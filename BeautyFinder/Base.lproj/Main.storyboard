@@ -305,6 +305,11 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2Xe-ss-pPt"/>
+                                    </mask>
+                                </variation>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lEu-ch-Lqg">
                                 <rect key="frame" x="0.0" y="138" width="600" height="360"/>
@@ -381,6 +386,11 @@
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="top" secondItem="WVl-56-A9N" secondAttribute="bottom" constant="36" id="k1m-ZW-O4T"/>
                             <constraint firstAttribute="centerX" secondItem="WVl-56-A9N" secondAttribute="centerX" id="mDM-lf-8Vi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="H5h-Dk-ncP"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="BeautyFinder" id="cTz-QH-UED">
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="XLd-z4-ahr">
