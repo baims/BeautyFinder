@@ -352,7 +352,7 @@
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xOo-DN-hwo">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="xOo-DN-hwo">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="46"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -396,7 +396,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="XLd-z4-ahr">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart_btn" id="iVE-ln-0uu">
+                        <barButtonItem key="rightBarButtonItem" image="cart_btn" id="iVE-ln-0uu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
@@ -457,7 +457,7 @@
                                 <rect key="frame" x="0.0" y="184" width="600" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="75" id="G2t-Tu-8wM">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="okthisisit" rowHeight="75" id="G2t-Tu-8wM">
                                         <rect key="frame" x="0.0" y="0.0" width="591" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G2t-Tu-8wM" id="CrA-yB-1b3">
