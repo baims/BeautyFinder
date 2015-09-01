@@ -13,6 +13,16 @@
 		CAA008D11B8C1B160094F10E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA008D01B8C1B160094F10E /* Images.xcassets */; };
 		CAA008D41B8C1B160094F10E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA008D21B8C1B160094F10E /* LaunchScreen.xib */; };
 		CAA008E01B8C1B160094F10E /* BeautyFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008DF1B8C1B160094F10E /* BeautyFinderTests.swift */; };
+		CAA008F41B8C1CB90094F10E /* MuseoSans_500_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008EA1B8C1CB90094F10E /* MuseoSans_500_Italic.otf */; };
+		CAA008F51B8C1CB90094F10E /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008EB1B8C1CB90094F10E /* MuseoSans_500.otf */; };
+		CAA008F61B8C1CB90094F10E /* MuseoSans_700.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008EC1B8C1CB90094F10E /* MuseoSans_700.otf */; };
+		CAA008F71B8C1CB90094F10E /* MuseoSans_900.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008ED1B8C1CB90094F10E /* MuseoSans_900.otf */; };
+		CAA008F81B8C1CB90094F10E /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008EE1B8C1CB90094F10E /* MuseoSans-100.otf */; };
+		CAA008F91B8C1CB90094F10E /* MuseoSans-100Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008EF1B8C1CB90094F10E /* MuseoSans-100Italic.otf */; };
+		CAA008FA1B8C1CB90094F10E /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008F01B8C1CB90094F10E /* MuseoSans-300.otf */; };
+		CAA008FB1B8C1CB90094F10E /* MuseoSans-300Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008F11B8C1CB90094F10E /* MuseoSans-300Italic.otf */; };
+		CAA008FC1B8C1CB90094F10E /* MuseoSans-700Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008F21B8C1CB90094F10E /* MuseoSans-700Italic.otf */; };
+		CAA008FD1B8C1CB90094F10E /* MuseoSans-900Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008F31B8C1CB90094F10E /* MuseoSans-900Italic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +46,16 @@
 		CAA008D91B8C1B160094F10E /* BeautyFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA008DE1B8C1B160094F10E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAA008DF1B8C1B160094F10E /* BeautyFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyFinderTests.swift; sourceTree = "<group>"; };
+		CAA008EA1B8C1CB90094F10E /* MuseoSans_500_Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500_Italic.otf; sourceTree = "<group>"; };
+		CAA008EB1B8C1CB90094F10E /* MuseoSans_500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_500.otf; sourceTree = "<group>"; };
+		CAA008EC1B8C1CB90094F10E /* MuseoSans_700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_700.otf; sourceTree = "<group>"; };
+		CAA008ED1B8C1CB90094F10E /* MuseoSans_900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MuseoSans_900.otf; sourceTree = "<group>"; };
+		CAA008EE1B8C1CB90094F10E /* MuseoSans-100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-100.otf"; sourceTree = "<group>"; };
+		CAA008EF1B8C1CB90094F10E /* MuseoSans-100Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-100Italic.otf"; sourceTree = "<group>"; };
+		CAA008F01B8C1CB90094F10E /* MuseoSans-300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300.otf"; sourceTree = "<group>"; };
+		CAA008F11B8C1CB90094F10E /* MuseoSans-300Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300Italic.otf"; sourceTree = "<group>"; };
+		CAA008F21B8C1CB90094F10E /* MuseoSans-700Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-700Italic.otf"; sourceTree = "<group>"; };
+		CAA008F31B8C1CB90094F10E /* MuseoSans-900Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-900Italic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +110,7 @@
 		CAA008C71B8C1B150094F10E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CAA008E91B8C1C990094F10E /* Fonts */,
 				CAA008C81B8C1B160094F10E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +131,23 @@
 				CAA008DE1B8C1B160094F10E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CAA008E91B8C1C990094F10E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CAA008EA1B8C1CB90094F10E /* MuseoSans_500_Italic.otf */,
+				CAA008EB1B8C1CB90094F10E /* MuseoSans_500.otf */,
+				CAA008EC1B8C1CB90094F10E /* MuseoSans_700.otf */,
+				CAA008ED1B8C1CB90094F10E /* MuseoSans_900.otf */,
+				CAA008EE1B8C1CB90094F10E /* MuseoSans-100.otf */,
+				CAA008EF1B8C1CB90094F10E /* MuseoSans-100Italic.otf */,
+				CAA008F01B8C1CB90094F10E /* MuseoSans-300.otf */,
+				CAA008F11B8C1CB90094F10E /* MuseoSans-300Italic.otf */,
+				CAA008F21B8C1CB90094F10E /* MuseoSans-700Italic.otf */,
+				CAA008F31B8C1CB90094F10E /* MuseoSans-900Italic.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +194,7 @@
 		CAA008BC1B8C1B150094F10E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Yousef Alhusaini";
 				TargetAttributes = {
@@ -192,9 +231,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA008F61B8C1CB90094F10E /* MuseoSans_700.otf in Resources */,
 				CAA008CF1B8C1B160094F10E /* Main.storyboard in Resources */,
+				CAA008F51B8C1CB90094F10E /* MuseoSans_500.otf in Resources */,
+				CAA008F71B8C1CB90094F10E /* MuseoSans_900.otf in Resources */,
+				CAA008F81B8C1CB90094F10E /* MuseoSans-100.otf in Resources */,
+				CAA008F91B8C1CB90094F10E /* MuseoSans-100Italic.otf in Resources */,
+				CAA008FD1B8C1CB90094F10E /* MuseoSans-900Italic.otf in Resources */,
 				CAA008D41B8C1B160094F10E /* LaunchScreen.xib in Resources */,
+				CAA008F41B8C1CB90094F10E /* MuseoSans_500_Italic.otf in Resources */,
+				CAA008FA1B8C1CB90094F10E /* MuseoSans-300.otf in Resources */,
 				CAA008D11B8C1B160094F10E /* Images.xcassets in Resources */,
+				CAA008FC1B8C1CB90094F10E /* MuseoSans-700Italic.otf in Resources */,
+				CAA008FB1B8C1CB90094F10E /* MuseoSans-300Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +458,7 @@
 				CAA008E51B8C1B160094F10E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAA008E61B8C1B160094F10E /* Build configuration list for PBXNativeTarget "BeautyFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +467,7 @@
 				CAA008E81B8C1B160094F10E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
