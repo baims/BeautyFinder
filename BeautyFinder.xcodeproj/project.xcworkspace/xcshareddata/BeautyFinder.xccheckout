@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5E145CFD-96B0-4B34-B2E1-A2BB2B51BDD0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BeautyFinder</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F326CE5262D3D5CB4979E49F6B98F6F9CB71B15D</key>
+		<string>https://github.com/baims/BeautyFinder.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BeautyFinder.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F326CE5262D3D5CB4979E49F6B98F6F9CB71B15D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/baims/BeautyFinder.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F326CE5262D3D5CB4979E49F6B98F6F9CB71B15D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F326CE5262D3D5CB4979E49F6B98F6F9CB71B15D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BeautyFinder</string>
+		</dict>
+	</array>
+</dict>
+</plist>
