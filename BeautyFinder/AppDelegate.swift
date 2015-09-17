@@ -1,4 +1,5 @@
 //
+ //
 //  AppDelegate.swift
 //  BeautyFinder
 //
@@ -22,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().barTintColor = UIColor(red: 211.0/255.0, green: 68.0/255.0, blue:
             124.0/255.0, alpha: 0.3)
+        //navigation bar customization & nav bar image bg
+        
+         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "header_2")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch), forBarMetrics: .Default)
+
+
+        //UINavigationBar.appearance().barTintColor = UIColor(red: 211.0/255.0, green: 68.0/255.0, blue:124.0/255.0, alpha: 0.3)
+        
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         if let barFont = UIFont(name: "MuseoSans_500", size: 22.0) {
             UINavigationBar.appearance().titleTextAttributes =
