@@ -10,6 +10,11 @@
 		9F27BAAB1B99B93600F5DF6A /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27BAAA1B99B93600F5DF6A /* CategoriesViewController.swift */; };
 		9F27BAAD1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27BAAC1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift */; };
 		9F27BAAF1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27BAAE1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift */; };
+		9F28F2E61BAC85BE007F1396 /* ADVSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F28F2E51BAC85BE007F1396 /* ADVSegmentedControl.swift */; settings = {ASSET_TAGS = (); }; };
+		9F28F2E81BAC8EFF007F1396 /* AreaSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F28F2E71BAC8EFF007F1396 /* AreaSearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9F28F2EA1BAC95F4007F1396 /* SalonSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F28F2E91BAC95F4007F1396 /* SalonSearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9F6CD0511BAC6C8700A0197D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0521BAC759F00A0197D /* SearchTextField.swift */; settings = {ASSET_TAGS = (); }; };
 		CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008C91B8C1B160094F10E /* AppDelegate.swift */; };
 		CAA008CC1B8C1B160094F10E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008CB1B8C1B160094F10E /* ViewController.swift */; };
 		CAA008CF1B8C1B160094F10E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA008CD1B8C1B160094F10E /* Main.storyboard */; };
@@ -42,6 +47,11 @@
 		9F27BAAA1B99B93600F5DF6A /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		9F27BAAC1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		9F27BAAE1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		9F28F2E51BAC85BE007F1396 /* ADVSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADVSegmentedControl.swift; sourceTree = "<group>"; };
+		9F28F2E71BAC8EFF007F1396 /* AreaSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaSearchViewController.swift; sourceTree = "<group>"; };
+		9F28F2E91BAC95F4007F1396 /* SalonSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonSearchViewController.swift; sourceTree = "<group>"; };
+		9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9F6CD0521BAC759F00A0197D /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		CAA008C41B8C1B150094F10E /* BeautyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA008C81B8C1B160094F10E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAA008C91B8C1B160094F10E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +92,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F6CD04E1BAC6C4600A0197D /* Home View */ = {
+			isa = PBXGroup;
+			children = (
+				9F27BAAA1B99B93600F5DF6A /* CategoriesViewController.swift */,
+				9F27BAAC1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift */,
+				9F27BAAE1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift */,
+			);
+			name = "Home View";
+			sourceTree = "<group>";
+		};
+		9F6CD04F1BAC6C6500A0197D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */,
+				9F28F2E71BAC8EFF007F1396 /* AreaSearchViewController.swift */,
+				9F28F2E91BAC95F4007F1396 /* SalonSearchViewController.swift */,
+				9F6CD0521BAC759F00A0197D /* SearchTextField.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		CAA008BB1B8C1B150094F10E = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +136,9 @@
 			children = (
 				CAA008C91B8C1B160094F10E /* AppDelegate.swift */,
 				CAA008CB1B8C1B160094F10E /* ViewController.swift */,
-				9F27BAAA1B99B93600F5DF6A /* CategoriesViewController.swift */,
-				9F27BAAC1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift */,
-				9F27BAAE1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift */,
+				9F28F2E51BAC85BE007F1396 /* ADVSegmentedControl.swift */,
+				9F6CD04E1BAC6C4600A0197D /* Home View */,
+				9F6CD04F1BAC6C6500A0197D /* Search */,
 				CAA008CD1B8C1B160094F10E /* Main.storyboard */,
 				CAA008D01B8C1B160094F10E /* Images.xcassets */,
 				CAA008D21B8C1B160094F10E /* LaunchScreen.xib */,
@@ -204,7 +235,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Yousef Alhusaini";
 				TargetAttributes = {
 					CAA008C31B8C1B150094F10E = {
@@ -270,9 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6CD0511BAC6C8700A0197D /* SearchViewController.swift in Sources */,
 				9F27BAAD1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift in Sources */,
+				9F28F2E81BAC8EFF007F1396 /* AreaSearchViewController.swift in Sources */,
 				CAA008CC1B8C1B160094F10E /* ViewController.swift in Sources */,
 				CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */,
+				9F28F2E61BAC85BE007F1396 /* ADVSegmentedControl.swift in Sources */,
+				9F28F2EA1BAC95F4007F1396 /* SalonSearchViewController.swift in Sources */,
+				9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */,
 				9F27BAAB1B99B93600F5DF6A /* CategoriesViewController.swift in Sources */,
 				9F27BAAF1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift in Sources */,
 			);
@@ -337,6 +373,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -403,6 +440,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BeautyFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Baims.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -413,6 +451,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BeautyFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Baims.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -431,6 +470,7 @@
 				);
 				INFOPLIST_FILE = BeautyFinderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Baims.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeautyFinder.app/BeautyFinder";
 			};
@@ -446,6 +486,7 @@
 				);
 				INFOPLIST_FILE = BeautyFinderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Baims.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeautyFinder.app/BeautyFinder";
 			};
