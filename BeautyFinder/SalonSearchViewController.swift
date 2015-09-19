@@ -1,29 +1,22 @@
 //
-//  CategoriesViewController.swift
+//  SalonSearchViewController.swift
 //  BeautyFinder
 //
-//  Created by Bader Alrshaid on 9/4/15.
-//  Copyright (c) 2015 Yousef Alhusaini. All rights reserved.
+//  Created by Bader Alrshaid on 9/18/15.
+//  Copyright © 2015 Yousef Alhusaini. All rights reserved.
 //
 
 import UIKit
 
-class CategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
-    var searchIsHidden = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidLayoutSubviews() {
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,33 +34,37 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         // Pass the selected object to the new view controller.
     }
     */
+
 }
 
 
-// MARK: Categories CollectionView
-extension CategoriesViewController
+// MARK: CollectionView
+extension SalonSearchViewController
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 7
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
-        cell.title.text      = "whatever222222"
+        cell.title.text      = "salonName"
         cell.imageView.image = UIImage(named: "header_3")
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
         
+
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
+    
+    
+    /*func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
     {
         switch kind
         {
@@ -77,9 +74,9 @@ extension CategoriesViewController
             switch indexPath.section
             {
             case 0:
-                headerView.title.text = "HAIR"
+                headerView.title.text = "AREA 1"
             default:
-                headerView.title.text = "MASSAGE"
+                headerView.title.text = "AREA 2"
             }
             
             return headerView
@@ -87,5 +84,6 @@ extension CategoriesViewController
         default:
             return UICollectionReusableView()
         }
-    }
+    }*/
+
 }
