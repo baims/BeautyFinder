@@ -7,23 +7,37 @@
 //
 
 import UIKit
+import Alamofire
+//import SwiftyJSON
 
 class CategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let refreshControl = UIRefreshControl()
     
+    let website = "https://aqueous-dawn-8486.herokuapp.com/"
     var searchIsHidden = true
+    var json : JSON?
+    
+    var indexPathForSelectedItem : NSIndexPath!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        self.refreshControl.addTarget(self, action: "startRefresh", forControlEvents: .ValueChanged)
+        collectionView?.addSubview(self.refreshControl)
     }
     
     override func viewDidLayoutSubviews() {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        
+        self.refreshControl.beginRefreshing()
+        self.startRefresh()
+        
+        //self.collectionView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.height), animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,16 +45,36 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "Category"
+        {
+            let vc = segue.destinationViewController as! SubcategoriesViewController
+            vc.primaryKey = self.json![self.indexPathForSelectedItem.section, "subcategories", self.indexPathForSelectedItem.item, "pk"].int!
+            vc.title      = self.json![self.indexPathForSelectedItem.section, "name"].string! + " " + self.json![self.indexPathForSelectedItem.section, "subcategories", self.indexPathForSelectedItem.item, "name"].string!
+            
+        }
     }
-    */
+
+    
+    
+    func startRefresh()
+    {
+        //UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        Alamofire.request(.GET, "https://aqueous-dawn-8486.herokuapp.com/homepage/").responseJSON { (response) -> Void in
+            
+            if let Json = response.result.value {
+                self.json = JSON(Json)
+                
+                self.refreshControl.endRefreshing()
+                
+                self.collectionView.reloadData()
+                self.refreshControl.removeFromSuperview()
+            }
+            
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
 }
 
 
@@ -48,18 +82,25 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
 extension CategoriesViewController
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 2
+        guard let json = json else {
+            return 0
+        }
+        
+        return json.count
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        guard let json = json else {
+            return 0
+        }
+        return json[section, "subcategories"].count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
-        cell.title.text      = "whatever222222"
-        cell.imageView.image = UIImage(named: "header_3")
+        cell.title.text = self.json![indexPath.section, "subcategories", indexPath.item, "name"].string!
+        cell.imageView.imageFromUrl(self.website + self.json![indexPath.section, "subcategories", indexPath.item, "image"].string!)
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
@@ -74,18 +115,20 @@ extension CategoriesViewController
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "header", forIndexPath: indexPath) as! CategoriesHeaderCollectionReusableView
             
-            switch indexPath.section
-            {
-            case 0:
-                headerView.title.text = "HAIR"
-            default:
-                headerView.title.text = "MASSAGE"
-            }
+            headerView.title.text = self.json![indexPath.section, "name"].string?.uppercaseString
             
             return headerView
             
         default:
             return UICollectionReusableView()
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        self.indexPathForSelectedItem = indexPath
+        
+        
+        return true
     }
 }
