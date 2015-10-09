@@ -1638,11 +1638,11 @@
                                         <size key="customSize" width="108" height="110"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="j26-NG-nfh"/>
-                                                <exclude reference="cyj-NS-k8D"/>
                                                 <exclude reference="Mb0-28-eA8"/>
-                                                <exclude reference="jiO-ZI-AUN"/>
+                                                <exclude reference="cyj-NS-k8D"/>
+                                                <exclude reference="j26-NG-nfh"/>
                                                 <exclude reference="Kve-n6-fjA"/>
+                                                <exclude reference="jiO-ZI-AUN"/>
                                             </mask>
                                         </variation>
                                         <connections>

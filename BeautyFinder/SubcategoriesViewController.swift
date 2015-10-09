@@ -54,7 +54,7 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     {
         //UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         print(self.primaryKey)
-        Alamofire.request(.GET, "https://aqueous-dawn-8486.herokuapp.com/subcategory/1", parameters:nil).responseJSON { (response) -> Void in
+        Alamofire.request(.GET, "https://aqueous-dawn-8486.herokuapp.com/subcategory/\(self.primaryKey)", parameters:nil).responseJSON { (response) -> Void in
             
             if let Json = response.result.value {
                 self.json = JSON(Json)
@@ -73,15 +73,25 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
 extension SubcategoriesViewController
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return 1;
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        guard let json = json else {
+            return 0
+        }
+        
+        return json.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
+        
+        cell.title.text = json![indexPath.item, "name"].string!;
+        cell.imageView.imageFromUrl(self.website + self.json![indexPath.item, "logo"].string!)
+        
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
+        cell.imageView.layer.masksToBounds = true
         
         return cell
     }

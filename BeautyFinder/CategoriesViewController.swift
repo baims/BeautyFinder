@@ -105,6 +105,18 @@ extension CategoriesViewController
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
         
+        let selectedView = UIView()
+        let circledView  = UIView(frame: cell.imageView.frame)
+        circledView.backgroundColor     = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        circledView.layer.cornerRadius  = cell.imageView.layer.cornerRadius
+        circledView.layer.masksToBounds = true
+        
+        selectedView.addSubview(circledView)
+        
+        cell.selectedBackgroundView = selectedView
+        cell.bringSubviewToFront(cell.selectedBackgroundView!)
+        
+        
         return cell
     }
     
