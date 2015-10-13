@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         //navigation bar customization
         
