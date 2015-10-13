@@ -15,6 +15,8 @@
 		9F28F2EA1BAC95F4007F1396 /* SalonSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F28F2E91BAC95F4007F1396 /* SalonSearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9F3354971BCC3AC500FA1A21 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3354961BCC3AC500FA1A21 /* LogInViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9F33549D1BCC54F100FA1A21 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33549C1BCC54F100FA1A21 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9F3354A01BCD46DB00FA1A21 /* SalonServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33549F1BCD46DB00FA1A21 /* SalonServicesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9F3354A21BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9F632C901BBDC6CD00AF2732 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F632C871BBDC5EF00AF2732 /* Alamofire.framework */; };
 		9F632C911BBDC6CD00AF2732 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9F632C871BBDC5EF00AF2732 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9F632C961BBDC81C00AF2732 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
@@ -115,6 +117,8 @@
 		9F28F2E91BAC95F4007F1396 /* SalonSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonSearchViewController.swift; sourceTree = "<group>"; };
 		9F3354961BCC3AC500FA1A21 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		9F33549C1BCC54F100FA1A21 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9F33549F1BCD46DB00FA1A21 /* SalonServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonServicesViewController.swift; sourceTree = "<group>"; };
+		9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonServicesTableViewCell.swift; sourceTree = "<group>"; };
 		9F632C7E1BBDC5EF00AF2732 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
@@ -162,6 +166,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F33549E1BCD465F00FA1A21 /* Sign in / Sign up */ = {
+			isa = PBXGroup;
+			children = (
+				9F3354961BCC3AC500FA1A21 /* LogInViewController.swift */,
+				9F33549C1BCC54F100FA1A21 /* SignUpViewController.swift */,
+			);
+			name = "Sign in / Sign up";
+			sourceTree = "<group>";
+		};
 		9F632C7F1BBDC5EF00AF2732 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,11 +243,12 @@
 				9F28F2E51BAC85BE007F1396 /* ADVSegmentedControl.swift */,
 				9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */,
 				9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */,
-				9F3354961BCC3AC500FA1A21 /* LogInViewController.swift */,
-				9F33549C1BCC54F100FA1A21 /* SignUpViewController.swift */,
+				9F33549F1BCD46DB00FA1A21 /* SalonServicesViewController.swift */,
+				9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */,
 				9F6CD04E1BAC6C4600A0197D /* Home View */,
 				9F67FF2F1BBDE49200C47C45 /* Subcategories */,
 				9F6CD04F1BAC6C6500A0197D /* Search */,
+				9F33549E1BCD465F00FA1A21 /* Sign in / Sign up */,
 				CAA008CD1B8C1B160094F10E /* Main.storyboard */,
 				CAA008D01B8C1B160094F10E /* Images.xcassets */,
 				CAA008D21B8C1B160094F10E /* LaunchScreen.xib */,
@@ -448,7 +462,9 @@
 				9F27BAAD1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift in Sources */,
 				9F632C981BBDD24F00AF2732 /* UIImageView+URL.swift in Sources */,
 				9F28F2E81BAC8EFF007F1396 /* AreaSearchViewController.swift in Sources */,
+				9F3354A01BCD46DB00FA1A21 /* SalonServicesViewController.swift in Sources */,
 				9F632C961BBDC81C00AF2732 /* SwiftyJSON.swift in Sources */,
+				9F3354A21BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift in Sources */,
 				CAA008CC1B8C1B160094F10E /* ViewController.swift in Sources */,
 				CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */,
 				9F28F2E61BAC85BE007F1396 /* ADVSegmentedControl.swift in Sources */,

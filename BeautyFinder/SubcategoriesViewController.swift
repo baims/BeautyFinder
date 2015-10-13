@@ -20,6 +20,7 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     let website = "https://aqueous-dawn-8486.herokuapp.com/"
     var searchIsHidden = true
     var json : JSON?
+    var indexPathForSelectedItem : NSIndexPath!
     
     
     override func viewDidLoad() {
@@ -40,23 +41,28 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "Salon"
+        {
+            let vc = segue.destinationViewController as! SalonServicesViewController
+            vc.json = self.json![indexPathForSelectedItem.item]
+        }
     }
-    */
 
+    
     func startRefresh()
     {
         //UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         print(self.primaryKey)
         Alamofire.request(.GET, "https://aqueous-dawn-8486.herokuapp.com/subcategory/\(self.primaryKey)", parameters:nil).responseJSON { (response) -> Void in
             
-            if let Json = response.result.value {
+            if let Json = response.result.value
+            {
                 self.json = JSON(Json)
                 
                 print(self.json)
@@ -93,6 +99,25 @@ extension SubcategoriesViewController
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
         
+        let selectedView = UIView()
+        let circledView  = UIView(frame: cell.imageView.frame)
+        circledView.backgroundColor     = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        circledView.layer.cornerRadius  = cell.imageView.layer.cornerRadius
+        circledView.layer.masksToBounds = true
+        
+        selectedView.addSubview(circledView)
+        
+        cell.selectedBackgroundView = selectedView
+        cell.bringSubviewToFront(cell.selectedBackgroundView!)
+        
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        self.indexPathForSelectedItem = indexPath
+        
+        
+        return true
     }
 }
