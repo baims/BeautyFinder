@@ -13,31 +13,44 @@ class SalonServicesViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     @IBOutlet weak var segmentedControl: ADVSegmentedControl!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var salonNameLabel: UILabel!
+    @IBOutlet weak var salonAddressLabel: UILabel!
+
     
     let website = "https://aqueous-dawn-8486.herokuapp.com/"
     
     var serviceImageViews : [[UIImageView?]] = []
     
     var json : JSON?
+    var salonImage : UIImage?
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        segmentedControl.items = ["SERVICES", "BEAUTICIANS"]
+        segmentedControl.items = [" 1. Service", "  2. Beautician ", "   3. Schedule"/*, "4. Book"*/]
         segmentedControl.font = UIFont(name: "MuseoSans-700", size: 14)
         segmentedControl.selectedIndex = 0
+        //segmentedControl.userInteractionEnabled = false
         segmentedControl.addTarget(self, action: "segmentValueChanged:", forControlEvents: .ValueChanged)
         
         self.title = self.json!["name"].string!
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidLayoutSubviews() {
+        self.logoImageView.kf_setImageWithURL(NSURL(string: self.website + self.json!["logo"].string!)!, placeholderImage: UIImage(named: "Icon-76"))
+        self.logoImageView.layer.cornerRadius = logoImageView.frame.width/2
+        self.logoImageView.clipsToBounds = true
+        
+        self.salonNameLabel.text = self.json!["name"].string!
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -48,6 +61,11 @@ class SalonServicesViewController: UIViewController, UITableViewDelegate, UITabl
     }
     */
 
+    
+    @IBAction func backButtonPressed(sender: UIButton)
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 }
 
 // MARK: SegmentedControl
@@ -117,11 +135,11 @@ extension SalonServicesViewController
     
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+        return 50
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.width, 70))
+        let headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.width, 50))
         headerView.backgroundColor = UIColor.whiteColor()
         
         

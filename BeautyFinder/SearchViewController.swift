@@ -21,7 +21,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     {
         super.viewDidLoad()
         
-        segmentedControl.items = ["SALON", "CATEGORY", "AREA", "OFFERS"]
+        segmentedControl.items = ["Salon", "Area", "Category"]
         segmentedControl.font = UIFont(name: "MuseoSans-700", size: 14)
         segmentedControl.selectedIndex = 0
         segmentedControl.addTarget(self, action: "segmentValueChanged:", forControlEvents: .ValueChanged)
@@ -34,8 +34,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     {
         let navBarFrame = self.navigationController?.navigationBar.frame
         
-        self.searchField.frame.size = CGSizeMake(navBarFrame!.size.width-50, 30)
-        self.searchField.center     = CGPointMake(navBarFrame!.width/2+11, navBarFrame!.height/2)
+        self.searchField.frame.size = CGSizeMake(navBarFrame!.size.width-40, 30)
+        self.searchField.center     = CGPointMake(navBarFrame!.width/2, navBarFrame!.height/2)
+        self.searchField.attributedPlaceholder = NSAttributedString(string: "Search", attributes: [NSForegroundColorAttributeName : UIColor(white: 1, alpha: 0.7)])
         self.searchField.delegate   = self
         
         self.navigationController?.navigationBar.addSubview(self.searchField)

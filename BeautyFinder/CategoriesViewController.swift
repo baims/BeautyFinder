@@ -50,6 +50,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         {
             self.collectionView.deselectItemAtIndexPath(indexPath, animated: true)
         }
+        
+        self.navigationController?.navigationBar.hidden = true
     }
     
     
@@ -69,7 +71,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
             subcategoryName = subcategoryName.lowercaseString
             subcategoryName.replaceRange(subcategoryName.startIndex ... subcategoryName.startIndex, with: String(subcategoryName[subcategoryName.startIndex]).capitalizedString)
             
-            vc.title      = categoryName + " " + subcategoryName
+            vc.titleString      = categoryName + " " + subcategoryName
         }
     }
 

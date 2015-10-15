@@ -34,4 +34,12 @@ class SearchTextField: UITextField {
     override func editingRectForBounds(bounds: CGRect) -> CGRect {
         return CGRectInset(bounds, 10, 0)
     }
+    
+    override func textRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset(bounds, 10, 0)
+    }
+    
+    override func placeholderRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset(bounds, 10, 0)
+    }
 }

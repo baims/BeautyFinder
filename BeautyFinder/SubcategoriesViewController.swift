@@ -14,6 +14,7 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     var primaryKey : Int!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     let refreshControl = UIRefreshControl()
     
@@ -21,6 +22,7 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     var searchIsHidden = true
     var json : JSON?
     var indexPathForSelectedItem : NSIndexPath?
+    var titleString : String!
     
     
     override func viewDidLoad() {
@@ -33,6 +35,8 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
         
         self.refreshControl.beginRefreshing()
         self.startRefresh()
+        
+        self.titleLabel.text = self.titleString
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +81,13 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
             }
         }
     }
+    
+    
+    @IBAction func backButtonPressed(sender: UIButton)
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
 }
 
 extension SubcategoriesViewController
