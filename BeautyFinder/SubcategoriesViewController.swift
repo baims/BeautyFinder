@@ -20,7 +20,7 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     let website = "https://aqueous-dawn-8486.herokuapp.com/"
     var searchIsHidden = true
     var json : JSON?
-    var indexPathForSelectedItem : NSIndexPath!
+    var indexPathForSelectedItem : NSIndexPath?
     
     
     override func viewDidLoad() {
@@ -40,6 +40,13 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        if let indexPath = indexPathForSelectedItem
+        {
+            self.collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        }
+    }
 
     
     // MARK: - Navigation
@@ -50,22 +57,18 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
         if segue.identifier == "Salon"
         {
             let vc = segue.destinationViewController as! SalonServicesViewController
-            vc.json = self.json![indexPathForSelectedItem.item]
+            vc.json = self.json![indexPathForSelectedItem!.item]
         }
     }
 
     
     func startRefresh()
     {
-        //UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        print(self.primaryKey)
         Alamofire.request(.GET, "https://aqueous-dawn-8486.herokuapp.com/subcategory/\(self.primaryKey)", parameters:nil).responseJSON { (response) -> Void in
             
             if let Json = response.result.value
             {
                 self.json = JSON(Json)
-                
-                print(self.json)
                 
                 self.refreshControl.endRefreshing()
                 
@@ -94,7 +97,7 @@ extension SubcategoriesViewController
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
         cell.title.text = json![indexPath.item, "name"].string!;
-        cell.imageView.imageFromUrl(self.website + self.json![indexPath.item, "logo"].string!)
+        cell.imageView.kf_setImageWithURL(NSURL(string: self.website + self.json![indexPath.item, "logo"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
