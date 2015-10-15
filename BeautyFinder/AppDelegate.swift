@@ -33,10 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //UINavigationBar.appearance().barTintColor = UIColor(red: 211.0/255.0, green: 68.0/255.0, blue:124.0/255.0, alpha: 0.3)
         
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        if let barFont = UIFont(name: "MuseoSans_500", size: 22.0) {
+        
+        if let barFont = UIFont(name: "MuseoSans-500", size: 20.0) {
             UINavigationBar.appearance().titleTextAttributes =
             [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
         }
+        
         return true
     }
 

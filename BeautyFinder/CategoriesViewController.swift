@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-//import SwiftyJSON
+import Kingfisher
 
 class CategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -20,7 +20,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     var searchIsHidden = true
     var json : JSON?
     
-    var indexPathForSelectedItem : NSIndexPath!
+    var indexPathForSelectedItem : NSIndexPath?
     
     
     override func viewDidLoad() {
@@ -45,14 +45,31 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if let indexPath = self.indexPathForSelectedItem
+        {
+            self.collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        }
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Category"
         {
             let vc = segue.destinationViewController as! SubcategoriesViewController
-            vc.primaryKey = self.json![self.indexPathForSelectedItem.section, "subcategories", self.indexPathForSelectedItem.item, "pk"].int!
-            vc.title      = self.json![self.indexPathForSelectedItem.section, "name"].string! + " " + self.json![self.indexPathForSelectedItem.section, "subcategories", self.indexPathForSelectedItem.item, "name"].string!
+            vc.primaryKey = self.json![self.indexPathForSelectedItem!.section, "subcategories", self.indexPathForSelectedItem!.item, "pk"].int!
             
+            
+            /*** Getting category/subcategory names from self.json and capitlize the first letter of each word ***/
+            var categoryName = self.json![self.indexPathForSelectedItem!.section, "name"].string!
+            categoryName = categoryName.lowercaseString
+            categoryName.replaceRange(categoryName.startIndex ... categoryName.startIndex, with: String(categoryName[categoryName.startIndex]).capitalizedString)
+            
+            var subcategoryName = self.json![self.indexPathForSelectedItem!.section, "subcategories", self.indexPathForSelectedItem!.item, "name"].string!
+            subcategoryName = subcategoryName.lowercaseString
+            subcategoryName.replaceRange(subcategoryName.startIndex ... subcategoryName.startIndex, with: String(subcategoryName[subcategoryName.startIndex]).capitalizedString)
+            
+            vc.title      = categoryName + " " + subcategoryName
         }
     }
 
@@ -100,7 +117,7 @@ extension CategoriesViewController
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
         cell.title.text = self.json![indexPath.section, "subcategories", indexPath.item, "name"].string!
-        cell.imageView.imageFromUrl(self.website + self.json![indexPath.section, "subcategories", indexPath.item, "image"].string!)
+        cell.imageView.kf_setImageWithURL(NSURL(string: self.website + self.json![indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true

@@ -43,6 +43,7 @@
             <string>MuseoSans-500</string>
             <string>MuseoSans-500</string>
             <string>MuseoSans-500</string>
+            <string>MuseoSans-500</string>
         </mutableArray>
         <mutableArray key="MuseoSans_700.otf">
             <string>MuseoSans-700</string>
@@ -524,7 +525,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FHX-Hd-V0E">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="FHX-Hd-V0E">
                                                     <rect key="frame" x="11" y="0.0" width="86" height="86"/>
                                                     <animations/>
                                                     <constraints>
@@ -719,23 +720,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCM-vO-2AM">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="LCM-vO-2AM">
                                                     <rect key="frame" x="14" y="10" width="70" height="70"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="0.20000001789999999" green="0.79215693470000004" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="S4C-4j-6Th"/>
                                                         <constraint firstAttribute="width" secondItem="LCM-vO-2AM" secondAttribute="height" id="SIM-ju-zP9"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$85" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yL2-5r-ZYe">
-                                                    <rect key="frame" x="527" y="35" width="31.5" height="20.5"/>
+                                                    <rect key="frame" x="527" y="34" width="31.5" height="22"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="uas-WW-y00"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="18"/>
+                                                    <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -744,21 +745,21 @@
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider" translatesAutoresizingMaskIntoConstraints="NO" id="kjq-VU-3h8">
-                                                    <rect key="frame" x="14" y="1" width="553" height="1"/>
+                                                    <rect key="frame" x="14" y="89" width="555" height="1"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="bYx-5N-VXK"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hair Bleach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FT2-Ow-qjh">
-                                                    <rect key="frame" x="106" y="35" width="90.5" height="20.5"/>
+                                                    <rect key="frame" x="100" y="35.5" width="85" height="19.5"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="117" id="6ML-gj-koS"/>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="418" id="sEB-KJ-Bi8"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="16"/>
+                                                    <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -773,16 +774,16 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="yL2-5r-ZYe" secondAttribute="trailing" id="2yx-Kn-daY"/>
                                                 <constraint firstItem="FT2-Ow-qjh" firstAttribute="centerY" secondItem="CrA-yB-1b3" secondAttribute="centerY" id="7d7-j0-w3b"/>
                                                 <constraint firstItem="yL2-5r-ZYe" firstAttribute="top" secondItem="CrA-yB-1b3" secondAttribute="topMargin" constant="18" id="9Ti-rW-Qyi"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kjq-VU-3h8" secondAttribute="bottom" constant="-8" id="Ajo-ON-Tz6"/>
                                                 <constraint firstItem="yL2-5r-ZYe" firstAttribute="leading" secondItem="FT2-Ow-qjh" secondAttribute="trailing" constant="8" id="EvM-xy-15g"/>
                                                 <constraint firstItem="LCM-vO-2AM" firstAttribute="top" secondItem="CrA-yB-1b3" secondAttribute="top" id="Mqu-w0-vlK"/>
                                                 <constraint firstItem="yL2-5r-ZYe" firstAttribute="leading" secondItem="FT2-Ow-qjh" secondAttribute="trailing" constant="309" id="O0W-cM-UKh"/>
                                                 <constraint firstItem="yL2-5r-ZYe" firstAttribute="centerY" secondItem="CrA-yB-1b3" secondAttribute="centerY" id="POk-S5-6yC"/>
                                                 <constraint firstItem="FT2-Ow-qjh" firstAttribute="top" secondItem="CrA-yB-1b3" secondAttribute="topMargin" id="SN7-KA-yGa"/>
-                                                <constraint firstItem="kjq-VU-3h8" firstAttribute="top" secondItem="CrA-yB-1b3" secondAttribute="topMargin" constant="-7" id="aja-eS-Xin"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="LCM-vO-2AM" secondAttribute="bottom" constant="-2" id="djU-FC-K42"/>
                                                 <constraint firstItem="LCM-vO-2AM" firstAttribute="centerY" secondItem="CrA-yB-1b3" secondAttribute="centerY" id="h4Z-3f-cCi"/>
-                                                <constraint firstItem="FT2-Ow-qjh" firstAttribute="leading" secondItem="LCM-vO-2AM" secondAttribute="trailing" constant="22" id="md5-sI-Gsx"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="kjq-VU-3h8" secondAttribute="trailing" constant="-8" id="ogi-tz-iKb"/>
+                                                <constraint firstItem="FT2-Ow-qjh" firstAttribute="leading" secondItem="LCM-vO-2AM" secondAttribute="trailing" constant="16" id="md5-sI-Gsx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kjq-VU-3h8" secondAttribute="trailing" constant="-10" id="ogi-tz-iKb"/>
                                                 <constraint firstItem="LCM-vO-2AM" firstAttribute="leading" secondItem="CrA-yB-1b3" secondAttribute="leadingMargin" constant="6" id="wSA-0P-xfT"/>
                                             </constraints>
                                             <variation key="default">
@@ -1655,7 +1656,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H6s-FD-snn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="H6s-FD-snn">
                                                     <rect key="frame" x="11" y="0.0" width="86" height="86"/>
                                                     <animations/>
                                                     <constraints>
@@ -1935,6 +1936,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icon-76" width="38" height="38"/>
         <image name="add_btn" width="86" height="25"/>
         <image name="back_btn" width="19" height="19"/>
         <image name="bg_img" width="375" height="667"/>
