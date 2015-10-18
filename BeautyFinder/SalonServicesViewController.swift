@@ -12,6 +12,7 @@ import Kingfisher
 class SalonServicesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: ADVSegmentedControl!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var salonNameLabel: UILabel!
@@ -20,10 +21,10 @@ class SalonServicesViewController: UIViewController, UITableViewDelegate, UITabl
     
     let website = "https://aqueous-dawn-8486.herokuapp.com/"
     
-    var serviceImageViews : [[UIImageView?]] = []
-    
     var json : JSON?
-    var salonImage : UIImage?
+    
+    var indexPathForSelectedRow : NSIndexPath?
+    
 
     override func viewDidLoad()
     {
@@ -32,10 +33,8 @@ class SalonServicesViewController: UIViewController, UITableViewDelegate, UITabl
         segmentedControl.items = [" 1. Service", "  2. Beautician ", "   3. Schedule"/*, "4. Book"*/]
         segmentedControl.font = UIFont(name: "MuseoSans-700", size: 14)
         segmentedControl.selectedIndex = 0
-        //segmentedControl.userInteractionEnabled = false
+        segmentedControl.userInteractionEnabled = false
         segmentedControl.addTarget(self, action: "segmentValueChanged:", forControlEvents: .ValueChanged)
-        
-        self.title = self.json!["name"].string!
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,19 +50,36 @@ class SalonServicesViewController: UIViewController, UITableViewDelegate, UITabl
         self.salonNameLabel.text = self.json!["name"].string!
     }
     
-    /*
+    override func viewDidAppear(animated: Bool) {
+        self.logoImageView.hidden = false
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "beauticians"
+        {
+            let selectedCell = self.tableView.cellForRowAtIndexPath(self.tableView.indexPathForSelectedRow!) as! SalonServicesTableViewCell
+            
+            let vc = segue.destinationViewController as! SalonBeauticiansViewController
+            vc.salonPK          = self.json!["pk"].int!
+            vc.salonName        = self.salonNameLabel.text!
+            vc.salonImagePath   = self.json!["logo"].string!
+            vc.salonAddress     = self.salonAddressLabel.text!
+            //vc.salonLocation  = (self.json!["longitude"].double!, self.json!["latitude"].double!)
+            vc.subcategoryPK  = self.json!["categories", self.tableView.indexPathForSelectedRow!.section, "subcategories", self.tableView.indexPathForSelectedRow!.row, "pk"].int!
+            vc.subcategoryName  = selectedCell.categoryNameLabel.text!
+            vc.subcategoryPrice = (selectedCell.categoryPriceLabel.text! as NSString).doubleValue
+        }
     }
-    */
 
     
     @IBAction func backButtonPressed(sender: UIButton)
     {
+        self.logoImageView.hidden = true
+        
         self.navigationController?.popViewControllerAnimated(true)
     }
 }
@@ -131,6 +147,10 @@ extension SalonServicesViewController
         cell.selectedBackgroundView = selectedBackgroundView
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.indexPathForSelectedRow = indexPath
     }
     
     

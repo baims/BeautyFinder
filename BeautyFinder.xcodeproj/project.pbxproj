@@ -25,6 +25,9 @@
 		9F67FF351BBDE4AE00C47C45 /* SubcategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67FF341BBDE4AE00C47C45 /* SubcategoriesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9F6CD0511BAC6C8700A0197D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0521BAC759F00A0197D /* SearchTextField.swift */; settings = {ASSET_TAGS = (); }; };
+		9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */; settings = {ASSET_TAGS = (); }; };
+		9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */; settings = {ASSET_TAGS = (); }; };
+		9F9B990F1BD1910000A78B4D /* SalonBeauticiansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B990E1BD1910000A78B4D /* SalonBeauticiansViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008C91B8C1B160094F10E /* AppDelegate.swift */; };
 		CAA008CC1B8C1B160094F10E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008CB1B8C1B160094F10E /* ViewController.swift */; };
 		CAA008CF1B8C1B160094F10E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA008CD1B8C1B160094F10E /* Main.storyboard */; };
@@ -166,6 +169,9 @@
 		9F67FF341BBDE4AE00C47C45 /* SubcategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesViewController.swift; sourceTree = "<group>"; };
 		9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9F6CD0521BAC759F00A0197D /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesAnimationController.swift; sourceTree = "<group>"; };
+		9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonViewAnimator.swift; sourceTree = "<group>"; };
+		9F9B990E1BD1910000A78B4D /* SalonBeauticiansViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonBeauticiansViewController.swift; sourceTree = "<group>"; };
 		CAA008C41B8C1B150094F10E /* BeautyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA008C81B8C1B160094F10E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAA008C91B8C1B160094F10E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				9F67FF341BBDE4AE00C47C45 /* SubcategoriesViewController.swift */,
+				9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */,
+				9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */,
 			);
 			name = Subcategories;
 			sourceTree = "<group>";
@@ -265,6 +273,32 @@
 				9F6CD0521BAC759F00A0197D /* SearchTextField.swift */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		9F9B990B1BD1907C00A78B4D /* Salon Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F9B990C1BD1908B00A78B4D /* Services */,
+				9F9B990D1BD1909300A78B4D /* Beauticians */,
+			);
+			name = "Salon Views";
+			sourceTree = "<group>";
+		};
+		9F9B990C1BD1908B00A78B4D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F33549F1BCD46DB00FA1A21 /* SalonServicesViewController.swift */,
+				9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9F9B990D1BD1909300A78B4D /* Beauticians */ = {
+			isa = PBXGroup;
+			children = (
+				9F9B990E1BD1910000A78B4D /* SalonBeauticiansViewController.swift */,
+			);
+			name = Beauticians;
 			sourceTree = "<group>";
 		};
 		CAA008BB1B8C1B150094F10E = {
@@ -295,8 +329,7 @@
 				9F28F2E51BAC85BE007F1396 /* ADVSegmentedControl.swift */,
 				9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */,
 				9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */,
-				9F33549F1BCD46DB00FA1A21 /* SalonServicesViewController.swift */,
-				9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */,
+				9F9B990B1BD1907C00A78B4D /* Salon Views */,
 				9F6CD04E1BAC6C4600A0197D /* Home View */,
 				9F67FF2F1BBDE49200C47C45 /* Subcategories */,
 				9F6CD04F1BAC6C6500A0197D /* Search */,
@@ -548,12 +581,15 @@
 				CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */,
 				9F28F2E61BAC85BE007F1396 /* ADVSegmentedControl.swift in Sources */,
 				9F28F2EA1BAC95F4007F1396 /* SalonSearchViewController.swift in Sources */,
+				9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */,
 				9F33549D1BCC54F100FA1A21 /* SignUpViewController.swift in Sources */,
 				9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */,
 				9F3354971BCC3AC500FA1A21 /* LogInViewController.swift in Sources */,
 				9F67FF351BBDE4AE00C47C45 /* SubcategoriesViewController.swift in Sources */,
 				9F27BAAB1B99B93600F5DF6A /* CategoriesViewController.swift in Sources */,
 				9F27BAAF1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift in Sources */,
+				9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */,
+				9F9B990F1BD1910000A78B4D /* SalonBeauticiansViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

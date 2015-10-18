@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class SubcategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class SubcategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate {
     
     var primaryKey : Int!
     
@@ -24,11 +24,10 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     var indexPathForSelectedItem : NSIndexPath?
     var titleString : String!
     
+    var animator = SalonViewAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         self.refreshControl.addTarget(self, action: "startRefresh", forControlEvents: .ValueChanged)
         collectionView?.addSubview(self.refreshControl)
@@ -50,6 +49,9 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
         {
             self.collectionView.deselectItemAtIndexPath(indexPath, animated: true)
         }
+        
+        self.navigationController?.delegate = nil
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
 
     
@@ -60,6 +62,9 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     {
         if segue.identifier == "Salon"
         {
+            self.navigationController?.delegate = self
+            self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+            
             let vc = segue.destinationViewController as! SalonServicesViewController
             vc.json = self.json![indexPathForSelectedItem!.item]
         }
