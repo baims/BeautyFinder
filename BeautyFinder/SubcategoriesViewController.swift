@@ -84,6 +84,10 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
                 self.collectionView.reloadData()
                 self.refreshControl.removeFromSuperview()
             }
+            else if let error = response.result.error
+            {
+                print(error)
+            }
         }
     }
     

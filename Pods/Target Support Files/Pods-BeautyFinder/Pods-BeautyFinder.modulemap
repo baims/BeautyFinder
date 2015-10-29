@@ -1,0 +1,6 @@
+framework module Pods_BeautyFinder {
+  umbrella header "Pods-BeautyFinder-umbrella.h"
+
+  export *
+  module * { export * }
+}

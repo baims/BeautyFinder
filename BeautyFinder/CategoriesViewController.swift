@@ -90,6 +90,10 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
                 self.collectionView.reloadData()
                 self.refreshControl.removeFromSuperview()
             }
+            else if let error = response.result.error
+            {
+                print(error)
+            }
             
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
