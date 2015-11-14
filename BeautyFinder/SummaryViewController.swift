@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class SummaryViewController: UIViewController {
     
     @IBOutlet weak var textOfPayButtonLabel: UILabel!
     
+    let website = "https://aqueous-dawn-8486.herokuapp.com/"
     
     var salonName : String!
 
@@ -46,9 +48,7 @@ class SummaryViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool)
-    {
-        print("viewWillAppear")
-        
+    {        
         if let _ = NSUserDefaults.standardUserDefaults().objectForKey("token")
         {
             self.textOfPayButtonLabel.text = "Pay & Book"
@@ -78,7 +78,7 @@ class SummaryViewController: UIViewController {
             // then go to knet page
             // finally, if the payment succeeds, then book the appointment
             
-            print(token)
+            self.reserveBooking(token)
         }
         else
         {
@@ -86,4 +86,34 @@ class SummaryViewController: UIViewController {
         }
     }
 
+    func reserveBooking(token : String!)
+    {
+        let parameters = ["beauticianpk" : beauticianPK,
+            "starttime" : "\(startTime)",
+            "endtime" : "\(endTime)",
+            "date" : dateOfBooking,
+            "subcategorypk" : subcategoryPK] as [String : AnyObject]
+        
+        let headers = ["Authorization" : "Token \(token)"]
+        
+        Alamofire.request(.POST, website + "reserve", parameters: parameters, headers: headers).responseJSON(completionHandler: { (response) -> Void in
+            
+            if let Json = response.result.value
+            {
+                let json = JSON(Json)
+                print(json)
+            }
+            else if let error = response.result.error
+            {
+                print(error)
+            }
+        })
+        
+        print("\n\nWebsite: \(website + "reserve/")")
+        print("\n\nParameters: ")
+        print(parameters)
+        print("\n\nHeader: ")
+        print(headers)
+        print("\n\n")
+    }
 }

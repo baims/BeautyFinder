@@ -64,9 +64,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     
                     NSUserDefaults.standardUserDefaults().setObject(token, forKey: "token")
                     NSUserDefaults.standardUserDefaults().synchronize()
-                    
-                    print(NSUserDefaults.standardUserDefaults().stringForKey("token")!)
-                    
+                                        
                     self.presentingViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
                         // reload everything in self.presentingViewController so it shows that the user is signed in
                     })
