@@ -65,8 +65,8 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
             self.navigationController?.delegate = self
             self.navigationController?.interactivePopGestureRecognizer?.delegate = self
             
-            let vc = segue.destinationViewController as! SalonServicesViewController
-            vc.json = self.json![indexPathForSelectedItem!.item]
+            let vc = segue.destinationViewController as! SalonViewController
+            vc.salonJson = self.json![indexPathForSelectedItem!.item]
         }
     }
 

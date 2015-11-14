@@ -1,23 +1,16 @@
 //
-//  SalonServicesViewController.swift
+//  SalonServicesContainerViewController.swift
 //  BeautyFinder
 //
-//  Created by Bader Alrshaid on 10/13/15.
+//  Created by Bader Alrshaid on 10/29/15.
 //  Copyright © 2015 Yousef Alhusaini. All rights reserved.
 //
 
 import UIKit
-import Kingfisher
 
-class SalonServicesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class SalonServicesContainerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var segmentedControl: ADVSegmentedControl!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var salonNameLabel: UILabel!
-    @IBOutlet weak var salonAddressLabel: UILabel!
-
     
     let website = "https://aqueous-dawn-8486.herokuapp.com/"
     
@@ -26,83 +19,30 @@ class SalonServicesViewController: UIViewController, UITableViewDelegate, UITabl
     var indexPathForSelectedRow : NSIndexPath?
     
 
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
-        segmentedControl.items = [" 1. Service", "  2. Beautician ", "   3. Schedule"/*, "4. Book"*/]
-        segmentedControl.font = UIFont(name: "MuseoSans-700", size: 14)
-        segmentedControl.selectedIndex = 0
-        segmentedControl.userInteractionEnabled = false
-        segmentedControl.addTarget(self, action: "segmentValueChanged:", forControlEvents: .ValueChanged)
+        // Do any additional setup after loading the view.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidLayoutSubviews() {
-        self.logoImageView.kf_setImageWithURL(NSURL(string: self.website + self.json!["logo"].string!)!, placeholderImage: UIImage(named: "Icon-76"))
-        self.logoImageView.layer.cornerRadius = logoImageView.frame.width/2
-        self.logoImageView.clipsToBounds = true
-        
-        self.salonNameLabel.text = self.json!["name"].string!
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        self.logoImageView.hidden = false
-    }
-    
+
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        if segue.identifier == "beauticians"
-        {
-            let selectedCell = self.tableView.cellForRowAtIndexPath(self.tableView.indexPathForSelectedRow!) as! SalonServicesTableViewCell
-            
-            let vc = segue.destinationViewController as! SalonBeauticiansViewController
-            vc.salonPK          = self.json!["pk"].int!
-            vc.salonName        = self.salonNameLabel.text!
-            vc.salonImagePath   = self.json!["logo"].string!
-            vc.salonAddress     = self.salonAddressLabel.text!
-            //vc.salonLocation  = (self.json!["longitude"].double!, self.json!["latitude"].double!)
-            vc.subcategoryPK  = self.json!["categories", self.tableView.indexPathForSelectedRow!.section, "subcategories", self.tableView.indexPathForSelectedRow!.row, "pk"].int!
-            vc.subcategoryName  = selectedCell.categoryNameLabel.text!
-            vc.subcategoryPrice = (selectedCell.categoryPriceLabel.text! as NSString).doubleValue
-        }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-
-    
-    @IBAction func backButtonPressed(sender: UIButton)
-    {
-        self.logoImageView.hidden = true
-        
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+    */
 }
 
-// MARK: SegmentedControl
-extension SalonServicesViewController
-{
-    func segmentValueChanged(sender: AnyObject?){
-        
-        if segmentedControl.selectedIndex == 0
-        {
-            //self.salonSearchContainerView.hidden = false
-            //self.areaSearchContainerView.hidden  = true
-        }
-        else if segmentedControl.selectedIndex == 1
-        {
-            
-        }
-    }
-}
-
-
-extension SalonServicesViewController
+extension SalonServicesContainerViewController
 {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         guard let json = json else
@@ -150,7 +90,18 @@ extension SalonServicesViewController
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
         self.indexPathForSelectedRow = indexPath
+        
+        let selectedCell = self.tableView.cellForRowAtIndexPath(self.indexPathForSelectedRow!) as! SalonServicesTableViewCell
+        let salonPK       = self.json!["pk"].int!
+        let subcategoryPK = self.json!["categories", self.indexPathForSelectedRow!.section, "subcategories", self.indexPathForSelectedRow!.row, "pk"].int!
+        let subcategoryName  = selectedCell.categoryNameLabel.text!
+        let subcategoryPrice = (selectedCell.categoryPriceLabel.text! as NSString).doubleValue
+        
+        let superView = self.parentViewController as! SalonViewController
+        superView.serviceIsSelected(salonPK, subcategoryPK: subcategoryPK, subcategoryName: subcategoryName, subcategoryPrice: subcategoryPrice)
     }
     
     
@@ -183,5 +134,23 @@ extension SalonServicesViewController
         headerView.addSubview(deviderImageView)
         
         return headerView
+    }
+}
+
+
+extension SalonViewController
+{
+    func serviceIsSelected(salonPK : Int, subcategoryPK : Int!, subcategoryName : String!, subcategoryPrice : Double!)
+    {
+        self.subcategoryName  = subcategoryName
+        self.subcategoryPK    = subcategoryPK
+        self.subcategoryPrice = subcategoryPrice
+        
+        self.segmentedControl.selectedIndex = 1;
+        
+        self.beauticiansViewController.startRefresh(salonPK, subcategoryPK: self.subcategoryPK, subcategoryName: self.subcategoryName)
+        
+        self.animateHiding(self.servicesContainerView, andShowing: self.beauticiansContainerView)
+    
     }
 }

@@ -1,68 +1,36 @@
 //
-//  SalonBeauticiansViewController.swift
+//  SalonBeauticiansContainerViewController.swift
 //  BeautyFinder
 //
-//  Created by Bader Alrshaid on 10/16/15.
+//  Created by Bader Alrshaid on 10/29/15.
 //  Copyright © 2015 Yousef Alhusaini. All rights reserved.
 //
 
 import UIKit
 import Alamofire
-import Kingfisher
 
-class SalonBeauticiansViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    
+class SalonBeauticiansContainerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var segmentedControl: ADVSegmentedControl!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var salonNameLabel: UILabel!
-    @IBOutlet weak var salonAddressLabel: UILabel!
+    
     
     let refreshControl = UIRefreshControl()
     
     let website = "https://aqueous-dawn-8486.herokuapp.com/"
     var beauticianJson : JSON?
     
-    /*** to be sent from the previous view controller ***/
-    //var salonJson       : JSON? // will be sent through -prepareForSegue: from previous view controller
-    var salonPK          : Int!
-    var salonName        : String!
-    var salonImagePath   : String!
-    var salonAddress     : String!
-    var salonLocation    : (longitude: Double!, latitude: Double!)
-    var subcategoryPK    : Int! // will be sent through -prepareForSegue: from previous view controller
-    var subcategoryName  : String!
-    var subcategoryPrice : Double!
-    
     var indexPathForSelectedItem : NSIndexPath?
     
-
+    var salonPK : Int!
+    var subcategoryPK : Int!
+    var subcategoryName : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        segmentedControl.items = [" 1. Service", "  2. Beautician ", "   3. Schedule"/*, "4. Book"*/]
-        segmentedControl.font = UIFont(name: "MuseoSans-700", size: 14)
-        segmentedControl.selectedIndex = 1
-        segmentedControl.userInteractionEnabled = false
-        segmentedControl.addTarget(self, action: "segmentValueChanged:", forControlEvents: .ValueChanged)
-        
-        
-        self.refreshControl.addTarget(self, action: "startRefresh", forControlEvents: .ValueChanged)
-        collectionView?.addSubview(self.refreshControl)
     }
     
     override func viewDidLayoutSubviews() {
-        self.logoImageView.kf_setImageWithURL(NSURL(string: self.website + self.salonImagePath)!, placeholderImage: UIImage(named: "Icon-76"))
-        self.logoImageView.layer.cornerRadius = logoImageView.frame.width/2
-        self.logoImageView.clipsToBounds = true
         
-        self.salonNameLabel.text    = self.salonName
-        self.salonAddressLabel.text = self.salonAddress
-        
-        
-        self.refreshControl.beginRefreshing()
-        self.startRefresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,19 +49,24 @@ class SalonBeauticiansViewController: UIViewController, UICollectionViewDelegate
     }
     */
     
-    @IBAction func backButtonPressed(sender: UIButton)
-    {
-        self.logoImageView.hidden = true
-        
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-
     
-    func startRefresh()
+    func startRefresh(salonPK : Int!, subcategoryPK : Int!, subcategoryName : String!)
     {
+        self.beauticianJson = nil
+        self.collectionView.addSubview(self.refreshControl)
+        self.collectionView.reloadData()
+        
+        self.salonPK         = salonPK
+        self.subcategoryPK   = subcategoryPK
+        self.subcategoryName = subcategoryName
+        
+        
+        self.refreshControl.beginRefreshing()
+        
+        
         //UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        let requestUrl = "https://aqueous-dawn-8486.herokuapp.com/schedule/\(salonPK)/\(subcategoryPK)/"
-        print(requestUrl)
+        let requestUrl = "https://aqueous-dawn-8486.herokuapp.com/schedule/\(self.salonPK)/\(self.subcategoryPK)/"
+
         
         Alamofire.request(.GET, requestUrl).responseJSON { (response) -> Void in
             
@@ -113,11 +86,11 @@ class SalonBeauticiansViewController: UIViewController, UICollectionViewDelegate
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
+
 }
 
 
-// CollectionView
-extension SalonBeauticiansViewController
+extension SalonBeauticiansContainerViewController
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -175,6 +148,43 @@ extension SalonBeauticiansViewController
     {
         self.indexPathForSelectedItem = indexPath
         
+        let beauticianName = self.beauticianJson![indexPath.item, "name"].string!
+        let beauticianPK = self.beauticianJson![indexPath.item, "pk"].int!
+        
+        
+        let superView = self.parentViewController as! SalonViewController
+        superView.beauticianIsSelectedWithName(beauticianName, beauticianPK: beauticianPK, beauticianJSON: beauticianJson![indexPath.item])
+        
         return true
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    {
+        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            collectionView.deselectItemAtIndexPath(indexPath, animated: false)
+        })
+    }
+}
+
+extension SalonViewController
+{
+    func beauticianIsSelectedWithName(beauticianName: String!, beauticianPK : Int!, beauticianJSON : JSON!)
+    {
+        self.beauticianName = beauticianName
+        self.beauticianPK = beauticianPK
+        
+        self.segmentedControl.selectedIndex = 2;
+        
+       /* self.logoImageView.hidden = true
+        self.salonAddressLabel.hidden = true
+        self.salonNameLabel.hidden = true
+        */
+        
+        //self.calendarContainerView.hidden = false
+        
+        self.scheduleContainerViewController.startRefresh(beauticianJSON)
+        
+        self.animateHiding(self.beauticiansContainerView, andShowing: self.scheduleContainerView)
     }
 }

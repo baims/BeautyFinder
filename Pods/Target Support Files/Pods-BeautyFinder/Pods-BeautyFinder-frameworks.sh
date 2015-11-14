@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-BeautyFinder/Alamofire.framework"
+  install_framework "Pods-BeautyFinder/CVCalendar.framework"
   install_framework "Pods-BeautyFinder/Kingfisher.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-BeautyFinder/Alamofire.framework"
+  install_framework "Pods-BeautyFinder/CVCalendar.framework"
   install_framework "Pods-BeautyFinder/Kingfisher.framework"
 fi

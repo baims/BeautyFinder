@@ -16,18 +16,22 @@
 		9F28F2EA1BAC95F4007F1396 /* SalonSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F28F2E91BAC95F4007F1396 /* SalonSearchViewController.swift */; };
 		9F3354971BCC3AC500FA1A21 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3354961BCC3AC500FA1A21 /* LogInViewController.swift */; };
 		9F33549D1BCC54F100FA1A21 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33549C1BCC54F100FA1A21 /* SignUpViewController.swift */; };
-		9F3354A01BCD46DB00FA1A21 /* SalonServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33549F1BCD46DB00FA1A21 /* SalonServicesViewController.swift */; };
+		9F3354A01BCD46DB00FA1A21 /* SalonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33549F1BCD46DB00FA1A21 /* SalonViewController.swift */; };
 		9F3354A21BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */; };
+		9F3973851BF68F90006C3748 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3973841BF68F90006C3748 /* SummaryViewController.swift */; };
 		9F632C961BBDC81C00AF2732 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */; };
 		9F632C981BBDD24F00AF2732 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */; };
 		9F67FF351BBDE4AE00C47C45 /* SubcategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67FF341BBDE4AE00C47C45 /* SubcategoriesViewController.swift */; };
+		9F6C3B4E1BE2A28A0039F742 /* SalonServicesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C3B4D1BE2A28A0039F742 /* SalonServicesContainerViewController.swift */; };
+		9F6C3B501BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C3B4F1BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift */; };
+		9F6C3B521BEC32ED0039F742 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C3B511BEC32ED0039F742 /* CalendarViewController.swift */; };
+		9F6C3B541BECE8FD0039F742 /* SalonScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C3B531BECE8FD0039F742 /* SalonScheduleTableViewCell.swift */; };
+		9F6C3B561BECEEF60039F742 /* SalonScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C3B551BECEEF60039F742 /* SalonScheduleViewController.swift */; };
 		9F6CD0511BAC6C8700A0197D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */; };
 		9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0521BAC759F00A0197D /* SearchTextField.swift */; };
 		9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */; };
 		9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */; };
-		9F9B990F1BD1910000A78B4D /* SalonBeauticiansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B990E1BD1910000A78B4D /* SalonBeauticiansViewController.swift */; };
 		CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008C91B8C1B160094F10E /* AppDelegate.swift */; };
-		CAA008CC1B8C1B160094F10E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008CB1B8C1B160094F10E /* ViewController.swift */; };
 		CAA008CF1B8C1B160094F10E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA008CD1B8C1B160094F10E /* Main.storyboard */; };
 		CAA008D11B8C1B160094F10E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA008D01B8C1B160094F10E /* Images.xcassets */; };
 		CAA008D41B8C1B160094F10E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA008D21B8C1B160094F10E /* LaunchScreen.xib */; };
@@ -88,20 +92,24 @@
 		9F28F2E91BAC95F4007F1396 /* SalonSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonSearchViewController.swift; sourceTree = "<group>"; };
 		9F3354961BCC3AC500FA1A21 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		9F33549C1BCC54F100FA1A21 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		9F33549F1BCD46DB00FA1A21 /* SalonServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonServicesViewController.swift; sourceTree = "<group>"; };
+		9F33549F1BCD46DB00FA1A21 /* SalonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonViewController.swift; sourceTree = "<group>"; };
 		9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonServicesTableViewCell.swift; sourceTree = "<group>"; };
+		9F3973841BF68F90006C3748 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		9F67FF341BBDE4AE00C47C45 /* SubcategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesViewController.swift; sourceTree = "<group>"; };
+		9F6C3B4D1BE2A28A0039F742 /* SalonServicesContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonServicesContainerViewController.swift; sourceTree = "<group>"; };
+		9F6C3B4F1BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonBeauticiansContainerViewController.swift; sourceTree = "<group>"; };
+		9F6C3B511BEC32ED0039F742 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		9F6C3B531BECE8FD0039F742 /* SalonScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		9F6C3B551BECEEF60039F742 /* SalonScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonScheduleViewController.swift; sourceTree = "<group>"; };
 		9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9F6CD0521BAC759F00A0197D /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesAnimationController.swift; sourceTree = "<group>"; };
 		9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonViewAnimator.swift; sourceTree = "<group>"; };
-		9F9B990E1BD1910000A78B4D /* SalonBeauticiansViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonBeauticiansViewController.swift; sourceTree = "<group>"; };
 		CAA008C41B8C1B150094F10E /* BeautyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA008C81B8C1B160094F10E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAA008C91B8C1B160094F10E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CAA008CB1B8C1B160094F10E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CAA008CE1B8C1B160094F10E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAA008D01B8C1B160094F10E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CAA008D31B8C1B160094F10E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -157,6 +165,16 @@
 			name = "Sign in / Sign up";
 			sourceTree = "<group>";
 		};
+		9F3973831BF68EAC006C3748 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				9F6C3B511BEC32ED0039F742 /* CalendarViewController.swift */,
+				9F6C3B551BECEEF60039F742 /* SalonScheduleViewController.swift */,
+				9F6C3B531BECE8FD0039F742 /* SalonScheduleTableViewCell.swift */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
 		9F67FF2F1BBDE49200C47C45 /* Subcategories */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,8 +209,10 @@
 		9F9B990B1BD1907C00A78B4D /* Salon Views */ = {
 			isa = PBXGroup;
 			children = (
+				9F33549F1BCD46DB00FA1A21 /* SalonViewController.swift */,
 				9F9B990C1BD1908B00A78B4D /* Services */,
 				9F9B990D1BD1909300A78B4D /* Beauticians */,
+				9F3973831BF68EAC006C3748 /* Schedule */,
 			);
 			name = "Salon Views";
 			sourceTree = "<group>";
@@ -200,7 +220,7 @@
 		9F9B990C1BD1908B00A78B4D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9F33549F1BCD46DB00FA1A21 /* SalonServicesViewController.swift */,
+				9F6C3B4D1BE2A28A0039F742 /* SalonServicesContainerViewController.swift */,
 				9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */,
 			);
 			name = Services;
@@ -209,7 +229,7 @@
 		9F9B990D1BD1909300A78B4D /* Beauticians */ = {
 			isa = PBXGroup;
 			children = (
-				9F9B990E1BD1910000A78B4D /* SalonBeauticiansViewController.swift */,
+				9F6C3B4F1BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift */,
 			);
 			name = Beauticians;
 			sourceTree = "<group>";
@@ -238,13 +258,13 @@
 			isa = PBXGroup;
 			children = (
 				CAA008C91B8C1B160094F10E /* AppDelegate.swift */,
-				CAA008CB1B8C1B160094F10E /* ViewController.swift */,
 				9F28F2E51BAC85BE007F1396 /* ADVSegmentedControl.swift */,
 				9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */,
 				9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */,
-				9F9B990B1BD1907C00A78B4D /* Salon Views */,
+				9F3973841BF68F90006C3748 /* SummaryViewController.swift */,
 				9F6CD04E1BAC6C4600A0197D /* Home View */,
 				9F67FF2F1BBDE49200C47C45 /* Subcategories */,
+				9F9B990B1BD1907C00A78B4D /* Salon Views */,
 				9F6CD04F1BAC6C6500A0197D /* Search */,
 				9F33549E1BCD465F00FA1A21 /* Sign in / Sign up */,
 				CAA008CD1B8C1B160094F10E /* Main.storyboard */,
@@ -476,22 +496,26 @@
 				9F27BAAD1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift in Sources */,
 				9F632C981BBDD24F00AF2732 /* UIImageView+URL.swift in Sources */,
 				9F28F2E81BAC8EFF007F1396 /* AreaSearchViewController.swift in Sources */,
-				9F3354A01BCD46DB00FA1A21 /* SalonServicesViewController.swift in Sources */,
+				9F3354A01BCD46DB00FA1A21 /* SalonViewController.swift in Sources */,
 				9F632C961BBDC81C00AF2732 /* SwiftyJSON.swift in Sources */,
 				9F3354A21BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift in Sources */,
-				CAA008CC1B8C1B160094F10E /* ViewController.swift in Sources */,
 				CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */,
+				9F6C3B501BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift in Sources */,
 				9F28F2E61BAC85BE007F1396 /* ADVSegmentedControl.swift in Sources */,
 				9F28F2EA1BAC95F4007F1396 /* SalonSearchViewController.swift in Sources */,
+				9F3973851BF68F90006C3748 /* SummaryViewController.swift in Sources */,
 				9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */,
 				9F33549D1BCC54F100FA1A21 /* SignUpViewController.swift in Sources */,
+				9F6C3B561BECEEF60039F742 /* SalonScheduleViewController.swift in Sources */,
+				9F6C3B4E1BE2A28A0039F742 /* SalonServicesContainerViewController.swift in Sources */,
+				9F6C3B521BEC32ED0039F742 /* CalendarViewController.swift in Sources */,
 				9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */,
 				9F3354971BCC3AC500FA1A21 /* LogInViewController.swift in Sources */,
 				9F67FF351BBDE4AE00C47C45 /* SubcategoriesViewController.swift in Sources */,
 				9F27BAAB1B99B93600F5DF6A /* CategoriesViewController.swift in Sources */,
 				9F27BAAF1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift in Sources */,
+				9F6C3B541BECE8FD0039F742 /* SalonScheduleTableViewCell.swift in Sources */,
 				9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */,
-				9F9B990F1BD1910000A78B4D /* SalonBeauticiansViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

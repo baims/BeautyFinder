@@ -7,118 +7,189 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03F494989CC1A8857B68A317D5D6860F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EA289AF31C3F02CACFC3C7C1DE909A /* Response.swift */; };
-		0681ADC8BAE2C3185F13487BAAB4D9DD /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EE65052081E3846B3CDB633D048A5 /* Upload.swift */; };
-		0756056E457318F3D8A0A21D71CDF764 /* KingfisherOptionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495956629759E751A6780DF230DA5B9F /* KingfisherOptionsInfo.swift */; };
-		0B3C904CCFE255DB5F3853B3725A542E /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF127CB4A8D173C1C4BDE3ED59687FD5 /* UIImageView+Kingfisher.swift */; };
-		12037AFEE99C51ED782BC606A704E055 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830145CF1F6809BE1B3D5F36CCC2BC2 /* Foundation.framework */; };
-		1253018525DC8EAFADC635BB999C6EC5 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589E16C8517E326B6C3B86B014B79485 /* UIImage+Extension.swift */; };
-		2C5450AC69398958CF6F7539EF7D99E5 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5854A8CF6B88A1512C01FA0B2E4D4DF7 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		33FFD53E35A807F56F3C1BD8B83BFD3B /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D9EA97CE55580117351438AAB09744 /* Kingfisher-dummy.m */; };
-		371CF8D3ACEDE3983CE1E8B275CAA7CA /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF486EE562BA85F462753176A3D1B837 /* KingfisherManager.swift */; };
-		4DE5FCC41D100B113B6645EA64410F16 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33910D1C7A9EA7A1890F206AD2408CBB /* ParameterEncoding.swift */; };
+		03F494989CC1A8857B68A317D5D6860F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BFFC472FA234ECF8E6E699CC128496 /* Response.swift */; };
+		0681ADC8BAE2C3185F13487BAAB4D9DD /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B58148060086D5AC1A03EF571D03356 /* Upload.swift */; };
+		0756056E457318F3D8A0A21D71CDF764 /* KingfisherOptionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B442AB1AC11DF8FAE3B8FD452EE69C /* KingfisherOptionsInfo.swift */; };
+		0B3C904CCFE255DB5F3853B3725A542E /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA029C87082D788D3ECEB4516E0B3F3 /* UIImageView+Kingfisher.swift */; };
+		1253018525DC8EAFADC635BB999C6EC5 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5A746E1AA48AFB9383D572E2D0C03 /* UIImage+Extension.swift */; };
+		1473E95D20A8550117266D4493AF9C6C /* CVCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE036AFA616CA857EE1DBCD00DFA46D2 /* CVCalendarView.swift */; };
+		27EDCBA933ABC5D70ECF3F562A63D31D /* CVCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E630171770590E88A44065E630953964 /* CVCalendarMonthView.swift */; };
+		2C5450AC69398958CF6F7539EF7D99E5 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1A79993689784EEE2FD67050D8895AE /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CD83CDD80950801E1E8E9A7854B795D /* CVRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1327ECF25A1CE91B94991DC6E09AF41F /* CVRange.swift */; };
+		33B12555139B2C0FAB72FF64E286A812 /* CVCalendarViewAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625047389D023662B40F4F3809A4B869 /* CVCalendarViewAnimatorDelegate.swift */; };
+		33FFD53E35A807F56F3C1BD8B83BFD3B /* Kingfisher-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A176996EC9846A7B0C645F88D3F9346 /* Kingfisher-dummy.m */; };
+		3705C2AE52E45691AFF860C3CEDD7441 /* CVCalendarMonthContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A651959A88B5FD5364BCE26AF6EE2943 /* CVCalendarMonthContentViewController.swift */; };
+		371CF8D3ACEDE3983CE1E8B275CAA7CA /* KingfisherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D2EDAA839984AE754A2D4840735BF /* KingfisherManager.swift */; };
+		3B87DC7F8BDF75B46E61FA884B289577 /* CVCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED2C952A0D53A42286B5DA5F1BD7987C /* CVCalendar-dummy.m */; };
+		40CB3875B30C9203B08807A16064A92A /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7D05A5757EC777ADE536E792A7A27 /* CVWeekdaySymbolType.swift */; };
+		461789AA9602F827AF415551B6EDE0B2 /* CVCalendarMenuViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4595D00AB4EBF72FA442BA2E71D34C2A /* CVCalendarMenuViewDelegate.swift */; };
+		4DE5FCC41D100B113B6645EA64410F16 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4A6774915683C3F950526B0AC9E8E /* ParameterEncoding.swift */; };
+		4E4F17DE924825CE5D480D0E8A05E3CD /* CVCalendarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE2060DFC31EBB6AE01E8B79AFB2DDD /* CVCalendarViewDelegate.swift */; };
 		525FAA98CD8CB4F408E6CEE1BA5B50CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830145CF1F6809BE1B3D5F36CCC2BC2 /* Foundation.framework */; };
-		595F31BC126E162D9C52835625E2EF88 /* KingfisherOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5B18FA60A69951498909918DC7B3E4 /* KingfisherOptions.swift */; };
-		80F496237530D382A045A29654D8C11C /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE5FAFC52EE499D6A763C8DA30F1149 /* ServerTrustPolicy.swift */; };
-		82971968CBDAB224212EEB4607C9FB8D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA14A4AD818B0AC128FA62C7ACDBD69 /* Result.swift */; };
-		8399DBEE3E2D98EB1F466132E476F4D9 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F07D7238CE957FE966E1842603FA20 /* MultipartFormData.swift */; };
-		8CF73FB3C1E427EFBB585346864D2017 /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152136A657363C045ED7C65B9DC90994 /* UIButton+Kingfisher.swift */; };
-		92A5CFD00C87578664623EA396678237 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32C59E5761DCFC5D4E6741964C01D72 /* Resource.swift */; };
+		551E9EE718FB2628ECBA3954D837BCE5 /* CVDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A3D95A2B21F4DFC370D959A3594B82 /* CVDate.swift */; };
+		57A71A8F4D5FCC79FE401287E197E7B3 /* CVCalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145267C3C264CD8ACD2BC45C48F42E9 /* CVCalendarWeekView.swift */; };
+		595F31BC126E162D9C52835625E2EF88 /* KingfisherOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976B7FB426B355AE87FD25E47796E4C1 /* KingfisherOptions.swift */; };
+		5E4E07F5AA458FA65DF01816F721468A /* CVCalendarWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A571CABA2B7816299E66D4E42A4CCD9 /* CVCalendarWeekday.swift */; };
+		6216E52EED65FFA771AD682DE96BC3B2 /* CVCalendarDayViewControlCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFC55AD04725D01EBE051D416D7425D /* CVCalendarDayViewControlCoordinator.swift */; };
+		62D9E7D63B75A2CD4A423744C9D29DB3 /* CVScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9350B11E6A0674FFA91F89F9FD97912 /* CVScrollDirection.swift */; };
+		6637B96C6BD4B5532AA3B69133DE4055 /* CVCalendarViewPresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8417DD430F68933F82E8D6D111B796 /* CVCalendarViewPresentationMode.swift */; };
+		6891101D8D1D37D2A990F6B398A992D3 /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C4749BFC3A5F6332835E6F41ADA14C /* CVShape.swift */; };
+		6A42CA1CA26852DF60F79E5748490DA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830145CF1F6809BE1B3D5F36CCC2BC2 /* Foundation.framework */; };
+		6CB822F35D76353193BFA86DD7BC2963 /* CVCalendarTouchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26ACE5FA6412EF61CD92959FBF7F5BF /* CVCalendarTouchController.swift */; };
+		6DA361F78BD4FE4C1D91F3B4888D2D48 /* CVCalendarViewAppearanceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CDB661C2E00053AFD76DE4B8DEE7C5 /* CVCalendarViewAppearanceDelegate.swift */; };
+		7FE567382B46982C01C4AF4F95A6093D /* CVSelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6756F5B5945253CC5C49E24CDEFAEE7 /* CVSelectionType.swift */; };
+		80F496237530D382A045A29654D8C11C /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD289BADB0A11EA3BB4A1C9966FEEC /* ServerTrustPolicy.swift */; };
+		82971968CBDAB224212EEB4607C9FB8D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBAAB52E5BA5CAB44F985029E22B2BB /* Result.swift */; };
+		8399DBEE3E2D98EB1F466132E476F4D9 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC1CD5E0BA612E587D22834AE5649CE /* MultipartFormData.swift */; };
+		8CF73FB3C1E427EFBB585346864D2017 /* UIButton+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1597BE83713B9571BA0648F99DEE4F9 /* UIButton+Kingfisher.swift */; };
+		92A5CFD00C87578664623EA396678237 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E57419639F0F3F1AEDFF58795EC3E5 /* Resource.swift */; };
+		95BBCAAE65C6668992593E20D80452DA /* CVCalendarViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6503DD70F7B460A15AE4CAFCF4E8C54 /* CVCalendarViewAnimator.swift */; };
 		96D99D0C2472535A169DED65CB231CD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830145CF1F6809BE1B3D5F36CCC2BC2 /* Foundation.framework */; };
-		A009139EF4C25E7793E01B37DE67F8FC /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51A9D3D6421DA53330BD3966CA6FD89 /* ThreadHelper.swift */; };
-		A0548980D6D5A773CAB774F47B7A932D /* Pods-BeautyFinder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E82EF047440ACFD0566D94A520483B4 /* Pods-BeautyFinder-dummy.m */; };
-		A2C172FE407C0BC3478ADCA91A6C9CEC /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA261E3405A9ADA748F3226280F6A08F /* Manager.swift */; };
-		A3505FA2FB3067D53847AD288AC04F03 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C80B477E0A28DF81A2303808286539 /* Download.swift */; };
-		AA49567C1B7A4C19CA6C290B153FFE9E /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B7DD79AFE4A9067E87300375B75407C /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0FB4B01682814B9E3D32F9DC4A5E762 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CAF8EBEF909F3DA04803E62505DD5 /* Alamofire.swift */; };
-		B34A9BAD21635DAAD707E7F35187E57D /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF04D2A2222337FDC1AB00384C93A7 /* ImageTransition.swift */; };
-		B6D2DC3E3DA44CD382B9B425F40E11C1 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D179DE912C67FF5D47E21CE38DA930A2 /* Alamofire-dummy.m */; };
-		C75519F0450166A6F28126ECC7664E9C /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF277B6FD40861366298362760F49B8 /* Validation.swift */; };
-		CAA0E03CED88D172A4DB164016620A15 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EAE0196754DB421638C13E123BE347 /* String+MD5.swift */; };
-		D21B7325B3642887BFBE977E021F2D26 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3B5BA10C7655BAE57E5EF3CAF8969 /* ResponseSerialization.swift */; };
-		D75CA395D510E08C404E55F5BDAE55CE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF34B38A7B8D1E9048B9169E9FC0AED /* Error.swift */; };
-		DCBECA5C3AAF6595DECAC0F7F47B4A7F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130697F3AA7F9C96FFD1CF399F8E53C3 /* ImageCache.swift */; };
+		9EDC94807BAC603CB94E83E863A84ED6 /* Pods-BeautyFinder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E82EF047440ACFD0566D94A520483B4 /* Pods-BeautyFinder-dummy.m */; };
+		9F596692858960FCDD3C7E648896FCFF /* CVCalendarWeekContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1091A6A04A4A05C90204B5746FE185F /* CVCalendarWeekContentViewController.swift */; };
+		A009139EF4C25E7793E01B37DE67F8FC /* ThreadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CBB80E248E69F93921B6BCF74CC13F /* ThreadHelper.swift */; };
+		A2C172FE407C0BC3478ADCA91A6C9CEC /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276A50CC08130A311B76AFBCD0F6D92 /* Manager.swift */; };
+		A3505FA2FB3067D53847AD288AC04F03 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1AD827C4011EDCB240C4E394ADED81 /* Download.swift */; };
+		AA49567C1B7A4C19CA6C290B153FFE9E /* Kingfisher-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F9FA68BFDEA416620332E9132423377 /* Kingfisher-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF021721AB2F970368E622EABFB9651F /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA64896DF6A602C665FA0904488CD18 /* CVAuxiliaryView.swift */; };
+		B0FB4B01682814B9E3D32F9DC4A5E762 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F94E62A842826ED5F1259D3D9956E /* Alamofire.swift */; };
+		B218F1BF6AEF7D9295EC4850457C40C1 /* CVCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C295BAA39EF05EA66A137080FA98B /* CVCalendarManager.swift */; };
+		B34A9BAD21635DAAD707E7F35187E57D /* ImageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DD566FE0C54AD09B854966F14EC727 /* ImageTransition.swift */; };
+		B3D4E56896D3187D07A37D1C0BB4463F /* CVCalendarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB68649723512F6F9C776E6B3E13524 /* CVCalendarMenuView.swift */; };
+		B6D2DC3E3DA44CD382B9B425F40E11C1 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CACECF2CEFDBDC9D9FE7662F3F8212 /* Alamofire-dummy.m */; };
+		BA2171175CEB329626AC8C4287F870A9 /* CVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358F91F937ADE46B153D709D9E5E988F /* CVSet.swift */; };
+		C68D88393AB99D8587329B61229CAA10 /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291871AF4E11FC94E74450734F1C377D /* CVCalendarContentViewController.swift */; };
+		C75519F0450166A6F28126ECC7664E9C /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5423D88BC85ACD420CE4CBDAA8C9D /* Validation.swift */; };
+		C8F505E2C3284B4BA389F0B4C7377A12 /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE2B6D002464C2C8B78E40A5DFAED8 /* CVCalendarDayView.swift */; };
+		CAA0E03CED88D172A4DB164016620A15 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D65FC2BC05A05552DF0A260389B10F /* String+MD5.swift */; };
+		D122BDD6E6C756C3ED9A98FDA468D3F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830145CF1F6809BE1B3D5F36CCC2BC2 /* Foundation.framework */; };
+		D21B7325B3642887BFBE977E021F2D26 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA9191F65F6D9EA4745CEE31487D9F4 /* ResponseSerialization.swift */; };
+		D75CA395D510E08C404E55F5BDAE55CE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B22F412E78D3E75E7E5E24CAE1B4D /* Error.swift */; };
+		D9A86BFF9617EE2BAF83EA6D36B50B96 /* CVCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FF9CC266C40A511D087BBA06842BB8D /* CVCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCBECA5C3AAF6595DECAC0F7F47B4A7F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D200EABA2A3D8C9431AA645BBBEB9C /* ImageCache.swift */; };
+		E685D3EAB6D0411CC512C2381B1D6E89 /* Pods-BeautyFinder-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53F5A86A491EB5A93EC98530EC2DD6B7 /* Pods-BeautyFinder-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB6932DFB4348CAF33AED9451B976845 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BD1DE0DAC7AF9BD8C1EA3758E5F3AC /* CFNetwork.framework */; };
-		F06730BEBDD7F73F53E0D65DFFBB86A4 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FDA417638FA91B85E25F116EA9AE839 /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0FF18857DA790090101973E919D6F08 /* Pods-BeautyFinder-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 53F5A86A491EB5A93EC98530EC2DD6B7 /* Pods-BeautyFinder-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1A8435CE1A88A07192DFCC35CB43100 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780A2A0EEAED1B38FFF89E8FB55CD3F /* ImageDownloader.swift */; };
-		FC14480CECE872865A9C6E584F886DA3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301DB2AB1CEA7E13F1308C9D5ACB65FC /* Request.swift */; };
-		FEF0D7653948988B804226129471C1EC /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C6B4A717038EB96F179B69F02F518 /* Stream.swift */; };
+		F06730BEBDD7F73F53E0D65DFFBB86A4 /* Kingfisher.h in Headers */ = {isa = PBXBuildFile; fileRef = C5CCBCA6CAE60F5BA03E9BF5B841E6DB /* Kingfisher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1A8435CE1A88A07192DFCC35CB43100 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56B39DD09D312B78DA10003C0B7EC52 /* ImageDownloader.swift */; };
+		F809213B24C125C576D1A8D28D242A4F /* CVCalendarViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F7538FAB1E2DA48BBC7135902D458 /* CVCalendarViewAppearance.swift */; };
+		FC14480CECE872865A9C6E584F886DA3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BEF5B82D29EBB4CB60761A9A0B2F96 /* Request.swift */; };
+		FEF0D7653948988B804226129471C1EC /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC971995D26D7F8CB622F5EAFAF1C6 /* Stream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		03A530E63A07E10227D8F7DE46C00F09 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F91226101ECE8FCFD221A3EC54481F82;
-			remoteInfo = Kingfisher;
-		};
-		B4BAC7CDB0706C99C26C83F5985552BB /* PBXContainerItemProxy */ = {
+		2B8B0A23E52D7D6C23A798B837E87802 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 432ECC54282C84882B482CCB4CF227FC;
 			remoteInfo = Alamofire;
 		};
+		9691AF67F44022E6A6A386A10EE722E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA14B622689766F6B8A4F42FD9DE552F;
+			remoteInfo = CVCalendar;
+		};
+		CDFDE199D3756A573D3406BA7D7ACA35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F91226101ECE8FCFD221A3EC54481F82;
+			remoteInfo = Kingfisher;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0780A2A0EEAED1B38FFF89E8FB55CD3F /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Kingfisher/ImageDownloader.swift; sourceTree = "<group>"; };
-		0B7DD79AFE4A9067E87300375B75407C /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
-		0C8C6B4A717038EB96F179B69F02F518 /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
-		0D2FECF0676FF79C4CD345E98C809632 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E6968FF791C2A0B3F7CA8A9344C2B84 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
-		130697F3AA7F9C96FFD1CF399F8E53C3 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Kingfisher/ImageCache.swift; sourceTree = "<group>"; };
-		152136A657363C045ED7C65B9DC90994 /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Kingfisher/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
+		0A4C295BAA39EF05EA66A137080FA98B /* CVCalendarManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarManager.swift; path = CVCalendar/CVCalendarManager.swift; sourceTree = "<group>"; };
+		0A571CABA2B7816299E66D4E42A4CCD9 /* CVCalendarWeekday.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarWeekday.swift; path = CVCalendar/CVCalendarWeekday.swift; sourceTree = "<group>"; };
+		0F1AD827C4011EDCB240C4E394ADED81 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
+		0FF7D05A5757EC777ADE536E792A7A27 /* CVWeekdaySymbolType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVWeekdaySymbolType.swift; path = CVCalendar/CVWeekdaySymbolType.swift; sourceTree = "<group>"; };
+		1327ECF25A1CE91B94991DC6E09AF41F /* CVRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVRange.swift; path = CVCalendar/CVRange.swift; sourceTree = "<group>"; };
+		14E5423D88BC85ACD420CE4CBDAA8C9D /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		17A3D95A2B21F4DFC370D959A3594B82 /* CVDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVDate.swift; path = CVCalendar/CVDate.swift; sourceTree = "<group>"; };
 		1830145CF1F6809BE1B3D5F36CCC2BC2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		187A692A481830D9A1B5C09E0FD23BC9 /* Pods-BeautyFinder.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BeautyFinder.modulemap"; sourceTree = "<group>"; };
+		18D65FC2BC05A05552DF0A260389B10F /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Kingfisher/String+MD5.swift"; sourceTree = "<group>"; };
+		1BFC55AD04725D01EBE051D416D7425D /* CVCalendarDayViewControlCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarDayViewControlCoordinator.swift; path = CVCalendar/CVCalendarDayViewControlCoordinator.swift; sourceTree = "<group>"; };
+		2145267C3C264CD8ACD2BC45C48F42E9 /* CVCalendarWeekView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarWeekView.swift; path = CVCalendar/CVCalendarWeekView.swift; sourceTree = "<group>"; };
+		23CDB661C2E00053AFD76DE4B8DEE7C5 /* CVCalendarViewAppearanceDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarViewAppearanceDelegate.swift; path = CVCalendar/CVCalendarViewAppearanceDelegate.swift; sourceTree = "<group>"; };
+		26BEF5B82D29EBB4CB60761A9A0B2F96 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		28E5A746E1AA48AFB9383D572E2D0C03 /* UIImage+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Extension.swift"; path = "Kingfisher/UIImage+Extension.swift"; sourceTree = "<group>"; };
+		291871AF4E11FC94E74450734F1C377D /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarContentViewController.swift; path = CVCalendar/CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		29BFD0A1BD4A8AD641AA6917CC5BC720 /* Pods-BeautyFinder-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BeautyFinder-resources.sh"; sourceTree = "<group>"; };
+		29DD566FE0C54AD09B854966F14EC727 /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Kingfisher/ImageTransition.swift; sourceTree = "<group>"; };
 		2E82EF047440ACFD0566D94A520483B4 /* Pods-BeautyFinder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BeautyFinder-dummy.m"; sourceTree = "<group>"; };
-		301DB2AB1CEA7E13F1308C9D5ACB65FC /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		33910D1C7A9EA7A1890F206AD2408CBB /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		3F4EE65052081E3846B3CDB633D048A5 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
-		47F07D7238CE957FE966E1842603FA20 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		495956629759E751A6780DF230DA5B9F /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Kingfisher/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
+		358F91F937ADE46B153D709D9E5E988F /* CVSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVSet.swift; path = CVCalendar/CVSet.swift; sourceTree = "<group>"; };
+		3C57A4770DE73E6CEBC29F8C1B487FB2 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		3C8417DD430F68933F82E8D6D111B796 /* CVCalendarViewPresentationMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarViewPresentationMode.swift; path = CVCalendar/CVCalendarViewPresentationMode.swift; sourceTree = "<group>"; };
+		4595D00AB4EBF72FA442BA2E71D34C2A /* CVCalendarMenuViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarMenuViewDelegate.swift; path = CVCalendar/CVCalendarMenuViewDelegate.swift; sourceTree = "<group>"; };
+		4A176996EC9846A7B0C645F88D3F9346 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
+		4A2F7538FAB1E2DA48BBC7135902D458 /* CVCalendarViewAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarViewAppearance.swift; path = CVCalendar/CVCalendarViewAppearance.swift; sourceTree = "<group>"; };
+		4B523639C93F3EC8F098746713FC70AF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CC1CD5E0BA612E587D22834AE5649CE /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		4FA9191F65F6D9EA4745CEE31487D9F4 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		514DDFC86A0AA0234AC4102D284C3E7B /* CVCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CVCalendar.xcconfig; sourceTree = "<group>"; };
+		5276A50CC08130A311B76AFBCD0F6D92 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
 		53F5A86A491EB5A93EC98530EC2DD6B7 /* Pods-BeautyFinder-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BeautyFinder-umbrella.h"; sourceTree = "<group>"; };
-		570DBA282B58FCF0D2CCEFC7B513756C /* Pods_BeautyFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5854A8CF6B88A1512C01FA0B2E4D4DF7 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		589E16C8517E326B6C3B86B014B79485 /* UIImage+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Extension.swift"; path = "Kingfisher/UIImage+Extension.swift"; sourceTree = "<group>"; };
-		5B5B18FA60A69951498909918DC7B3E4 /* KingfisherOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptions.swift; path = Kingfisher/KingfisherOptions.swift; sourceTree = "<group>"; };
-		5C1BB179F2EC5D9753525028E4AFDD36 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
+		56D34A79DF67C5B1A866EFF608D25354 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B6F94E62A842826ED5F1259D3D9956E /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		5D39B98E79994E18D9C6411DDA5A87F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DF4A6774915683C3F950526B0AC9E8E /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		5F9FA68BFDEA416620332E9132423377 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
+		625047389D023662B40F4F3809A4B869 /* CVCalendarViewAnimatorDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarViewAnimatorDelegate.swift; path = CVCalendar/CVCalendarViewAnimatorDelegate.swift; sourceTree = "<group>"; };
 		62BD1DE0DAC7AF9BD8C1EA3758E5F3AC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		63CC971995D26D7F8CB622F5EAFAF1C6 /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
+		64E48D6E1F23D6185A7227CE27B18D68 /* Pods_BeautyFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D92D0503C38059208823828B1F837E /* Pods-BeautyFinder-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BeautyFinder-frameworks.sh"; sourceTree = "<group>"; };
+		71B442AB1AC11DF8FAE3B8FD452EE69C /* KingfisherOptionsInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptionsInfo.swift; path = Kingfisher/KingfisherOptionsInfo.swift; sourceTree = "<group>"; };
+		77CACECF2CEFDBDC9D9FE7662F3F8212 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		7A688E95FB6D93D20C4B39C32EB999A7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		80BB9A1960044002001D300027CAB9CD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B84897E184042756545F7605F9D2E03 /* Kingfisher-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-prefix.pch"; sourceTree = "<group>"; };
+		7FF9CC266C40A511D087BBA06842BB8D /* CVCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CVCalendar-umbrella.h"; sourceTree = "<group>"; };
+		85E92A6CA6506CD063F2BD41D39021F6 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
+		88BFFC472FA234ECF8E6E699CC128496 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		8EFD289BADB0A11EA3BB4A1C9966FEEC /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		911E1D5248C20A84C6CBE7D207264FFE /* Pods-BeautyFinder-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BeautyFinder-acknowledgements.plist"; sourceTree = "<group>"; };
-		9950268065AEBD1F70F0D7E04221CD03 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Kingfisher.modulemap; sourceTree = "<group>"; };
-		9D95988436356E831FFF3F0643DD19B8 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		9DCEF5B9D0A8DE2F92E0E5A8DB4C5487 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FDA417638FA91B85E25F116EA9AE839 /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Kingfisher/Kingfisher.h; sourceTree = "<group>"; };
-		A8CED0ED0A36B8600C4D23DEDE60B324 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		A9D9EA97CE55580117351438AAB09744 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
-		AF486EE562BA85F462753176A3D1B837 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Kingfisher/KingfisherManager.swift; sourceTree = "<group>"; };
+		976B7FB426B355AE87FD25E47796E4C1 /* KingfisherOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherOptions.swift; path = Kingfisher/KingfisherOptions.swift; sourceTree = "<group>"; };
+		9AF5260ADAA7792F6701FB9FD6DB6779 /* CVCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CVCalendar.modulemap; sourceTree = "<group>"; };
+		9B58148060086D5AC1A03EF571D03356 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
+		9D2FD0D1A316C630EAFCED251A9DEF33 /* CVCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CVCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1091A6A04A4A05C90204B5746FE185F /* CVCalendarWeekContentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarWeekContentViewController.swift; path = CVCalendar/CVCalendarWeekContentViewController.swift; sourceTree = "<group>"; };
+		A2457C195CC046A2B7B337A34F4F569B /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A26ACE5FA6412EF61CD92959FBF7F5BF /* CVCalendarTouchController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarTouchController.swift; path = CVCalendar/CVCalendarTouchController.swift; sourceTree = "<group>"; };
+		A4C4749BFC3A5F6332835E6F41ADA14C /* CVShape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVShape.swift; path = CVCalendar/CVShape.swift; sourceTree = "<group>"; };
+		A651959A88B5FD5364BCE26AF6EE2943 /* CVCalendarMonthContentViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarMonthContentViewController.swift; path = CVCalendar/CVCalendarMonthContentViewController.swift; sourceTree = "<group>"; };
+		A9B5E2B3BAC8B190FF605A5A68BEDBC0 /* CVCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CVCalendar-prefix.pch"; sourceTree = "<group>"; };
+		ADD286F498FE028D062257FEA2AECBDA /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		B00FFA363B05C948F66FE341B41769EE /* Pods-BeautyFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BeautyFinder.debug.xcconfig"; sourceTree = "<group>"; };
-		B32C59E5761DCFC5D4E6741964C01D72 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Kingfisher/Resource.swift; sourceTree = "<group>"; };
-		B50411404A6F8ABBA295320C621A19A2 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		B51A9D3D6421DA53330BD3966CA6FD89 /* ThreadHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadHelper.swift; path = Kingfisher/ThreadHelper.swift; sourceTree = "<group>"; };
-		B7C80B477E0A28DF81A2303808286539 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
-		BA261E3405A9ADA748F3226280F6A08F /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
+		B1A79993689784EEE2FD67050D8895AE /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		B3D200EABA2A3D8C9431AA645BBBEB9C /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Kingfisher/ImageCache.swift; sourceTree = "<group>"; };
+		B64B22F412E78D3E75E7E5E24CAE1B4D /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
+		B9350B11E6A0674FFA91F89F9FD97912 /* CVScrollDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVScrollDirection.swift; path = CVCalendar/CVScrollDirection.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BBF277B6FD40861366298362760F49B8 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		C40CAF8EBEF909F3DA04803E62505DD5 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		CF127CB4A8D173C1C4BDE3ED59687FD5 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Kingfisher.swift"; path = "Kingfisher/UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
-		D179DE912C67FF5D47E21CE38DA930A2 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		D7AF04D2A2222337FDC1AB00384C93A7 /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Kingfisher/ImageTransition.swift; sourceTree = "<group>"; };
+		BFB68649723512F6F9C776E6B3E13524 /* CVCalendarMenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarMenuView.swift; path = CVCalendar/CVCalendarMenuView.swift; sourceTree = "<group>"; };
+		C0D114894E57C9FDF94D5EA4F3AE243F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5CCBCA6CAE60F5BA03E9BF5B841E6DB /* Kingfisher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Kingfisher.h; path = Kingfisher/Kingfisher.h; sourceTree = "<group>"; };
+		CCA029C87082D788D3ECEB4516E0B3F3 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+Kingfisher.swift"; path = "Kingfisher/UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		D15D2EDAA839984AE754A2D4840735BF /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Kingfisher/KingfisherManager.swift; sourceTree = "<group>"; };
+		D5B410E51A62F24CCCFB6A67E6831FC3 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Kingfisher.modulemap; sourceTree = "<group>"; };
+		D6503DD70F7B460A15AE4CAFCF4E8C54 /* CVCalendarViewAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarViewAnimator.swift; path = CVCalendar/CVCalendarViewAnimator.swift; sourceTree = "<group>"; };
 		D7E06D11C0EF8C1EA31C42F641D46F59 /* Pods-BeautyFinder-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BeautyFinder-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DFF34B38A7B8D1E9048B9169E9FC0AED /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
-		E1C3B5BA10C7655BAE57E5EF3CAF8969 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		EBA14A4AD818B0AC128FA62C7ACDBD69 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		DFBAAB52E5BA5CAB44F985029E22B2BB /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		E0CBB80E248E69F93921B6BCF74CC13F /* ThreadHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadHelper.swift; path = Kingfisher/ThreadHelper.swift; sourceTree = "<group>"; };
+		E56B39DD09D312B78DA10003C0B7EC52 /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Kingfisher/ImageDownloader.swift; sourceTree = "<group>"; };
+		E630171770590E88A44065E630953964 /* CVCalendarMonthView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarMonthView.swift; path = CVCalendar/CVCalendarMonthView.swift; sourceTree = "<group>"; };
+		E6756F5B5945253CC5C49E24CDEFAEE7 /* CVSelectionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVSelectionType.swift; path = CVCalendar/CVSelectionType.swift; sourceTree = "<group>"; };
+		EAE2060DFC31EBB6AE01E8B79AFB2DDD /* CVCalendarViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarViewDelegate.swift; path = CVCalendar/CVCalendarViewDelegate.swift; sourceTree = "<group>"; };
 		EBCB1B585886B3188FC334F180222EE3 /* Pods-BeautyFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BeautyFinder.release.xcconfig"; sourceTree = "<group>"; };
-		ECE5FAFC52EE499D6A763C8DA30F1149 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		F5EA289AF31C3F02CACFC3C7C1DE909A /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		F9EAE0196754DB421638C13E123BE347 /* String+MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+MD5.swift"; path = "Kingfisher/String+MD5.swift"; sourceTree = "<group>"; };
-		FD3FEBED5B50778181ED0F817DB41B1C /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED2C952A0D53A42286B5DA5F1BD7987C /* CVCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CVCalendar-dummy.m"; sourceTree = "<group>"; };
+		F1597BE83713B9571BA0648F99DEE4F9 /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Kingfisher/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
+		F624D54CF57000048A3974FC143E15C4 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		F7E57419639F0F3F1AEDFF58795EC3E5 /* Resource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Kingfisher/Resource.swift; sourceTree = "<group>"; };
+		FDA64896DF6A602C665FA0904488CD18 /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVAuxiliaryView.swift; path = CVCalendar/CVAuxiliaryView.swift; sourceTree = "<group>"; };
+		FE036AFA616CA857EE1DBCD00DFA46D2 /* CVCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarView.swift; path = CVCalendar/CVCalendarView.swift; sourceTree = "<group>"; };
+		FFAE2B6D002464C2C8B78E40A5DFAED8 /* CVCalendarDayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CVCalendarDayView.swift; path = CVCalendar/CVCalendarDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +202,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7F2EAC07BC17AC29BBA83B53A6492DEC /* Frameworks */ = {
+		3625B3DEAF9E1C39222E05CF234C1B1A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12037AFEE99C51ED782BC606A704E055 /* Foundation.framework in Frameworks */,
+				D122BDD6E6C756C3ED9A98FDA468D3F7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,46 +218,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9C7A436E24D0C282E66251E8BCD9548 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A42CA1CA26852DF60F79E5748490DA8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A929F63259B5E5AF388E32F55EA92D6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				501FF8FF8A11033539A9A8DAC307CCBC /* Alamofire */,
-				A3B03B59AF3A21783F72436AB3E19B81 /* Kingfisher */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		0FEF1C120282AA7FCB6EB9EFFF74C64B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0D2FECF0676FF79C4CD345E98C809632 /* Info.plist */,
-				9950268065AEBD1F70F0D7E04221CD03 /* Kingfisher.modulemap */,
-				0E6968FF791C2A0B3F7CA8A9344C2B84 /* Kingfisher.xcconfig */,
-				A9D9EA97CE55580117351438AAB09744 /* Kingfisher-dummy.m */,
-				5C1BB179F2EC5D9753525028E4AFDD36 /* Kingfisher-prefix.pch */,
-				0B7DD79AFE4A9067E87300375B75407C /* Kingfisher-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Kingfisher";
-			sourceTree = "<group>";
-		};
-		254A08EA5255E56EDAB33AF3D866E302 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9D95988436356E831FFF3F0643DD19B8 /* Alamofire.modulemap */,
-				A8CED0ED0A36B8600C4D23DEDE60B324 /* Alamofire.xcconfig */,
-				D179DE912C67FF5D47E21CE38DA930A2 /* Alamofire-dummy.m */,
-				B50411404A6F8ABBA295320C621A19A2 /* Alamofire-prefix.pch */,
-				5854A8CF6B88A1512C01FA0B2E4D4DF7 /* Alamofire-umbrella.h */,
-				80BB9A1960044002001D300027CAB9CD /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
-			sourceTree = "<group>";
-		};
 		283ED392269042C2E41936A55273F43D /* Pods-BeautyFinder */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +247,20 @@
 			path = "Target Support Files/Pods-BeautyFinder";
 			sourceTree = "<group>";
 		};
+		2AFCD6B0C8FCC9A17B70F2AB354CE5BA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9AF5260ADAA7792F6701FB9FD6DB6779 /* CVCalendar.modulemap */,
+				514DDFC86A0AA0234AC4102D284C3E7B /* CVCalendar.xcconfig */,
+				ED2C952A0D53A42286B5DA5F1BD7987C /* CVCalendar-dummy.m */,
+				A9B5E2B3BAC8B190FF605A5A68BEDBC0 /* CVCalendar-prefix.pch */,
+				7FF9CC266C40A511D087BBA06842BB8D /* CVCalendar-umbrella.h */,
+				C0D114894E57C9FDF94D5EA4F3AE243F /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CVCalendar";
+			sourceTree = "<group>";
+		};
 		406FB32D50055289952E2C61D244BB8E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,36 +277,60 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4F9E564C71D872AD2419C9B60AAD8727 /* Products */ = {
+		5E0609D1584622C5B6B880383E8FBFAD /* Kingfisher */ = {
 			isa = PBXGroup;
 			children = (
-				9DCEF5B9D0A8DE2F92E0E5A8DB4C5487 /* Alamofire.framework */,
-				FD3FEBED5B50778181ED0F817DB41B1C /* Kingfisher.framework */,
-				570DBA282B58FCF0D2CCEFC7B513756C /* Pods_BeautyFinder.framework */,
+				B3D200EABA2A3D8C9431AA645BBBEB9C /* ImageCache.swift */,
+				E56B39DD09D312B78DA10003C0B7EC52 /* ImageDownloader.swift */,
+				29DD566FE0C54AD09B854966F14EC727 /* ImageTransition.swift */,
+				C5CCBCA6CAE60F5BA03E9BF5B841E6DB /* Kingfisher.h */,
+				D15D2EDAA839984AE754A2D4840735BF /* KingfisherManager.swift */,
+				976B7FB426B355AE87FD25E47796E4C1 /* KingfisherOptions.swift */,
+				71B442AB1AC11DF8FAE3B8FD452EE69C /* KingfisherOptionsInfo.swift */,
+				F7E57419639F0F3F1AEDFF58795EC3E5 /* Resource.swift */,
+				18D65FC2BC05A05552DF0A260389B10F /* String+MD5.swift */,
+				E0CBB80E248E69F93921B6BCF74CC13F /* ThreadHelper.swift */,
+				F1597BE83713B9571BA0648F99DEE4F9 /* UIButton+Kingfisher.swift */,
+				28E5A746E1AA48AFB9383D572E2D0C03 /* UIImage+Extension.swift */,
+				CCA029C87082D788D3ECEB4516E0B3F3 /* UIImageView+Kingfisher.swift */,
+				964F7F3F08C208153486A3975EA8FE47 /* Support Files */,
 			);
-			name = Products;
+			path = Kingfisher;
 			sourceTree = "<group>";
 		};
-		501FF8FF8A11033539A9A8DAC307CCBC /* Alamofire */ = {
+		66FD1641C9B9A61785BD71D7631922AC /* CVCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				C40CAF8EBEF909F3DA04803E62505DD5 /* Alamofire.swift */,
-				B7C80B477E0A28DF81A2303808286539 /* Download.swift */,
-				DFF34B38A7B8D1E9048B9169E9FC0AED /* Error.swift */,
-				BA261E3405A9ADA748F3226280F6A08F /* Manager.swift */,
-				47F07D7238CE957FE966E1842603FA20 /* MultipartFormData.swift */,
-				33910D1C7A9EA7A1890F206AD2408CBB /* ParameterEncoding.swift */,
-				301DB2AB1CEA7E13F1308C9D5ACB65FC /* Request.swift */,
-				F5EA289AF31C3F02CACFC3C7C1DE909A /* Response.swift */,
-				E1C3B5BA10C7655BAE57E5EF3CAF8969 /* ResponseSerialization.swift */,
-				EBA14A4AD818B0AC128FA62C7ACDBD69 /* Result.swift */,
-				ECE5FAFC52EE499D6A763C8DA30F1149 /* ServerTrustPolicy.swift */,
-				0C8C6B4A717038EB96F179B69F02F518 /* Stream.swift */,
-				3F4EE65052081E3846B3CDB633D048A5 /* Upload.swift */,
-				BBF277B6FD40861366298362760F49B8 /* Validation.swift */,
-				254A08EA5255E56EDAB33AF3D866E302 /* Support Files */,
+				FDA64896DF6A602C665FA0904488CD18 /* CVAuxiliaryView.swift */,
+				291871AF4E11FC94E74450734F1C377D /* CVCalendarContentViewController.swift */,
+				FFAE2B6D002464C2C8B78E40A5DFAED8 /* CVCalendarDayView.swift */,
+				1BFC55AD04725D01EBE051D416D7425D /* CVCalendarDayViewControlCoordinator.swift */,
+				0A4C295BAA39EF05EA66A137080FA98B /* CVCalendarManager.swift */,
+				BFB68649723512F6F9C776E6B3E13524 /* CVCalendarMenuView.swift */,
+				4595D00AB4EBF72FA442BA2E71D34C2A /* CVCalendarMenuViewDelegate.swift */,
+				A651959A88B5FD5364BCE26AF6EE2943 /* CVCalendarMonthContentViewController.swift */,
+				E630171770590E88A44065E630953964 /* CVCalendarMonthView.swift */,
+				A26ACE5FA6412EF61CD92959FBF7F5BF /* CVCalendarTouchController.swift */,
+				FE036AFA616CA857EE1DBCD00DFA46D2 /* CVCalendarView.swift */,
+				D6503DD70F7B460A15AE4CAFCF4E8C54 /* CVCalendarViewAnimator.swift */,
+				625047389D023662B40F4F3809A4B869 /* CVCalendarViewAnimatorDelegate.swift */,
+				4A2F7538FAB1E2DA48BBC7135902D458 /* CVCalendarViewAppearance.swift */,
+				23CDB661C2E00053AFD76DE4B8DEE7C5 /* CVCalendarViewAppearanceDelegate.swift */,
+				EAE2060DFC31EBB6AE01E8B79AFB2DDD /* CVCalendarViewDelegate.swift */,
+				3C8417DD430F68933F82E8D6D111B796 /* CVCalendarViewPresentationMode.swift */,
+				A1091A6A04A4A05C90204B5746FE185F /* CVCalendarWeekContentViewController.swift */,
+				0A571CABA2B7816299E66D4E42A4CCD9 /* CVCalendarWeekday.swift */,
+				2145267C3C264CD8ACD2BC45C48F42E9 /* CVCalendarWeekView.swift */,
+				17A3D95A2B21F4DFC370D959A3594B82 /* CVDate.swift */,
+				1327ECF25A1CE91B94991DC6E09AF41F /* CVRange.swift */,
+				B9350B11E6A0674FFA91F89F9FD97912 /* CVScrollDirection.swift */,
+				E6756F5B5945253CC5C49E24CDEFAEE7 /* CVSelectionType.swift */,
+				358F91F937ADE46B153D709D9E5E988F /* CVSet.swift */,
+				A4C4749BFC3A5F6332835E6F41ADA14C /* CVShape.swift */,
+				0FF7D05A5757EC777ADE536E792A7A27 /* CVWeekdaySymbolType.swift */,
+				2AFCD6B0C8FCC9A17B70F2AB354CE5BA /* Support Files */,
 			);
-			path = Alamofire;
+			path = CVCalendar;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -258,31 +338,81 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				0A929F63259B5E5AF388E32F55EA92D6 /* Pods */,
-				4F9E564C71D872AD2419C9B60AAD8727 /* Products */,
+				FE0265C6561469AD0E7205F322A7CB37 /* Pods */,
+				8A4F70071E8DBD1E630DAD539B4BD9B2 /* Products */,
 				406FB32D50055289952E2C61D244BB8E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A3B03B59AF3A21783F72436AB3E19B81 /* Kingfisher */ = {
+		8A4F70071E8DBD1E630DAD539B4BD9B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				130697F3AA7F9C96FFD1CF399F8E53C3 /* ImageCache.swift */,
-				0780A2A0EEAED1B38FFF89E8FB55CD3F /* ImageDownloader.swift */,
-				D7AF04D2A2222337FDC1AB00384C93A7 /* ImageTransition.swift */,
-				9FDA417638FA91B85E25F116EA9AE839 /* Kingfisher.h */,
-				AF486EE562BA85F462753176A3D1B837 /* KingfisherManager.swift */,
-				5B5B18FA60A69951498909918DC7B3E4 /* KingfisherOptions.swift */,
-				495956629759E751A6780DF230DA5B9F /* KingfisherOptionsInfo.swift */,
-				B32C59E5761DCFC5D4E6741964C01D72 /* Resource.swift */,
-				F9EAE0196754DB421638C13E123BE347 /* String+MD5.swift */,
-				B51A9D3D6421DA53330BD3966CA6FD89 /* ThreadHelper.swift */,
-				152136A657363C045ED7C65B9DC90994 /* UIButton+Kingfisher.swift */,
-				589E16C8517E326B6C3B86B014B79485 /* UIImage+Extension.swift */,
-				CF127CB4A8D173C1C4BDE3ED59687FD5 /* UIImageView+Kingfisher.swift */,
-				0FEF1C120282AA7FCB6EB9EFFF74C64B /* Support Files */,
+				4B523639C93F3EC8F098746713FC70AF /* Alamofire.framework */,
+				9D2FD0D1A316C630EAFCED251A9DEF33 /* CVCalendar.framework */,
+				A2457C195CC046A2B7B337A34F4F569B /* Kingfisher.framework */,
+				64E48D6E1F23D6185A7227CE27B18D68 /* Pods_BeautyFinder.framework */,
 			);
-			path = Kingfisher;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		964F7F3F08C208153486A3975EA8FE47 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				56D34A79DF67C5B1A866EFF608D25354 /* Info.plist */,
+				D5B410E51A62F24CCCFB6A67E6831FC3 /* Kingfisher.modulemap */,
+				85E92A6CA6506CD063F2BD41D39021F6 /* Kingfisher.xcconfig */,
+				4A176996EC9846A7B0C645F88D3F9346 /* Kingfisher-dummy.m */,
+				7B84897E184042756545F7605F9D2E03 /* Kingfisher-prefix.pch */,
+				5F9FA68BFDEA416620332E9132423377 /* Kingfisher-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Kingfisher";
+			sourceTree = "<group>";
+		};
+		9738504E276B31DDD8783ABE9E241BC7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C57A4770DE73E6CEBC29F8C1B487FB2 /* Alamofire.modulemap */,
+				F624D54CF57000048A3974FC143E15C4 /* Alamofire.xcconfig */,
+				77CACECF2CEFDBDC9D9FE7662F3F8212 /* Alamofire-dummy.m */,
+				ADD286F498FE028D062257FEA2AECBDA /* Alamofire-prefix.pch */,
+				B1A79993689784EEE2FD67050D8895AE /* Alamofire-umbrella.h */,
+				5D39B98E79994E18D9C6411DDA5A87F5 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
+			sourceTree = "<group>";
+		};
+		AABB76D7F39B98274C3136D21111B6E4 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				5B6F94E62A842826ED5F1259D3D9956E /* Alamofire.swift */,
+				0F1AD827C4011EDCB240C4E394ADED81 /* Download.swift */,
+				B64B22F412E78D3E75E7E5E24CAE1B4D /* Error.swift */,
+				5276A50CC08130A311B76AFBCD0F6D92 /* Manager.swift */,
+				4CC1CD5E0BA612E587D22834AE5649CE /* MultipartFormData.swift */,
+				5DF4A6774915683C3F950526B0AC9E8E /* ParameterEncoding.swift */,
+				26BEF5B82D29EBB4CB60761A9A0B2F96 /* Request.swift */,
+				88BFFC472FA234ECF8E6E699CC128496 /* Response.swift */,
+				4FA9191F65F6D9EA4745CEE31487D9F4 /* ResponseSerialization.swift */,
+				DFBAAB52E5BA5CAB44F985029E22B2BB /* Result.swift */,
+				8EFD289BADB0A11EA3BB4A1C9966FEEC /* ServerTrustPolicy.swift */,
+				63CC971995D26D7F8CB622F5EAFAF1C6 /* Stream.swift */,
+				9B58148060086D5AC1A03EF571D03356 /* Upload.swift */,
+				14E5423D88BC85ACD420CE4CBDAA8C9D /* Validation.swift */,
+				9738504E276B31DDD8783ABE9E241BC7 /* Support Files */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		FE0265C6561469AD0E7205F322A7CB37 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AABB76D7F39B98274C3136D21111B6E4 /* Alamofire */,
+				66FD1641C9B9A61785BD71D7631922AC /* CVCalendar */,
+				5E0609D1584622C5B6B880383E8FBFAD /* Kingfisher */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		FFF9046D2410B3E36331C4861D1F7945 /* iOS */ = {
@@ -306,14 +436,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4F249894ABD983210AABD6FA658BE500 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F0FF18857DA790090101973E919D6F08 /* Pods-BeautyFinder-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5F7B61281F714E2A64A51E80A2C9C062 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,26 +444,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7162EE70BD1E7E72DC571D3BEF3887BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E685D3EAB6D0411CC512C2381B1D6E89 /* Pods-BeautyFinder-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEE10F1B81EC5F9AF236789B9461A5E5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A86BFF9617EE2BAF83EA6D36B50B96 /* CVCalendar-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		428173B3AA94409DDAAAEE50485AA43D /* Pods-BeautyFinder */ = {
+		06930FA546493A7E82496419419F78E9 /* Pods-BeautyFinder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FB00834C80A90EBCF2827E01486297D1 /* Build configuration list for PBXNativeTarget "Pods-BeautyFinder" */;
+			buildConfigurationList = E57A0A4141D59EA312C72FF177318C21 /* Build configuration list for PBXNativeTarget "Pods-BeautyFinder" */;
 			buildPhases = (
-				0912428FD33E3E33F638D9A999E644E6 /* Sources */,
-				7F2EAC07BC17AC29BBA83B53A6492DEC /* Frameworks */,
-				4F249894ABD983210AABD6FA658BE500 /* Headers */,
+				7566DBCC2460CBAAF661FA23A34F6899 /* Sources */,
+				3625B3DEAF9E1C39222E05CF234C1B1A /* Frameworks */,
+				7162EE70BD1E7E72DC571D3BEF3887BA /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D52C48AF9E691792532F0BFC3F2E3404 /* PBXTargetDependency */,
-				38A1B26068981B0C70FBA40C11C428F1 /* PBXTargetDependency */,
+				8B98D0FB3B6A3DAC8BF1FD8D3A931252 /* PBXTargetDependency */,
+				33EE19E3B73B1405AA37A55E56441861 /* PBXTargetDependency */,
+				3D35A3D0128C0D0C30B46639DBD8B3CF /* PBXTargetDependency */,
 			);
 			name = "Pods-BeautyFinder";
 			productName = "Pods-BeautyFinder";
-			productReference = 570DBA282B58FCF0D2CCEFC7B513756C /* Pods_BeautyFinder.framework */;
+			productReference = 64E48D6E1F23D6185A7227CE27B18D68 /* Pods_BeautyFinder.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		432ECC54282C84882B482CCB4CF227FC /* Alamofire */ = {
@@ -358,7 +497,24 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 9DCEF5B9D0A8DE2F92E0E5A8DB4C5487 /* Alamofire.framework */;
+			productReference = 4B523639C93F3EC8F098746713FC70AF /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA14B622689766F6B8A4F42FD9DE552F /* CVCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED221B285CC012F4E42D62A4287101A4 /* Build configuration list for PBXNativeTarget "CVCalendar" */;
+			buildPhases = (
+				C61400E0ED753F02D457392692F8B35A /* Sources */,
+				D9C7A436E24D0C282E66251E8BCD9548 /* Frameworks */,
+				CEE10F1B81EC5F9AF236789B9461A5E5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CVCalendar;
+			productName = CVCalendar;
+			productReference = 9D2FD0D1A316C630EAFCED251A9DEF33 /* CVCalendar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F91226101ECE8FCFD221A3EC54481F82 /* Kingfisher */ = {
@@ -375,7 +531,7 @@
 			);
 			name = Kingfisher;
 			productName = Kingfisher;
-			productReference = FD3FEBED5B50778181ED0F817DB41B1C /* Kingfisher.framework */;
+			productReference = A2457C195CC046A2B7B337A34F4F569B /* Kingfisher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -395,26 +551,19 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4F9E564C71D872AD2419C9B60AAD8727 /* Products */;
+			productRefGroup = 8A4F70071E8DBD1E630DAD539B4BD9B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				432ECC54282C84882B482CCB4CF227FC /* Alamofire */,
+				BA14B622689766F6B8A4F42FD9DE552F /* CVCalendar */,
 				F91226101ECE8FCFD221A3EC54481F82 /* Kingfisher */,
-				428173B3AA94409DDAAAEE50485AA43D /* Pods-BeautyFinder */,
+				06930FA546493A7E82496419419F78E9 /* Pods-BeautyFinder */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0912428FD33E3E33F638D9A999E644E6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0548980D6D5A773CAB774F47B7A932D /* Pods-BeautyFinder-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2D462943B80446E53D45D3166FA1FAF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,6 +581,49 @@
 				8CF73FB3C1E427EFBB585346864D2017 /* UIButton+Kingfisher.swift in Sources */,
 				1253018525DC8EAFADC635BB999C6EC5 /* UIImage+Extension.swift in Sources */,
 				0B3C904CCFE255DB5F3853B3725A542E /* UIImageView+Kingfisher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7566DBCC2460CBAAF661FA23A34F6899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EDC94807BAC603CB94E83E863A84ED6 /* Pods-BeautyFinder-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C61400E0ED753F02D457392692F8B35A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF021721AB2F970368E622EABFB9651F /* CVAuxiliaryView.swift in Sources */,
+				3B87DC7F8BDF75B46E61FA884B289577 /* CVCalendar-dummy.m in Sources */,
+				C68D88393AB99D8587329B61229CAA10 /* CVCalendarContentViewController.swift in Sources */,
+				C8F505E2C3284B4BA389F0B4C7377A12 /* CVCalendarDayView.swift in Sources */,
+				6216E52EED65FFA771AD682DE96BC3B2 /* CVCalendarDayViewControlCoordinator.swift in Sources */,
+				B218F1BF6AEF7D9295EC4850457C40C1 /* CVCalendarManager.swift in Sources */,
+				B3D4E56896D3187D07A37D1C0BB4463F /* CVCalendarMenuView.swift in Sources */,
+				461789AA9602F827AF415551B6EDE0B2 /* CVCalendarMenuViewDelegate.swift in Sources */,
+				3705C2AE52E45691AFF860C3CEDD7441 /* CVCalendarMonthContentViewController.swift in Sources */,
+				27EDCBA933ABC5D70ECF3F562A63D31D /* CVCalendarMonthView.swift in Sources */,
+				6CB822F35D76353193BFA86DD7BC2963 /* CVCalendarTouchController.swift in Sources */,
+				1473E95D20A8550117266D4493AF9C6C /* CVCalendarView.swift in Sources */,
+				95BBCAAE65C6668992593E20D80452DA /* CVCalendarViewAnimator.swift in Sources */,
+				33B12555139B2C0FAB72FF64E286A812 /* CVCalendarViewAnimatorDelegate.swift in Sources */,
+				F809213B24C125C576D1A8D28D242A4F /* CVCalendarViewAppearance.swift in Sources */,
+				6DA361F78BD4FE4C1D91F3B4888D2D48 /* CVCalendarViewAppearanceDelegate.swift in Sources */,
+				4E4F17DE924825CE5D480D0E8A05E3CD /* CVCalendarViewDelegate.swift in Sources */,
+				6637B96C6BD4B5532AA3B69133DE4055 /* CVCalendarViewPresentationMode.swift in Sources */,
+				9F596692858960FCDD3C7E648896FCFF /* CVCalendarWeekContentViewController.swift in Sources */,
+				5E4E07F5AA458FA65DF01816F721468A /* CVCalendarWeekday.swift in Sources */,
+				57A71A8F4D5FCC79FE401287E197E7B3 /* CVCalendarWeekView.swift in Sources */,
+				551E9EE718FB2628ECBA3954D837BCE5 /* CVDate.swift in Sources */,
+				2CD83CDD80950801E1E8E9A7854B795D /* CVRange.swift in Sources */,
+				62D9E7D63B75A2CD4A423744C9D29DB3 /* CVScrollDirection.swift in Sources */,
+				7FE567382B46982C01C4AF4F95A6093D /* CVSelectionType.swift in Sources */,
+				BA2171175CEB329626AC8C4287F870A9 /* CVSet.swift in Sources */,
+				6891101D8D1D37D2A990F6B398A992D3 /* CVShape.swift in Sources */,
+				40CB3875B30C9203B08807A16064A92A /* CVWeekdaySymbolType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,17 +652,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		38A1B26068981B0C70FBA40C11C428F1 /* PBXTargetDependency */ = {
+		33EE19E3B73B1405AA37A55E56441861 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CVCalendar;
+			target = BA14B622689766F6B8A4F42FD9DE552F /* CVCalendar */;
+			targetProxy = 9691AF67F44022E6A6A386A10EE722E1 /* PBXContainerItemProxy */;
+		};
+		3D35A3D0128C0D0C30B46639DBD8B3CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Kingfisher;
 			target = F91226101ECE8FCFD221A3EC54481F82 /* Kingfisher */;
-			targetProxy = 03A530E63A07E10227D8F7DE46C00F09 /* PBXContainerItemProxy */;
+			targetProxy = CDFDE199D3756A573D3406BA7D7ACA35 /* PBXContainerItemProxy */;
 		};
-		D52C48AF9E691792532F0BFC3F2E3404 /* PBXTargetDependency */ = {
+		8B98D0FB3B6A3DAC8BF1FD8D3A931252 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = 432ECC54282C84882B482CCB4CF227FC /* Alamofire */;
-			targetProxy = B4BAC7CDB0706C99C26C83F5985552BB /* PBXContainerItemProxy */;
+			targetProxy = 2B8B0A23E52D7D6C23A798B837E87802 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -509,9 +707,39 @@
 			};
 			name = Release;
 		};
+		50BEEB3E98F52E4A81163E05CCB7662F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBCB1B585886B3188FC334F180222EE3 /* Pods-BeautyFinder.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-BeautyFinder/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BeautyFinder/Pods-BeautyFinder.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_BeautyFinder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		51347C6CC43E058148BBA2D2833EC82A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8CED0ED0A36B8600C4D23DEDE60B324 /* Alamofire.xcconfig */;
+			baseConfigurationReference = F624D54CF57000048A3974FC143E15C4 /* Alamofire.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -578,7 +806,7 @@
 		};
 		5EA484BB3F3B8C864B1E1455C4758B97 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E6968FF791C2A0B3F7CA8A9344C2B84 /* Kingfisher.xcconfig */;
+			baseConfigurationReference = 85E92A6CA6506CD063F2BD41D39021F6 /* Kingfisher.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -604,7 +832,7 @@
 			};
 			name = Debug;
 		};
-		9AE1DEE78966C8ABCA56334CCA87BDF5 /* Debug */ = {
+		694CA8A86FC15BF01994E6C65BA073D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B00FFA363B05C948F66FE341B41769EE /* Pods-BeautyFinder.debug.xcconfig */;
 			buildSettings = {
@@ -635,9 +863,9 @@
 			};
 			name = Debug;
 		};
-		B70262CDE6D7BEE49F49EA4809946541 /* Release */ = {
+		B606D775F252D3BB428487D6FF79875E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBCB1B585886B3188FC334F180222EE3 /* Pods-BeautyFinder.release.xcconfig */;
+			baseConfigurationReference = 514DDFC86A0AA0234AC4102D284C3E7B /* CVCalendar.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -646,17 +874,14 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-BeautyFinder/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/CVCalendar/CVCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CVCalendar/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BeautyFinder/Pods-BeautyFinder.modulemap";
+				MODULEMAP_FILE = "Target Support Files/CVCalendar/CVCalendar.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_BeautyFinder;
+				PRODUCT_NAME = CVCalendar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -667,7 +892,7 @@
 		};
 		BCDE1E85FD75D976235B1535F079754A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8CED0ED0A36B8600C4D23DEDE60B324 /* Alamofire.xcconfig */;
+			baseConfigurationReference = F624D54CF57000048A3974FC143E15C4 /* Alamofire.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -692,9 +917,37 @@
 			};
 			name = Release;
 		};
+		C8B42810097055DD5CB79FA09A434281 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 514DDFC86A0AA0234AC4102D284C3E7B /* CVCalendar.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CVCalendar/CVCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CVCalendar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CVCalendar/CVCalendar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CVCalendar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		E9B900BAF85D3FBD8FF4FD9C6F72EDC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E6968FF791C2A0B3F7CA8A9344C2B84 /* Kingfisher.xcconfig */;
+			baseConfigurationReference = 85E92A6CA6506CD063F2BD41D39021F6 /* Kingfisher.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -749,11 +1002,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FB00834C80A90EBCF2827E01486297D1 /* Build configuration list for PBXNativeTarget "Pods-BeautyFinder" */ = {
+		E57A0A4141D59EA312C72FF177318C21 /* Build configuration list for PBXNativeTarget "Pods-BeautyFinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9AE1DEE78966C8ABCA56334CCA87BDF5 /* Debug */,
-				B70262CDE6D7BEE49F49EA4809946541 /* Release */,
+				694CA8A86FC15BF01994E6C65BA073D5 /* Debug */,
+				50BEEB3E98F52E4A81163E05CCB7662F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED221B285CC012F4E42D62A4287101A4 /* Build configuration list for PBXNativeTarget "CVCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8B42810097055DD5CB79FA09A434281 /* Debug */,
+				B606D775F252D3BB428487D6FF79875E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

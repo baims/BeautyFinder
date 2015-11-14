@@ -119,6 +119,30 @@ import UIKit
         
     }
     
+    func flashSelectedItem()
+    {
+        /*UIView.animateWithDuration(0.15, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: [UIViewAnimationOptions.BeginFromCurrentState], animations: { () -> Void in
+            self.thumbView.transform = CGAffineTransformMakeScale(1.2, 1.2)
+            }) { (completed) -> Void in
+                UIView.animateWithDuration(0.25, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [.BeginFromCurrentState], animations: { () -> Void in
+                    self.thumbView.transform = CGAffineTransformMakeScale(1, 1)
+                    }, completion: nil)
+        }*/
+        
+        
+        UIView.animateWithDuration(0.2/2, animations: { () -> Void in
+            self.thumbView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1)
+            }) { (completed) -> Void in
+                UIView.animateWithDuration(0.2/2, animations: { () -> Void in
+                    self.thumbView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9)
+                    }, completion: { (completed) -> Void in
+                        UIView.animateWithDuration(0.2/2, animations: { () -> Void in
+                            self.thumbView.transform = CGAffineTransformIdentity
+                        })
+                })
+        }
+    }
+    
     override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         
         let location = touch.locationInView(self)
