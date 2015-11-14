@@ -39,6 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
         }
         
+        
+        /*****
+        THIS MUST BE REMOVED IN THE FINAL RELEASE
+        ********/
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
+        
         return true
     }
 

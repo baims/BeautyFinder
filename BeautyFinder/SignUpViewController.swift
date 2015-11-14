@@ -69,11 +69,55 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 if let Json = response.result.value {
                     print(Json)
                     
-                    /// IF OPETATION = OK THEN SIGN IN THE USER AND SAVE TOKEN IN NSUSERDEFAULTS
+                    let json = JSON(Json)
+                    
+                    if json["Operation"].string! == "ok"
+                    {
+                        self.signIn(self.emailTextField.text!, password: self.passwordTextField.text!)
+                    }
+                    else
+                    {
+                        print("there is something wrong with the data provided")
+                    }
                 }
                 else if let error = response.result.error
                 {
                     print(error)
+                }
+                
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
+    
+    func signIn(username: String!, password: String!)
+    {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        Alamofire.request(.POST, "https://aqueous-dawn-8486.herokuapp.com/login/", parameters: ["username" : username, "password" : password]).validate().responseJSON
+            { (response) -> Void in
+                
+                if let Json = response.result.value {
+                    let json = JSON(Json)
+                    let token = json["token"].string!
+                    
+                    NSUserDefaults.standardUserDefaults().setObject(token, forKey: "token")
+                    NSUserDefaults.standardUserDefaults().synchronize()
+                    
+                    print(NSUserDefaults.standardUserDefaults().stringForKey("token")!)
+                    
+                    self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        // reload everything in self.presentingViewController so it shows that the user is signed in
+                    })
+                }
+                else if let error = response.result.error
+                {
+                    print(error)
+                    
+                    let alertController = UIAlertController(title: "", message: "Your email and password does not match", preferredStyle: .Alert)
+                    let cancel = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+                    
+                    alertController.addAction(cancel)
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
                 
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false

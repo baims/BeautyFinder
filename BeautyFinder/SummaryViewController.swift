@@ -10,6 +10,9 @@ import UIKit
 
 class SummaryViewController: UIViewController {
     
+    @IBOutlet weak var textOfPayButtonLabel: UILabel!
+    
+    
     var salonName : String!
 
     var subcategoryName : String!
@@ -22,6 +25,8 @@ class SummaryViewController: UIViewController {
     var dateOfBooking   : String!
     var startTime       : String!
     var endTime         : String!
+    
+    
 
     override func viewDidLoad()
     {
@@ -35,8 +40,23 @@ class SummaryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidLayoutSubviews() {
-        print(salonName)
+    override func viewDidLayoutSubviews()
+    {
+        //print(salonName)
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        print("viewWillAppear")
+        
+        if let _ = NSUserDefaults.standardUserDefaults().objectForKey("token")
+        {
+            self.textOfPayButtonLabel.text = "Pay & Book"
+        }
+        else
+        {
+            self.textOfPayButtonLabel.text = "Log In To Continue Booking"
+        }
     }
 
     /*
@@ -48,5 +68,22 @@ class SummaryViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func bookAndPayButtonTapped(sender: UIButton)
+    {
+        if let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
+        {
+            // use the token to reserve the booking
+            // then go to knet page
+            // finally, if the payment succeeds, then book the appointment
+            
+            print(token)
+        }
+        else
+        {
+            self.performSegueWithIdentifier("logIn", sender: nil)
+        }
+    }
 
 }

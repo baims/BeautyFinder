@@ -116,6 +116,9 @@ class SalonViewController: UIViewController {
         }
         else if segue.identifier == "summarySegue"
         {
+            self.navigationController?.delegate = nil
+            self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+            
             let summaryViewController = segue.destinationViewController as! SummaryViewController
             
             summaryViewController.salonName        = self.salonNameLabel.text!
