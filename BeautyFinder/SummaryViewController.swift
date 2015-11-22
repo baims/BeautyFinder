@@ -96,18 +96,29 @@ class SummaryViewController: UIViewController {
         
         let headers = ["Authorization" : "Token \(token)"]
         
-        Alamofire.request(.POST, website + "reserve", parameters: parameters, headers: headers).responseJSON(completionHandler: { (response) -> Void in
-            
-            if let Json = response.result.value
-            {
-                let json = JSON(Json)
-                print(json)
-            }
-            else if let error = response.result.error
-            {
-                print(error)
-            }
-        })
+        Alamofire.request(.POST, website + "reserve/", parameters: parameters, headers: headers).responseString { (response) -> Void in
+            if let string = response.result.value
+                        {
+                            //let json = JSON(Json)
+                            print(string)
+                        }
+                        else if let error = response.result.error
+                        {
+                            print(error)
+                        }
+        }
+//         responseJSON(completionHandler: { (response) -> Void in
+//            
+//            if let Json = response.result.value
+//            {
+//                let json = JSON(Json)
+//                print(json)
+//            }
+//            else if let error = response.result.error
+//            {
+//                print(error)
+//            }
+//        })
         
         print("\n\nWebsite: \(website + "reserve/")")
         print("\n\nParameters: ")

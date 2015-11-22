@@ -199,7 +199,7 @@ extension SalonScheduleViewController
         
         self.indexPathForSelectedRow = indexPath
         
-        let date      = "\(selectedDate.year)/\(selectedDate.month)/\(selectedDate.day)"
+        let date      = "\(selectedDate.year)-\(selectedDate.month)-\(selectedDate.day)"
         let startTime = self.jsonOfSelectedDate!["time", self.indexPathForSelectedRow.row, "start"].string!
         let endTime = self.jsonOfSelectedDate!["time", self.indexPathForSelectedRow.row, "end"].string!
         
