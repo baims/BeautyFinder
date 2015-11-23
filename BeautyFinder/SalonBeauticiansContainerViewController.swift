@@ -112,6 +112,8 @@ extension SalonBeauticiansContainerViewController
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
+        cell.imageView.layer.borderWidth = 0.5
+        cell.imageView.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
         
         let selectedView = UIView()
         let circledView  = UIView(frame: cell.imageView.frame)
@@ -150,10 +152,11 @@ extension SalonBeauticiansContainerViewController
         
         let beauticianName = self.beauticianJson![indexPath.item, "name"].string!
         let beauticianPK = self.beauticianJson![indexPath.item, "pk"].int!
+        let beauticianImageUrl = self.website + self.beauticianJson![indexPath.item, "image"].string!
         
         
         let superView = self.parentViewController as! SalonViewController
-        superView.beauticianIsSelectedWithName(beauticianName, beauticianPK: beauticianPK, beauticianJSON: beauticianJson![indexPath.item])
+        superView.beauticianIsSelectedWithName(beauticianName, beauticianPK: beauticianPK, beauticianImageUrl:  beauticianImageUrl, beauticianJSON: beauticianJson![indexPath.item])
         
         return true
     }
@@ -169,10 +172,11 @@ extension SalonBeauticiansContainerViewController
 
 extension SalonViewController
 {
-    func beauticianIsSelectedWithName(beauticianName: String!, beauticianPK : Int!, beauticianJSON : JSON!)
+    func beauticianIsSelectedWithName(beauticianName: String!, beauticianPK : Int!, beauticianImageUrl : String!, beauticianJSON : JSON!)
     {
         self.beauticianName = beauticianName
         self.beauticianPK = beauticianPK
+        self.beauticianImageUrl = beauticianImageUrl
         
         self.segmentedControl.selectedIndex = 2;
         

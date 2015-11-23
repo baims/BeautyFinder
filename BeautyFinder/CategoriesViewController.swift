@@ -127,6 +127,8 @@ extension CategoriesViewController
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
+        cell.imageView.layer.borderWidth = 0.5
+        cell.imageView.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
         
         let selectedView = UIView()
         let circledView  = UIView(frame: cell.imageView.frame)

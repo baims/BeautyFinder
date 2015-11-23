@@ -44,6 +44,7 @@ class SalonViewController: UIViewController {
     
     var beauticianName  : String!
     var beauticianPK    : Int!
+    var beauticianImageUrl : String!
     
     var dateOfBooking   : String!
     var startTime       : String!
@@ -122,6 +123,7 @@ class SalonViewController: UIViewController {
             let summaryViewController = segue.destinationViewController as! SummaryViewController
             
             summaryViewController.salonName        = self.salonNameLabel.text!
+            summaryViewController.salonImageUrl    = self.website + self.salonJson!["logo"].string!
             
             summaryViewController.subcategoryName  = self.subcategoryName
             summaryViewController.subcategoryPK    = self.subcategoryPK
@@ -129,6 +131,7 @@ class SalonViewController: UIViewController {
             
             summaryViewController.beauticianName   = self.beauticianName
             summaryViewController.beauticianPK     = self.beauticianPK
+            summaryViewController.beauticianImageUrl = self.beauticianImageUrl
             
             summaryViewController.dateOfBooking    = self.dateOfBooking
             summaryViewController.startTime        = self.startTime

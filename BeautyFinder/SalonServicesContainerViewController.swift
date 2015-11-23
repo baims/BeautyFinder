@@ -73,7 +73,8 @@ extension SalonServicesContainerViewController
         
         cell.categoryImageView.layer.cornerRadius = cell.categoryImageView.frame.size.width/2
         cell.categoryImageView.layer.masksToBounds = true
-        
+        cell.categoryImageView.layer.borderWidth = 0.5
+        cell.categoryImageView.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
         
         
         let accessoryView = UIImageView(image: UIImage(named: "arrow"))
