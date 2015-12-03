@@ -59,7 +59,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        Alamofire.request(.POST, "https://aqueous-dawn-8486.herokuapp.com/register/", parameters:
+        Alamofire.request(.POST, k_website + "register/", parameters:
             ["email" : self.emailTextField.text!,
             "password" : self.passwordTextField.text!,
                 "phone" : self.phoneTextField.text!,
@@ -93,7 +93,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        Alamofire.request(.POST, "https://aqueous-dawn-8486.herokuapp.com/login/", parameters: ["username" : username, "password" : password]).validate().responseJSON
+        Alamofire.request(.POST, k_website + "login/", parameters: ["username" : username, "password" : password]).validate().responseJSON
             { (response) -> Void in
                 
                 if let Json = response.result.value {

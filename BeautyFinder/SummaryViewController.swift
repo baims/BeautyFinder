@@ -14,12 +14,18 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var beauticianImageView: UIImageView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var textOfPayButtonLabel: UILabel!
-    
-    let website = "https://aqueous-dawn-8486.herokuapp.com/"
+    @IBOutlet weak var salonNameLabel: UILabel!
+    @IBOutlet weak var beauticianNameLabel: UILabel!
+    @IBOutlet weak var subcatgoryNameLabel: UILabel!
+    @IBOutlet weak var salonAddressLabel: UILabel!
+    @IBOutlet weak var dateOfBookingLabel: UILabel!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
     
     var salonName : String!
     var salonImageUrl : String!
-
+    var salonAddress : String!
+    
     var subcategoryName : String!
     var subcategoryPK   : Int!
     var subcategoryPrice : Double!
@@ -39,6 +45,15 @@ class SummaryViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        salonNameLabel.text      = salonName
+        beauticianNameLabel.text = beauticianName
+        subcatgoryNameLabel.text = subcategoryName
+        salonAddressLabel.text   = salonAddress
+        
+        dateOfBookingLabel.text = dateOfBooking
+        startTimeLabel.text     = DateTimeConverter.convertTimeToString(startTime)
+        endTimeLabel.text       = DateTimeConverter.convertTimeToString(endTime)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,18 +74,6 @@ class SummaryViewController: UIViewController {
         self.beauticianImageView.clipsToBounds = true
         self.beauticianImageView.layer.borderWidth = 0.5
         self.beauticianImageView.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
-        
-        
-        
-        UIView.animateWithDuration(0.2, delay: 0.1, options: [UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse, UIViewAnimationOptions.CurveEaseOut], animations: { () -> Void in
-            
-            self.beauticianImageView.hidden = true
-            }) { (completed) -> Void in
-                if (self.beauticianImageView.frame.size.height == 0)
-                {
-                    //self.beauticianImageView.hidden = true
-                }
-        }
     }
     
     override func viewWillAppear(animated: Bool)
@@ -126,7 +129,7 @@ class SummaryViewController: UIViewController {
         
         let headers = ["Authorization" : "Token \(token)"]
         
-        Alamofire.request(.POST, website + "reserve/", parameters: parameters, headers: headers).responseString { (response) -> Void in
+        Alamofire.request(.POST, k_website + "reserve/", parameters: parameters, headers: headers).responseString { (response) -> Void in
             if let string = response.result.value
                         {
                             //let json = JSON(Json)
@@ -150,7 +153,7 @@ class SummaryViewController: UIViewController {
 //            }
 //        })
         
-        print("\n\nWebsite: \(website + "reserve/")")
+        print("\n\nWebsite: \(k_website + "reserve/")")
         print("\n\nParameters: ")
         print(parameters)
         print("\n\nHeader: ")

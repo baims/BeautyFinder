@@ -31,6 +31,7 @@
 		9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0521BAC759F00A0197D /* SearchTextField.swift */; };
 		9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */; };
 		9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */; };
+		9FFF96BC1C1092EF004B8F48 /* DateAndTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */; };
 		CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008C91B8C1B160094F10E /* AppDelegate.swift */; };
 		CAA008CF1B8C1B160094F10E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA008CD1B8C1B160094F10E /* Main.storyboard */; };
 		CAA008D11B8C1B160094F10E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA008D01B8C1B160094F10E /* Images.xcassets */; };
@@ -107,6 +108,7 @@
 		9F6CD0521BAC759F00A0197D /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesAnimationController.swift; sourceTree = "<group>"; };
 		9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonViewAnimator.swift; sourceTree = "<group>"; };
+		9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTimeConverter.swift; sourceTree = "<group>"; };
 		CAA008C41B8C1B150094F10E /* BeautyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA008C81B8C1B160094F10E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAA008C91B8C1B160094F10E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */,
 				9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */,
 				9F3973841BF68F90006C3748 /* SummaryViewController.swift */,
+				9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */,
 				9F6CD04E1BAC6C4600A0197D /* Home View */,
 				9F67FF2F1BBDE49200C47C45 /* Subcategories */,
 				9F9B990B1BD1907C00A78B4D /* Salon Views */,
@@ -504,6 +507,7 @@
 				9F28F2E61BAC85BE007F1396 /* ADVSegmentedControl.swift in Sources */,
 				9F28F2EA1BAC95F4007F1396 /* SalonSearchViewController.swift in Sources */,
 				9F3973851BF68F90006C3748 /* SummaryViewController.swift in Sources */,
+				9FFF96BC1C1092EF004B8F48 /* DateAndTimeConverter.swift in Sources */,
 				9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */,
 				9F33549D1BCC54F100FA1A21 /* SignUpViewController.swift in Sources */,
 				9F6C3B561BECEEF60039F742 /* SalonScheduleViewController.swift in Sources */,

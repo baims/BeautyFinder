@@ -16,7 +16,6 @@ class SalonBeauticiansContainerViewController: UIViewController, UICollectionVie
     
     let refreshControl = UIRefreshControl()
     
-    let website = "https://aqueous-dawn-8486.herokuapp.com/"
     var beauticianJson : JSON?
     
     var indexPathForSelectedItem : NSIndexPath?
@@ -65,8 +64,9 @@ class SalonBeauticiansContainerViewController: UIViewController, UICollectionVie
         
         
         //UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        let requestUrl = "https://aqueous-dawn-8486.herokuapp.com/schedule/\(self.salonPK)/\(self.subcategoryPK)/"
-
+        let requestUrl = k_website + "schedule/\(self.salonPK)/\(self.subcategoryPK)/"
+        print(requestUrl)
+        
         
         Alamofire.request(.GET, requestUrl).responseJSON { (response) -> Void in
             
@@ -108,8 +108,8 @@ extension SalonBeauticiansContainerViewController
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
         cell.title.text = self.beauticianJson![indexPath.item, "name"].string!
-        //cell.imageView.kf_setImageWithURL(NSURL(string: self.website + self.beauticianJson![indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
-        
+        cell.imageView.kf_setImageWithURL(NSURL(string: k_website + self.beauticianJson![indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
+
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
         cell.imageView.layer.borderWidth = 0.5
@@ -152,7 +152,7 @@ extension SalonBeauticiansContainerViewController
         
         let beauticianName = self.beauticianJson![indexPath.item, "name"].string!
         let beauticianPK = self.beauticianJson![indexPath.item, "pk"].int!
-        let beauticianImageUrl = self.website + self.beauticianJson![indexPath.item, "image"].string!
+        let beauticianImageUrl = k_website + self.beauticianJson![indexPath.item, "image"].string!
         
         
         let superView = self.parentViewController as! SalonViewController
@@ -188,6 +188,7 @@ extension SalonViewController
         //self.calendarContainerView.hidden = false
         
         self.scheduleContainerViewController.startRefresh(beauticianJSON)
+        self.calendarContainerViewController.startRefresh()
         
         self.animateHiding(self.beauticiansContainerView, andShowing: self.scheduleContainerView)
     }

@@ -14,36 +14,47 @@ class SalonScheduleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
-    @IBOutlet weak var dashLabel: UILabel!
+    @IBOutlet weak var fromLabel: UILabel!
+    @IBOutlet weak var toLabel: UILabel!
+    @IBOutlet weak var dash1View: UIView!
+    @IBOutlet weak var dash2View: UIView!
+    @IBOutlet weak var availabilityLabel: UILabel!
     
-    var defaultTextColor : UIColor = UIColor.darkGrayColor()
-    
-    /*@IBInspectable var isBooked : Bool = false
-    {
+
+    var isBooked : Bool = false {
         didSet
         {
             if isBooked == true
             {
-                defaultTextColor = UIColor.lightGrayColor()
-                defaultTextColor = UIColor.lightGrayColor()
-                defaultTextColor = UIColor.lightGrayColor()
+                print(isBooked)
+                startTimeLabel.textColor = UIColor.lightGrayColor()
+                endTimeLabel.textColor   = UIColor.lightGrayColor()
+                fromLabel.textColor      = UIColor.lightGrayColor()
+                toLabel.textColor        = UIColor.lightGrayColor()
+                dash1View.backgroundColor = UIColor.lightGrayColor()
+                dash2View.backgroundColor = UIColor.lightGrayColor()
+                
+                availabilityLabel.text      = "BOOKED"
+                availabilityLabel.textColor = UIColor.lightGrayColor()
             }
             else
             {
-                defaultTextColor = UIColor.darkGrayColor()
-                defaultTextColor = UIColor.darkGrayColor()
-                defaultTextColor = UIColor.darkGrayColor()
+                startTimeLabel?.textColor = UIColor.blackColor()
+                endTimeLabel?.textColor   = UIColor.blackColor()
+                fromLabel?.textColor      = UIColor.blackColor()
+                toLabel?.textColor        = UIColor.blackColor()
+                dash1View?.backgroundColor = UIColor(red: 213.0/255.0, green: 38.0/255.0, blue: 101.0/255.0, alpha: 1)
+                dash2View?.backgroundColor = UIColor(red: 213.0/255.0, green: 38.0/255.0, blue: 101.0/255.0, alpha: 1)
+                
+                availabilityLabel?.text      = "AVAILABLE"
+                availabilityLabel?.textColor = UIColor(red: 0, green: 175.0/255.0, blue: 0, alpha: 1.0) //UIColor(red: 213.0/255.0, green: 38.0/255.0, blue: 101.0/255.0, alpha: 1)
             }
         }
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }*/
+    
+    var defaultTextColor : UIColor = UIColor.darkGrayColor()
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

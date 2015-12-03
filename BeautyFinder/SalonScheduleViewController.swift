@@ -65,7 +65,7 @@ class SalonScheduleViewController: UIViewController, UITableViewDelegate, UITabl
         self.selectedDate = date
         
         let stringOfDate : String = String(format: "%i-%02i-%02i", arguments: [self.selectedDate.year, self.selectedDate.month, self.selectedDate.day]) // writing the date in YYYY-MM-DD format (ex: 2015-11-06 )
-        let dayOfWeek = self.getDayOfWeek(stringOfDate)!
+        let dayOfWeek = DateTimeConverter.getDayOfWeek(stringOfDate)!
         
         self.dateLabel.text = dayOfWeek + "   \(selectedDate.day)/\(selectedDate.month)/\(selectedDate.year)"
         
@@ -84,67 +84,39 @@ class SalonScheduleViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
-    func convertTimeToString(time : String) -> String
+    
+    func availableBookingExistInDate(date: CVDate!) -> Bool
     {
-        let timeString : String
+        let stringOfDate : String = String(format: "%i-%02i-%02i", arguments: [date.year, date.month, date.day]) // writing the date in YYYY-MM-DD format (ex: 2015-11-06 )
         
-        var hour : String = time[time.startIndex.advancedBy(0) ... time.startIndex.advancedBy(1)]
-        let minute : String = time[time.startIndex.advancedBy(3) ... time.startIndex.advancedBy(4)]
-        
-        
-        if (Int(hour) >= 12)
+        if let _ = self.json
         {
-            hour = String( Int(hour)! - 12 )
-            
-            timeString = hour + ":" + minute + "pm"
+            for schedule in self.json!["schedule"].array! where schedule["date"].string! == stringOfDate
+            {
+                for time in schedule["time"].array! where time["is_busy"].bool! == false
+                {
+                    return true
+                }
+            }
         }
-        else
-        {
-            hour = String(Int(hour)!)
-            
-            timeString = hour + ":" + minute + "am"
-        }
-
         
-        return timeString
+        return false
     }
     
     
-    func getDayOfWeek(today:String)-> String?
+    func isDateAvailable(date: CVDate!) -> Bool
     {
-        let formatter  = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        let stringOfDate : String = String(format: "%i-%02i-%02i", arguments: [date.year, date.month, date.day]) // writing the date in YYYY-MM-DD format (ex: 2015-11-06 )
         
-        if let todayDate = formatter.dateFromString(today)
+        if let _ = self.json
         {
-            let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let myComponents = myCalendar.components(.Weekday, fromDate: todayDate)
-            let weekDay = myComponents.weekday
-            
-            switch weekDay
+            for schedule in self.json!["schedule"].array! where schedule["date"].string! == stringOfDate
             {
-            case 1:
-                return "Sunday"
-            case 2 :
-                return "Monday"
-            case 3:
-                return "Tuesday"
-            case 4 :
-                return "Wednesday"
-            case 5:
-                return "Thursday"
-            case 6 :
-                return "Friday"
-            case 7:
-                return "Saturday"
-            default:
-                return "OUT OF INDEX!"
+                return true
             }
         }
-        else
-        {
-            return nil
-        }
+        
+        return false
     }
 }
 
@@ -169,22 +141,24 @@ extension SalonScheduleViewController
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SalonScheduleTableViewCell
         
         
-        cell.startTimeLabel.text = self.convertTimeToString(self.jsonOfSelectedDate!["time", indexPath.row, "start"].string!)
-        cell.endTimeLabel.text   = self.convertTimeToString(self.jsonOfSelectedDate!["time", indexPath.row, "end"].string!)
+        cell.startTimeLabel.text = DateTimeConverter.convertTimeToString(self.jsonOfSelectedDate!["time", indexPath.row, "start"].string!)
+        cell.endTimeLabel.text   = DateTimeConverter.convertTimeToString(self.jsonOfSelectedDate!["time", indexPath.row, "end"].string!)
+        cell.isBooked            = self.jsonOfSelectedDate!["time", indexPath.row, "is_busy"].bool!
         
+        print(cell.isBooked)
         
-        if self.jsonOfSelectedDate!["time", indexPath.row, "is_busy"].bool!
+        if cell.isBooked
         {
             cell.selectionStyle = .None // to disable highlighting when the user uses
         }
         else
         {
             cell.selectionStyle = .Gray
+            
+            let accessoryView = UIImageView(image: UIImage(named: "arrow"))
+            cell.accessoryView = accessoryView
         }
-        
-        
-        let accessoryView = UIImageView(image: UIImage(named: "arrow"))
-        cell.accessoryView = accessoryView
+
         
         let selectedBackgroundView = UIView(frame: cell.frame)
         selectedBackgroundView.backgroundColor = UIColor(red: 50.0/255, green: 50.0/255, blue: 50.0/255, alpha: 0.2)

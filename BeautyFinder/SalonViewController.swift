@@ -30,7 +30,6 @@ class SalonViewController: UIViewController {
     @IBOutlet weak var salonAddressLabel: UILabel!
 
     
-    let website = "https://aqueous-dawn-8486.herokuapp.com/"
     
     var salonJson : JSON?
     
@@ -67,14 +66,15 @@ class SalonViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        self.logoImageView.kf_setImageWithURL(NSURL(string: self.website + self.salonJson!["logo"].string!)!, placeholderImage: UIImage(named: "Icon-76"))
+        self.logoImageView.kf_setImageWithURL(NSURL(string: k_website + self.salonJson!["logo"].string!)!, placeholderImage: UIImage(named: "Icon-76"))
         self.logoImageView.layer.cornerRadius = logoImageView.frame.width/2
         self.logoImageView.clipsToBounds = true
         
         self.salonNameLabel.text = self.salonJson!["name"].string!
+        self.salonAddressLabel.text = self.salonJson!["area"].string! + ", " + self.salonJson!["address"].string!
         
-        self.calendarContainerView.layer.cornerRadius = 20
-        self.calendarContainerView.layer.masksToBounds = true
+//        self.calendarContainerView.layer.cornerRadius = 20
+//        self.calendarContainerView.layer.masksToBounds = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -123,7 +123,8 @@ class SalonViewController: UIViewController {
             let summaryViewController = segue.destinationViewController as! SummaryViewController
             
             summaryViewController.salonName        = self.salonNameLabel.text!
-            summaryViewController.salonImageUrl    = self.website + self.salonJson!["logo"].string!
+            summaryViewController.salonImageUrl    = k_website + self.salonJson!["logo"].string!
+            summaryViewController.salonAddress     = self.salonAddressLabel.text!
             
             summaryViewController.subcategoryName  = self.subcategoryName
             summaryViewController.subcategoryPK    = self.subcategoryPK

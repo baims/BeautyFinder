@@ -26,7 +26,7 @@ extension SubcategoriesViewController : UINavigationControllerDelegate
             
             let cell = collectionView.cellForItemAtIndexPath(self.indexPathForSelectedItem!) as! CategoriesCollectionViewCell
             animator.originFrame = cell.imageView.superview?.superview?.convertRect(cell.imageView.frame, toView: nil)
-            animator.imageViewPath = self.website + self.json![indexPathForSelectedItem!.item, "logo"].string!
+            animator.imageViewPath = k_website + self.json![indexPathForSelectedItem!.item, "logo"].string!
         }
         else if operation == .Pop
         {

@@ -10,11 +10,12 @@ import UIKit
 import CVCalendar
 
 class CalendarViewController: UIViewController {
-
+    
     @IBOutlet weak var calendarMenuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var superOfBlurView: UIView!
+    @IBOutlet weak var monthLabel: UILabel!
     
     var didShowNewMonth = false
     
@@ -36,6 +37,17 @@ class CalendarViewController: UIViewController {
         
         superOfBlurView.layer.cornerRadius = 15
         superOfBlurView.clipsToBounds = true
+        
+        monthLabel.text = selectedDate.globalDescription
+    }
+    
+    func startRefresh()
+    {
+        for weekV in calendarView.contentController.presentedMonthView.weekViews {
+            for dayView in weekV.dayViews {
+                dayView.setupDotMarker()
+            }
+        }
     }
     
 
@@ -86,7 +98,7 @@ extension CalendarViewController : CVCalendarViewDelegate, CVCalendarMenuViewDel
         print(dayView.weekdayIndex)
 
         self.selectedDate = dayView.date
-        
+        self.monthLabel.text = self.selectedDate.globalDescription
         
         let parentViewController = self.parentViewController as! SalonViewController
         parentViewController.newDateIsSelected(self.selectedDate)
@@ -147,35 +159,40 @@ extension CalendarViewController : CVCalendarViewDelegate, CVCalendarMenuViewDel
         return true
     }
     
-    func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
-//        let day = dayView.date.day
-//        let randomDay = Int(arc4random_uniform(31))
-//        if day == randomDay {
-//            return true
-//        }
-        
-        
-        
-        return false
+    func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool
+    {
+        if let parentViewController = self.parentViewController as? SalonViewController
+        {
+            if parentViewController.checkIfDateIsAvailable(dayView.date) == true
+            {
+                return true
+            }
+            else
+            {
+                return false
+            }
+        }
+        else
+        {
+            return false
+        }
     }
     
     func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
-        //let day = dayView.date.day
-        
-        let red = CGFloat(arc4random_uniform(600) / 255)
-        let green = CGFloat(arc4random_uniform(600) / 255)
-        let blue = CGFloat(arc4random_uniform(600) / 255)
-        
-        let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
-        
-        let numberOfDots = Int(arc4random_uniform(3) + 1)
-        switch(numberOfDots) {
-        case 2:
-            return [color, color]
-        case 3:
-            return [color, color, color]
-        default:
-            return [color] // return 1 dot
+        if let parentViewController = self.parentViewController as? SalonViewController
+        {
+            if parentViewController.checkIfAvailableBookingExistInDate(dayView.date) == true
+            {
+                return [UIColor(red: 0, green: 175.0/255.0, blue: 0, alpha: 1.0)]
+            }
+            else
+            {
+                return [UIColor(red: 1.0, green: 0, blue: 52.0/255.0, alpha: 1.0)]
+            }
+        }
+        else
+        {
+            return [UIColor.redColor()]
         }
     }
     
@@ -184,7 +201,7 @@ extension CalendarViewController : CVCalendarViewDelegate, CVCalendarMenuViewDel
     }
     
     func dotMarker(sizeOnDayView dayView: DayView) -> CGFloat {
-        return 13
+        return 14
     }
     
     
@@ -268,6 +285,7 @@ extension CalendarViewController : CVCalendarViewAppearanceDelegate {
     }
     
     
+    
     func dayLabelWeekdayInTextColor() -> UIColor {
         return UIColor(red: 208.0/255.0, green: 40.0/255.0, blue: 102.0/255.0, alpha: 1)
     }
@@ -276,11 +294,13 @@ extension CalendarViewController : CVCalendarViewAppearanceDelegate {
         return UIColor.whiteColor()
     }
     
-    func dayLabelPresentWeekdaySelectedBackgroundColor() -> UIColor {
+    func dayLabelWeekdaySelectedBackgroundColor() -> UIColor {
         return UIColor(red: 208.0/255.0, green: 40.0/255.0, blue: 102.0/255.0, alpha: 1)
     }
     
-    func dayLabelWeekdaySelectedBackgroundColor() -> UIColor {
+    
+    
+    func dayLabelPresentWeekdaySelectedBackgroundColor() -> UIColor {
         return UIColor(red: 208.0/255.0, green: 40.0/255.0, blue: 102.0/255.0, alpha: 1)
     }
     
@@ -288,9 +308,17 @@ extension CalendarViewController : CVCalendarViewAppearanceDelegate {
         return UIColor.whiteColor()
     }
     
-    func dayLabelPresentWeekdayFont() -> UIFont {
-        return UIFont.systemFontOfSize(18)
+    func dayLabelPresentWeekdayTextColor() -> UIColor
+    {
+        return UIColor(red: 208.0/255.0, green: 40.0/255.0, blue: 102.0/255.0, alpha: 1)
     }
+    
+    func dayLabelPresentWeekdayFont() -> UIFont {
+        return UIFont.systemFontOfSize(19)
+    }
+    
+    
+    
     
     func spaceBetweenWeekViews() -> CGFloat {
         return -1
@@ -391,5 +419,15 @@ extension SalonViewController
     func newDateIsSelected(date : CVDate!)
     {
         self.scheduleContainerViewController.startRefresh(date)
+    }
+    
+    func checkIfAvailableBookingExistInDate(date: CVDate!) -> Bool
+    {
+        return self.scheduleContainerViewController.availableBookingExistInDate(date)
+    }
+    
+    func checkIfDateIsAvailable(date: CVDate!) -> Bool
+    {
+        return self.scheduleContainerViewController.isDateAvailable(date)
     }
 }

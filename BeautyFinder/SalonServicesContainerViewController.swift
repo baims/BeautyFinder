@@ -12,7 +12,6 @@ class SalonServicesContainerViewController: UIViewController, UITableViewDelegat
     
     @IBOutlet weak var tableView: UITableView!
     
-    let website = "https://aqueous-dawn-8486.herokuapp.com/"
     
     var json : JSON?
     
@@ -62,13 +61,14 @@ extension SalonServicesContainerViewController
         return json["categories", section, "subcategories"].count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SalonServicesTableViewCell
         
         cell.categoryNameLabel.text = self.json!["categories", indexPath.section, "name"].string! + " " + self.json!["categories", indexPath.section, "subcategories", indexPath.item, "name"].string!
         cell.categoryPriceLabel.text = String(format: "%.3f", arguments: [self.json!["categories", indexPath.section, "subcategories", indexPath.item, "price"].double!]) + " KD"
         
-        cell.categoryImageView.kf_setImageWithURL(NSURL(string: self.website + self.json!["categories", indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-76"))
+        cell.categoryImageView.kf_setImageWithURL(NSURL(string: k_website + self.json!["categories", indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-76"))
         
         
         cell.categoryImageView.layer.cornerRadius = cell.categoryImageView.frame.size.width/2
@@ -90,7 +90,8 @@ extension SalonServicesContainerViewController
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         self.indexPathForSelectedRow = indexPath

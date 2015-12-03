@@ -55,7 +55,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        Alamofire.request(.POST, "https://aqueous-dawn-8486.herokuapp.com/login/", parameters: ["username" : self.emailTextField.text!, "password" : self.passwordTextField.text!]).validate().responseJSON
+        Alamofire.request(.POST, k_website + "login/", parameters: ["username" : self.emailTextField.text!, "password" : self.passwordTextField.text!]).validate().responseJSON
             { (response) -> Void in
             
                 if let Json = response.result.value {

@@ -16,7 +16,6 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     
     let refreshControl = UIRefreshControl()
     
-    let website = "https://aqueous-dawn-8486.herokuapp.com/"
     var searchIsHidden = true
     var json : JSON?
     
@@ -80,7 +79,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     func startRefresh()
     {
         //UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        Alamofire.request(.GET, "https://aqueous-dawn-8486.herokuapp.com/homepage/").responseJSON { (response) -> Void in
+        
+        Alamofire.request(.GET, k_website + "homepage/").responseJSON { (response) -> Void in
             
             if let Json = response.result.value {
                 self.json = JSON(Json)
@@ -123,7 +123,7 @@ extension CategoriesViewController
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
         cell.title.text = self.json![indexPath.section, "subcategories", indexPath.item, "name"].string!
-        cell.imageView.kf_setImageWithURL(NSURL(string: self.website + self.json![indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
+        cell.imageView.kf_setImageWithURL(NSURL(string: k_website + self.json![indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true

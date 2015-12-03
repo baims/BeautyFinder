@@ -9,6 +9,8 @@
 
 import UIKit
 
+let k_website = "http://beautyfinders.com/"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -43,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*****
         THIS MUST BE REMOVED IN THE FINAL RELEASE
         ********/
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
+        //NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
         
         return true
     }
