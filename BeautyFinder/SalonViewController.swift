@@ -165,6 +165,16 @@ class SalonViewController: UIViewController {
         }
     }
     
+    @IBAction func openLocationInMaps(sender: UIButton)
+    {
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
+            UIApplication.sharedApplication().openURL(NSURL(string:
+                "comgooglemaps://?daddr=\(self.salonJson!["latitude"].double!),\(self.salonJson!["longitude"].double!)&zoom=14")!)
+        } else {
+            print("Can't use comgooglemaps://");
+        }
+    }
+    
     // hiding & showing containerViews with animation
     func animateHiding(firstContainerView : UIView!, andShowing secondContainerView: UIView!)
     {

@@ -21,6 +21,8 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var dateOfBookingLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var totalPriceView: UIView!
     
     var salonName : String!
     var salonImageUrl : String!
@@ -47,9 +49,12 @@ class SummaryViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         salonNameLabel.text      = salonName
-        beauticianNameLabel.text = beauticianName
-        subcatgoryNameLabel.text = subcategoryName
         salonAddressLabel.text   = salonAddress
+        
+        beauticianNameLabel.text = beauticianName
+        
+        subcatgoryNameLabel.text = subcategoryName
+        totalPriceLabel.text = "\(subcategoryPrice) KD"//String(format: "%.3f", arguments: [subcategoryPrice]) + " KD"
         
         dateOfBookingLabel.text = dateOfBooking
         startTimeLabel.text     = DateTimeConverter.convertTimeToString(startTime)
@@ -74,6 +79,9 @@ class SummaryViewController: UIViewController {
         self.beauticianImageView.clipsToBounds = true
         self.beauticianImageView.layer.borderWidth = 0.5
         self.beauticianImageView.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
+        
+        
+        totalPriceLabel.sizeToFit()
     }
     
     override func viewWillAppear(animated: Bool)

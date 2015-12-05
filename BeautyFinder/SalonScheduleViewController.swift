@@ -150,6 +150,8 @@ extension SalonScheduleViewController
         if cell.isBooked
         {
             cell.selectionStyle = .None // to disable highlighting when the user uses
+            
+            cell.accessoryView = nil
         }
         else
         {
