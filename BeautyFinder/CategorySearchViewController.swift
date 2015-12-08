@@ -1,21 +1,21 @@
 //
-//  AreaSearchViewController.swift
+//  CategorySearchViewController.swift
 //  BeautyFinder
 //
-//  Created by Bader Alrshaid on 9/18/15.
+//  Created by Bader Alrshaid on 12/8/15.
 //  Copyright © 2015 Yousef Alhusaini. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 
-class AreaSearchViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class CategorySearchViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var searchJson : JSON?
-    
     var indexPathForSelectedItem : NSIndexPath?
+    
+    var searchJson : JSON?
+    var searchText : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +28,15 @@ class AreaSearchViewController: UIViewController, UICollectionViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
     
+    
     func refresh(text : String)
     {
-        guard !text.isEmpty else
+        searchText = text
+        
+        var array = [JSON]()
+        
+        guard text.isEmpty == false else
         {
-            //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
-            
             searchJson = nil
             
             collectionView.reloadData()
@@ -41,24 +44,30 @@ class AreaSearchViewController: UIViewController, UICollectionViewDataSource, UI
             return
         }
         
-        //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        Alamofire.request(.GET, k_website + "area/\(text)").responseJSON { (response) -> Void in
-            
-            if let Json = response.result.value {
-                self.searchJson = JSON(Json)
-
-                self.collectionView.reloadData()
-            }
-            else if let error = response.result.error
+        if let json = categoriesJson
+        {
+            for category in json.array!
             {
-                print(error)
+                if category["name"].string!.lowercaseString.rangeOfString(text.lowercaseString) != nil
+                {
+                    array.append(category)
+                }
+                else
+                {
+                    for subcategory in category["subcategories"].array! where subcategory["name"].string!.lowercaseString.rangeOfString(text.lowercaseString) != nil
+                    {
+                        array.append(category)
+                        break
+                    }
+                }
             }
-            
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
+        
+        searchJson = JSON(array)
+        print(searchJson)
+        
+        collectionView.reloadData()
     }
 
     /*
@@ -70,14 +79,13 @@ class AreaSearchViewController: UIViewController, UICollectionViewDataSource, UI
         // Pass the selected object to the new view controller.
     }
     */
+
 }
 
-// MARK: CollectionView
-extension AreaSearchViewController
+extension CategorySearchViewController : UICollectionViewDelegate, UICollectionViewDataSource
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        guard let json = searchJson else
-        {
+        guard let json = searchJson else {
             return 0
         }
         
@@ -85,19 +93,18 @@ extension AreaSearchViewController
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let json = searchJson else
-        {
+        guard let json = searchJson else {
             return 0
         }
-        
-        return json[section, "salons"].count
+        return json[section, "subcategories"].count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
+
         
-        cell.title.text = searchJson![indexPath.section, "salons", indexPath.item, "name"].string!;
-        cell.imageView.kf_setImageWithURL(NSURL(string: k_website + searchJson![indexPath.section, "salons", indexPath.item, "logo"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
+        cell.title.text = searchJson![indexPath.section, "subcategories", indexPath.item, "name"].string!
+        cell.imageView.kf_setImageWithURL(NSURL(string: k_website + searchJson![indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
@@ -115,6 +122,7 @@ extension AreaSearchViewController
         cell.selectedBackgroundView = selectedView
         cell.bringSubviewToFront(cell.selectedBackgroundView!)
         
+        
         return cell
     }
     
@@ -125,7 +133,7 @@ extension AreaSearchViewController
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "header", forIndexPath: indexPath) as! CategoriesHeaderCollectionReusableView
             
-            headerView.title.text = searchJson![indexPath.section, "name"].string!
+            headerView.title.text = searchJson![indexPath.section, "name"].string?.uppercaseString
             
             return headerView
             
@@ -136,20 +144,35 @@ extension AreaSearchViewController
     
     func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
     {
-        indexPathForSelectedItem = indexPath
+        self.indexPathForSelectedItem = indexPath
+        
+        let primaryKey = categoriesJson![self.indexPathForSelectedItem!.section, "subcategories", self.indexPathForSelectedItem!.item, "pk"].int!
+        
+        
+        /*** Getting category/subcategory names from self.json and capitlize the first letter of each word ***/
+        var categoryName = searchJson![self.indexPathForSelectedItem!.section, "name"].string!
+        categoryName = categoryName.lowercaseString
+        categoryName.replaceRange(categoryName.startIndex ... categoryName.startIndex, with: String(categoryName[categoryName.startIndex]).capitalizedString)
+        
+        var subcategoryName = searchJson![self.indexPathForSelectedItem!.section, "subcategories", self.indexPathForSelectedItem!.item, "name"].string!
+        subcategoryName = subcategoryName.lowercaseString
+        subcategoryName.replaceRange(subcategoryName.startIndex ... subcategoryName.startIndex, with: String(subcategoryName[subcategoryName.startIndex]).capitalizedString)
+        
+        let titleString      = categoryName + " " + subcategoryName
+        
         
         let parentViewController = self.parentViewController as! SearchViewController
-        parentViewController.salonIsChosenWithJson(searchJson![indexPath.section, "salons", indexPath.item])
+        parentViewController.categoryIsChosenWithPrimaryKey(primaryKey, title: titleString)
         
         return true
     }
 }
 
+
 extension SearchViewController
 {
-    func salonIsChosenWithJson(json : JSON)
-    {
-        self.salonJson = json
-        performSegueWithIdentifier("Salon", sender: nil)
+    func categoryIsChosenWithPrimaryKey(pk : Int, title : String)
+    {        
+        self.performSegueWithIdentifier("Category", sender: ["pk" : pk, "title" : title])
     }
 }

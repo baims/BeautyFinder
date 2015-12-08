@@ -17,7 +17,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     let refreshControl = UIRefreshControl()
     
     var searchIsHidden = true
-    var json : JSON?
+    //var json : JSON?
     
     var indexPathForSelectedItem : NSIndexPath?
     
@@ -58,15 +58,15 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         if segue.identifier == "Category"
         {
             let vc = segue.destinationViewController as! SubcategoriesViewController
-            vc.primaryKey = self.json![self.indexPathForSelectedItem!.section, "subcategories", self.indexPathForSelectedItem!.item, "pk"].int!
+            vc.primaryKey = categoriesJson![self.indexPathForSelectedItem!.section, "subcategories", self.indexPathForSelectedItem!.item, "pk"].int!
             
             
             /*** Getting category/subcategory names from self.json and capitlize the first letter of each word ***/
-            var categoryName = self.json![self.indexPathForSelectedItem!.section, "name"].string!
+            var categoryName = categoriesJson![self.indexPathForSelectedItem!.section, "name"].string!
             categoryName = categoryName.lowercaseString
             categoryName.replaceRange(categoryName.startIndex ... categoryName.startIndex, with: String(categoryName[categoryName.startIndex]).capitalizedString)
             
-            var subcategoryName = self.json![self.indexPathForSelectedItem!.section, "subcategories", self.indexPathForSelectedItem!.item, "name"].string!
+            var subcategoryName = categoriesJson![self.indexPathForSelectedItem!.section, "subcategories", self.indexPathForSelectedItem!.item, "name"].string!
             subcategoryName = subcategoryName.lowercaseString
             subcategoryName.replaceRange(subcategoryName.startIndex ... subcategoryName.startIndex, with: String(subcategoryName[subcategoryName.startIndex]).capitalizedString)
             
@@ -83,7 +83,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         Alamofire.request(.GET, k_website + "homepage/").responseJSON { (response) -> Void in
             
             if let Json = response.result.value {
-                self.json = JSON(Json)
+                categoriesJson = JSON(Json)
                 
                 self.refreshControl.endRefreshing()
                 
@@ -105,7 +105,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
 extension CategoriesViewController
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        guard let json = json else {
+        guard let json = categoriesJson else {
             return 0
         }
         
@@ -113,7 +113,7 @@ extension CategoriesViewController
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let json = json else {
+        guard let json = categoriesJson else {
             return 0
         }
         return json[section, "subcategories"].count
@@ -122,8 +122,8 @@ extension CategoriesViewController
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
-        cell.title.text = self.json![indexPath.section, "subcategories", indexPath.item, "name"].string!
-        cell.imageView.kf_setImageWithURL(NSURL(string: k_website + self.json![indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
+        cell.title.text = categoriesJson![indexPath.section, "subcategories", indexPath.item, "name"].string!
+        cell.imageView.kf_setImageWithURL(NSURL(string: k_website + categoriesJson![indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
@@ -152,7 +152,7 @@ extension CategoriesViewController
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "header", forIndexPath: indexPath) as! CategoriesHeaderCollectionReusableView
             
-            headerView.title.text = self.json![indexPath.section, "name"].string?.uppercaseString
+            headerView.title.text = categoriesJson![indexPath.section, "name"].string?.uppercaseString
             
             return headerView
             

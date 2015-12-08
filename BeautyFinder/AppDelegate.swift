@@ -11,11 +11,13 @@ import UIKit
 
 let k_website = "http://beautyfinders.com/"
 
+var categoriesJson : JSON?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -45,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*****
         THIS MUST BE REMOVED IN THE FINAL RELEASE
         ********/
-        //NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
         
         return true
     }

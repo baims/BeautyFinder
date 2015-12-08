@@ -12,6 +12,7 @@ class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UIC
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var indexPathForSelectedItem : NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
