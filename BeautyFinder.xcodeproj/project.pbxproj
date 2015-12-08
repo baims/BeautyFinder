@@ -36,7 +36,6 @@
 		CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008C91B8C1B160094F10E /* AppDelegate.swift */; };
 		CAA008CF1B8C1B160094F10E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA008CD1B8C1B160094F10E /* Main.storyboard */; };
 		CAA008D11B8C1B160094F10E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA008D01B8C1B160094F10E /* Images.xcassets */; };
-		CAA008D41B8C1B160094F10E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA008D21B8C1B160094F10E /* LaunchScreen.xib */; };
 		CAA008E01B8C1B160094F10E /* BeautyFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008DF1B8C1B160094F10E /* BeautyFinderTests.swift */; };
 		CAA008F41B8C1CB90094F10E /* MuseoSans_500_Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008EA1B8C1CB90094F10E /* MuseoSans_500_Italic.otf */; };
 		CAA008F51B8C1CB90094F10E /* MuseoSans_500.otf in Resources */ = {isa = PBXBuildFile; fileRef = CAA008EB1B8C1CB90094F10E /* MuseoSans_500.otf */; };
@@ -116,7 +115,6 @@
 		CAA008C91B8C1B160094F10E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAA008CE1B8C1B160094F10E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAA008D01B8C1B160094F10E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CAA008D31B8C1B160094F10E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CAA008D91B8C1B160094F10E /* BeautyFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA008DE1B8C1B160094F10E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAA008DF1B8C1B160094F10E /* BeautyFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyFinderTests.swift; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 				9FFF96D11C174D4B004B8F48 /* Modal */,
 				CAA008CD1B8C1B160094F10E /* Main.storyboard */,
 				CAA008D01B8C1B160094F10E /* Images.xcassets */,
-				CAA008D21B8C1B160094F10E /* LaunchScreen.xib */,
 				CAA008C71B8C1B150094F10E /* Supporting Files */,
 			);
 			path = BeautyFinder;
@@ -443,7 +440,6 @@
 				CAA008F81B8C1CB90094F10E /* MuseoSans-100.otf in Resources */,
 				CAA008F91B8C1CB90094F10E /* MuseoSans-100Italic.otf in Resources */,
 				CAA008FD1B8C1CB90094F10E /* MuseoSans-900Italic.otf in Resources */,
-				CAA008D41B8C1B160094F10E /* LaunchScreen.xib in Resources */,
 				CAA008F41B8C1CB90094F10E /* MuseoSans_500_Italic.otf in Resources */,
 				CAA008FA1B8C1CB90094F10E /* MuseoSans-300.otf in Resources */,
 				CAA008D11B8C1B160094F10E /* Images.xcassets in Resources */,
@@ -570,14 +566,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		CAA008D21B8C1B160094F10E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CAA008D31B8C1B160094F10E /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -668,6 +656,7 @@
 			baseConfigurationReference = E9008E37EB0A90C44665CFCD /* Pods-BeautyFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -686,6 +675,7 @@
 			baseConfigurationReference = 7E1C07455FAF7F95E27DC511 /* Pods-BeautyFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
