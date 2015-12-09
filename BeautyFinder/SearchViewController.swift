@@ -137,7 +137,7 @@ extension SearchViewController
     {
         if segmentedControl.selectedIndex == 0
         {
-            
+            self.salonSearchViewController.refresh(searchField.text!)
         }
         else if segmentedControl.selectedIndex == 1
         {
@@ -199,9 +199,18 @@ extension SearchViewController : UINavigationControllerDelegate
         {
             animator.presenting = true
             
-            let cell = areaSearchViewController.collectionView.cellForItemAtIndexPath(areaSearchViewController.indexPathForSelectedItem!) as! CategoriesCollectionViewCell
-            animator.originFrame = cell.imageView.superview?.superview?.convertRect(cell.imageView.frame, toView: nil)
-            animator.imageViewPath = k_website + areaSearchViewController.searchJson![areaSearchViewController.indexPathForSelectedItem!.section, "salons", areaSearchViewController.indexPathForSelectedItem!.item, "logo"].string!
+            if segmentedControl.selectedIndex == 0 // salon search
+            {
+                let cell = salonSearchViewController.collectionView.cellForItemAtIndexPath(salonSearchViewController.indexPathForSelectedItem!) as! CategoriesCollectionViewCell
+                animator.originFrame = cell.imageView.superview?.superview?.convertRect(cell.imageView.frame, toView: nil)
+                animator.imageViewPath = k_website + salonSearchViewController.searchJson![salonSearchViewController.indexPathForSelectedItem!.item, "logo"].string!
+            }
+            else if segmentedControl.selectedIndex == 1 // area search
+            {
+                let cell = areaSearchViewController.collectionView.cellForItemAtIndexPath(areaSearchViewController.indexPathForSelectedItem!) as! CategoriesCollectionViewCell
+                animator.originFrame = cell.imageView.superview?.superview?.convertRect(cell.imageView.frame, toView: nil)
+                animator.imageViewPath = k_website + areaSearchViewController.searchJson![areaSearchViewController.indexPathForSelectedItem!.section, "salons", areaSearchViewController.indexPathForSelectedItem!.item, "logo"].string!
+            }
         }
         else if operation == .Pop
         {

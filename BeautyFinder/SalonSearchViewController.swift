@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Alamofire
 
 class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var indexPathForSelectedItem : NSIndexPath?
+    
+    var searchJson : JSON?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,39 @@ class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UIC
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func refresh(text : String)
+    {
+        guard !text.isEmpty else
+        {
+            //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
+            
+            searchJson = nil
+            
+            collectionView.reloadData()
+            
+            return
+        }
+        
+        //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        Alamofire.request(.GET, k_website + "salon/\(text)").responseJSON { (response) -> Void in
+            
+            if let Json = response.result.value {
+                self.searchJson = JSON(Json)
+                
+                self.collectionView.reloadData()
+            }
+            else if let error = response.result.error
+            {
+                print(error)
+            }
+            
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -47,44 +84,48 @@ extension SalonSearchViewController
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        guard let json = searchJson else
+        {
+            return 0
+        }
+        
+        return json.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
-        cell.title.text      = "salonName"
-        cell.imageView.image = UIImage(named: "header_3")
+        cell.title.text = searchJson![indexPath.item, "name"].string!;
+        cell.imageView.kf_setImageWithURL(NSURL(string: k_website + searchJson![indexPath.item, "logo"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
         cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
         cell.imageView.layer.masksToBounds = true
+        cell.imageView.layer.borderWidth = 0.5
+        cell.imageView.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
+        
+        let selectedView = UIView()
+        let circledView  = UIView(frame: cell.imageView.frame)
+        circledView.backgroundColor     = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        circledView.layer.cornerRadius  = cell.imageView.layer.cornerRadius
+        circledView.layer.masksToBounds = true
+        
+        selectedView.addSubview(circledView)
+        
+        cell.selectedBackgroundView = selectedView
+        cell.bringSubviewToFront(cell.selectedBackgroundView!)
         
 
         return cell
     }
     
     
-    
-    /*func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView
+    func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
     {
-        switch kind
-        {
-        case UICollectionElementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "header", forIndexPath: indexPath) as! CategoriesHeaderCollectionReusableView
-            
-            switch indexPath.section
-            {
-            case 0:
-                headerView.title.text = "AREA 1"
-            default:
-                headerView.title.text = "AREA 2"
-            }
-            
-            return headerView
-            
-        default:
-            return UICollectionReusableView()
-        }
-    }*/
-
+        indexPathForSelectedItem = indexPath
+        
+        let parentViewController = self.parentViewController as! SearchViewController
+        parentViewController.salonIsChosenWithJson(searchJson![indexPath.item])
+        
+        return true
+    }
 }
