@@ -115,16 +115,20 @@ extension SubcategoriesViewController
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
+        
         cell.title.text = json![indexPath.item, "name"].string!;
         cell.imageView.kf_setImageWithURL(NSURL(string: k_website + self.json![indexPath.item, "logo"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
-        cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2
+        cell.imageView.layer.cornerRadius = (cell.frame.size.width-22)/2
         cell.imageView.layer.masksToBounds = true
         cell.imageView.layer.borderWidth = 0.5
         cell.imageView.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
         
         let selectedView = UIView()
-        let circledView  = UIView(frame: cell.imageView.frame)
+        let circledView  = UIView(frame: CGRectZero)
+        circledView.frame.size = CGSizeMake(cell.frame.size.width-22, cell.frame.size.width-22)
+        circledView.center.x = cell.frame.width/2
+        circledView.frame.origin.y = 0
         circledView.backgroundColor     = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         circledView.layer.cornerRadius  = cell.imageView.layer.cornerRadius
         circledView.layer.masksToBounds = true

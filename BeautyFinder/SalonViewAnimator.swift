@@ -67,7 +67,7 @@ class SalonViewAnimator: NSObject, UIViewControllerAnimatedTransitioning
             {
                 if self.presenting
                 {
-                    imageView.frame = CGRectMake(257, 44, 86, 86)
+                    imageView.frame = CGRectMake(containerView.frame.width/2-(86/2), 44, 86, 86)
                 }
                 else
                 {
