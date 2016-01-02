@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class SubcategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate {
+class SubcategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout {
     
     var primaryKey : Int!
     
@@ -143,5 +143,9 @@ extension SubcategoriesViewController
         
         
         return true
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return self.view.frame.width > 320 ? CGSizeMake(108, 110) : CGSizeMake(92, 94)
     }
 }

@@ -8,20 +8,27 @@
 
 import UIKit
 import Alamofire
+import IQKeyboardManagerSwift
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UIViewController, UITextFieldDelegate
+{
+    var viewIsLoaded = false
     
     
+    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
 
+    @IBOutlet weak var logoTopLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textFieldYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var signUpButtonYConstraint: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,26 +36,63 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
     override func viewDidLayoutSubviews()
     {
-        nameTextField.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
-        phoneTextField.attributedPlaceholder = NSAttributedString(string: "Phone Number", attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
+        if !viewIsLoaded
+        {
+            viewIsLoaded = true
+            
+            nameTextField.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSForegroundColorAttributeName : UIColor(white: 1.0, alpha: 0.4)])
+            phoneTextField.attributedPlaceholder = NSAttributedString(string: "Phone Number", attributes: [NSForegroundColorAttributeName : UIColor(white: 1.0, alpha: 0.4)])
+            emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName : UIColor(white: 1.0, alpha: 0.4)])
+            passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName : UIColor(white: 1.0, alpha: 0.4)])
+            
+            
+            
+            /*** Changing the placement of the textFields/Buttons depending on the device ***/
+            switch self.view.frame.height
+            {
+            case 480: // iPhone 4/4s
+                textFieldYConstraint.constant = 120
+                logoTopLayoutConstraint.active = false
+                let constraint = NSLayoutConstraint(item: logoImageView, attribute: .Bottom, relatedBy: .Equal, toItem: nameTextField, attribute: .Top, multiplier: 1, constant: -50)
+                self.view.addConstraint(constraint)
+                
+            case 568: // iPhone 5/5s/5c
+                textFieldYConstraint.constant = 150
+                signUpButtonYConstraint.constant = 46
+                
+            case 667: // iPhone 6/6s
+                textFieldYConstraint.constant = 91
+                signUpButtonYConstraint.constant = 274
+                
+            case 736: // iPhone 6/6s
+                textFieldYConstraint.constant = 115
+                signUpButtonYConstraint.constant = 300
+                
+            default:
+                textFieldYConstraint.constant = 91
+                signUpButtonYConstraint.constant = 274
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        /*** Showing the keyboard on iphone 6/6+ immediately after showing the VC ***/
+        switch self.view.frame.height
+        {
+        case 667: // iPhone 6/6s
+            self.nameTextField.becomeFirstResponder()
+        case 736:
+            self.nameTextField.becomeFirstResponder()
+        default:
+            break
+        }
+    }
+
     
     @IBAction func backButtonTapped(sender: UIButton)
     {
@@ -144,5 +188,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    
+    
+    /*** Gesture Recognizers ***/
+    @IBAction func dismissKeyboard(sender: AnyObject)
+    {
+        if self.view.frame.height != 667 && self.view.frame.height != 736
+        {
+            self.nameTextField.resignFirstResponder()
+            self.phoneTextField.resignFirstResponder()
+            self.emailTextField.resignFirstResponder()
+            self.passwordTextField.resignFirstResponder()
+        }
     }
 }

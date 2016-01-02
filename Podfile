@@ -6,6 +6,7 @@ target 'BeautyFinder' do
 pod 'Alamofire', '~> 3.0'
 pod 'Kingfisher', '~> 1.7'
 pod 'CVCalendar', '~> 1.2.7'
+pod 'IQKeyboardManagerSwift'
 end
 
 target 'BeautyFinderTests' do

@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Kingfisher
 
-class CategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class CategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -24,7 +24,6 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.refreshControl.addTarget(self, action: "startRefresh", forControlEvents: .ValueChanged)
         collectionView?.addSubview(self.refreshControl)
@@ -167,5 +166,9 @@ extension CategoriesViewController
         
         
         return true
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return self.view.frame.width > 320 ? CGSizeMake(108, 110) : CGSizeMake(92, 94)
     }
 }

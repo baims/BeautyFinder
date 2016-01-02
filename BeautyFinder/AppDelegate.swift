@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 let k_website = "http://beautyfinders.com/"
 
@@ -19,23 +20,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        //navigation bar customization
         
+        /*** Sliding up textFields when the keyboard pops-up ***/
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 30
+        //IQKeyboardManager.sharedManager().disableToolbarInViewControllerClass(SearchViewController)
+        
+        //navigation bar customization
         UINavigationBar.appearance().barTintColor = UIColor(red: 211.0/255.0, green: 68.0/255.0, blue:
             124.0/255.0, alpha: 0.3)
-        //navigation bar customization & nav bar image bg
         
+        //navigation bar customization & nav bar image bg
          UINavigationBar.appearance().setBackgroundImage(UIImage(named: "header_2")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch), forBarMetrics: .Default)
 
 
         //UINavigationBar.appearance().barTintColor = UIColor(red: 211.0/255.0, green: 68.0/255.0, blue:124.0/255.0, alpha: 0.3)
-        
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
         if let barFont = UIFont(name: "MuseoSans-500", size: 20.0) {

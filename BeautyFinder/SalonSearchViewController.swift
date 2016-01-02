@@ -77,7 +77,7 @@ class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UIC
 
 
 // MARK: CollectionView
-extension SalonSearchViewController
+extension SalonSearchViewController : UICollectionViewDelegateFlowLayout
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -127,5 +127,9 @@ extension SalonSearchViewController
         parentViewController.salonIsChosenWithJson(searchJson![indexPath.item])
         
         return true
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return self.view.frame.width > 320 ? CGSizeMake(108, 110) : CGSizeMake(92, 94)
     }
 }

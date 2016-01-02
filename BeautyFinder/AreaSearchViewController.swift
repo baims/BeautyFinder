@@ -73,7 +73,7 @@ class AreaSearchViewController: UIViewController, UICollectionViewDataSource, UI
 }
 
 // MARK: CollectionView
-extension AreaSearchViewController
+extension AreaSearchViewController : UICollectionViewDelegateFlowLayout
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         guard let json = searchJson else
@@ -142,6 +142,10 @@ extension AreaSearchViewController
         parentViewController.salonIsChosenWithJson(searchJson![indexPath.section, "salons", indexPath.item])
         
         return true
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return self.view.frame.width > 320 ? CGSizeMake(108, 110) : CGSizeMake(92, 94)
     }
 }
 

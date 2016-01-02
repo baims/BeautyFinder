@@ -82,7 +82,7 @@ class CategorySearchViewController: UIViewController {
 
 }
 
-extension CategorySearchViewController : UICollectionViewDelegate, UICollectionViewDataSource
+extension CategorySearchViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         guard let json = searchJson else {
@@ -165,6 +165,10 @@ extension CategorySearchViewController : UICollectionViewDelegate, UICollectionV
         parentViewController.categoryIsChosenWithPrimaryKey(primaryKey, title: titleString)
         
         return true
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return self.view.frame.width > 320 ? CGSizeMake(108, 110) : CGSizeMake(92, 94)
     }
 }
 

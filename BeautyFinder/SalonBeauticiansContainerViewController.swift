@@ -90,7 +90,7 @@ class SalonBeauticiansContainerViewController: UIViewController, UICollectionVie
 }
 
 
-extension SalonBeauticiansContainerViewController
+extension SalonBeauticiansContainerViewController : UICollectionViewDelegateFlowLayout
 {
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -167,6 +167,11 @@ extension SalonBeauticiansContainerViewController
         dispatch_after(dispatchTime, dispatch_get_main_queue(), {
             collectionView.deselectItemAtIndexPath(indexPath, animated: false)
         })
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        print(self.view.frame.width)
+        return self.view.frame.width > 320 ? CGSizeMake(108, 110) : CGSizeMake(92, 94)
     }
 }
 
