@@ -14,17 +14,32 @@ class SalonScheduleViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var tableViewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewLeadingConstraint: NSLayoutConstraint!
+    
+    var viewIsLoaded = false
     
     var json : JSON?
     var indexPathForSelectedRow : NSIndexPath!
     
     var selectedDate : CVDate!
     var jsonOfSelectedDate : JSON?
+    
+    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewDidLayoutSubviews()
+    {
+        if !viewIsLoaded
+        {
+            viewIsLoaded = true
+            
+            
+            if self.view.frame.width == 414 // iPhone 6+/6s+
+            {
+                tableViewTrailingConstraint.constant = -20
+                tableViewLeadingConstraint.constant  = -20
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -24,6 +24,13 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalPriceView: UIView!
     
+    
+    @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var salonNameLabelTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var totalPriceBottomConstraint: NSLayoutConstraint!
+    
+    var viewIsLoaded = false
+    
     var salonName : String!
     var salonImageUrl : String!
     var salonAddress : String!
@@ -82,6 +89,38 @@ class SummaryViewController: UIViewController {
         
         
         totalPriceLabel.sizeToFit()
+        
+        
+        if !viewIsLoaded
+        {
+            viewIsLoaded = true
+            
+            /*** Changing the placement of the labels/images depending on the device ***/
+            switch self.view.frame.height
+            {
+            case 480: // iPhone 4/4s
+                stackViewTopConstraint.constant = 6
+                salonNameLabelTopConstraint.constant = 12
+                totalPriceBottomConstraint.constant = 6
+                
+            case 568: // iPhone 5/5s/5c
+                salonNameLabelTopConstraint.constant = 40
+                
+            case 667: // iPhone 6/6s
+                stackViewTopConstraint.constant      = 30
+                salonNameLabelTopConstraint.constant = 64
+                totalPriceBottomConstraint.constant  = 50
+                
+            case 736: // iPhone 6+/6s+
+                stackViewTopConstraint.constant      = 40
+                salonNameLabelTopConstraint.constant = 90
+                totalPriceBottomConstraint.constant  = 60
+                
+            default:
+                stackViewTopConstraint.constant = 106
+                stackViewTopConstraint.constant = 280
+            }
+        }
     }
     
     override func viewWillAppear(animated: Bool)

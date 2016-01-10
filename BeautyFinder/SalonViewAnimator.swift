@@ -41,6 +41,7 @@ class SalonViewAnimator: NSObject, UIViewControllerAnimatedTransitioning
         let imageView = UIImageView()
         imageView.kf_setImageWithURL(NSURL(string: imageViewPath)!, placeholderImage: UIImage(named: "Icon-76"))
         imageView.frame = self.originFrame
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.layer.cornerRadius = self.originFrame.width/2
         imageView.layer.masksToBounds = true
         imageView.backgroundColor = UIColor.clearColor()
@@ -75,7 +76,7 @@ class SalonViewAnimator: NSObject, UIViewControllerAnimatedTransitioning
                 }
                 
             }) { (completed) -> Void in
-                
+             
         }
         
         
@@ -88,5 +89,26 @@ class SalonViewAnimator: NSObject, UIViewControllerAnimatedTransitioning
                 whiteView.removeFromSuperview()
                 transitionContext.completeTransition(completed)
         }
+        
+        
+        /*** Animating the corner radius of the image (logo) ***/
+        let finalCornerRadius : CGFloat!
+        
+        if self.presenting
+        {
+            finalCornerRadius = 86 / 2
+        }
+        else
+        {
+            finalCornerRadius = originFrame.width / 2
+        }
+        
+        let cornerRadiusAnimation = CABasicAnimation(keyPath: "cornerRadius")
+        cornerRadiusAnimation.fromValue = imageView.layer.cornerRadius
+        cornerRadiusAnimation.toValue   = finalCornerRadius
+        cornerRadiusAnimation.duration  = 0.2
+        
+        imageView.layer.cornerRadius = finalCornerRadius
+        imageView.layer.addAnimation(cornerRadiusAnimation, forKey: "cornerRadius")
     }
 }

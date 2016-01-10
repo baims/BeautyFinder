@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MarqueeLabel_Swift
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var title: MarqueeLabel!
 }

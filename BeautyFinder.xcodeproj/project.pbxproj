@@ -21,6 +21,7 @@
 		9F3973851BF68F90006C3748 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3973841BF68F90006C3748 /* SummaryViewController.swift */; };
 		9F632C961BBDC81C00AF2732 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */; };
 		9F632C981BBDD24F00AF2732 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */; };
+		9F6561401C3F968900FBEE2F /* BeautyFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65613F1C3F968900FBEE2F /* BeautyFinderUITests.swift */; };
 		9F67FF351BBDE4AE00C47C45 /* SubcategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67FF341BBDE4AE00C47C45 /* SubcategoriesViewController.swift */; };
 		9F6C3B4E1BE2A28A0039F742 /* SalonServicesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C3B4D1BE2A28A0039F742 /* SalonServicesContainerViewController.swift */; };
 		9F6C3B501BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C3B4F1BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift */; };
@@ -50,6 +51,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9F6561421C3F968900FBEE2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CAA008BC1B8C1B150094F10E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAA008C31B8C1B150094F10E;
+			remoteInfo = BeautyFinder;
+		};
 		CAA008DA1B8C1B160094F10E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CAA008BC1B8C1B150094F10E /* Project object */;
@@ -98,6 +106,9 @@
 		9F3973841BF68F90006C3748 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
+		9F65613D1C3F968900FBEE2F /* BeautyFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F65613F1C3F968900FBEE2F /* BeautyFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyFinderUITests.swift; sourceTree = "<group>"; };
+		9F6561411C3F968900FBEE2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F67FF341BBDE4AE00C47C45 /* SubcategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesViewController.swift; sourceTree = "<group>"; };
 		9F6C3B4D1BE2A28A0039F742 /* SalonServicesContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonServicesContainerViewController.swift; sourceTree = "<group>"; };
 		9F6C3B4F1BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonBeauticiansContainerViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +143,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F65613A1C3F968900FBEE2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAA008C11B8C1B150094F10E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +193,15 @@
 				9F6C3B531BECE8FD0039F742 /* SalonScheduleTableViewCell.swift */,
 			);
 			name = Schedule;
+			sourceTree = "<group>";
+		};
+		9F65613E1C3F968900FBEE2F /* BeautyFinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9F65613F1C3F968900FBEE2F /* BeautyFinderUITests.swift */,
+				9F6561411C3F968900FBEE2F /* Info.plist */,
+			);
+			path = BeautyFinderUITests;
 			sourceTree = "<group>";
 		};
 		9F67FF2F1BBDE49200C47C45 /* Subcategories */ = {
@@ -261,6 +288,7 @@
 			children = (
 				CAA008C61B8C1B150094F10E /* BeautyFinder */,
 				CAA008DC1B8C1B160094F10E /* BeautyFinderTests */,
+				9F65613E1C3F968900FBEE2F /* BeautyFinderUITests */,
 				CAA008C51B8C1B150094F10E /* Products */,
 				CDFEEBF921285764B7860FA4 /* Pods */,
 				7E076CAEBB769C3E3EC90D4C /* Frameworks */,
@@ -272,6 +300,7 @@
 			children = (
 				CAA008C41B8C1B150094F10E /* BeautyFinder.app */,
 				CAA008D91B8C1B160094F10E /* BeautyFinderTests.xctest */,
+				9F65613D1C3F968900FBEE2F /* BeautyFinderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,6 +378,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9F65613C1C3F968900FBEE2F /* BeautyFinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F6561461C3F968900FBEE2F /* Build configuration list for PBXNativeTarget "BeautyFinderUITests" */;
+			buildPhases = (
+				9F6561391C3F968900FBEE2F /* Sources */,
+				9F65613A1C3F968900FBEE2F /* Frameworks */,
+				9F65613B1C3F968900FBEE2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F6561431C3F968900FBEE2F /* PBXTargetDependency */,
+			);
+			name = BeautyFinderUITests;
+			productName = BeautyFinderUITests;
+			productReference = 9F65613D1C3F968900FBEE2F /* BeautyFinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		CAA008C31B8C1B150094F10E /* BeautyFinder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAA008E31B8C1B160094F10E /* Build configuration list for PBXNativeTarget "BeautyFinder" */;
@@ -395,10 +442,14 @@
 		CAA008BC1B8C1B150094F10E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Baims;
 				TargetAttributes = {
+					9F65613C1C3F968900FBEE2F = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CAA008C31B8C1B150094F10E;
+					};
 					CAA008C31B8C1B150094F10E = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = XAT4WZ442G;
@@ -424,11 +475,19 @@
 			targets = (
 				CAA008C31B8C1B150094F10E /* BeautyFinder */,
 				CAA008D81B8C1B160094F10E /* BeautyFinderTests */,
+				9F65613C1C3F968900FBEE2F /* BeautyFinderUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F65613B1C3F968900FBEE2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAA008C21B8C1B150094F10E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,6 +565,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F6561391C3F968900FBEE2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F6561401C3F968900FBEE2F /* BeautyFinderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CAA008C01B8C1B150094F10E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -550,6 +617,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9F6561431C3F968900FBEE2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAA008C31B8C1B150094F10E /* BeautyFinder */;
+			targetProxy = 9F6561421C3F968900FBEE2F /* PBXContainerItemProxy */;
+		};
 		CAA008DB1B8C1B160094F10E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CAA008C31B8C1B150094F10E /* BeautyFinder */;
@@ -569,6 +641,33 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9F6561441C3F968900FBEE2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = BeautyFinderUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Baims.BeautyFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BeautyFinder;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		9F6561451C3F968900FBEE2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BeautyFinderUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Baims.BeautyFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BeautyFinder;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		CAA008E11B8C1B160094F10E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -728,6 +827,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F6561461C3F968900FBEE2F /* Build configuration list for PBXNativeTarget "BeautyFinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F6561441C3F968900FBEE2F /* Debug */,
+				9F6561451C3F968900FBEE2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CAA008BF1B8C1B150094F10E /* Build configuration list for PBXProject "BeautyFinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

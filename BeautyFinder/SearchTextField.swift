@@ -25,6 +25,7 @@ class SearchTextField: UITextField {
         self.backgroundColor    = UIColor(red: 177/255, green: 133/255, blue: 150/255, alpha: 0.7)
         self.textColor          = UIColor.whiteColor()
         self.layer.cornerRadius = 5
+        self.autocorrectionType = .No
     }
     
     required init?(coder aDecoder: NSCoder) {

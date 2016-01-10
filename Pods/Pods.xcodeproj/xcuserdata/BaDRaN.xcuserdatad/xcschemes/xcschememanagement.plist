@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MarqueeLabel-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BeautyFinder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +42,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>360B4B7000453D9597D4FCC9056FCD6C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>998B4DC9E9BA1D3D2B5D85C7DBF35A5B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BA14B622689766F6B8A4F42FD9DE552F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CFF858055EBBB40A023415F0A0168820</key>
 		<dict>
 			<key>primary</key>
 			<true/>

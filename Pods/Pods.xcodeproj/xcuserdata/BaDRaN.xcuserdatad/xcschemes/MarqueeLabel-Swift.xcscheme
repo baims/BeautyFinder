@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '12770313107707915EEA89FF'
-               BlueprintName = 'Pods-BeautyFinder'
+               BlueprintIdentifier = '65D388CDAD8393C82B4969D9'
+               BlueprintName = 'MarqueeLabel-Swift'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_BeautyFinder.framework'>
+               BuildableName = 'MarqueeLabel_Swift.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -38,6 +38,16 @@
                ReferencedContainer = "container:BeautyFinder.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9F65613C1C3F968900FBEE2F"
+               BuildableName = "BeautyFinderUITests.xctest"
+               BlueprintName = "BeautyFinderUITests"
+               ReferencedContainer = "container:BeautyFinder.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

@@ -88,10 +88,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-BeautyFinder/CVCalendar.framework"
   install_framework "Pods-BeautyFinder/IQKeyboardManagerSwift.framework"
   install_framework "Pods-BeautyFinder/Kingfisher.framework"
+  install_framework "Pods-BeautyFinder/MarqueeLabel_Swift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-BeautyFinder/Alamofire.framework"
   install_framework "Pods-BeautyFinder/CVCalendar.framework"
   install_framework "Pods-BeautyFinder/IQKeyboardManagerSwift.framework"
   install_framework "Pods-BeautyFinder/Kingfisher.framework"
+  install_framework "Pods-BeautyFinder/MarqueeLabel_Swift.framework"
 fi

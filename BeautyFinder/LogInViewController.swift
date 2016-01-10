@@ -63,7 +63,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate
                 textFieldYConstraint.constant = 106
                 signUpButtonYConstraint.constant = 280
                 
-            case 736: // iPhone 6/6s
+            case 736: // iPhone 6+/6s+
                 textFieldYConstraint.constant = 130
                 signUpButtonYConstraint.constant = 300
                 

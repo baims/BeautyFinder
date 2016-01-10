@@ -72,14 +72,19 @@ class SalonViewController: UIViewController {
         
         self.salonNameLabel.text = self.salonJson!["name"].string!
         self.salonAddressLabel.text = self.salonJson!["area"].string! + ", " + self.salonJson!["address"].string!
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
         
-//        self.calendarContainerView.layer.cornerRadius = 20
-//        self.calendarContainerView.layer.masksToBounds = true
+        self.tabBarController!.tabBar.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
         self.logoImageView.hidden = false
     }
+
     
     // MARK: - Navigation
 

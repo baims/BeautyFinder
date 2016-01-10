@@ -3,17 +3,20 @@ PODS:
   - CVCalendar (1.2.7)
   - IQKeyboardManagerSwift (3.3.4)
   - Kingfisher (1.7.1)
+  - MarqueeLabel-Swift (2.4.2)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - CVCalendar (~> 1.2.7)
   - IQKeyboardManagerSwift
   - Kingfisher (~> 1.7)
+  - MarqueeLabel-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 415bd7f56197722978759078486689f7ef913dce
   CVCalendar: 1ae6ee62dd7fd4c6a6703a43c641e11dfd32276e
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   Kingfisher: c65d078cfc202639f2b6ddd49f09f742cef8781a
+  MarqueeLabel-Swift: 02f82b53b7b01a4cbc06f00ec8cd165093b0c7cb
 
 COCOAPODS: 0.39.0

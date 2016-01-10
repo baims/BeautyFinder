@@ -49,8 +49,12 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
             self.collectionView.deselectItemAtIndexPath(indexPath, animated: true)
         }
         
+        // removing the segue animations ( if it was set by showing the SalonViewController in -prepareForSegue(segue:,sender:)
         self.navigationController?.delegate = nil
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        
+        // showing tabBar ( if it was hidden from the SalonViewController )
+        self.tabBarController!.tabBar.hidden = false
     }
 
     
@@ -116,7 +120,12 @@ extension SubcategoriesViewController
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
         
-        cell.title.text = json![indexPath.item, "name"].string!;
+        cell.title.text = json![indexPath.item, "name"].string!
+        cell.title.fadeLength = 4
+        cell.title.scrollRate = 30
+        
+        
+        
         cell.imageView.kf_setImageWithURL(NSURL(string: k_website + self.json![indexPath.item, "logo"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
         cell.imageView.layer.cornerRadius = (cell.frame.size.width-22)/2
@@ -139,6 +148,10 @@ extension SubcategoriesViewController
         cell.bringSubviewToFront(cell.selectedBackgroundView!)
         
         return cell
+    }
+
+    func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        //(cell as! CategoriesCollectionViewCell).title.restartLabel()
     }
     
     func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool
