@@ -32,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 30
         //IQKeyboardManager.sharedManager().disableToolbarInViewControllerClass(SearchViewController)
         
-        //navigation bar customization
+        
+        /*** UINavigationController Customizations ***/
         UINavigationBar.appearance().barTintColor = UIColor(red: 211.0/255.0, green: 68.0/255.0, blue:
             124.0/255.0, alpha: 0.3)
         
@@ -48,6 +49,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
         }
         
+        
+        /*** UITabBarController Customizations ***/
+        UITabBar.appearance().barTintColor = UIColor(red: 198.0/255.0, green: 39.0/255.0, blue: 107.0/255.0, alpha: 0.3)
+        UITabBar.appearance().tintColor    = UIColor.whiteColor()
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.whiteColor()], forState: UIControlState.Normal)
+        //UITabBar.appearance().backgroundImage = UIImage(named: "header_1")
+        let tabBarController = window?.rootViewController as! UITabBarController
+    
+        for item in tabBarController.tabBar.items! as [UITabBarItem]
+        {
+            if let image = item.image
+            {
+                item.image = image.imageWithRenderingMode(.AlwaysOriginal)
+                
+            }
+        }
         
         /*****
         THIS MUST BE REMOVED IN THE FINAL RELEASE

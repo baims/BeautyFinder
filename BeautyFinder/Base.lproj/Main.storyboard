@@ -342,11 +342,11 @@
             </objects>
             <point key="canvasLocation" x="784" y="890"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="T1H-tU-Nlt">
             <objects>
                 <navigationController id="Oom-Gd-Co0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="OWg-AL-lcB"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search_btn" id="OWg-AL-lcB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0v-1G-9QR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2655,6 +2655,7 @@
         <image name="header_3" width="375" height="250"/>
         <image name="logo" width="36" height="52"/>
         <image name="long_btn" width="375" height="49"/>
+        <image name="search_btn" width="19" height="19"/>
         <image name="signin_btn" width="347" height="42"/>
         <image name="total" width="153" height="62"/>
     </resources>
