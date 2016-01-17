@@ -171,6 +171,7 @@ extension CategorySearchViewController : UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        print(self.collectionView.frame.width)
         return self.view.frame.width > 320 ? CGSizeMake(108, 110) : CGSizeMake(92, 94)
     }
 }

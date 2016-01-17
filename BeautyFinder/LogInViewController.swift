@@ -13,7 +13,7 @@ import SafariServices
 class LogInViewController: UIViewController, UITextFieldDelegate
 {
     var viewIsLoaded = false
- 
+    var needGoToProfileViewController = false
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -44,8 +44,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate
             emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName : UIColor(white: 1.0, alpha: 0.4)])
             passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName : UIColor(white: 1.0, alpha: 0.4)])
             
-            emailTextField.text = "badran1996@gmail.com"
-            passwordTextField.text = "bader555"
+            //emailTextField.text = "badran1996@gmail.com"
+            //passwordTextField.text = "bader555"
             
             
             
@@ -113,7 +113,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate
                     
                     NSUserDefaults.standardUserDefaults().setObject(token, forKey: "token")
                     NSUserDefaults.standardUserDefaults().synchronize()
-                                        
+                    
+                    if self.needGoToProfileViewController
+                    {
+                        (self.presentingViewController as! TabBarController).selectedIndex = 2
+                    }
+                    
                     self.presentingViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
                         // reload everything in self.presentingViewController so it shows that the user is signed in
                     })

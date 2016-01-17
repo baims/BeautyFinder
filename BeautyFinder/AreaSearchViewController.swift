@@ -45,7 +45,9 @@ class AreaSearchViewController: UIViewController, UICollectionViewDataSource, UI
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        Alamofire.request(.GET, k_website + "area/\(text)").responseJSON { (response) -> Void in
+        let url = k_website + "area/\(text)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! // using the stringByAddingPercent... method to add %20 instead of spaces in the url
+        
+        Alamofire.request(.GET, url).responseJSON { (response) -> Void in
             
             if let Json = response.result.value {
                 self.searchJson = JSON(Json)

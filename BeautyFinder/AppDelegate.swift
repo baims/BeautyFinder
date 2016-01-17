@@ -53,15 +53,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*** UITabBarController Customizations ***/
         UITabBar.appearance().barTintColor = UIColor(red: 198.0/255.0, green: 39.0/255.0, blue: 107.0/255.0, alpha: 0.3)
         UITabBar.appearance().tintColor    = UIColor.whiteColor()
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.whiteColor()], forState: UIControlState.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1)], forState: UIControlState.Selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(red: 252/255.0, green: 158/255.0, blue: 200/255.0, alpha: 1)], forState: UIControlState.Normal)
         //UITabBar.appearance().backgroundImage = UIImage(named: "header_1")
         let tabBarController = window?.rootViewController as! UITabBarController
     
+        
         for item in tabBarController.tabBar.items! as [UITabBarItem]
         {
             if let image = item.image
             {
-                item.image = image.imageWithRenderingMode(.AlwaysOriginal)
+                item.image = image.imageWithRenderingMode(.AlwaysTemplate)
                 
             }
         }
@@ -69,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*****
         THIS MUST BE REMOVED IN THE FINAL RELEASE
         ********/
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
+        //NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
         
         return true
     }

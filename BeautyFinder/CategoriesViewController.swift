@@ -53,7 +53,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         if segue.identifier == "Category"
         {
             let vc = segue.destinationViewController as! SubcategoriesViewController

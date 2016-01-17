@@ -34,8 +34,6 @@ class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UIC
     {
         guard !text.isEmpty else
         {
-            //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
-            
             searchJson = nil
             
             collectionView.reloadData()
@@ -43,11 +41,13 @@ class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UIC
             return
         }
         
-        //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
         
+        /*** Start fetching results ***/
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        Alamofire.request(.GET, k_website + "salon/\(text)").responseJSON { (response) -> Void in
+        let url = k_website + "salon/\(text)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! // using the stringByAddingPercent... method to add %20 instead of spaces in the url
+        
+        Alamofire.request(.GET, url).responseJSON { (response) -> Void in
             
             if let Json = response.result.value {
                 self.searchJson = JSON(Json)
