@@ -10,10 +10,27 @@ import UIKit
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate
 {
+    var viewIsLoaded = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.delegate = self
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if !viewIsLoaded
+        {
+            viewIsLoaded = true
+            
+            
+            for (var i = 0; i < tabBar.items?.count; i++)
+            {
+                print(i)
+                tabBar.items![i].image = UIImage(named: "tabBarImages\(i)")
+                tabBar.items![i].selectedImage = UIImage(named: "tabBarImagesSelected\(i)")
+            }
+        }
     }
     
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
