@@ -27,8 +27,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate
             for (var i = 0; i < tabBar.items?.count; i++)
             {
                 print(i)
-                tabBar.items![i].image = UIImage(named: "tabBarImages\(i)")
-                tabBar.items![i].selectedImage = UIImage(named: "tabBarImagesSelected\(i)")
+                tabBar.items![i].image = UIImage(named: "tabBarImages\(i)")!.imageWithRenderingMode(.AlwaysOriginal)
+                tabBar.items![i].selectedImage = UIImage(named: "tabBarImagesSelected\(i)")!.imageWithRenderingMode(.AlwaysOriginal)
             }
         }
     }
