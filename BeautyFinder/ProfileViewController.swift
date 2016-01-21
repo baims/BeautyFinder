@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UITextFieldDelegate
 {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -20,9 +20,36 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var phoneTextField: UITextField!
     
     
-    
-    let emailIsChanged = false
-    let phoneNumberIsChanged = false
+    var emailIsChanged : Bool {
+        get {
+            if json == nil {
+                return false
+            }
+            else if emailTextField.text == self.json!["email"].string!
+            {
+                return false
+            }
+            else
+            {
+                return true
+            }
+        }
+    }
+    var phoneIsChanged : Bool {
+        get {
+            if json == nil {
+                return false
+            }
+            else if phoneTextField.text == self.json!["Phonenumber"].string!
+            {
+                return false
+            }
+            else
+            {
+                return true
+            }
+        }
+    }
     
     var json : JSON?
     var token : String?
@@ -33,6 +60,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         getProfileJsonIfSignedIn()
+        
+        emailTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: .EditingChanged)
+        phoneTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: .EditingChanged)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -110,7 +140,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        if phoneNumberIsChanged
+        if phoneIsChanged
         {
             // TODO: update phone number on server ( api )
         }
@@ -151,11 +181,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         saveButton.enabled = false
         cancelButton.hidden = true
+        
+        emailTextField.resignFirstResponder()
+        phoneTextField.resignFirstResponder()
     }
     
 }
 
-// MARK: UITableViewDelegate & DataSource
+// MARK: UITableViewDelegate & DataSource & UIScrollViewDelegate
 extension ProfileViewController
 {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -189,6 +222,35 @@ extension ProfileViewController
         {
             scrollView.contentOffset.y = -20
         }
+    }
+}
+
+// MARK: UITextFieldDelegate
+extension ProfileViewController
+{
+    func textFieldDidBeginEditing(textField: UITextField)
+    {
+        print("didBeginEditing")
+    }
+    
+    func textFieldDidChange(sender: UITextField)
+    {
+        /** hiding/showing save & cancel buttons **/
+        if emailIsChanged == true || phoneIsChanged == true
+        {
+            saveButton.enabled = true
+            cancelButton.hidden = false
+        }
+        else
+        {
+            saveButton.enabled = false
+            cancelButton.hidden = true
+        }
         
+        sender.resignFirstResponder()
+        //sender.sizeToFit()
+        //sender.setNeedsLayout()
+        //self.view.setNeedsLayout()
+        sender.becomeFirstResponder()
     }
 }

@@ -1331,12 +1331,19 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="ihY-I8-832" id="F8K-dI-RiN"/>
+                                                    </connections>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="badran1996@gmail.com" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DtT-FQ-sWn">
                                                     <rect key="frame" x="70" y="26" width="170" height="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="emailAddressIsEditing:" destination="ihY-I8-832" eventType="valueChanged" id="gzC-CI-qQF"/>
+                                                        <outlet property="delegate" destination="ihY-I8-832" id="S5s-Nq-Sdk"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
