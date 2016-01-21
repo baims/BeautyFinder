@@ -850,6 +850,7 @@
 				9F6561451C3F968900FBEE2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAA008BF1B8C1B150094F10E /* Build configuration list for PBXProject "BeautyFinder" */ = {
 			isa = XCConfigurationList;

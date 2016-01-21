@@ -9,11 +9,17 @@
 import UIKit
 import Alamofire
 
-class ProfileViewController: UIViewController
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate
 {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    
+    
     
     let emailIsChanged = false
     let phoneNumberIsChanged = false
@@ -89,7 +95,7 @@ class ProfileViewController: UIViewController
             if let Json = response.result.value
             {
                 self.json = JSON(Json)
-                
+                print(self.json)
                 // updating elements on screen
                 self.updateElementsOnScreen()
             }
@@ -125,6 +131,8 @@ class ProfileViewController: UIViewController
         else
         {
             // update everything just like in json
+            emailTextField.text = self.json!["email"].string!
+            phoneTextField.text = self.json!["Phonenumber"].string!
         }
     }
 
@@ -145,4 +153,42 @@ class ProfileViewController: UIViewController
         cancelButton.hidden = true
     }
     
+}
+
+// MARK: UITableViewDelegate & DataSource
+extension ProfileViewController
+{
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let json = self.json else
+        {
+            return 1 // which will be "There is no orders"
+        }
+        
+        if json["lastOrders"].array!.count > 3
+        {
+            return json["lastOrders"].array!.count + 1
+        }
+        else
+        {
+            return json["lastOrders"].array!.count
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
+        return cell
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < -20
+        {
+            scrollView.contentOffset.y = -20
+        }
+        
+    }
 }
