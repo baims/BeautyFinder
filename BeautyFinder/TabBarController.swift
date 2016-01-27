@@ -23,13 +23,15 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate
         {
             viewIsLoaded = true
             
-            
             for (var i = 0; i < tabBar.items?.count; i++)
             {
                 print(i)
                 tabBar.items![i].image = UIImage(named: "tabBarImages\(i)")!.imageWithRenderingMode(.AlwaysOriginal)
                 tabBar.items![i].selectedImage = UIImage(named: "tabBarImagesSelected\(i)")!.imageWithRenderingMode(.AlwaysOriginal)
             }
+            
+            // force loading the ProfileViewController
+            let _ = (viewControllers![2] as! UINavigationController).viewControllers[0].view
         }
     }
     
@@ -41,11 +43,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate
             {
                 print("here")
                 
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("LogInViewController") as! LogInViewController
-                vc.needGoToProfileViewController = true
-                
-                self.presentViewController(vc, animated: true, completion: nil)
+                showSignInViewController()
                 
                 return false
             }
@@ -56,5 +54,13 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate
         return true
     }
     
-
+    
+    func showSignInViewController()
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("LogInViewController") as! LogInViewController
+        vc.needGoToProfileViewController = true
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
 }

@@ -24,12 +24,15 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalPriceView: UIView!
     
+    @IBOutlet weak var bookAndPayButton: UIButton!
     
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var salonNameLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var totalPriceBottomConstraint: NSLayoutConstraint!
     
     var viewIsLoaded = false
+    
+    var needToHideBookButton = false
     
     var salonName : String!
     var salonImageUrl : String!
@@ -61,7 +64,7 @@ class SummaryViewController: UIViewController {
         beauticianNameLabel.text = beauticianName
         
         subcatgoryNameLabel.text = subcategoryName
-        totalPriceLabel.text = "\(subcategoryPrice) KD"//String(format: "%.3f", arguments: [subcategoryPrice]) + " KD"
+        totalPriceLabel.text = "\(subcategoryPrice) KD" //String(format: "%.3f", arguments: [subcategoryPrice]) + " KD"
         
         dateOfBookingLabel.text = dateOfBooking
         startTimeLabel.text     = DateTimeConverter.convertTimeToString(startTime)
@@ -94,6 +97,11 @@ class SummaryViewController: UIViewController {
         if !viewIsLoaded
         {
             viewIsLoaded = true
+            
+            if needToHideBookButton
+            {
+                bookAndPayButton.hidden = true
+            }
             
             /*** Changing the placement of the labels/images depending on the device ***/
             switch self.view.frame.height

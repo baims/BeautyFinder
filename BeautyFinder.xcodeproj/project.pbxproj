@@ -19,6 +19,8 @@
 		9F3354A01BCD46DB00FA1A21 /* SalonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33549F1BCD46DB00FA1A21 /* SalonViewController.swift */; };
 		9F3354A21BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */; };
 		9F3973851BF68F90006C3748 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3973841BF68F90006C3748 /* SummaryViewController.swift */; };
+		9F5122211C510A7600E92155 /* BAAutoResizingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5122201C510A7600E92155 /* BAAutoResizingTextField.swift */; };
+		9F5122231C51103E00E92155 /* String+EmailPhoneValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5122221C51103E00E92155 /* String+EmailPhoneValidation.swift */; };
 		9F632C961BBDC81C00AF2732 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */; };
 		9F632C981BBDD24F00AF2732 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */; };
 		9F6561401C3F968900FBEE2F /* BeautyFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F65613F1C3F968900FBEE2F /* BeautyFinderUITests.swift */; };
@@ -32,6 +34,7 @@
 		9F6C3B561BECEEF60039F742 /* SalonScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C3B551BECEEF60039F742 /* SalonScheduleViewController.swift */; };
 		9F6CD0511BAC6C8700A0197D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */; };
 		9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0521BAC759F00A0197D /* SearchTextField.swift */; };
+		9F96CF631C59130400881A1B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F96CF621C59130400881A1B /* ProfileTableViewCell.swift */; };
 		9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */; };
 		9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */; };
 		9FFF96BC1C1092EF004B8F48 /* DateAndTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */; };
@@ -106,6 +109,8 @@
 		9F33549F1BCD46DB00FA1A21 /* SalonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonViewController.swift; sourceTree = "<group>"; };
 		9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonServicesTableViewCell.swift; sourceTree = "<group>"; };
 		9F3973841BF68F90006C3748 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		9F5122201C510A7600E92155 /* BAAutoResizingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAAutoResizingTextField.swift; sourceTree = "<group>"; };
+		9F5122221C51103E00E92155 /* String+EmailPhoneValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EmailPhoneValidation.swift"; sourceTree = "<group>"; };
 		9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		9F65613D1C3F968900FBEE2F /* BeautyFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +126,7 @@
 		9F6C3B551BECEEF60039F742 /* SalonScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonScheduleViewController.swift; sourceTree = "<group>"; };
 		9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9F6CD0521BAC759F00A0197D /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		9F96CF621C59130400881A1B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesAnimationController.swift; sourceTree = "<group>"; };
 		9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonViewAnimator.swift; sourceTree = "<group>"; };
 		9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTimeConverter.swift; sourceTree = "<group>"; };
@@ -212,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				9F6561481C44E24E00FBEE2F /* ProfileViewController.swift */,
+				9F96CF621C59130400881A1B /* ProfileTableViewCell.swift */,
+				9F5122201C510A7600E92155 /* BAAutoResizingTextField.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 			children = (
 				CAA008C91B8C1B160094F10E /* AppDelegate.swift */,
 				9F65614C1C46660900FBEE2F /* TabBarController.swift */,
+				9F5122221C51103E00E92155 /* String+EmailPhoneValidation.swift */,
 				9F6CD04E1BAC6C4600A0197D /* Home View */,
 				9F67FF2F1BBDE49200C47C45 /* Subcategories */,
 				9F9B990B1BD1907C00A78B4D /* Salon Views */,
@@ -591,8 +600,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5122211C510A7600E92155 /* BAAutoResizingTextField.swift in Sources */,
 				9F6CD0511BAC6C8700A0197D /* SearchViewController.swift in Sources */,
 				9F27BAAD1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift in Sources */,
+				9F96CF631C59130400881A1B /* ProfileTableViewCell.swift in Sources */,
+				9F5122231C51103E00E92155 /* String+EmailPhoneValidation.swift in Sources */,
 				9F632C981BBDD24F00AF2732 /* UIImageView+URL.swift in Sources */,
 				9F28F2E81BAC8EFF007F1396 /* AreaSearchViewController.swift in Sources */,
 				9F3354A01BCD46DB00FA1A21 /* SalonViewController.swift in Sources */,

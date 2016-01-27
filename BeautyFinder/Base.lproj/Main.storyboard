@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mJX-Ex-DLT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mJX-Ex-DLT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -7,6 +7,9 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="MuseoSans-300.otf">
+            <string>MuseoSans-300</string>
+            <string>MuseoSans-300</string>
+            <string>MuseoSans-300</string>
             <string>MuseoSans-300</string>
             <string>MuseoSans-300</string>
             <string>MuseoSans-300</string>
@@ -734,19 +737,19 @@
                                     <constraint firstAttribute="width" constant="86" id="D0b-1Y-Mdc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Salon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-r6-29P">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-r6-29P">
                                 <rect key="frame" x="252" y="146" width="95" height="21"/>
                                 <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="17"/>
                                 <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Salon's address, block 6, whatever street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-Rd-paj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salon's address, block 6, whatever street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-Rd-paj">
                                 <rect key="frame" x="154" y="185" width="293" height="20"/>
                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="16"/>
                                 <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHo-iA-ERH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHo-iA-ERH">
                                 <rect key="frame" x="453" y="184" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="aNh-Q8-XDW"/>
@@ -1103,10 +1106,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r6C-CK-xpG">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6C-CK-xpG">
                                 <rect key="frame" x="228" y="432" width="144" height="43"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="total" translatesAutoresizingMaskIntoConstraints="NO" id="Tpf-ea-oEb">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="total" translatesAutoresizingMaskIntoConstraints="NO" id="Tpf-ea-oEb">
                                         <rect key="frame" x="41" y="0.0" width="104" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="jnj-O5-fts"/>
@@ -1156,6 +1159,7 @@
                         <constraints>
                             <constraint firstItem="uPk-VR-fs8" firstAttribute="centerX" secondItem="meD-rz-dow" secondAttribute="centerX" id="2WR-uA-qps"/>
                             <constraint firstItem="FSs-Yt-a9d" firstAttribute="top" secondItem="iaB-LB-J9z" secondAttribute="bottom" constant="34" id="5MC-1R-9Tk"/>
+                            <constraint firstItem="i2F-BH-XGt" firstAttribute="top" secondItem="r6C-CK-xpG" secondAttribute="bottom" constant="76" id="7ly-o2-hsP"/>
                             <constraint firstItem="3XE-4y-C3C" firstAttribute="top" secondItem="xAg-wR-dBa" secondAttribute="bottom" constant="8" id="AoY-DH-XiS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AyN-2l-Bbq" secondAttribute="trailing" constant="-20" id="CJO-Yf-kwx"/>
                             <constraint firstItem="xAg-wR-dBa" firstAttribute="top" secondItem="FSs-Yt-a9d" secondAttribute="bottom" constant="6" id="EfN-jh-mNN"/>
@@ -1182,7 +1186,6 @@
                             <constraint firstItem="iaB-LB-J9z" firstAttribute="top" secondItem="meD-rz-dow" secondAttribute="bottom" constant="18" id="rpS-gQ-AfS"/>
                             <constraint firstItem="xAg-wR-dBa" firstAttribute="centerX" secondItem="FSs-Yt-a9d" secondAttribute="centerX" id="tUm-ie-BPH"/>
                             <constraint firstItem="ehE-2N-AZa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fU7-2d-otK" secondAttribute="leadingMargin" constant="20" id="vKO-Ci-fZg"/>
-                            <constraint firstItem="AyN-2l-Bbq" firstAttribute="top" secondItem="r6C-CK-xpG" secondAttribute="bottom" constant="27" id="w8B-zu-wCd"/>
                             <constraint firstItem="FSs-Yt-a9d" firstAttribute="centerX" secondItem="fU7-2d-otK" secondAttribute="centerX" id="zPj-xQ-LEy"/>
                             <constraint firstItem="uPk-VR-fs8" firstAttribute="top" secondItem="meD-rz-dow" secondAttribute="bottom" constant="-36" id="zbF-tc-hXy"/>
                             <constraint firstItem="PVC-YK-dDd" firstAttribute="centerX" secondItem="FSs-Yt-a9d" secondAttribute="centerX" id="zzS-i5-c8F"/>
@@ -1191,6 +1194,7 @@
                     <connections>
                         <outlet property="beauticianImageView" destination="Om4-lQ-Elb" id="ekg-yv-Y8w"/>
                         <outlet property="beauticianNameLabel" destination="Mm7-la-ffp" id="wGw-6N-all"/>
+                        <outlet property="bookAndPayButton" destination="AyN-2l-Bbq" id="1cU-8f-pU6"/>
                         <outlet property="dateOfBookingLabel" destination="Cdy-83-oKb" id="iWx-DN-1ER"/>
                         <outlet property="endTimeLabel" destination="a7j-Wa-6U1" id="yTk-Bl-g8j"/>
                         <outlet property="logoImageView" destination="rSD-Tu-1DW" id="JiR-Z2-blC"/>
@@ -1201,7 +1205,6 @@
                         <outlet property="startTimeLabel" destination="aZD-9N-6Kg" id="e8a-wv-IiM"/>
                         <outlet property="subcatgoryNameLabel" destination="FSs-Yt-a9d" id="Duj-Xe-Ra5"/>
                         <outlet property="textOfPayButtonLabel" destination="zKY-15-oAf" id="nfE-JF-Y6n"/>
-                        <outlet property="totalPriceBottomConstraint" destination="w8B-zu-wCd" id="BNU-R4-Vn2"/>
                         <outlet property="totalPriceLabel" destination="iF7-l0-exZ" id="Wqo-Sb-sLq"/>
                         <outlet property="totalPriceView" destination="r6C-CK-xpG" id="s0P-aJ-kD9"/>
                         <segue destination="6fJ-dB-okj" kind="presentation" identifier="logIn" id="K5e-Ch-39M"/>
@@ -1259,18 +1262,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Uf-l6-RSt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Uf-l6-RSt">
                                 <rect key="frame" x="0.0" y="-20" width="600" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="oZF-AG-CKh">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_3" translatesAutoresizingMaskIntoConstraints="NO" id="28Q-1D-9OR">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="65" id="Wem-jY-Ca9"/>
-                                                <constraint firstAttribute="height" constant="200" id="rAX-3h-cit"/>
+                                                <constraint firstAttribute="height" constant="240" id="rAX-3h-cit"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -1289,7 +1292,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWZ-G1-Yfk">
-                                            <rect key="frame" x="270" y="26" width="61" height="24"/>
+                                            <rect key="frame" x="270" y="26" width="60.5" height="24"/>
                                             <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -1301,8 +1304,19 @@
                                                 <action selector="cancelButtonTapped:" destination="ihY-I8-832" eventType="touchUpInside" id="IWS-zw-N9B"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEy-Qk-KSD">
+                                            <rect key="frame" x="242" y="192" width="116" height="36"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <state key="normal" image="signOutButton"/>
+                                            <state key="selected" image="signOutButton"/>
+                                            <state key="highlighted" image="signOutButton"/>
+                                            <connections>
+                                                <action selector="signOutButtonTapped:" destination="ihY-I8-832" eventType="touchUpInside" id="of8-ub-vng"/>
+                                            </connections>
+                                        </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6f-A2-aFU">
-                                            <rect key="frame" x="181" y="64" width="240" height="128"/>
+                                            <rect key="frame" x="252" y="64" width="97" height="128"/>
                                             <subviews>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="emailAddress" translatesAutoresizingMaskIntoConstraints="NO" id="mcI-gk-0uF">
                                                     <rect key="frame" x="0.0" y="15" width="40" height="40"/>
@@ -1326,20 +1340,20 @@
                                                         <constraint firstAttribute="height" constant="24" id="Gtw-Zb-xKR"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="99918449" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xKb-dQ-ObV">
-                                                    <rect key="frame" x="70" y="74" width="152" height="18"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" " minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xKb-dQ-ObV" customClass="BAAutoResizingTextField" customModule="BeautyFinder" customModuleProvider="target">
+                                                    <rect key="frame" x="70" y="74" width="9" height="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="ihY-I8-832" id="F8K-dI-RiN"/>
                                                     </connections>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="badran1996@gmail.com" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DtT-FQ-sWn">
-                                                    <rect key="frame" x="70" y="26" width="170" height="18"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" " minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DtT-FQ-sWn" customClass="BAAutoResizingTextField" customModule="BeautyFinder" customModuleProvider="target">
+                                                    <rect key="frame" x="70" y="26" width="27" height="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert"/>
                                                     <connections>
                                                         <action selector="emailAddressIsEditing:" destination="ihY-I8-832" eventType="valueChanged" id="gzC-CI-qQF"/>
                                                         <outlet property="delegate" destination="ihY-I8-832" id="S5s-Nq-Sdk"/>
@@ -1372,6 +1386,7 @@
                                         <constraint firstItem="HWZ-G1-Yfk" firstAttribute="centerX" secondItem="28Q-1D-9OR" secondAttribute="centerX" id="15Q-VD-kkq"/>
                                         <constraint firstAttribute="trailing" secondItem="5fi-kh-HFp" secondAttribute="trailing" constant="18" id="3rL-dZ-1TR"/>
                                         <constraint firstItem="o9U-B4-DXv" firstAttribute="centerY" secondItem="HWZ-G1-Yfk" secondAttribute="centerY" id="KiS-X1-hOX"/>
+                                        <constraint firstItem="rEy-Qk-KSD" firstAttribute="centerX" secondItem="HWZ-G1-Yfk" secondAttribute="centerX" id="RSo-Bp-LCA"/>
                                         <constraint firstItem="Q6f-A2-aFU" firstAttribute="top" secondItem="HWZ-G1-Yfk" secondAttribute="bottom" constant="14" id="cQs-iL-rwm"/>
                                         <constraint firstItem="28Q-1D-9OR" firstAttribute="height" secondItem="oZF-AG-CKh" secondAttribute="height" id="m3e-4d-PUo"/>
                                         <constraint firstItem="28Q-1D-9OR" firstAttribute="centerX" secondItem="oZF-AG-CKh" secondAttribute="centerX" id="nDF-jY-GgY"/>
@@ -1379,18 +1394,89 @@
                                         <constraint firstItem="28Q-1D-9OR" firstAttribute="width" secondItem="oZF-AG-CKh" secondAttribute="width" id="pyX-sK-Hn4"/>
                                         <constraint firstItem="28Q-1D-9OR" firstAttribute="top" secondItem="HWZ-G1-Yfk" secondAttribute="bottom" constant="-50" id="qyy-Yt-6kq"/>
                                         <constraint firstItem="5fi-kh-HFp" firstAttribute="centerY" secondItem="HWZ-G1-Yfk" secondAttribute="centerY" id="sqz-ad-Z5c"/>
+                                        <constraint firstAttribute="bottom" secondItem="rEy-Qk-KSD" secondAttribute="bottom" constant="12" id="vgI-eS-JOy"/>
                                         <constraint firstItem="28Q-1D-9OR" firstAttribute="centerY" secondItem="oZF-AG-CKh" secondAttribute="centerY" id="w3h-TM-zvg"/>
                                         <constraint firstItem="Q6f-A2-aFU" firstAttribute="centerX" secondItem="HWZ-G1-Yfk" secondAttribute="centerX" id="xo7-dW-sAr"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="LaS-iy-vAi">
-                                        <rect key="frame" x="0.0" y="228" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="115" id="LaS-iy-vAi" customClass="ProfileTableViewCell" customModule="BeautyFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="268" width="600" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LaS-iy-vAi" id="dgk-VQ-SqK">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EkA-tD-IBl">
+                                                    <rect key="frame" x="12" y="14.5" width="86" height="86"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="86" id="7Xk-AG-6nI"/>
+                                                        <constraint firstAttribute="height" constant="86" id="lwM-Wx-uMm"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUp-eA-3Ph">
+                                                    <rect key="frame" x="116" y="17.5" width="1" height="80"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.9126372466216216" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="1eB-GG-Xck"/>
+                                                        <constraint firstAttribute="height" constant="80" id="JsE-0j-baZ"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09-02-2016 - DONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRE-1R-llx">
+                                                    <rect key="frame" x="135" y="8" width="163" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bader Salon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PA3-Sd-kqX">
+                                                    <rect key="frame" x="135" y="36" width="92.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Om-s8-Xo6">
+                                                    <rect key="frame" x="135" y="58" width="41.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mishref, block whatever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="303-iY-aF4" customClass="MarqueeLabel" customModule="MarqueeLabel_Swift">
+                                                    <rect key="frame" x="135" y="86.5" width="182" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PA3-Sd-kqX" firstAttribute="top" secondItem="wRE-1R-llx" secondAttribute="bottom" constant="8" id="2Xn-D8-2kJ"/>
+                                                <constraint firstItem="dUp-eA-3Ph" firstAttribute="leading" secondItem="EkA-tD-IBl" secondAttribute="trailing" constant="18" id="4j7-Wh-WTD"/>
+                                                <constraint firstItem="EkA-tD-IBl" firstAttribute="centerY" secondItem="dUp-eA-3Ph" secondAttribute="centerY" id="8za-PD-THw"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="EkA-tD-IBl" secondAttribute="leading" constant="-4" id="GZ6-jF-Npk"/>
+                                                <constraint firstItem="303-iY-aF4" firstAttribute="leading" secondItem="wRE-1R-llx" secondAttribute="leading" id="HhT-ST-iT7"/>
+                                                <constraint firstItem="PA3-Sd-kqX" firstAttribute="leading" secondItem="wRE-1R-llx" secondAttribute="leading" id="RcB-rp-FyL"/>
+                                                <constraint firstItem="EkA-tD-IBl" firstAttribute="centerY" secondItem="dgk-VQ-SqK" secondAttribute="centerY" id="Rs1-AK-QaY"/>
+                                                <constraint firstItem="303-iY-aF4" firstAttribute="top" secondItem="3Om-s8-Xo6" secondAttribute="bottom" constant="8" id="W4t-aG-7hc"/>
+                                                <constraint firstItem="wRE-1R-llx" firstAttribute="leading" secondItem="dUp-eA-3Ph" secondAttribute="trailing" constant="18" id="YRe-nb-FZi"/>
+                                                <constraint firstItem="3Om-s8-Xo6" firstAttribute="leading" secondItem="PA3-Sd-kqX" secondAttribute="leading" id="jav-YS-Jlb"/>
+                                                <constraint firstItem="3Om-s8-Xo6" firstAttribute="top" secondItem="PA3-Sd-kqX" secondAttribute="bottom" constant="2" id="szK-WH-zMB"/>
+                                                <constraint firstAttribute="topMargin" secondItem="wRE-1R-llx" secondAttribute="top" id="tWW-Qa-yhN"/>
+                                                <constraint firstItem="wRE-1R-llx" firstAttribute="leading" secondItem="PA3-Sd-kqX" secondAttribute="trailing" id="y7S-7v-TFY"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="303-iY-aF4" secondAttribute="trailing" constant="18" id="yii-Mn-t8f"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="y7S-7v-TFY"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="303-iY-aF4" id="XvD-2R-aWf"/>
+                                            <outlet property="dateLabel" destination="wRE-1R-llx" id="cMm-xQ-ldg"/>
+                                            <outlet property="salonLogo" destination="EkA-tD-IBl" id="I7T-tc-FD4"/>
+                                            <outlet property="salonNameLabel" destination="PA3-Sd-kqX" id="TTH-h4-Ogx"/>
+                                            <outlet property="serviceLabel" destination="3Om-s8-Xo6" id="dbl-oM-dYu"/>
+                                            <segue destination="sda-A2-Lir" kind="show" identifier="booking" id="iVD-BR-7s0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -2482,13 +2568,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="580" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="8:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-w3-tHn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-w3-tHn">
                                                     <rect key="frame" x="74" y="14" width="55" height="18"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5k-Cd-Qbh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5k-Cd-Qbh">
                                                     <rect key="frame" x="74" y="41" width="63" height="18"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2506,7 +2592,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pHp-Ee-1OC">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHp-Ee-1OC">
                                                     <rect key="frame" x="60" y="14" width="2" height="18"/>
                                                     <color key="backgroundColor" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -2514,7 +2600,7 @@
                                                         <constraint firstAttribute="height" constant="18" id="aZR-6b-AtX"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jal-e7-i7z">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jal-e7-i7z">
                                                     <rect key="frame" x="60" y="41" width="2" height="18"/>
                                                     <color key="backgroundColor" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -2828,11 +2914,13 @@
         <image name="long_btn" width="375" height="49"/>
         <image name="phoneNumber" width="40" height="40"/>
         <image name="search_btn" width="19" height="19"/>
+        <image name="signOutButton" width="116" height="36"/>
         <image name="total" width="153" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CuH-be-IF5"/>
+        <segue reference="7rn-ZD-fhg"/>
+        <segue reference="iVD-BR-7s0"/>
         <segue reference="wYj-pK-fFW"/>
-        <segue reference="8RK-R7-7R9"/>
     </inferredMetricsTieBreakers>
 </document>
