@@ -123,6 +123,10 @@ extension CategoriesViewController
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CategoriesCollectionViewCell
         
         cell.title.text = categoriesJson![indexPath.section, "subcategories", indexPath.item, "name"].string!
+        cell.title.fadeLength = 4
+        cell.title.scrollRate = 30
+        
+        
         cell.imageView.kf_setImageWithURL(NSURL(string: k_website + categoriesJson![indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
         cell.imageView.layer.cornerRadius = (cell.frame.size.width-22)/2

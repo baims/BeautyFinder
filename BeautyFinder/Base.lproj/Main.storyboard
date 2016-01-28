@@ -1407,15 +1407,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EkA-tD-IBl">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EkA-tD-IBl">
                                                     <rect key="frame" x="12" y="14.5" width="86" height="86"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="86" id="7Xk-AG-6nI"/>
                                                         <constraint firstAttribute="height" constant="86" id="lwM-Wx-uMm"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUp-eA-3Ph">
-                                                    <rect key="frame" x="116" y="17.5" width="1" height="80"/>
+                                                    <rect key="frame" x="112" y="17.5" width="1" height="80"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.9126372466216216" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="1eB-GG-Xck"/>
@@ -1423,36 +1424,38 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09-02-2016 - DONE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRE-1R-llx">
-                                                    <rect key="frame" x="135" y="8" width="163" height="20.5"/>
+                                                    <rect key="frame" x="131" y="8" width="163" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bader Salon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PA3-Sd-kqX">
-                                                    <rect key="frame" x="135" y="36" width="92.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Om-s8-Xo6">
-                                                    <rect key="frame" x="135" y="58" width="41.5" height="20.5"/>
+                                                    <rect key="frame" x="131" y="36" width="443" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mishref, block whatever" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="303-iY-aF4" customClass="MarqueeLabel" customModule="MarqueeLabel_Swift">
-                                                    <rect key="frame" x="135" y="86.5" width="182" height="20.5"/>
+                                                    <rect key="frame" x="131" y="86" width="443" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hair Coloring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Om-s8-Xo6">
+                                                    <rect key="frame" x="131" y="58" width="443" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="PA3-Sd-kqX" firstAttribute="top" secondItem="wRE-1R-llx" secondAttribute="bottom" constant="8" id="2Xn-D8-2kJ"/>
-                                                <constraint firstItem="dUp-eA-3Ph" firstAttribute="leading" secondItem="EkA-tD-IBl" secondAttribute="trailing" constant="18" id="4j7-Wh-WTD"/>
+                                                <constraint firstItem="dUp-eA-3Ph" firstAttribute="leading" secondItem="EkA-tD-IBl" secondAttribute="trailing" constant="14" id="4j7-Wh-WTD"/>
                                                 <constraint firstItem="EkA-tD-IBl" firstAttribute="centerY" secondItem="dUp-eA-3Ph" secondAttribute="centerY" id="8za-PD-THw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3Om-s8-Xo6" secondAttribute="trailing" constant="18" id="Ft9-w5-gQX"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="EkA-tD-IBl" secondAttribute="leading" constant="-4" id="GZ6-jF-Npk"/>
                                                 <constraint firstItem="303-iY-aF4" firstAttribute="leading" secondItem="wRE-1R-llx" secondAttribute="leading" id="HhT-ST-iT7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PA3-Sd-kqX" secondAttribute="trailing" constant="18" id="O3p-wz-A6h"/>
                                                 <constraint firstItem="PA3-Sd-kqX" firstAttribute="leading" secondItem="wRE-1R-llx" secondAttribute="leading" id="RcB-rp-FyL"/>
                                                 <constraint firstItem="EkA-tD-IBl" firstAttribute="centerY" secondItem="dgk-VQ-SqK" secondAttribute="centerY" id="Rs1-AK-QaY"/>
                                                 <constraint firstItem="303-iY-aF4" firstAttribute="top" secondItem="3Om-s8-Xo6" secondAttribute="bottom" constant="8" id="W4t-aG-7hc"/>
@@ -1461,7 +1464,7 @@
                                                 <constraint firstItem="3Om-s8-Xo6" firstAttribute="top" secondItem="PA3-Sd-kqX" secondAttribute="bottom" constant="2" id="szK-WH-zMB"/>
                                                 <constraint firstAttribute="topMargin" secondItem="wRE-1R-llx" secondAttribute="top" id="tWW-Qa-yhN"/>
                                                 <constraint firstItem="wRE-1R-llx" firstAttribute="leading" secondItem="PA3-Sd-kqX" secondAttribute="trailing" id="y7S-7v-TFY"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="303-iY-aF4" secondAttribute="trailing" constant="18" id="yii-Mn-t8f"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="303-iY-aF4" secondAttribute="trailing" constant="18" id="yii-Mn-t8f"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">

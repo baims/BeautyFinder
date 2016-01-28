@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UITextFieldDelegate
 {
@@ -331,6 +332,30 @@ extension ProfileViewController
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ProfileTableViewCell
         
         // TODO: implement this freakin' cell
+        let json = self.json!["lastOrders", indexPath.row]
+        
+        // date label
+        cell.dateLabel.text = json["date"].string!
+        
+        if BADate.dateIsBeforeToday(json["date"].string!)
+        {
+            print("http://beautyfinders.com" + json["salonLogo"].string!)
+        }
+        
+        cell.salonNameLabel.text = json["salonName"].string!
+        cell.serviceLabel.text   = json["service"].string!
+        
+        
+        cell.addressLabel.text   = json["salonAddress"].string!
+        cell.addressLabel.fadeLength = 4
+        cell.addressLabel.scrollRate = 30
+        
+        cell.salonLogo.kf_setImageWithURL(NSURL(string: "http://beautyfinders.com" + json["salonLogo"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
+        
+        cell.salonLogo.layer.cornerRadius = 86/2
+        cell.salonLogo.layer.masksToBounds = true
+        cell.salonLogo.layer.borderWidth = 0.5
+        cell.salonLogo.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
         
         
         let accessoryView = UIImageView(image: UIImage(named: "arrow"))
@@ -340,7 +365,11 @@ extension ProfileViewController
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 140
+        return 115
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        (cell as! ProfileTableViewCell).addressLabel.restartLabel()
     }
     
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath?
