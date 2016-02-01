@@ -402,6 +402,39 @@ extension ProfileViewController
         return cell
     }
     
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRectMake(0, 0, tableView.frame.width, 50))
+        headerView.backgroundColor = UIColor.whiteColor()
+        
+        
+        // label in header
+        let categoryLabel = UILabel(frame: CGRectZero)
+        categoryLabel.text = "Previous Orders"
+        categoryLabel.textColor = UIColor(red: 171.0/255.0, green: 171.0/255.0, blue: 171.0/255.0, alpha: 1)
+        categoryLabel.font = UIFont(name: "MuseoSans-700", size: 16)
+        categoryLabel.sizeToFit()
+        categoryLabel.center = CGPointMake(headerView.frame.width/2, headerView.frame.height/2)
+        
+        headerView.addSubview(categoryLabel)
+        
+        
+        // devider in header
+        let deviderImageView = UIImageView(image: UIImage(named: "divider"))
+        deviderImageView.frame.size = CGSizeMake(headerView.frame.width-30, 1)
+        deviderImageView.center     = CGPointMake(headerView.frame.width/2, headerView.frame.height)
+        deviderImageView.alpha = 0.5
+        
+        headerView.addSubview(deviderImageView)
+        
+        return headerView
+    }
+    
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 115
     }
