@@ -142,6 +142,9 @@ class SalonViewController: UIViewController {
             summaryViewController.dateOfBooking    = self.dateOfBooking
             summaryViewController.startTime        = self.startTime
             summaryViewController.endTime          = self.endTime
+            
+            summaryViewController.latitude         = self.salonJson!["latitude"].double!
+            summaryViewController.longitude        = self.salonJson!["longitude"].double!
         }
     }
 

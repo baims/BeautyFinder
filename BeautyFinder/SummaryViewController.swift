@@ -29,27 +29,31 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var salonNameLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var totalPriceBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bookAndPayButtonHeightConstraint: NSLayoutConstraint!
+    
     
     var viewIsLoaded = false
     
     var needToHideBookButton = false
     
-    var salonName : String!
+    var salonName     : String!
     var salonImageUrl : String!
-    var salonAddress : String!
+    var salonAddress  : String!
     
-    var subcategoryName : String!
-    var subcategoryPK   : Int!
+    var subcategoryName  : String!
+    var subcategoryPK    : Int!
     var subcategoryPrice : Double!
     
-    var beauticianName  : String!
-    var beauticianPK    : Int!
+    var beauticianName     : String!
+    var beauticianPK       : Int!
     var beauticianImageUrl : String!
     
     var dateOfBooking   : String!
     var startTime       : String!
     var endTime         : String!
     
+    var longitude : Double!
+    var latitude  : Double!
     
 
     override func viewDidLoad()
@@ -100,7 +104,7 @@ class SummaryViewController: UIViewController {
             
             if needToHideBookButton
             {
-                bookAndPayButton.hidden = true
+                bookAndPayButtonHeightConstraint.constant = 0
             }
             
             /*** Changing the placement of the labels/images depending on the device ***/
@@ -173,6 +177,18 @@ class SummaryViewController: UIViewController {
             self.performSegueWithIdentifier("logIn", sender: nil)
         }
     }
+    
+    
+    @IBAction func openLocationInMaps(sender: UIButton)
+    {
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
+            UIApplication.sharedApplication().openURL(NSURL(string:
+                "comgooglemaps://?daddr=\(latitude),\(longitude)&zoom=14")!)
+        } else {
+            print("Can't use comgooglemaps://");
+        }
+    }
+    
 
     func reserveBooking(token : String!)
     {

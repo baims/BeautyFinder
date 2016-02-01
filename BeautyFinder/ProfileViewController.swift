@@ -57,6 +57,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var token : String?
     var indexOfSelectedCell : NSIndexPath?
     
+    var viewIsLoaded = false
+    
 
     override func viewDidLoad()
     {
@@ -74,7 +76,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.navigationController?.navigationBar.hidden = true
         
+        if let indexPath = self.tableView.indexPathForSelectedRow
+        {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: animated)
+        }
+        
+        
         getProfileJsonIfSignedIn()
+        
         
         if token == nil
         {
@@ -92,6 +101,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
+    override func viewDidLayoutSubviews()
+    {
+        if !viewIsLoaded
+        {
+            viewIsLoaded = true
+            
+            self.tableView.contentOffset.y = -20
+        }
+    }
 
     // MARK: - Navigation
 
@@ -111,7 +129,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             summaryViewController.subcategoryName  = jsonOfSelectedIndex["service"].string!
             //summaryViewController.subcategoryPK    = jsonOfSelectedIndex["starttime"].string!
-            summaryViewController.subcategoryPrice =  jsonOfSelectedIndex["price"].double!
+            summaryViewController.subcategoryPrice = jsonOfSelectedIndex["price"].double!
             
             summaryViewController.beauticianName   = jsonOfSelectedIndex["beautician"].string!
             //summaryViewController.beauticianPK     = jsonOfSelectedIndex["starttime"].string!
@@ -119,7 +137,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             summaryViewController.dateOfBooking    = jsonOfSelectedIndex["date"].string!
             summaryViewController.startTime        = jsonOfSelectedIndex["starttime"].string!
-            summaryViewController.endTime          = DateTimeConverter.convertTimeToString(jsonOfSelectedIndex["endtime"].string!)
+            summaryViewController.endTime          = jsonOfSelectedIndex["endtime"].string!
+            
+            summaryViewController.latitude         = jsonOfSelectedIndex["lat"].double!
+            summaryViewController.longitude        = jsonOfSelectedIndex["long"].double!
             
             summaryViewController.needToHideBookButton = true
         }
@@ -145,16 +166,32 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func getProfileDataFromServer()
     {
         let headers = ["Authorization" : "Token \(token!)"]
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
                 
         Alamofire.request(.GET, k_website + "user/profile/", parameters: nil, headers: headers).responseJSON(completionHandler: { (response) -> Void in
             
-            if let Json = response.result.value
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            
+            
+            if let resultJson = response.result.value
             {
-                self.json = JSON(Json)
-                print(self.json)
-                
-                // updating elements on screen
-                self.updateElementsOnScreen()
+                // if self.json is not nil AND it is not the same as the fetched json from server, then we can update elements on screen, otherwise there is no need to update elements on screen
+                if let json = self.json where json != JSON(resultJson)
+                {
+                    self.json = JSON(resultJson)
+                    
+                    // updating elements on screen
+                    self.updateElementsOnScreen()
+                }
+                else if self.json == nil
+                {
+                    self.json = JSON(resultJson)
+                    
+                    // updating elements on screen
+                    self.updateElementsOnScreen()
+                }
             }
             else if let error = response.result.error
             {
@@ -313,7 +350,7 @@ extension ProfileViewController
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let json = self.json else
         {
-            return 1 // which will be "There is no orders"
+            return 0 // which will be "There is no orders"
         }
         
 //        if json["lastOrders"].array!.count > 3
@@ -337,6 +374,7 @@ extension ProfileViewController
         // date label
         cell.dateLabel.text = json["date"].string!
         
+        // order date is before 'today' or not
         if BADate.dateIsBeforeToday(json["date"].string!)
         {
             print("http://beautyfinders.com" + json["salonLogo"].string!)
