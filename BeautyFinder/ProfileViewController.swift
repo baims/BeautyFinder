@@ -218,14 +218,31 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     print(respond)
                     
                     /** Dealing with the respond from server **/
-                    if respond["Operation"].string! == "ok"
+                    if respond["Operation"].string == "ok"
                     {
                         self.getProfileJsonIfSignedIn()
+                    }
+                    else
+                    {
+                        self.showAlertView("Error", message: respond["error"].string!)
+                        
+                        self.saveButton.enabled = true
                     }
                 }
                 else if let error = response.result.error
                 {
                     print(error)
+                    
+                    if error.code == -1009
+                    {
+                        self.showAlertView("No internet connection!", message: "Please check your internet connection")
+                    }
+                    else
+                    {
+                        self.showAlertView("Something's Wrong!", message: "Please check the provided data and check your internet connection")
+                    }
+                    
+                    self.saveButton.enabled = true
                 }
             })
         }
@@ -242,14 +259,31 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     print(respond)
                     
                     /** Dealing with the respond from server **/
-                    if respond["Operation"].string! == "ok"
+                    if respond["Operation"].string == "ok"
                     {
                         self.getProfileJsonIfSignedIn()
+                    }
+                    else
+                    {
+                        self.showAlertView("Error", message: respond["error"].string!)
+                        
+                        self.saveButton.enabled = true
                     }
                 }
                 else if let error = response.result.error
                 {
                     print(error)
+                    
+                    if error.code == -1009
+                    {
+                        self.showAlertView("No internet connection!", message: "Please check your internet connection")
+                    }
+                    else
+                    {
+                        self.showAlertView("Something's Wrong!", message: "Please check the provided data and check your internet connection")
+                    }
+                    
+                    self.saveButton.enabled = true
                 }
             })
         }
@@ -287,19 +321,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func saveButtonTapped(sender: UIButton)
     {
-        if emailTextField.text!.isValidEmail()
+        if phoneIsChanged && phoneTextField.text!.characters.count < 8
         {
-            updateProfileDataOnServer()
-            
-            saveButton.enabled = false
-            
-            emailTextField.resignFirstResponder()
-            phoneTextField.resignFirstResponder()
+            showAlertView("Phone number is not valid", message: "Phone number should be 8 or more digits")
+            return
         }
-        else
+        else if emailIsChanged && !emailTextField.text!.isValidEmail()
         {
-            showAlertView()
+            showAlertView("Your email address is not valid", message: "Please enter a valid email address")
+            return
         }
+        
+        saveButton.enabled = false
+        
+        updateProfileDataOnServer()
+            
+        emailTextField.resignFirstResponder()
+        phoneTextField.resignFirstResponder()
     }
     
     

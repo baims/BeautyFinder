@@ -102,6 +102,17 @@ class LogInViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func logInButtonTapped(sender: UIButton)
     {
+        if !emailTextField.text!.isValidEmail()
+        {
+            showAlertView("Your email address is not valid", message: "Please enter a valid email address")
+            return
+        }
+        else if passwordTextField.text!.isEmpty
+        {
+            showAlertView("Enter a password", message: "Please enter your password")
+            return
+        }
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         Alamofire.request(.POST, k_website + "login/", parameters: ["username" : self.emailTextField.text!, "password" : self.passwordTextField.text!]).validate().responseJSON
@@ -127,11 +138,18 @@ class LogInViewController: UIViewController, UITextFieldDelegate
                 {
                     print(error)
                     
-                    let alertController = UIAlertController(title: "", message: "Your email and password does not match", preferredStyle: .Alert)
-                    let cancel = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
-                    
-                    alertController.addAction(cancel)
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    if error.code == -6003
+                    {
+                        self.showAlertView("Something's Wrong!", message: "Your email and password does not match")
+                    }
+                    else if error.code == -1009
+                    {
+                        self.showAlertView("No internet connection!", message: "Please check your internet connection")
+                    }
+                    else
+                    {
+                        self.showAlertView("Something's Wrong!", message: "Please check the provided data and check your internet connection")
+                    }
                 }
                 
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -145,6 +163,16 @@ class LogInViewController: UIViewController, UITextFieldDelegate
         
         let safariViewController = SFSafariViewController(URL: NSURL(string: k_website + "reset/recover")!)
         self.presentViewController(safariViewController, animated: true, completion: nil)
+    }
+    
+    
+    func showAlertView(title:String = "Something's wrong", message: String = "Please check your email address and phone number and make sure they are valid")
+    {
+        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        
+        alertView.addAction(okAction)
+        self.presentViewController(alertView, animated: true, completion: nil)
     }
     
     

@@ -181,11 +181,25 @@ class SummaryViewController: UIViewController {
     
     @IBAction func openLocationInMaps(sender: UIButton)
     {
-        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!))
+        {
             UIApplication.sharedApplication().openURL(NSURL(string:
                 "comgooglemaps://?daddr=\(latitude),\(longitude)&zoom=14")!)
-        } else {
-            print("Can't use comgooglemaps://");
+        }
+        else
+        {
+            let alertView = UIAlertController(title: "Download Google Maps", message: "You need to download Google Maps app from the App Store to get the location of this salon", preferredStyle: .Alert)
+            
+            let openGoogleMapsAction = UIAlertAction(title: "Download", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+                UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/us/app/google-maps/id585027354?mt=8")!)
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            
+            alertView.addAction(openGoogleMapsAction)
+            alertView.addAction(cancelAction)
+            
+            self.presentViewController(alertView, animated: true, completion: nil)
         }
     }
     
