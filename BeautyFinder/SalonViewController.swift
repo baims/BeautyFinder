@@ -57,7 +57,7 @@ class SalonViewController: UIViewController {
         segmentedControl.items = [" 1. Service", "  2. Beautician ", "   3. Schedule"/*, "4. Book"*/]
         segmentedControl.font = UIFont(name: "MuseoSans-700", size: 14)
         segmentedControl.selectedIndex = 0
-        segmentedControl.addTarget(self, action: "segmentValueChanged:", forControlEvents: .ValueChanged)
+        segmentedControl.addTarget(self, action: #selector(SalonViewController.segmentValueChanged(_:)), forControlEvents: .ValueChanged)
     }
     
     override func didReceiveMemoryWarning() {

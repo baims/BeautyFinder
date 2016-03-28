@@ -28,7 +28,7 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl.addTarget(self, action: "startRefresh", forControlEvents: .ValueChanged)
+        self.refreshControl.addTarget(self, action: #selector(SubcategoriesViewController.startRefresh), forControlEvents: .ValueChanged)
         collectionView?.addSubview(self.refreshControl)
         
         self.refreshControl.beginRefreshing()

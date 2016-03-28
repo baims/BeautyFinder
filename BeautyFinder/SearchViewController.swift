@@ -31,12 +31,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UIGestureReco
         
         segmentedControl.items = ["Salon", "Area", "Category"]
         segmentedControl.font = UIFont(name: "MuseoSans-700", size: 14)
-        segmentedControl.addTarget(self, action: "segmentValueChanged:", forControlEvents: .ValueChanged)
+        segmentedControl.addTarget(self, action: #selector(SearchViewController.segmentValueChanged(_:)), forControlEvents: .ValueChanged)
         segmentedControl.selectedIndex = 0
         
         
         searchField.becomeFirstResponder()
-        searchField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        searchField.addTarget(self, action: #selector(SearchViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -68,6 +68,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UIGestureReco
         
         self.navigationController?.delegate = nil
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        
+        // showing tabBar ( if it was hidden from the SalonViewController )
+        self.tabBarController!.tabBar.hidden = false
     }
     
     override func viewWillDisappear(animated: Bool)

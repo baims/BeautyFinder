@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftSpinner
 
 class SummaryViewController: UIViewController {
         
@@ -166,10 +167,8 @@ class SummaryViewController: UIViewController {
     {
         if let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
         {
-            // use the token to reserve the booking
-            // then go to knet page
-            // finally, if the payment succeeds, then book the appointment
-            
+            SwiftSpinner.show("Please Wait...")
+            // reserving booking
             self.reserveBooking(token)
         }
         else
@@ -206,43 +205,99 @@ class SummaryViewController: UIViewController {
 
     func reserveBooking(token : String!)
     {
+        sendRequestToWebsite(token, withExtensionLink: "reserve/")
+    }
+    
+    func orderBooking(token: String!)
+    {
+        sendRequestToWebsite(token, withExtensionLink: "order/")
+    }
+    
+    
+    /**
+      Sends request for the website for booking or reserving appointments
+ - Parameter extensionLink: may take values "order/" or "reserve/"
+ */
+    func sendRequestToWebsite(token : String!, withExtensionLink extensionLink: String!)
+    {
         let parameters = ["beauticianpk" : beauticianPK,
-            "starttime" : "\(startTime)",
-            "endtime" : "\(endTime)",
-            "date" : dateOfBooking,
-            "subcategorypk" : subcategoryPK] as [String : AnyObject]
+                          "starttime" : "\(startTime)",
+                          "endtime" : "\(endTime)",
+                          "date" : dateOfBooking,
+                          "subcategorypk" : subcategoryPK] as [String : AnyObject]
         
         let headers = ["Authorization" : "Token \(token)"]
         
-        Alamofire.request(.POST, k_website + "reserve/", parameters: parameters, headers: headers).responseString { (response) -> Void in
-            if let string = response.result.value
-                        {
-                            //let json = JSON(Json)
-                            print(string)
-                        }
-                        else if let error = response.result.error
-                        {
-                            print(error)
-                        }
-        }
-//         responseJSON(completionHandler: { (response) -> Void in
-//            
-//            if let Json = response.result.value
-//            {
-//                let json = JSON(Json)
-//                print(json)
-//            }
-//            else if let error = response.result.error
-//            {
-//                print(error)
-//            }
-//        })
+        Alamofire.request(.POST, k_website + extensionLink, parameters: parameters, headers: headers).responseJSON(completionHandler: { (response) -> Void in
         
-        print("\n\nWebsite: \(k_website + "reserve/")")
+                    if let Json = response.result.value
+                    {
+                        let json = JSON(Json)
+                        if json["Operation"].string! == "ok" && extensionLink == "reserve/"
+                        {
+                            self.getProfileDataAndFetchMyFatoorahLink(token)
+                        }
+                        else if json["Operation"].string! == "error" && extensionLink == "reserve/"
+                        {
+                            SwiftSpinner.hide()
+                            
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.showAlertView("We're Sorry!", message: "This appointment is already booked by another customer! Please try again with another time or date.")
+                            })
+                        }
+                        else if json["Operation"].string! == "ok" && extensionLink == "order/"
+                        {
+                            SwiftSpinner.hide()
+                            
+                            // TODO: show some fancy stuff to let the user know that the booking has succeeded
+                            dispatch_async(dispatch_get_main_queue(), { 
+                                self.bookAndPayButton.hidden = true
+                                self.showAlertView("Thank you!", message: "We received your payment successfully.")
+                            })
+                        }
+                        print(json)
+                    }
+                    else if let error = response.result.error
+                    {
+                        print(error)
+                    }
+                })
+        
+        print("\n\nWebsite: \(k_website + extensionLink)")
         print("\n\nParameters: ")
         print(parameters)
         print("\n\nHeader: ")
         print(headers)
         print("\n\n")
+    }
+    
+    func getProfileDataAndFetchMyFatoorahLink(token: String!)
+    {
+        // Getting name, email and phone number of the user
+        // and then fetching the payment link from myFatoorah ( inside the block )
+        let headers = ["Authorization" : "Token \(token)"]
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        
+        Alamofire.request(.GET, k_website + "user/profile/", parameters: nil, headers: headers).responseJSON(completionHandler: { (response) -> Void in
+            
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            
+            
+            if let resultJson = response.result.value
+            {
+                let json = JSON(resultJson)
+                
+                
+                self.fetchMyfatoorahLinkWith(withName: json["name"].string!,
+                    email: json["email"].string!, phone: json["Phonenumber"].string!,
+                    service: self.subcategoryName, price: self.subcategoryPrice)
+            }
+            else if let error = response.result.error
+            {
+                print(error)
+            }
+        })
     }
 }

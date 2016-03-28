@@ -66,8 +66,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         getProfileJsonIfSignedIn()
         
-        emailTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: .EditingChanged)
-        phoneTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: .EditingChanged)
+        emailTextField.addTarget(self, action: #selector(ProfileViewController.textFieldDidChange(_:)), forControlEvents: .EditingChanged)
+        phoneTextField.addTarget(self, action: #selector(ProfileViewController.textFieldDidChange(_:)), forControlEvents: .EditingChanged)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -227,6 +227,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         self.showAlertView("Error", message: respond["error"].string!)
                         
                         self.saveButton.enabled = true
+                        self.cancelButton.hidden = false
                     }
                 }
                 else if let error = response.result.error
@@ -243,6 +244,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                     
                     self.saveButton.enabled = true
+                    self.cancelButton.hidden = false
                 }
             })
         }
@@ -268,6 +270,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                         self.showAlertView("Error", message: respond["error"].string!)
                         
                         self.saveButton.enabled = true
+                        self.cancelButton.hidden = false
                     }
                 }
                 else if let error = response.result.error
@@ -284,6 +287,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                     
                     self.saveButton.enabled = true
+                    self.cancelButton.hidden = false
                 }
             })
         }
@@ -346,6 +350,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         updateElementsOnScreen()
         
         saveButton.enabled = false
+        cancelButton.hidden = true
         
         emailTextField.resignFirstResponder()
         phoneTextField.resignFirstResponder()

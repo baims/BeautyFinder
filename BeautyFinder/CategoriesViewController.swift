@@ -25,12 +25,12 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl.addTarget(self, action: "startRefresh", forControlEvents: .ValueChanged)
+        self.refreshControl.addTarget(self, action: #selector(CategoriesViewController.startRefresh), forControlEvents: .ValueChanged)
         collectionView?.addSubview(self.refreshControl)
     }
     
     override func viewDidLayoutSubviews() {
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
         self.refreshControl.beginRefreshing()
         self.startRefresh()

@@ -34,6 +34,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SWXMLHash.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -47,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>998B4DC9E9BA1D3D2B5D85C7DBF35A5B</key>
+		<key>5FDAC3FC9FF0F29E7F42DA3B1C381C5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>BA14B622689766F6B8A4F42FD9DE552F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3CDB8DCA83F7D7680D1E32E674CC8AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4BFDF050BA73D60E12EEE95078C09F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

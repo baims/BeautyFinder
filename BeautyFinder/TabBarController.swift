@@ -23,7 +23,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate
         {
             viewIsLoaded = true
             
-            for (var i = 0; i < tabBar.items?.count; i++)
+            for i in 0 ..< tabBar.items!.count// (var i = 0; i < tabBar.items?.count; i += 1)
             {
                 print(i)
                 tabBar.items![i].image = UIImage(named: "tabBarImages\(i)")!.imageWithRenderingMode(.AlwaysOriginal)
