@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mJX-Ex-DLT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mJX-Ex-DLT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -25,8 +25,10 @@
             <string>MuseoSans-300</string>
             <string>MuseoSans-300</string>
             <string>MuseoSans-300</string>
+            <string>MuseoSans-300</string>
         </mutableArray>
         <mutableArray key="MuseoSans_500.otf">
+            <string>MuseoSans-500</string>
             <string>MuseoSans-500</string>
             <string>MuseoSans-500</string>
             <string>MuseoSans-500</string>
@@ -441,7 +443,6 @@
                         <outlet property="categorySearchContainerView" destination="8AE-18-uVE" id="Sju-DT-0AH"/>
                         <outlet property="salonSearchContainerView" destination="oVb-ys-xkB" id="vCh-xf-oD7"/>
                         <outlet property="segmentedControl" destination="vWk-ts-gfr" id="01C-9t-EDd"/>
-                        <segue destination="Dip-aM-egQ" kind="show" identifier="Category" id="CuH-be-IF5"/>
                         <segue destination="fcD-YS-Zrb" kind="show" identifier="Salon" id="8RK-R7-7R9"/>
                     </connections>
                 </viewController>
@@ -646,9 +647,6 @@
                     <navigationItem key="navigationItem" id="cTz-QH-UED">
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="XLd-z4-ahr">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="searchButtonTapped:" destination="Ka9-h3-hlT" id="TfH-8X-cCH"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="cart_btn" id="iVE-ln-0uu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -663,7 +661,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Y0-fD-4zr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="77Y-uI-M3j">
                     <connections>
-                        <outlet property="delegate" destination="Ka9-h3-hlT" id="XLc-nn-UNH"/>
                         <outlet property="searchContentsController" destination="Ka9-h3-hlT" id="0Dk-Qd-Gz6"/>
                         <outlet property="searchResultsDataSource" destination="Ka9-h3-hlT" id="FJP-69-HVS"/>
                         <outlet property="searchResultsDelegate" destination="Ka9-h3-hlT" id="jof-CS-GIb"/>
@@ -906,7 +903,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="Dip-aM-egQ" eventType="touchUpInside" id="zpf-E3-6Cq"/>
                                     <action selector="backButtonTapped:" destination="sda-A2-Lir" eventType="touchUpInside" id="vwy-qf-5dp"/>
                                 </connections>
                             </button>
@@ -917,7 +913,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="87" height="106"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rSD-Tu-1DW">
-                                                <rect key="frame" x="0.5" y="0.0" width="86" height="86"/>
+                                                <rect key="frame" x="1" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="86" id="Awo-bn-C9d"/>
                                                     <constraint firstAttribute="width" secondItem="rSD-Tu-1DW" secondAttribute="height" multiplier="1:1" id="JKR-vz-8Ut"/>
@@ -942,10 +938,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="enw-T2-0mN">
-                                        <rect key="frame" x="125" y="0.5" width="87" height="105"/>
+                                        <rect key="frame" x="125" y="1" width="87" height="105"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Om4-lQ-Elb">
-                                                <rect key="frame" x="0.5" y="0.0" width="86" height="86"/>
+                                                <rect key="frame" x="1" y="0.0" width="86" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="86" id="3LG-tU-uj9"/>
                                                     <constraint firstAttribute="width" secondItem="Om4-lQ-Elb" secondAttribute="height" multiplier="1:1" id="C3Z-3g-rUP"/>
@@ -1410,9 +1406,8 @@
                                                     <rect key="frame" x="70" y="26" width="27" height="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                                                     <connections>
-                                                        <action selector="emailAddressIsEditing:" destination="ihY-I8-832" eventType="valueChanged" id="gzC-CI-qQF"/>
                                                         <outlet property="delegate" destination="ihY-I8-832" id="S5s-Nq-Sdk"/>
                                                     </connections>
                                                 </textField>
@@ -1962,21 +1957,19 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="V9t-X0-t06" id="qj3-dE-gkt"/>
-                        <outlet property="searchDisplayController" destination="77Y-uI-M3j" id="Opw-iF-CVl"/>
                         <outlet property="titleLabel" destination="j7s-wj-nFV" id="JDP-w3-DPS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4f-QJ-FA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="cvX-wg-BaX">
                     <connections>
-                        <outlet property="delegate" destination="Dip-aM-egQ" id="vlu-ef-PKN"/>
                         <outlet property="searchContentsController" destination="Dip-aM-egQ" id="b9l-3d-g6I"/>
                         <outlet property="searchResultsDataSource" destination="Dip-aM-egQ" id="UJO-0N-L4C"/>
                         <outlet property="searchResultsDelegate" destination="Dip-aM-egQ" id="Phh-aR-NQd"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-394" y="1295"/>
+            <point key="canvasLocation" x="-400" y="1243"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="KSd-1h-mOW">
@@ -2629,13 +2622,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKh-w3-tHn">
-                                                    <rect key="frame" x="74" y="14" width="55" height="18"/>
+                                                    <rect key="frame" x="75" y="14" width="55" height="18"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5k-Cd-Qbh">
-                                                    <rect key="frame" x="74" y="41" width="63" height="18"/>
+                                                    <rect key="frame" x="75" y="41" width="63" height="18"/>
                                                     <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2653,7 +2646,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHp-Ee-1OC">
-                                                    <rect key="frame" x="60" y="14" width="2" height="18"/>
+                                                    <rect key="frame" x="61" y="14" width="2" height="18"/>
                                                     <color key="backgroundColor" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="2" id="Re7-3B-wQ9"/>
@@ -2661,7 +2654,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jal-e7-i7z">
-                                                    <rect key="frame" x="60" y="41" width="2" height="18"/>
+                                                    <rect key="frame" x="61" y="41" width="2" height="18"/>
                                                     <color key="backgroundColor" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="2" id="6cX-wX-JIq"/>
@@ -2957,6 +2950,121 @@
             </objects>
             <point key="canvasLocation" x="110" y="-289.5"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Bgv-sp-zxD">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cQ-CS-jJC" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="BAWebViewController" id="8Pw-hY-eBc" customClass="BAWebViewController" customModule="BeautyFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Srs-AJ-zOX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ezN-JY-pyI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g6z-kh-4Rm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4OZ-NQ-iCr">
+                                <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                                <color key="tintColor" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="header_1" translatesAutoresizingMaskIntoConstraints="NO" id="rbU-My-rFp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <color key="backgroundColor" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="IRK-Hf-D2f"/>
+                                    <constraint firstAttribute="height" constant="64" id="syS-ey-r3F"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IRK-Hf-D2f"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVp-P2-AIh">
+                                <rect key="frame" x="263.5" y="28" width="73.5" height="22"/>
+                                <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIa-h0-Uhl">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.76944026659999998" green="0.1354767818" blue="0.36185768039999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <barButtonItem image="back_btn" id="84v-B9-Biz">
+                                        <connections>
+                                            <action selector="back:" destination="8Pw-hY-eBc" id="M9o-oL-B7y"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Wcp-hy-WGZ"/>
+                                    <barButtonItem image="forwardButton" id="At3-V3-61M">
+                                        <connections>
+                                            <action selector="forward:" destination="8Pw-hY-eBc" id="SMe-bA-SRo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HNr-JM-vbh"/>
+                                    <barButtonItem image="refresh" id="GbI-QS-EXh">
+                                        <connections>
+                                            <action selector="reload:" destination="8Pw-hY-eBc" id="wnR-KX-Xbn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="1" green="1" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.83852382852812168" green="0.24372490566950447" blue="0.45885023622935961" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvW-qV-XIj">
+                                <rect key="frame" x="20" y="22" width="58" height="34"/>
+                                <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="18"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="8Pw-hY-eBc" eventType="touchUpInside" id="iA9-g4-3aZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qIa-h0-Uhl" firstAttribute="leading" secondItem="g6z-kh-4Rm" secondAttribute="leadingMargin" constant="-20" id="0er-q3-Gcb"/>
+                            <constraint firstItem="rbU-My-rFp" firstAttribute="top" secondItem="Srs-AJ-zOX" secondAttribute="bottom" constant="-20" id="3YE-gu-tb1"/>
+                            <constraint firstItem="4OZ-NQ-iCr" firstAttribute="top" secondItem="Srs-AJ-zOX" secondAttribute="bottom" id="DMG-Kp-y6G"/>
+                            <constraint firstItem="rbU-My-rFp" firstAttribute="top" secondItem="4OZ-NQ-iCr" secondAttribute="bottom" constant="-22" id="EYE-cm-7Yd"/>
+                            <constraint firstItem="GvW-qV-XIj" firstAttribute="centerY" secondItem="NVp-P2-AIh" secondAttribute="centerY" id="EzO-nm-XBO"/>
+                            <constraint firstItem="rbU-My-rFp" firstAttribute="leading" secondItem="GvW-qV-XIj" secondAttribute="trailing" constant="-78" id="HeS-TX-U5J"/>
+                            <constraint firstItem="NVp-P2-AIh" firstAttribute="top" secondItem="rbU-My-rFp" secondAttribute="bottom" constant="-36" id="Kuu-cB-LXa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qIa-h0-Uhl" secondAttribute="trailing" constant="-20" id="RNP-gs-y58"/>
+                            <constraint firstItem="NVp-P2-AIh" firstAttribute="centerX" secondItem="rbU-My-rFp" secondAttribute="centerX" id="RQN-T8-WZz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rbU-My-rFp" secondAttribute="trailing" constant="-20" id="TSg-cq-D16"/>
+                            <constraint firstItem="rbU-My-rFp" firstAttribute="leading" secondItem="g6z-kh-4Rm" secondAttribute="leadingMargin" constant="-20" id="fgF-bZ-Djh"/>
+                            <constraint firstItem="4OZ-NQ-iCr" firstAttribute="top" secondItem="rbU-My-rFp" secondAttribute="bottom" id="gE9-0l-7jN"/>
+                            <constraint firstItem="4OZ-NQ-iCr" firstAttribute="top" secondItem="Srs-AJ-zOX" secondAttribute="bottom" id="lX4-UD-RbI"/>
+                            <constraint firstItem="4OZ-NQ-iCr" firstAttribute="leading" secondItem="g6z-kh-4Rm" secondAttribute="leadingMargin" constant="-20" id="nK3-Ne-jp8"/>
+                            <constraint firstItem="4OZ-NQ-iCr" firstAttribute="leading" secondItem="g6z-kh-4Rm" secondAttribute="leadingMargin" constant="-20" id="q7W-jt-Gft"/>
+                            <constraint firstItem="qIa-h0-Uhl" firstAttribute="leading" secondItem="g6z-kh-4Rm" secondAttribute="leadingMargin" id="v0d-uV-3VU"/>
+                            <constraint firstItem="ezN-JY-pyI" firstAttribute="top" secondItem="qIa-h0-Uhl" secondAttribute="bottom" id="xqx-pG-u9h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4OZ-NQ-iCr" secondAttribute="trailing" constant="-20" id="zNP-bL-Rpj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EYE-cm-7Yd"/>
+                                <exclude reference="DMG-Kp-y6G"/>
+                                <exclude reference="lX4-UD-RbI"/>
+                                <exclude reference="q7W-jt-Gft"/>
+                                <exclude reference="v0d-uV-3VU"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="W3R-Tv-COQ"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="84v-B9-Biz" id="ZsD-nh-DpW"/>
+                        <outlet property="forwardButton" destination="At3-V3-61M" id="T8r-Wn-FJU"/>
+                        <outlet property="progressView" destination="4OZ-NQ-iCr" id="Dd3-Dv-Nhe"/>
+                        <outlet property="reloadButton" destination="GbI-QS-EXh" id="dtD-W6-8Nf"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-400" y="3584"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Icon-76" width="38" height="38"/>
@@ -2968,20 +3076,21 @@
         <image name="cart_btn" width="19" height="19"/>
         <image name="divider" width="344" height="1"/>
         <image name="emailAddress" width="40" height="40"/>
+        <image name="forwardButton" width="19" height="19"/>
         <image name="header_1" width="375" height="65"/>
         <image name="header_3" width="375" height="250"/>
         <image name="logo" width="36" height="52"/>
         <image name="long_btn" width="375" height="49"/>
         <image name="phoneNumber" width="40" height="40"/>
+        <image name="refresh" width="19" height="19"/>
         <image name="search_btn" width="19" height="19"/>
         <image name="signOutButton" width="116" height="36"/>
         <image name="total" width="358" height="62"/>
         <image name="totalCut" width="42" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CuH-be-IF5"/>
-        <segue reference="7rn-ZD-fhg"/>
-        <segue reference="Rwa-c6-yJa"/>
-        <segue reference="K5e-Ch-39M"/>
+        <segue reference="wYj-pK-fFW"/>
+        <segue reference="iVD-BR-7s0"/>
+        <segue reference="8RK-R7-7R9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '12770313107707915EEA89FF'
+               BlueprintIdentifier = '29E04098D0B4E40D1E43E680'
                BlueprintName = 'Pods-BeautyFinder'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_BeautyFinder.framework'>
