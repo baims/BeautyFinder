@@ -181,15 +181,19 @@ class SalonViewController: UIViewController {
         }
         else
         {
-            let alertView = UIAlertController(title: "Download Google Maps", message: "You need to download Google Maps app from the App Store to get the location of this salon", preferredStyle: .Alert)
+            let alertView = UIAlertController(title: "You don't have Google Maps", message: "You can download Google Maps app from the App Store to get the directions to this salon, or you can open it in Apple Maps", preferredStyle: .Alert)
             
-            let openGoogleMapsAction = UIAlertAction(title: "Download", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+            let openGoogleMapsAction = UIAlertAction(title: "Download Google Maps", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
                 UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/us/app/google-maps/id585027354?mt=8")!)
+            })
+            let openAppleMapsAction = UIAlertAction(title: "Open Apple Maps", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(self.salonJson!["latitude"].double!),\(self.salonJson!["longitude"].double!)&z=17")!)
             })
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             
             alertView.addAction(openGoogleMapsAction)
+            alertView.addAction(openAppleMapsAction)
             alertView.addAction(cancelAction)
             
             self.presentViewController(alertView, animated: true, completion: nil)
