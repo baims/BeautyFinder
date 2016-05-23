@@ -182,8 +182,24 @@ class SummaryViewController: UIViewController {
     {
         if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!))
         {
-            UIApplication.sharedApplication().openURL(NSURL(string:
-                "comgooglemaps://?daddr=\(latitude),\(longitude)&zoom=14")!)
+            let actionSheet = UIAlertController(title: "Open Location in:", message: nil, preferredStyle: .ActionSheet)
+           
+            let openGoogleMaps = UIAlertAction(title: "Google Maps", style: .Default, handler: { (action) in
+                UIApplication.sharedApplication().openURL(NSURL(string:
+                    "comgooglemaps://?daddr=\(self.latitude),\(self.longitude)&zoom=14")!)
+            })
+            
+            let openAppleMaps = UIAlertAction(title: "Apple Maps", style: .Default, handler: { (action) in
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(self.latitude),\(self.longitude)&z=17")!)
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            
+            actionSheet.addAction(openGoogleMaps)
+            actionSheet.addAction(openAppleMaps)
+            actionSheet.addAction(cancelAction)
+            
+            self.presentViewController(actionSheet, animated: true, completion: nil)
         }
         else
         {

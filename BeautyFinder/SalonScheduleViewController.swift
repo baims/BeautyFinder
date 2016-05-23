@@ -265,6 +265,29 @@ extension SalonViewController
         self.startTime     = startTime
         self.endTime       = endTime
         
-        self.performSegueWithIdentifier("summarySegue", sender: nil)
+        //self.performSegueWithIdentifier("summarySegue", sender: nil)
+        let newOrder = BAOrderData()
+        newOrder.beauticianName     = self.beauticianName
+        newOrder.beauticianPK       = self.beauticianPK
+        newOrder.beauticianImageUrl = self.beauticianImageUrl
+        newOrder.dateOfBooking      = self.dateOfBooking
+        newOrder.startTime          = self.startTime
+        newOrder.endTime            = self.endTime
+        newOrder.subcategoryPrice   = self.subcategoryPrice
+        newOrder.subcategoryPK      = self.subcategoryPK
+        newOrder.subcategoryName    = self.subcategoryName
+        
+        orders.append(newOrder)
+        
+        /*
+         - show the cart button with a counter on it
+         - go back to the services page
+         - show him a notification if it's the first time (NSUserDefaults)
+         - when he taps the cart button, orders should be sent to the BACartViewController
+         - when he taps the continue shopping button, orders should be sent back to this VC
+         - trying to go back to the first page should show a notification saying that everything will be lost because users cannot book in more than 1 salon at a time
+         */
+        
+        self.updateCart()
     }
 }

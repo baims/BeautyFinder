@@ -34,6 +34,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-BeautyFinderTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SWXMLHash.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +62,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>23074F70190E82E6250C985E05C4D6C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30F95E272089C65FF087A799EB3A4CD3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5FDAC3FC9FF0F29E7F42DA3B1C381C5C</key>
+		<key>43948D8393067F98DD89359629903AF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6330AA6F502F47EDE492D28E12706BD9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B2F0EC1CEEF645C38029F272771D8AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,17 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C3CDB8DCA83F7D7680D1E32E674CC8AC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C4BFDF050BA73D60E12EEE95078C09F8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CFF858055EBBB40A023415F0A0168820</key>
+		<key>CA6108018E909B21C0905A21AC83278E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
