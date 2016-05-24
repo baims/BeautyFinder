@@ -241,9 +241,13 @@ extension CVCalendarDayView {
     }
     
     public func setupDotMarker() {
-        for (index, dotMarker) in dotMarkers.enumerate() {
-            dotMarkers[index]!.removeFromSuperview()
-            dotMarkers[index] = nil
+        for (index, dotMarker) in dotMarkers.enumerate()
+        {
+            if let _ = dotMarkers[index]
+            {
+                dotMarkers[index]!.removeFromSuperview()
+                dotMarkers[index] = nil
+            }
         }
         
         if let delegate = calendarView.delegate {

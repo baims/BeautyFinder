@@ -280,14 +280,10 @@ extension SalonViewController
         orders.append(newOrder)
         
         /*
-         - show the cart button with a counter on it
-         - go back to the services page
          - show him a notification if it's the first time (NSUserDefaults)
-         - when he taps the cart button, orders should be sent to the BACartViewController
-         - when he taps the continue shopping button, orders should be sent back to this VC
          - trying to go back to the first page should show a notification saying that everything will be lost because users cannot book in more than 1 salon at a time
          */
         
-        self.updateCart()
+        self.updateCart(true)
     }
 }

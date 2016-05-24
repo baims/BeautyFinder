@@ -8,6 +8,8 @@
 
 import UIKit
 import PureLayout
+import SwiftSpinner
+import Alamofire
 
 protocol BACartDelegate {
     func dismissCartViewController(orders : [BAOrderData]!)
@@ -104,6 +106,7 @@ class BACartViewController: UIViewController
         
         /*** Buttons ***/
         bookAndPayButton.setImage(UIImage(named: "long_btn"), forState: .Normal)
+        bookAndPayButton.addTarget(self, action: #selector(self.bookAndPayButtonTapped(_:)), forControlEvents: .TouchUpInside)
         self.view.addSubview(bookAndPayButton)
         
         bookAndPayButton.autoPinEdgeToSuperviewEdge(.Trailing)
@@ -202,20 +205,18 @@ class BACartViewController: UIViewController
         totalLabel.center.y = self.view.frame.height+100
         
         
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations:
+            {
+                self.scrollView.center = scrollViewCenter
+                self.cartTitle.center  = cartTitleCenter
+                self.bookAndPayButton.center = bookAndPayButtonCenter
+                self.bookAndPayLabel.center  = bookAndPayLabelCenter
+                self.continueShoppingLabel.center  = continueShoppingLabelCenter
+                self.continueShoppingButton.center = continueShoppingButtonCenter
+                self.buttonsSeparator.center = buttonsSeparatorCenter
+                self.totalLabel.center = totalLabelCenter
             self.view.alpha = 1
-            }) { (completed) in
-                UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-                    self.scrollView.center = scrollViewCenter
-                    self.cartTitle.center  = cartTitleCenter
-                    self.bookAndPayButton.center = bookAndPayButtonCenter
-                    self.bookAndPayLabel.center  = bookAndPayLabelCenter
-                    self.continueShoppingLabel.center  = continueShoppingLabelCenter
-                    self.continueShoppingButton.center = continueShoppingButtonCenter
-                    self.buttonsSeparator.center = buttonsSeparatorCenter
-                    self.totalLabel.center = totalLabelCenter
-                    }, completion: nil)
-        }
+            }, completion: nil)
     }
 
     override func didReceiveMemoryWarning()
@@ -235,12 +236,9 @@ class BACartViewController: UIViewController
     }
     */
     
-    func continueShoppingButtonTapped(sender : UIButton)
+    func hideViewControllerWithAnimation()
     {
-        UIView.animateWithDuration(0.2, animations: {
-            self.view.alpha = 1
-        }) { (completed) in
-            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                 self.scrollView.center = CGPointMake(self.view.frame.size.width+200, self.scrollView.center.y)
                 self.cartTitle.center  = CGPointMake(self.cartTitle.center.x, self.cartTitle.center.x-300)
                 self.bookAndPayButton.center = CGPointMake(self.bookAndPayButton.center.x, self.bookAndPayButton.center.y+300)
@@ -254,7 +252,120 @@ class BACartViewController: UIViewController
                 (completed) in
                 self.delegate.dismissCartViewController(self.orders)
             }
+    }
+    
+    func continueShoppingButtonTapped(sender : UIButton)
+    {
+        hideViewControllerWithAnimation()
+    }
+    
+    func bookAndPayButtonTapped(sender : UIButton)
+    {
+        if let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
+        {
+            SwiftSpinner.show("Please Wait...")
+            // reserving booking
+            self.reserveBooking(token)
         }
+        else
+        {
+            self.performSegueWithIdentifier("logIn", sender: nil)
+        }
+    }
+    
+    func reserveBooking(token : String!)
+    {
+        sendRequestToWebsite(token, withExtensionLink: "reserve/")
+    }
+    
+    func orderBooking(token: String!)
+    {
+        sendRequestToWebsite(token, withExtensionLink: "order/")
+    }
+    
+    /**
+     Sends request for the website for booking or reserving appointments
+     - Parameter extensionLink: may take values "order/" or "reserve/"
+     */
+    func sendRequestToWebsite(token : String!, withExtensionLink extensionLink: String!)
+    {
+        var parameters = [[String : AnyObject]]()
+        
+        for order in orders
+        {
+            let parameter = ["beauticianpk" : order.beauticianPK,
+                              "starttime" : "\(order.startTime)",
+                              "endtime" : "\(order.endTime)",
+                              "date" : order.dateOfBooking,
+                              "subcategorypk" : order.subcategoryPK] as [String : AnyObject]
+            
+            parameters.append(parameter)
+        }
+
+        //let request = NSMutableURLRequest(URL: NSURL(string: k_website + extensionLink)!)
+        let request = NSMutableURLRequest(URL: NSURL(string: k_website + "order/")!)
+        request.HTTPMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(["orders":parameters], options: [.PrettyPrinted])
+        request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
+        
+       // let headers = ["Authorization" : "Token \(token)"]
+        
+        Alamofire.request(request).responseString { (response) in
+            print(response.description)
+        }
+            
+//            .responseJSON(completionHandler: { (response) -> Void in
+//            
+//            if let Json = response.result.value
+//            {
+//                let json = JSON(Json)
+//                
+//                print("\(extensionLink) \(json)")
+//                
+//                if json["Operation"].string! == "ok" && extensionLink == "reserve/"
+//                {
+//                    //self.getProfileDataAndFetchMyFatoorahLink(token)
+//                    print("RESERVED")
+//                    self.orderBooking(token)
+//                    
+//                    //SwiftSpinner.show("Please Wait...")
+//                }
+//                else if json["Operation"].string! == "error" && extensionLink == "reserve/"
+//                {
+//                    SwiftSpinner.hide()
+//                    
+//                    dispatch_async(dispatch_get_main_queue(), {
+//                        self.showAlertView("We're Sorry!", message: "This appointment is already booked by another customer! Please try again with another time or date.")
+//                    })
+//                }
+//                else if json["Operation"].string! == "ok" && extensionLink == "order/"
+//                {
+//                    SwiftSpinner.hide()
+//                    
+//                    print("ORDERED")
+//                    
+//                    // TODO: show some fancy stuff to let the user know that the booking has succeeded
+//                    dispatch_async(dispatch_get_main_queue(), {
+//                        self.bookAndPayButton.hidden = true
+//                        self.showAlertView("Thank you!", message: "We received your payment successfully.")
+//                    })
+//                }
+//            }
+//            else if let error = response.result.error
+//            {
+//                print(response)
+//            }
+//        })
+        
+        print("\n\nWebsite: \(NSURL(string: k_website + extensionLink)!)")
+        print("\n\nParameters: ")
+        print(["orders" : parameters])
+        print("\n\nHeader: ")
+        print("[\"Authorization\" : \"Token \(token)\"]")
+        print("\n\n")
     }
 
     func deleteOrderButtonTapped(sender : UIButton)
@@ -307,8 +418,17 @@ class BACartViewController: UIViewController
         }
         else
         {
-            // hide this VC and show the salon VC again
+            hideViewControllerWithAnimation()
         }
+    }
+    
+    func showAlertView(title:String = "Something's wrong", message: String = "Please check your email address and phone number and make sure they are valid")
+    {
+        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        
+        alertView.addAction(okAction)
+        self.presentViewController(alertView, animated: true, completion: nil)
     }
 }
 

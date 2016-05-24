@@ -112,7 +112,7 @@ class BAOrderView: UIView {
         separator2.autoAlignAxis(.Vertical, toSameAxisOfView: separator1)
         
         let fromLabel = UILabel()
-        fromLabel.text = self.orderData.startTime
+        fromLabel.text = DateTimeConverter.convertTimeToString(self.orderData.startTime)
         fromLabel.font = UIFont(name: "MuseoSans-500", size: 15)
         fromLabel.sizeToFit()
         detailsView.addSubview(fromLabel)
@@ -140,7 +140,7 @@ class BAOrderView: UIView {
         separator3.autoAlignAxis(.Vertical, toSameAxisOfView: separator2)
         
         let endLabel = UILabel()
-        endLabel.text = self.orderData.endTime
+        endLabel.text = DateTimeConverter.convertTimeToString(self.orderData.endTime)
         endLabel.font = UIFont(name: "MuseoSans-500", size: 15)
         endLabel.sizeToFit()
         detailsView.addSubview(endLabel)

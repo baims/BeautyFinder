@@ -348,7 +348,7 @@ class SalonViewController: UIViewController, BACartDelegate {
 // MARK : Cart Handling stuff
 extension SalonViewController
 {
-    func updateCart()
+    func updateCart(animateToServicesContainerView : Bool)
     {
         cartCounterLabel.text = "\(orders.count > 0 ? orders.count : 1)"
         
@@ -366,6 +366,7 @@ extension SalonViewController
             }) {
                 (completed) in
                 self.segmentedControl.selectedIndex = 0
+                self.animateHiding(self.scheduleContainerView, andShowing: self.servicesContainerView)
             }
         }
         else if cartButton.hidden == false && orders.count == 0
@@ -379,13 +380,20 @@ extension SalonViewController
                 self.cartCounterLabel.hidden = true
             }
         }
+        else if animateToServicesContainerView
+        {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                self.segmentedControl.selectedIndex = 0
+                self.animateHiding(self.scheduleContainerView, andShowing: self.servicesContainerView)
+            })
+        }
     }
     
     func dismissCartViewController(orders: [BAOrderData]!)
     {
         self.orders = orders
         dismissViewControllerAnimated(false) { 
-            self.updateCart()
+            self.updateCart(false)
         }
     }
 }
