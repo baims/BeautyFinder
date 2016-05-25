@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BAOrderData: NSObject {
+class BAOrderData : NSObject {
     //var salonName     : String!
     //var salonImageUrl : String!
     //var salonAddress  : String!
@@ -24,4 +24,32 @@ class BAOrderData: NSObject {
     var dateOfBooking   : String! = "22 / 12 / 2016"
     var startTime       : String! = "8:00 AM"
     var endTime         : String! = "10:00 AM"
+}
+
+func == (lhs: BAOrderData, rhs: BAOrderData) -> Bool
+{
+    print("\(lhs.dateOfBooking) == \(rhs.dateOfBooking)")
+    print("\(lhs.startTime) == \(rhs.startTime)")
+    
+    if lhs.dateOfBooking != rhs.dateOfBooking
+    {
+        return false
+    }
+    
+    if lhs.startTime != rhs.startTime
+    {
+        return false
+    }
+    
+    if lhs.endTime != rhs.endTime
+    {
+        return false
+    }
+    
+    if lhs.beauticianName != rhs.beauticianName
+    {
+        return false
+    }
+    
+    return true
 }

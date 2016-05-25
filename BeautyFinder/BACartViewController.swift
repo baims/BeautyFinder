@@ -38,11 +38,11 @@ class BACartViewController: UIViewController
     var kCellSpacing : CGFloat! = 40
     
     var delegate : BACartDelegate!
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.clearColor()
         
@@ -51,10 +51,13 @@ class BACartViewController: UIViewController
         let blurView = UIVisualEffectView(frame: CGRectZero)
         let blurEffect = UIBlurEffect(style: .Dark)
         blurView.effect = blurEffect
+        blurView.userInteractionEnabled = true
         self.view.addSubview(blurView)
-
+        
         blurView.autoPinEdgesToSuperviewEdges()
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.blurBackgroundViewIsTapped(_:)))
+        self.view.addGestureRecognizer(tapGesture)
         
         /*** Scroll View ***/
         scrollView.delegate = self
@@ -67,6 +70,7 @@ class BACartViewController: UIViewController
         for i in 0..<orders.count
         {
             let view = BAOrderView(frame: CGRectMake(0, 0, kCellWidth, 290), withOrderData: orders[i])
+            view.userInteractionEnabled = true
             
             if i == 0
             {
@@ -179,7 +183,7 @@ class BACartViewController: UIViewController
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
-    
+        
         let scrollViewCenter = scrollView.center
         scrollView.center.x = self.view.frame.width * 1.5
         
@@ -215,43 +219,43 @@ class BACartViewController: UIViewController
                 self.continueShoppingButton.center = continueShoppingButtonCenter
                 self.buttonsSeparator.center = buttonsSeparatorCenter
                 self.totalLabel.center = totalLabelCenter
-            self.view.alpha = 1
+                self.view.alpha = 1
             }, completion: nil)
     }
-
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     func hideViewControllerWithAnimation()
     {
         UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-                self.scrollView.center = CGPointMake(self.view.frame.size.width+200, self.scrollView.center.y)
-                self.cartTitle.center  = CGPointMake(self.cartTitle.center.x, self.cartTitle.center.x-300)
-                self.bookAndPayButton.center = CGPointMake(self.bookAndPayButton.center.x, self.bookAndPayButton.center.y+300)
-                self.bookAndPayLabel.center  = CGPointMake(self.bookAndPayLabel.center.x, self.bookAndPayLabel.center.y+300)
-                self.continueShoppingLabel.center  = CGPointMake(self.continueShoppingLabel.center.x, self.continueShoppingLabel.center.y+300)
-                self.continueShoppingButton.center = CGPointMake(self.continueShoppingButton.center.x, self.continueShoppingButton.center.y+300)
-                self.buttonsSeparator.center = CGPointMake(self.buttonsSeparator.center.x, self.buttonsSeparator.center.y+300)
-                self.totalLabel.center = CGPointMake(self.totalLabel.center.x, self.totalLabel.center.y+300)
-                self.view.alpha = 0
-            }) {
-                (completed) in
-                self.delegate.dismissCartViewController(self.orders)
-            }
+            self.scrollView.center = CGPointMake(self.view.frame.size.width+200, self.scrollView.center.y)
+            self.cartTitle.center  = CGPointMake(self.cartTitle.center.x, self.cartTitle.center.x-300)
+            self.bookAndPayButton.center = CGPointMake(self.bookAndPayButton.center.x, self.bookAndPayButton.center.y+300)
+            self.bookAndPayLabel.center  = CGPointMake(self.bookAndPayLabel.center.x, self.bookAndPayLabel.center.y+300)
+            self.continueShoppingLabel.center  = CGPointMake(self.continueShoppingLabel.center.x, self.continueShoppingLabel.center.y+300)
+            self.continueShoppingButton.center = CGPointMake(self.continueShoppingButton.center.x, self.continueShoppingButton.center.y+300)
+            self.buttonsSeparator.center = CGPointMake(self.buttonsSeparator.center.x, self.buttonsSeparator.center.y+300)
+            self.totalLabel.center = CGPointMake(self.totalLabel.center.x, self.totalLabel.center.y+300)
+            self.view.alpha = 0
+        }) {
+            (completed) in
+            self.delegate.dismissCartViewController(self.orders)
+        }
     }
     
     func continueShoppingButtonTapped(sender : UIButton)
@@ -269,7 +273,10 @@ class BACartViewController: UIViewController
         }
         else
         {
-            self.performSegueWithIdentifier("logIn", sender: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("LogInViewController") as! LogInViewController
+            
+            self.presentViewController(vc, animated: true, completion: nil)
         }
     }
     
@@ -294,16 +301,15 @@ class BACartViewController: UIViewController
         for order in orders
         {
             let parameter = ["beauticianpk" : order.beauticianPK,
-                              "starttime" : "\(order.startTime)",
-                              "endtime" : "\(order.endTime)",
-                              "date" : order.dateOfBooking,
-                              "subcategorypk" : order.subcategoryPK] as [String : AnyObject]
+                             "starttime" : "\(order.startTime)",
+                             "endtime" : "\(order.endTime)",
+                             "date" : order.dateOfBooking,
+                             "subcategorypk" : order.subcategoryPK] as [String : AnyObject]
             
             parameters.append(parameter)
         }
-
-        //let request = NSMutableURLRequest(URL: NSURL(string: k_website + extensionLink)!)
-        let request = NSMutableURLRequest(URL: NSURL(string: k_website + "order/")!)
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: k_website + extensionLink)!)
         request.HTTPMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
@@ -311,54 +317,55 @@ class BACartViewController: UIViewController
         request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(["orders":parameters], options: [.PrettyPrinted])
         request.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
         
-       // let headers = ["Authorization" : "Token \(token)"]
+        // let headers = ["Authorization" : "Token \(token)"]
         
-        Alamofire.request(request).responseString { (response) in
-            print(response.description)
-        }
+        Alamofire.request(request).responseJSON(completionHandler: { (response) -> Void in
             
-//            .responseJSON(completionHandler: { (response) -> Void in
-//            
-//            if let Json = response.result.value
-//            {
-//                let json = JSON(Json)
-//                
-//                print("\(extensionLink) \(json)")
-//                
-//                if json["Operation"].string! == "ok" && extensionLink == "reserve/"
-//                {
-//                    //self.getProfileDataAndFetchMyFatoorahLink(token)
-//                    print("RESERVED")
-//                    self.orderBooking(token)
-//                    
-//                    //SwiftSpinner.show("Please Wait...")
-//                }
-//                else if json["Operation"].string! == "error" && extensionLink == "reserve/"
-//                {
-//                    SwiftSpinner.hide()
-//                    
-//                    dispatch_async(dispatch_get_main_queue(), {
-//                        self.showAlertView("We're Sorry!", message: "This appointment is already booked by another customer! Please try again with another time or date.")
-//                    })
-//                }
-//                else if json["Operation"].string! == "ok" && extensionLink == "order/"
-//                {
-//                    SwiftSpinner.hide()
-//                    
-//                    print("ORDERED")
-//                    
-//                    // TODO: show some fancy stuff to let the user know that the booking has succeeded
-//                    dispatch_async(dispatch_get_main_queue(), {
-//                        self.bookAndPayButton.hidden = true
-//                        self.showAlertView("Thank you!", message: "We received your payment successfully.")
-//                    })
-//                }
-//            }
-//            else if let error = response.result.error
-//            {
-//                print(response)
-//            }
-//        })
+            if let Json = response.result.value
+            {
+                let json = JSON(Json)
+                
+                print("\(extensionLink) \(json)")
+                
+                if json["Operation"].string! == "ok" && extensionLink == "reserve/"
+                {
+                    //self.getProfileDataAndFetchMyFatoorahLink(token)
+                    print("RESERVED")
+                    self.orderBooking(token)
+                    
+                    //SwiftSpinner.show("Please Wait...")
+                }
+                else if json["Operation"].string! == "ok" && extensionLink == "order/"
+                {
+                    SwiftSpinner.hide()
+                    
+                    print("ORDERED")
+                    
+                    // TODO: show some fancy stuff to let the user know that the booking has succeeded
+                    dispatch_async(dispatch_get_main_queue(), {
+                        //self.bookAndPayButton.hidden = true
+                        self.showAlertView("Thank you!", message: "We received your payment successfully.")
+                        self.orders.removeAll()
+                        self.hideViewControllerWithAnimation()
+                    })
+                }
+                else if json["Operation"].string! == "error"
+                {
+                    SwiftSpinner.hide()
+                    
+                    for error in json["errors"].array!
+                    {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.showAlertView("We're Sorry!", message: error.string!)
+                        })
+                    }
+                }
+            }
+            else if let error = response.result.error
+            {
+                print(error)
+            }
+        })
         
         print("\n\nWebsite: \(NSURL(string: k_website + extensionLink)!)")
         print("\n\nParameters: ")
@@ -367,7 +374,7 @@ class BACartViewController: UIViewController
         print("[\"Authorization\" : \"Token \(token)\"]")
         print("\n\n")
     }
-
+    
     func deleteOrderButtonTapped(sender : UIButton)
     {
         scrollView.userInteractionEnabled = false
@@ -377,14 +384,14 @@ class BACartViewController: UIViewController
         
         UIView.animateWithDuration(0.1, animations: {
             sender.transform = CGAffineTransformMakeScale(0.01, 0.01)
-            }) { (completed) in
-                sender.removeFromSuperview()
+        }) { (completed) in
+            sender.removeFromSuperview()
         }
         
-        UIView.animateWithDuration(0.1, delay: 0.1, options: [], animations: { 
+        UIView.animateWithDuration(0.1, delay: 0.1, options: [], animations: {
             self.orderViews[currentViewIndex].transform = CGAffineTransformMakeScale(0.01, 0.01)
-            }) { (completed) in
-                self.orderViews[currentViewIndex].removeFromSuperview()
+        }) { (completed) in
+            self.orderViews[currentViewIndex].removeFromSuperview()
         }
         
         for i in (currentViewIndex..<orders.count-1).reverse()
@@ -393,13 +400,13 @@ class BACartViewController: UIViewController
                 self.orderViews[i+1].center = self.orderViews[i].center
                 self.xButtons[i+1].center   = self.xButtons[i].center
             }) { (completed) in
-               
+                
             }
         }
-    
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                self.updateScrollViewContentSizeAndOrdersAfterAnimation(currentViewIndex)
-            })
+            self.updateScrollViewContentSizeAndOrdersAfterAnimation(currentViewIndex)
+        })
     }
     
     func updateScrollViewContentSizeAndOrdersAfterAnimation(index : Int)
@@ -429,6 +436,27 @@ class BACartViewController: UIViewController
         
         alertView.addAction(okAction)
         self.presentViewController(alertView, animated: true, completion: nil)
+    }
+    
+    func blurBackgroundViewIsTapped(sender : UITapGestureRecognizer)
+    {
+        let tappingPoint = sender.locationInView(self.view)
+        
+        let leftBound = view.frame.width/2 - kCellWidth/2
+        let rightBound = view.frame.width/2 + kCellWidth/2
+        let upperBound = view.frame.height/2 - 290/2 - 20.0
+        let lowerBound = view.frame.height/2 + 290/2 - 20.0
+        
+        if tappingPoint.x < leftBound || tappingPoint.x > rightBound
+        {
+            print("tapped")
+        }
+        else if tappingPoint.y < upperBound || tappingPoint.y > lowerBound
+        {
+            print("tapped")
+        }
+        
+        //print("tapped")
     }
 }
 
