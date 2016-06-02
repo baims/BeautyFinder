@@ -363,13 +363,18 @@ extension SalonViewController
             cartButton.hidden = false
             cartCounterLabel.hidden = false
             
-            UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: [], animations: { 
-                self.cartButton.transform       = CGAffineTransformMakeScale(1,1)
-                self.cartCounterLabel.transform = CGAffineTransformMakeScale(1,1)
+            UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: [], animations: {
+                self.cartButton.transform       = CGAffineTransformMakeScale(1.2, 1.2)
+                self.cartCounterLabel.transform = CGAffineTransformMakeScale(1.2, 1.2)
             }) {
                 (completed) in
                 self.segmentedControl.selectedIndex = 0
                 self.animateHiding(self.scheduleContainerView, andShowing: self.servicesContainerView)
+                
+                UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: [.Autoreverse, .Repeat, .AllowUserInteraction], animations: {
+                    self.cartButton.transform       = CGAffineTransformMakeScale(0.9, 0.9)
+                    self.cartCounterLabel.transform = CGAffineTransformMakeScale(0.9, 0.9)
+                }, completion: nil)
             }
         }
         else if cartButton.hidden == false && orders.count == 0
