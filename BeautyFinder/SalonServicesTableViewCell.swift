@@ -13,4 +13,5 @@ class SalonServicesTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var categoryPriceLabel: UILabel!
+    @IBOutlet weak var startFromView: UIView!
 }

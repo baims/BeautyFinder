@@ -39,6 +39,20 @@ class SalonServicesContainerViewController: UIViewController, UITableViewDelegat
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func startFromButtonTapped(sender: UIButton)
+    {
+        showAlertView("This is a start from price", message: "This means you may end up paying more inside the salon depending on your hair length")
+    }
+    
+    func showAlertView(title:String = "Something's wrong", message: String = "Please check your email address and phone number and make sure they are valid")
+    {
+        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        
+        alertView.addAction(okAction)
+        self.presentViewController(alertView, animated: true, completion: nil)
+    }
 }
 
 extension SalonServicesContainerViewController
@@ -70,12 +84,15 @@ extension SalonServicesContainerViewController
         
         cell.categoryImageView.kf_setImageWithURL(NSURL(string: k_website + self.json!["categories", indexPath.section, "subcategories", indexPath.item, "image"].string!)!, placeholderImage: UIImage(named: "Icon-76"))
         
+        cell.startFromView.hidden = !self.json!["categories", indexPath.section, "subcategories", indexPath.item, "startfrom"].bool!
+        
         
         cell.categoryImageView.layer.cornerRadius = cell.categoryImageView.frame.size.width/2
         cell.categoryImageView.layer.masksToBounds = true
         cell.categoryImageView.layer.borderWidth = 0.5
         cell.categoryImageView.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
         
+        print(json!)
         
         let accessoryView = UIImageView(image: UIImage(named: "arrow"))
         cell.accessoryView = accessoryView

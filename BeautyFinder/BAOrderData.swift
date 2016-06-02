@@ -24,6 +24,8 @@ class BAOrderData : NSObject {
     var dateOfBooking   : String! = "22 / 12 / 2016"
     var startTime       : String! = "8:00 AM"
     var endTime         : String! = "10:00 AM"
+    
+    var startFromPrice : Bool! = false
 }
 
 func == (lhs: BAOrderData, rhs: BAOrderData) -> Bool
