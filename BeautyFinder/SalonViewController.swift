@@ -199,14 +199,17 @@ class SalonViewController: UIViewController, BACartDelegate {
         }
     }
     
-    @IBAction func cartButtonTapped(sender: UIButton)
+    @IBAction func cartButtonTapped(sender: UIButton?)
     {
         let cartViewController = BACartViewController()
         cartViewController.orders = self.orders
         cartViewController.delegate = self
-        cartViewController.modalPresentationStyle = .OverCurrentContext
         
-        presentViewController(cartViewController, animated: false, completion: nil)
+        let navController = UINavigationController(rootViewController: cartViewController)
+        navController.modalPresentationStyle = .OverCurrentContext
+        navController.navigationBarHidden = true
+        
+        presentViewController(navController, animated: false, completion: nil)
     }
     
     @IBAction func openLocationInMaps(sender: UIButton)

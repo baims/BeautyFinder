@@ -329,11 +329,11 @@ class BACartViewController: UIViewController
                 
                 if json["Operation"].string! == "ok" && extensionLink == "reserve/"
                 {
-                    //self.getProfileDataAndFetchMyFatoorahLink(token)
+                    self.getProfileDataAndFetchMyFatoorahLink(token)
                     print("RESERVED")
-                    self.orderBooking(token)
+                    //self.orderBooking(token)
                     
-                    //SwiftSpinner.show("Please Wait...")
+                    SwiftSpinner.show("Please Wait...")
                 }
                 else if json["Operation"].string! == "ok" && extensionLink == "order/"
                 {
@@ -375,6 +375,36 @@ class BACartViewController: UIViewController
         print("\n\n")
     }
     
+    func getProfileDataAndFetchMyFatoorahLink(token: String!)
+    {
+        // Getting name, email and phone number of the user
+        // and then fetching the payment link from myFatoorah ( inside the block )
+        let headers = ["Authorization" : "Token \(token)"]
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        
+        Alamofire.request(.GET, k_website + "user/profile/", parameters: nil, headers: headers).responseJSON(completionHandler: { (response) -> Void in
+            
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            
+            
+            if let resultJson = response.result.value
+            {
+                let json = JSON(resultJson)
+                
+                
+                self.fetchMyfatoorahLinkWith(withName: json["name"].string!,
+                    email: json["email"].string!, phone: json["Phonenumber"].string!,
+                    orders: self.orders)
+            }
+            else if let error = response.result.error
+            {
+                print(error)
+            }
+        })
+    }
+    
     func deleteOrderButtonTapped(sender : UIButton)
     {
         scrollView.userInteractionEnabled = false
@@ -414,7 +444,7 @@ class BACartViewController: UIViewController
         print(index)
         self.orderViews.removeAtIndex(index)
         self.xButtons.removeAtIndex(index)
-        self.orders.removeAtIndex(index)
+        let deletedOrder = self.orders.removeAtIndex(index)
         
         scrollView.contentSize = CGSizeMake(max(view.frame.width+1, CGFloat(orders.count+1) * 0.5 * view.frame.width), view.frame.height)
         scrollView.userInteractionEnabled = true
@@ -422,6 +452,9 @@ class BACartViewController: UIViewController
         if orders.count != 0
         {
             cartTitle.text = "Cart (\(self.orders.count))"
+            
+            totalPrice -= deletedOrder.subcategoryPrice
+            totalLabel.text = String(format: "Total: %.3f", arguments: [totalPrice]) + " KD"
         }
         else
         {
@@ -447,16 +480,10 @@ class BACartViewController: UIViewController
         let upperBound = view.frame.height/2 - 290/2 - 20.0
         let lowerBound = view.frame.height/2 + 290/2 - 20.0
         
-        if tappingPoint.x < leftBound || tappingPoint.x > rightBound
+        if tappingPoint.x < leftBound || tappingPoint.x > rightBound || tappingPoint.y < upperBound || tappingPoint.y > lowerBound
         {
-            print("tapped")
+            hideViewControllerWithAnimation()
         }
-        else if tappingPoint.y < upperBound || tappingPoint.y > lowerBound
-        {
-            print("tapped")
-        }
-        
-        //print("tapped")
     }
 }
 

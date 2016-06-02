@@ -41,6 +41,7 @@
 		9F96CF651C5A198900881A1B /* BADate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F96CF641C5A198900881A1B /* BADate.swift */; };
 		9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */; };
 		9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */; };
+		9FB6F0F91CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6F0F81CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift */; };
 		9FD7ED191CF202FB00D4EB33 /* BACartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7ED161CF202FB00D4EB33 /* BACartViewController.swift */; };
 		9FD7ED1A1CF202FB00D4EB33 /* BAOrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7ED171CF202FB00D4EB33 /* BAOrderData.swift */; };
 		9FD7ED1B1CF202FC00D4EB33 /* BAOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7ED181CF202FB00D4EB33 /* BAOrderView.swift */; };
@@ -143,6 +144,7 @@
 		9F96CF641C5A198900881A1B /* BADate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BADate.swift; sourceTree = "<group>"; };
 		9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesAnimationController.swift; sourceTree = "<group>"; };
 		9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonViewAnimator.swift; sourceTree = "<group>"; };
+		9FB6F0F81CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACartViewControllerPaymentExtension.swift; sourceTree = "<group>"; };
 		9FD7ED161CF202FB00D4EB33 /* BACartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACartViewController.swift; sourceTree = "<group>"; };
 		9FD7ED171CF202FB00D4EB33 /* BAOrderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAOrderData.swift; sourceTree = "<group>"; };
 		9FD7ED181CF202FB00D4EB33 /* BAOrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAOrderView.swift; sourceTree = "<group>"; };
@@ -310,8 +312,11 @@
 			isa = PBXGroup;
 			children = (
 				9FD7ED161CF202FB00D4EB33 /* BACartViewController.swift */,
+				9FB6F0F81CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift */,
 				9FD7ED171CF202FB00D4EB33 /* BAOrderData.swift */,
 				9FD7ED181CF202FB00D4EB33 /* BAOrderView.swift */,
+				9F64C66A1CA8479600A98BDD /* BAWebViewController.swift */,
+				9F64C66C1CA8479C00A98BDD /* BAWebViewDelegate.swift */,
 			);
 			name = Cart;
 			sourceTree = "<group>";
@@ -321,8 +326,6 @@
 			children = (
 				9F3973841BF68F90006C3748 /* SummaryViewController.swift */,
 				9F64C66E1CA847D700A98BDD /* SummaryViewControllerPaymentExtension.swift */,
-				9F64C66A1CA8479600A98BDD /* BAWebViewController.swift */,
-				9F64C66C1CA8479C00A98BDD /* BAWebViewDelegate.swift */,
 			);
 			name = "Summary View";
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				9FFF96D31C174ECC004B8F48 /* CategorySearchViewController.swift in Sources */,
 				9FFF96BC1C1092EF004B8F48 /* DateAndTimeConverter.swift in Sources */,
 				9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */,
+				9FB6F0F91CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift in Sources */,
 				9F33549D1BCC54F100FA1A21 /* SignUpViewController.swift in Sources */,
 				9F6C3B561BECEEF60039F742 /* SalonScheduleViewController.swift in Sources */,
 				9F6C3B4E1BE2A28A0039F742 /* SalonServicesContainerViewController.swift in Sources */,
