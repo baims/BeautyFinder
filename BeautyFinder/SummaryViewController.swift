@@ -182,20 +182,40 @@ class SummaryViewController: UIViewController {
     {
         if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!))
         {
-            UIApplication.sharedApplication().openURL(NSURL(string:
-                "comgooglemaps://?daddr=\(latitude),\(longitude)&zoom=14")!)
+            let actionSheet = UIAlertController(title: "Open Location in:", message: nil, preferredStyle: .ActionSheet)
+           
+            let openGoogleMaps = UIAlertAction(title: "Google Maps", style: .Default, handler: { (action) in
+                UIApplication.sharedApplication().openURL(NSURL(string:
+                    "comgooglemaps://?daddr=\(self.latitude),\(self.longitude)&zoom=14")!)
+            })
+            
+            let openAppleMaps = UIAlertAction(title: "Apple Maps", style: .Default, handler: { (action) in
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(self.latitude),\(self.longitude)&z=17")!)
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            
+            actionSheet.addAction(openGoogleMaps)
+            actionSheet.addAction(openAppleMaps)
+            actionSheet.addAction(cancelAction)
+            
+            self.presentViewController(actionSheet, animated: true, completion: nil)
         }
         else
         {
-            let alertView = UIAlertController(title: "Download Google Maps", message: "You need to download Google Maps app from the App Store to get the location of this salon", preferredStyle: .Alert)
+            let alertView = UIAlertController(title: "You don't have Google Maps", message: "You can download Google Maps app from the App Store to get the directions to this salon, or you can open it in Apple Maps", preferredStyle: .Alert)
             
-            let openGoogleMapsAction = UIAlertAction(title: "Download", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+            let openGoogleMapsAction = UIAlertAction(title: "Download Google Maps", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
                 UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/us/app/google-maps/id585027354?mt=8")!)
+            })
+            let openAppleMapsAction = UIAlertAction(title: "Open Apple Maps", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(self.latitude),\(self.longitude)&z=17")!)
             })
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             
             alertView.addAction(openGoogleMapsAction)
+            alertView.addAction(openAppleMapsAction)
             alertView.addAction(cancelAction)
             
             self.presentViewController(alertView, animated: true, completion: nil)

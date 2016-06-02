@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		988C28581E80BE15E419DB24 /* Pods_BeautyFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAB1F9EA93F5AB77DFC2642 /* Pods_BeautyFinder.framework */; };
+		9372CCE7E0F20DD2F25E1D17 /* Pods_BeautyFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE143A93C6D97CFCB0790EF /* Pods_BeautyFinder.framework */; };
 		9F27BAAB1B99B93600F5DF6A /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27BAAA1B99B93600F5DF6A /* CategoriesViewController.swift */; };
 		9F27BAAD1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27BAAC1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift */; };
 		9F27BAAF1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27BAAE1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift */; };
@@ -41,8 +41,13 @@
 		9F96CF651C5A198900881A1B /* BADate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F96CF641C5A198900881A1B /* BADate.swift */; };
 		9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */; };
 		9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */; };
+		9FB6F0F91CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6F0F81CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift */; };
+		9FD7ED191CF202FB00D4EB33 /* BACartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7ED161CF202FB00D4EB33 /* BACartViewController.swift */; };
+		9FD7ED1A1CF202FB00D4EB33 /* BAOrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7ED171CF202FB00D4EB33 /* BAOrderData.swift */; };
+		9FD7ED1B1CF202FC00D4EB33 /* BAOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7ED181CF202FB00D4EB33 /* BAOrderView.swift */; };
 		9FFF96BC1C1092EF004B8F48 /* DateAndTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */; };
 		9FFF96D31C174ECC004B8F48 /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF96D21C174ECC004B8F48 /* CategorySearchViewController.swift */; };
+		BEDA589FC67C9C6A4A6CEDCD /* Pods_BeautyFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973A1B2300219F730F0128EB /* Pods_BeautyFinderTests.framework */; };
 		CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA008C91B8C1B160094F10E /* AppDelegate.swift */; };
 		CAA008CF1B8C1B160094F10E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA008CD1B8C1B160094F10E /* Main.storyboard */; };
 		CAA008D11B8C1B160094F10E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA008D01B8C1B160094F10E /* Images.xcassets */; };
@@ -100,8 +105,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5AAB1F9EA93F5AB77DFC2642 /* Pods_BeautyFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E1C07455FAF7F95E27DC511 /* Pods-BeautyFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeautyFinder/Pods-BeautyFinder.release.xcconfig"; sourceTree = "<group>"; };
+		5A428375291A21A848572463 /* Pods-BeautyFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyFinderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeautyFinderTests/Pods-BeautyFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		936C03006D9B33C5FC24C5EF /* Pods-BeautyFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeautyFinder/Pods-BeautyFinder.release.xcconfig"; sourceTree = "<group>"; };
+		9544DAF955E5356B3EAB7BE9 /* Pods-BeautyFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeautyFinder/Pods-BeautyFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		973A1B2300219F730F0128EB /* Pods_BeautyFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F27BAAA1B99B93600F5DF6A /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		9F27BAAC1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		9F27BAAE1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +144,10 @@
 		9F96CF641C5A198900881A1B /* BADate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BADate.swift; sourceTree = "<group>"; };
 		9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesAnimationController.swift; sourceTree = "<group>"; };
 		9F9B99091BD12CB600A78B4D /* SalonViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonViewAnimator.swift; sourceTree = "<group>"; };
+		9FB6F0F81CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACartViewControllerPaymentExtension.swift; sourceTree = "<group>"; };
+		9FD7ED161CF202FB00D4EB33 /* BACartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACartViewController.swift; sourceTree = "<group>"; };
+		9FD7ED171CF202FB00D4EB33 /* BAOrderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAOrderData.swift; sourceTree = "<group>"; };
+		9FD7ED181CF202FB00D4EB33 /* BAOrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAOrderView.swift; sourceTree = "<group>"; };
 		9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTimeConverter.swift; sourceTree = "<group>"; };
 		9FFF96D21C174ECC004B8F48 /* CategorySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		CAA008C41B8C1B150094F10E /* BeautyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +168,8 @@
 		CAA008F11B8C1CB90094F10E /* MuseoSans-300Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-300Italic.otf"; sourceTree = "<group>"; };
 		CAA008F21B8C1CB90094F10E /* MuseoSans-700Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-700Italic.otf"; sourceTree = "<group>"; };
 		CAA008F31B8C1CB90094F10E /* MuseoSans-900Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSans-900Italic.otf"; sourceTree = "<group>"; };
-		E9008E37EB0A90C44665CFCD /* Pods-BeautyFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeautyFinder/Pods-BeautyFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		CFE143A93C6D97CFCB0790EF /* Pods_BeautyFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeautyFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED638F5AB5F4D152C3E97871 /* Pods-BeautyFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeautyFinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeautyFinderTests/Pods-BeautyFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				988C28581E80BE15E419DB24 /* Pods_BeautyFinder.framework in Frameworks */,
+				9372CCE7E0F20DD2F25E1D17 /* Pods_BeautyFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,18 +192,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEDA589FC67C9C6A4A6CEDCD /* Pods_BeautyFinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E076CAEBB769C3E3EC90D4C /* Frameworks */ = {
+		087F601A587EC73A1AA809CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5AAB1F9EA93F5AB77DFC2642 /* Pods_BeautyFinder.framework */,
+				9544DAF955E5356B3EAB7BE9 /* Pods-BeautyFinder.debug.xcconfig */,
+				936C03006D9B33C5FC24C5EF /* Pods-BeautyFinder.release.xcconfig */,
+				ED638F5AB5F4D152C3E97871 /* Pods-BeautyFinderTests.debug.xcconfig */,
+				5A428375291A21A848572463 /* Pods-BeautyFinderTests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9F33549E1BCD465F00FA1A21 /* Sign in / Sign up */ = {
@@ -292,13 +308,24 @@
 			name = Beauticians;
 			sourceTree = "<group>";
 		};
+		9FD7ED151CF202E100D4EB33 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				9FD7ED161CF202FB00D4EB33 /* BACartViewController.swift */,
+				9FB6F0F81CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift */,
+				9FD7ED171CF202FB00D4EB33 /* BAOrderData.swift */,
+				9FD7ED181CF202FB00D4EB33 /* BAOrderView.swift */,
+				9F64C66A1CA8479600A98BDD /* BAWebViewController.swift */,
+				9F64C66C1CA8479C00A98BDD /* BAWebViewDelegate.swift */,
+			);
+			name = Cart;
+			sourceTree = "<group>";
+		};
 		9FFF96D01C174D24004B8F48 /* Summary View */ = {
 			isa = PBXGroup;
 			children = (
 				9F3973841BF68F90006C3748 /* SummaryViewController.swift */,
 				9F64C66E1CA847D700A98BDD /* SummaryViewControllerPaymentExtension.swift */,
-				9F64C66A1CA8479600A98BDD /* BAWebViewController.swift */,
-				9F64C66C1CA8479C00A98BDD /* BAWebViewDelegate.swift */,
 			);
 			name = "Summary View";
 			sourceTree = "<group>";
@@ -321,8 +348,8 @@
 				CAA008DC1B8C1B160094F10E /* BeautyFinderTests */,
 				9F65613E1C3F968900FBEE2F /* BeautyFinderUITests */,
 				CAA008C51B8C1B150094F10E /* Products */,
-				CDFEEBF921285764B7860FA4 /* Pods */,
-				7E076CAEBB769C3E3EC90D4C /* Frameworks */,
+				087F601A587EC73A1AA809CD /* Pods */,
+				F275F07768AEF59BFCB76776 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -343,6 +370,7 @@
 				9F65614C1C46660900FBEE2F /* TabBarController.swift */,
 				9F5122221C51103E00E92155 /* String+EmailPhoneValidation.swift */,
 				9F96CF641C5A198900881A1B /* BADate.swift */,
+				9FD7ED151CF202E100D4EB33 /* Cart */,
 				9F6CD04E1BAC6C4600A0197D /* Home View */,
 				9F67FF2F1BBDE49200C47C45 /* Subcategories */,
 				9F9B990B1BD1907C00A78B4D /* Salon Views */,
@@ -401,13 +429,13 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		CDFEEBF921285764B7860FA4 /* Pods */ = {
+		F275F07768AEF59BFCB76776 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E9008E37EB0A90C44665CFCD /* Pods-BeautyFinder.debug.xcconfig */,
-				7E1C07455FAF7F95E27DC511 /* Pods-BeautyFinder.release.xcconfig */,
+				CFE143A93C6D97CFCB0790EF /* Pods_BeautyFinder.framework */,
+				973A1B2300219F730F0128EB /* Pods_BeautyFinderTests.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,14 +463,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAA008E31B8C1B160094F10E /* Build configuration list for PBXNativeTarget "BeautyFinder" */;
 			buildPhases = (
-				7CC4E913E004051A52A7B885 /* Check Pods Manifest.lock */,
+				30623E26C97ADB9DC3C9D25E /* 📦 Check Pods Manifest.lock */,
 				CAA008C01B8C1B150094F10E /* Sources */,
 				CAA008C11B8C1B150094F10E /* Frameworks */,
 				CAA008C21B8C1B150094F10E /* Resources */,
 				9F632C941BBDC6CD00AF2732 /* Embed Frameworks */,
 				9F3354B11BCE905100FA1A21 /* Copy Frameworks */,
-				663317D4EB2AB838D0690DB4 /* Embed Pods Frameworks */,
-				DD793E9D6E0E0338416B1E29 /* Copy Pods Resources */,
+				BCA7E0C64DC9F2B5FA875102 /* 📦 Embed Pods Frameworks */,
+				D9953D6E0DD782476DDB64B6 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -457,9 +485,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAA008E61B8C1B160094F10E /* Build configuration list for PBXNativeTarget "BeautyFinderTests" */;
 			buildPhases = (
+				7A81277CCD78B9FE400043D4 /* 📦 Check Pods Manifest.lock */,
 				CAA008D51B8C1B160094F10E /* Sources */,
 				CAA008D61B8C1B160094F10E /* Frameworks */,
 				CAA008D71B8C1B160094F10E /* Resources */,
+				D14CC35609EFDAD630E32B33 /* 📦 Embed Pods Frameworks */,
+				87ED0C6CCD26016449F347CD /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -552,29 +583,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		663317D4EB2AB838D0690DB4 /* Embed Pods Frameworks */ = {
+		30623E26C97ADB9DC3C9D25E /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeautyFinder/Pods-BeautyFinder-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7CC4E913E004051A52A7B885 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,14 +598,74 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DD793E9D6E0E0338416B1E29 /* Copy Pods Resources */ = {
+		7A81277CCD78B9FE400043D4 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		87ED0C6CCD26016449F347CD /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeautyFinderTests/Pods-BeautyFinderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCA7E0C64DC9F2B5FA875102 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeautyFinder/Pods-BeautyFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D14CC35609EFDAD630E32B33 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeautyFinderTests/Pods-BeautyFinderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9953D6E0DD782476DDB64B6 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,6 +700,7 @@
 				9F96CF651C5A198900881A1B /* BADate.swift in Sources */,
 				9F632C961BBDC81C00AF2732 /* SwiftyJSON.swift in Sources */,
 				9F6561491C44E24E00FBEE2F /* ProfileViewController.swift in Sources */,
+				9FD7ED1B1CF202FC00D4EB33 /* BAOrderView.swift in Sources */,
 				9F3354A21BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift in Sources */,
 				CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */,
 				9F6C3B501BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift in Sources */,
@@ -633,11 +710,13 @@
 				9FFF96D31C174ECC004B8F48 /* CategorySearchViewController.swift in Sources */,
 				9FFF96BC1C1092EF004B8F48 /* DateAndTimeConverter.swift in Sources */,
 				9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */,
+				9FB6F0F91CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift in Sources */,
 				9F33549D1BCC54F100FA1A21 /* SignUpViewController.swift in Sources */,
 				9F6C3B561BECEEF60039F742 /* SalonScheduleViewController.swift in Sources */,
 				9F6C3B4E1BE2A28A0039F742 /* SalonServicesContainerViewController.swift in Sources */,
 				9F6C3B521BEC32ED0039F742 /* CalendarViewController.swift in Sources */,
 				9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */,
+				9FD7ED1A1CF202FB00D4EB33 /* BAOrderData.swift in Sources */,
 				9F64C66F1CA847D700A98BDD /* SummaryViewControllerPaymentExtension.swift in Sources */,
 				9F3354971BCC3AC500FA1A21 /* LogInViewController.swift in Sources */,
 				9F64C66B1CA8479600A98BDD /* BAWebViewController.swift in Sources */,
@@ -645,6 +724,7 @@
 				9F27BAAB1B99B93600F5DF6A /* CategoriesViewController.swift in Sources */,
 				9F27BAAF1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift in Sources */,
 				9F65614D1C46660900FBEE2F /* TabBarController.swift in Sources */,
+				9FD7ED191CF202FB00D4EB33 /* BACartViewController.swift in Sources */,
 				9F6C3B541BECE8FD0039F742 /* SalonScheduleTableViewCell.swift in Sources */,
 				9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */,
 			);
@@ -796,7 +876,7 @@
 		};
 		CAA008E41B8C1B160094F10E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9008E37EB0A90C44665CFCD /* Pods-BeautyFinder.debug.xcconfig */;
+			baseConfigurationReference = 9544DAF955E5356B3EAB7BE9 /* Pods-BeautyFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -815,7 +895,7 @@
 		};
 		CAA008E51B8C1B160094F10E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E1C07455FAF7F95E27DC511 /* Pods-BeautyFinder.release.xcconfig */;
+			baseConfigurationReference = 936C03006D9B33C5FC24C5EF /* Pods-BeautyFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -834,6 +914,7 @@
 		};
 		CAA008E71B8C1B160094F10E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED638F5AB5F4D152C3E97871 /* Pods-BeautyFinderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -854,6 +935,7 @@
 		};
 		CAA008E81B8C1B160094F10E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A428375291A21A848572463 /* Pods-BeautyFinderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

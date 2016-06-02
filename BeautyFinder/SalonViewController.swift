@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class SalonViewController: UIViewController {
+class SalonViewController: UIViewController, BACartDelegate {
     
     
     var servicesViewController : SalonServicesContainerViewController!
@@ -29,6 +29,8 @@ class SalonViewController: UIViewController {
     @IBOutlet weak var salonNameLabel: UILabel!
     @IBOutlet weak var salonAddressLabel: UILabel!
 
+    @IBOutlet weak var cartButton: UIButton!
+    @IBOutlet weak var cartCounterLabel: UILabel!
     
     
     var salonJson : JSON?
@@ -48,6 +50,8 @@ class SalonViewController: UIViewController {
     var dateOfBooking   : String!
     var startTime       : String!
     var endTime         : String!
+    
+    var orders = [BAOrderData]()
     
 
     override func viewDidLoad()
@@ -125,26 +129,48 @@ class SalonViewController: UIViewController {
             self.navigationController?.delegate = nil
             self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
             
-            let summaryViewController = segue.destinationViewController as! SummaryViewController
+//            let summaryViewController = segue.destinationViewController as! SummaryViewController
+//            
+//            summaryViewController.salonName        = self.salonNameLabel.text!
+//            summaryViewController.salonImageUrl    = k_website + self.salonJson!["logo"].string!
+//            summaryViewController.salonAddress     = self.salonAddressLabel.text!
+//            
+//            summaryViewController.subcategoryName  = self.subcategoryName
+//            summaryViewController.subcategoryPK    = self.subcategoryPK
+//            summaryViewController.subcategoryPrice = self.subcategoryPrice
+//            
+//            summaryViewController.beauticianName   = self.beauticianName
+//            summaryViewController.beauticianPK     = self.beauticianPK
+//            summaryViewController.beauticianImageUrl = self.beauticianImageUrl
+//            
+//            summaryViewController.dateOfBooking    = self.dateOfBooking
+//            summaryViewController.startTime        = self.startTime
+//            summaryViewController.endTime          = self.endTime
+//            
+//            summaryViewController.latitude         = self.salonJson!["latitude"].double!
+//            summaryViewController.longitude        = self.salonJson!["longitude"].double!
             
-            summaryViewController.salonName        = self.salonNameLabel.text!
-            summaryViewController.salonImageUrl    = k_website + self.salonJson!["logo"].string!
-            summaryViewController.salonAddress     = self.salonAddressLabel.text!
+            let newOrder = BAOrderData()
+            newOrder.beauticianName     = self.beauticianName
+            newOrder.beauticianPK       = self.beauticianPK
+            newOrder.beauticianImageUrl = self.beauticianImageUrl
+            newOrder.dateOfBooking      = self.dateOfBooking
+            newOrder.startTime          = self.startTime
+            newOrder.endTime            = self.endTime
+            newOrder.subcategoryPrice   = self.subcategoryPrice
+            newOrder.subcategoryPK      = self.subcategoryPK
+            newOrder.subcategoryName    = self.subcategoryName
             
-            summaryViewController.subcategoryName  = self.subcategoryName
-            summaryViewController.subcategoryPK    = self.subcategoryPK
-            summaryViewController.subcategoryPrice = self.subcategoryPrice
+            orders.append(newOrder)
             
-            summaryViewController.beauticianName   = self.beauticianName
-            summaryViewController.beauticianPK     = self.beauticianPK
-            summaryViewController.beauticianImageUrl = self.beauticianImageUrl
-            
-            summaryViewController.dateOfBooking    = self.dateOfBooking
-            summaryViewController.startTime        = self.startTime
-            summaryViewController.endTime          = self.endTime
-            
-            summaryViewController.latitude         = self.salonJson!["latitude"].double!
-            summaryViewController.longitude        = self.salonJson!["longitude"].double!
+            /*
+             - show the cart button with a counter on it
+             - go back to the services page
+             - show him a notification if it's the first time (NSUserDefaults)
+             - when he taps the cart button, orders should be sent to the BACartViewController
+             - when he taps the continue shopping button, orders should be sent back to this VC
+             - trying to go back to the first page should show a notification saying that everything will be lost because users cannot book in more than 1 salon at a time
+            */
         }
     }
 
@@ -173,23 +199,57 @@ class SalonViewController: UIViewController {
         }
     }
     
+    @IBAction func cartButtonTapped(sender: UIButton?)
+    {
+        let cartViewController = BACartViewController()
+        cartViewController.orders = self.orders
+        cartViewController.delegate = self
+        
+        let navController = UINavigationController(rootViewController: cartViewController)
+        navController.modalPresentationStyle = .OverCurrentContext
+        navController.navigationBarHidden = true
+        
+        presentViewController(navController, animated: false, completion: nil)
+    }
+    
     @IBAction func openLocationInMaps(sender: UIButton)
     {
-        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
-            UIApplication.sharedApplication().openURL(NSURL(string:
-                "comgooglemaps://?daddr=\(self.salonJson!["latitude"].double!),\(self.salonJson!["longitude"].double!)&zoom=14")!)
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!))
+        {
+            let actionSheet = UIAlertController(title: "Open Location in:", message: nil, preferredStyle: .ActionSheet)
+            
+            let openGoogleMaps = UIAlertAction(title: "Google Maps", style: .Default, handler: { (action) in
+                UIApplication.sharedApplication().openURL(NSURL(string:
+                    "comgooglemaps://?daddr=\(self.salonJson!["latitude"].double!),\(self.salonJson!["longitude"].double!)&zoom=14")!)
+            })
+            
+            let openAppleMaps = UIAlertAction(title: "Apple Maps", style: .Default, handler: { (action) in
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(self.salonJson!["latitude"].double!),\(self.salonJson!["longitude"].double!)&z=17")!)
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            
+            actionSheet.addAction(openGoogleMaps)
+            actionSheet.addAction(openAppleMaps)
+            actionSheet.addAction(cancelAction)
+            
+            self.presentViewController(actionSheet, animated: true, completion: nil)
         }
         else
         {
-            let alertView = UIAlertController(title: "Download Google Maps", message: "You need to download Google Maps app from the App Store to get the location of this salon", preferredStyle: .Alert)
+            let alertView = UIAlertController(title: "You don't have Google Maps", message: "You can download Google Maps app from the App Store to get the directions to this salon, or you can open it in Apple Maps", preferredStyle: .Alert)
             
-            let openGoogleMapsAction = UIAlertAction(title: "Download", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+            let openGoogleMapsAction = UIAlertAction(title: "Download Google Maps", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
                 UIApplication.sharedApplication().openURL(NSURL(string: "https://itunes.apple.com/us/app/google-maps/id585027354?mt=8")!)
+            })
+            let openAppleMapsAction = UIAlertAction(title: "Open Apple Maps", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://maps.apple.com/?ll=\(self.salonJson!["latitude"].double!),\(self.salonJson!["longitude"].double!)&z=17")!)
             })
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             
             alertView.addAction(openGoogleMapsAction)
+            alertView.addAction(openAppleMapsAction)
             alertView.addAction(cancelAction)
             
             self.presentViewController(alertView, animated: true, completion: nil)
@@ -285,6 +345,59 @@ class SalonViewController: UIViewController {
                         _firstContainerView.hidden = true
                     }
             })
+    }
+}
+
+// MARK : Cart Handling stuff
+extension SalonViewController
+{
+    func updateCart(animateToServicesContainerView : Bool)
+    {
+        cartCounterLabel.text = "\(orders.count > 0 ? orders.count : 1)"
+        
+        if cartButton.hidden == true && orders.count > 0 // new order, show cart with animation
+        {
+            cartButton.transform       = CGAffineTransformMakeScale(0.0001, 0.0001)
+            cartCounterLabel.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
+            
+            cartButton.hidden = false
+            cartCounterLabel.hidden = false
+            
+            UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: [], animations: { 
+                self.cartButton.transform       = CGAffineTransformMakeScale(1,1)
+                self.cartCounterLabel.transform = CGAffineTransformMakeScale(1,1)
+            }) {
+                (completed) in
+                self.segmentedControl.selectedIndex = 0
+                self.animateHiding(self.scheduleContainerView, andShowing: self.servicesContainerView)
+            }
+        }
+        else if cartButton.hidden == false && orders.count == 0
+        {
+            UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: [], animations: {
+                self.cartButton.transform       = CGAffineTransformMakeScale(0.0001,0.0001)
+                self.cartCounterLabel.transform = CGAffineTransformMakeScale(0.0001,0.0001)
+            }) {
+                (completed) in
+                self.cartButton.hidden = true
+                self.cartCounterLabel.hidden = true
+            }
+        }
+        else if animateToServicesContainerView
+        {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                self.segmentedControl.selectedIndex = 0
+                self.animateHiding(self.scheduleContainerView, andShowing: self.servicesContainerView)
+            })
+        }
+    }
+    
+    func dismissCartViewController(orders: [BAOrderData]!)
+    {
+        self.orders = orders
+        dismissViewControllerAnimated(false) { 
+            self.updateCart(false)
+        }
     }
 }
 

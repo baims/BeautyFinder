@@ -10,6 +10,7 @@ pod 'IQKeyboardManagerSwift'
 pod 'MarqueeLabel-Swift', '~> 2.6.5'
 pod 'SWXMLHash', '~> 2.1.0'
 pod 'SwiftSpinner'
+pod 'PureLayout'
 end
 
 target 'BeautyFinderTests' do
