@@ -307,6 +307,7 @@ extension SalonViewController
         newOrder.subcategoryPrice   = self.subcategoryPrice
         newOrder.subcategoryPK      = self.subcategoryPK
         newOrder.subcategoryName    = self.subcategoryName
+        newOrder.startFromPrice     = self.startFromPrice
         
         orders.append(newOrder)
         

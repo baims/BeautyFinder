@@ -265,6 +265,41 @@ class BACartViewController: UIViewController
     
     func bookAndPayButtonTapped(sender : UIButton)
     {
+        var ordersWithStartFromPrice = [BAOrderData]()
+        
+        for order in orders where order.startFromPrice == true
+        {
+            ordersWithStartFromPrice.append(order)
+        }
+        
+        if ordersWithStartFromPrice.count > 0
+        {
+            var alertMessage = "Note that the following order(s) does not have a fixed price, you might end up paying more in the salon depending on your hair length or whatever ( قولوا لي شنو اكتب بالضبط) :-"
+            
+            for order in ordersWithStartFromPrice
+            {
+                alertMessage += "\n- \(order.subcategoryName) with \(order.beauticianName)"
+            }
+            
+            let alertView = UIAlertController(title: "Start-From Prices", message: alertMessage, preferredStyle: .Alert)
+            let agreeAction = UIAlertAction(title: "I Agree", style: .Default, handler: { (alertAction) in
+                self.signInAndStartReservingProcess()
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            
+            alertView.addAction(agreeAction)
+            alertView.addAction(cancelAction)
+            
+            self.presentViewController(alertView, animated: true, completion: nil)
+        }
+        else
+        {
+            self.signInAndStartReservingProcess()
+        }
+    }
+    
+    func signInAndStartReservingProcess()
+    {
         if let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
         {
             SwiftSpinner.show("Please Wait...")

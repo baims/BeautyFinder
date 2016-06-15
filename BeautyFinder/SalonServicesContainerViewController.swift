@@ -118,9 +118,10 @@ extension SalonServicesContainerViewController
         let subcategoryPK = self.json!["categories", self.indexPathForSelectedRow!.section, "subcategories", self.indexPathForSelectedRow!.row, "pk"].int!
         let subcategoryName  = selectedCell.categoryNameLabel.text!
         let subcategoryPrice = (selectedCell.categoryPriceLabel.text! as NSString).doubleValue
+        let startFromPrice = self.json!["categories", indexPath.section, "subcategories", indexPath.item, "startfrom"].bool!
         
         let superView = self.parentViewController as! SalonViewController
-        superView.serviceIsSelected(salonPK, subcategoryPK: subcategoryPK, subcategoryName: subcategoryName, subcategoryPrice: subcategoryPrice)
+        superView.serviceIsSelected(salonPK, subcategoryPK: subcategoryPK, subcategoryName: subcategoryName, subcategoryPrice: subcategoryPrice, startFromPrice: startFromPrice)
     }
     
     
@@ -159,11 +160,12 @@ extension SalonServicesContainerViewController
 
 extension SalonViewController
 {
-    func serviceIsSelected(salonPK : Int, subcategoryPK : Int!, subcategoryName : String!, subcategoryPrice : Double!)
+    func serviceIsSelected(salonPK : Int, subcategoryPK : Int!, subcategoryName : String!, subcategoryPrice : Double!, startFromPrice : Bool!)
     {
         self.subcategoryName  = subcategoryName
         self.subcategoryPK    = subcategoryPK
         self.subcategoryPrice = subcategoryPrice
+        self.startFromPrice   = startFromPrice
         
         self.segmentedControl.selectedIndex = 1;
         

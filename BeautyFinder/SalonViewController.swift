@@ -51,6 +51,8 @@ class SalonViewController: UIViewController, BACartDelegate {
     var startTime       : String!
     var endTime         : String!
     
+    var startFromPrice  : Bool!
+    
     var orders = [BAOrderData]()
     
 

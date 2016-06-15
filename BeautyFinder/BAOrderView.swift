@@ -64,6 +64,7 @@ class BAOrderView: UIView {
         
         detailsView.autoAlignAxisToSuperviewAxis(.Vertical)
         detailsView.autoPinEdge(.Top, toEdge: .Bottom, ofView: beauticianNameLabel, withOffset: 20)
+        detailsView.autoMatchDimension(.Width, toDimension: .Width, ofView: self, withMultiplier: 0.8, relation: .LessThanOrEqual)
         
         /*** Date row ***/
         let wordDateLabel = UILabel()
@@ -170,11 +171,14 @@ class BAOrderView: UIView {
         let priceLabel = UILabel()
         priceLabel.text = String(format: "%.3f", arguments: [self.orderData.subcategoryPrice]) + " KD"
         priceLabel.font = UIFont(name: "MuseoSans-500", size: 15)
+        priceLabel.adjustsFontSizeToFitWidth = true
+        priceLabel.minimumScaleFactor = 0.2
         priceLabel.sizeToFit()
         detailsView.addSubview(priceLabel)
         
         priceLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: separator4)
         priceLabel.autoPinEdge(.Left, toEdge: .Right, ofView: separator4, withOffset: 8)
+        priceLabel.autoPinEdgeToSuperviewEdge(.Trailing)
         
         
         /*** Making every UILabel dark gray ***/
