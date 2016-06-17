@@ -59,6 +59,8 @@ class BAWebViewController: UIViewController, WKNavigationDelegate {
         
         backButton.enabled = false
         forwardButton.enabled = false
+        
+        self.performSelector(#selector(self.paymentDurationIsTimedOut), withObject: nil, afterDelay: 5 * 60)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -67,7 +69,17 @@ class BAWebViewController: UIViewController, WKNavigationDelegate {
         webView.removeObserver(self, forKeyPath: "loading")
         webView.removeObserver(self, forKeyPath: "estimatedProgress")
         webView.removeObserver(self, forKeyPath: "title")
+        
+        // Canceling the scheduled 5 minutes timeout
+        NSObject.cancelPreviousPerformRequestsWithTarget(self)
     }
+    
+    
+    func paymentDurationIsTimedOut()
+    {
+        delegate?.paymentTimeOut!()
+    }
+    
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>)
     {

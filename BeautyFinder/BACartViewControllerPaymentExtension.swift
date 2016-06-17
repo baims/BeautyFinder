@@ -141,4 +141,11 @@ extension BACartViewController: BAWebViewDelegate
     {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    func paymentTimeOut()
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+        
+        showAlertView("Time out!", message: "There is a limit of 5 minutes to stay on the payment page. Please try to book again.")
+    }
 }
