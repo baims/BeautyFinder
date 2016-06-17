@@ -13,4 +13,5 @@ import UIKit
     optional func webViewIsLoadingNewURL(url: NSURL!)
     optional func webViewDidLoadNewURL(url: NSURL!)
     optional func webViewCancelButtonIsTapped()
+    optional func paymentTimeOut()
 }
