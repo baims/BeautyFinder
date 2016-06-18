@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7ED9B4E386AEF61675B068FD74152E9E'
-               BlueprintName = 'SwiftSpinner'
+               BlueprintIdentifier = 'DC4CEECF232AF069CF9E5FE2BF3744C9'
+               BlueprintName = 'Datez'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftSpinner.framework'>
+               BuildableName = 'Datez.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

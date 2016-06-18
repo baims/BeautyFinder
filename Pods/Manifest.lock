@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (3.1.0)
   - CVCalendar (1.2.7)
+  - Datez (1.0.0)
   - IQKeyboardManagerSwift (3.3.4)
   - Kingfisher (1.7.1)
   - MarqueeLabel-Swift (2.6.5)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.0)
   - CVCalendar (~> 1.2.7)
+  - Datez
   - IQKeyboardManagerSwift
   - Kingfisher (~> 1.7)
   - MarqueeLabel-Swift (~> 2.6.5)
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 415bd7f56197722978759078486689f7ef913dce
   CVCalendar: 1ae6ee62dd7fd4c6a6703a43c641e11dfd32276e
+  Datez: 7069ce6694ae7f4e58dd37c4c063d5aa76ac02f9
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   Kingfisher: c65d078cfc202639f2b6ddd49f09f742cef8781a
   MarqueeLabel-Swift: 6fbc43d0bdd41fbd7107a4ca84e167933df42671
@@ -28,6 +31,6 @@ SPEC CHECKSUMS:
   SwiftSpinner: 09a60c00f4dfa2097b4deabd26f513ad077af4f1
   SWXMLHash: 7257a358b3ab2f7a209e0b4e4cf552e8b6df5f0f
 
-PODFILE CHECKSUM: 3ae3873f6fe09c21c89baf1ec3b3da92d613b00a
+PODFILE CHECKSUM: 9913bdf2231966be03abda7bb77cff7508a85107
 
 COCOAPODS: 1.0.0

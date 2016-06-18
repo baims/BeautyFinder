@@ -68,10 +68,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        /*** Local Notifications Setup ***/
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        
         /*****
         THIS MUST BE REMOVED IN THE FINAL RELEASE
         ********/
         //NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
+        
         
         return true
     }

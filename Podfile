@@ -11,6 +11,7 @@ pod 'MarqueeLabel-Swift', '~> 2.6.5'
 pod 'SWXMLHash', '~> 2.1.0'
 pod 'SwiftSpinner'
 pod 'PureLayout'
+pod 'Datez'
 end
 
 target 'BeautyFinderTests' do

@@ -10,6 +10,7 @@ import UIKit
 import PureLayout
 import SwiftSpinner
 import Alamofire
+import Datez
 
 protocol BACartDelegate {
     func dismissCartViewController(orders : [BAOrderData]!)
@@ -221,6 +222,8 @@ class BACartViewController: UIViewController
                 self.totalLabel.center = totalLabelCenter
                 self.view.alpha = 1
             }, completion: nil)
+        
+        
     }
     
     override func didReceiveMemoryWarning()
@@ -265,6 +268,8 @@ class BACartViewController: UIViewController
     
     func bookAndPayButtonTapped(sender : UIButton)
     {
+        self.scheduleLocalNotifications()
+        
         var ordersWithStartFromPrice = [BAOrderData]()
         
         for order in orders where order.startFromPrice == true
@@ -380,6 +385,7 @@ class BACartViewController: UIViewController
                     dispatch_async(dispatch_get_main_queue(), {
                         //self.bookAndPayButton.hidden = true
                         self.showAlertView("Thank you!", message: "We received your payment successfully.")
+                        self.scheduleLocalNotifications()
                         self.orders.removeAll()
                         self.hideViewControllerWithAnimation()
                     })
@@ -543,5 +549,30 @@ extension BACartViewController : UIScrollViewDelegate
         }
         
         targetContentOffset.memory.x = targetIndex * (kCellWidth + kCellSpacing)
+    }
+}
+
+
+// MARK: Notification stuff
+extension BACartViewController
+{
+    func scheduleLocalNotifications()
+    {
+        for order in orders
+        {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
+            let date = dateFormatter.dateFromString("\(order.dateOfBooking) \(order.startTime)")
+            print("daaateee issss \(date)")
+            
+            let notification = UILocalNotification()
+            notification.fireDate = date! + (-1.day.timeInterval)
+            notification.alertBody = "You have an appointment tomorrow with \(order.beauticianName) for \(order.subcategoryName) at \(DateTimeConverter.convertTimeToString(order.startTime))"
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            
+            print("notification fire date is: \(notification.fireDate!)")
+        }
     }
 }
