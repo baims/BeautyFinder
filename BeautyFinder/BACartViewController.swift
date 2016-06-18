@@ -28,6 +28,7 @@ class BACartViewController: UIViewController
     let continueShoppingLabel = UILabel()
     let buttonsSeparator = UIView()
     
+    var salonName : String!
     var orders : [BAOrderData]!
     var scrollView = UIScrollView(frame: CGRectZero)
     
@@ -568,7 +569,8 @@ extension BACartViewController
             
             let notification = UILocalNotification()
             notification.fireDate = date! + (-1.day.timeInterval)
-            notification.alertBody = "You have an appointment tomorrow with \(order.beauticianName) for \(order.subcategoryName) at \(DateTimeConverter.convertTimeToString(order.startTime))"
+            notification.alertBody = "You have an appointment tomorrow with \(order.beauticianName) in \(self.salonName) at \(DateTimeConverter.convertTimeToString(order.startTime))"
+            notification.userInfo = ["order" : order, "salonName" : salonName]
             
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
             

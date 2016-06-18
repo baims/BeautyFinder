@@ -206,6 +206,7 @@ class SalonViewController: UIViewController, BACartDelegate {
         let cartViewController = BACartViewController()
         cartViewController.orders = self.orders
         cartViewController.delegate = self
+        cartViewController.salonName = salonNameLabel.text!
         
         let navController = UINavigationController(rootViewController: cartViewController)
         navController.modalPresentationStyle = .OverCurrentContext
