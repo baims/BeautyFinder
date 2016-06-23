@@ -280,7 +280,7 @@ class BACartViewController: UIViewController
         
         if ordersWithStartFromPrice.count > 0
         {
-            var alertMessage = "Note that the following order(s) does not have a fixed price, you might end up paying more in the salon depending on your hair length or whatever ( قولوا لي شنو اكتب بالضبط) :-"
+            var alertMessage = "Note that the following order(s) does not have a fixed price, you might end up paying more in the salon depending on your hair length or whatever :-"
             
             for order in ordersWithStartFromPrice
             {
