@@ -363,15 +363,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let signOutAction = UIAlertAction(title: "Sign out", style: UIAlertActionStyle.Destructive)
             { (alertAction) -> Void in
                 
-            NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
-            
-            self.json = nil
-            
-            self.updateElementsOnScreen()
-            
-            let tabBarController = self.tabBarController as! TabBarController
-            tabBarController.selectedIndex = 0
-            tabBarController.showSignInViewController()
+                UIApplication.sharedApplication().cancelAllLocalNotifications()
+                
+                NSUserDefaults.standardUserDefaults().removeObjectForKey("token")
+                
+                self.json = nil
+                
+                self.updateElementsOnScreen()
+                
+                let tabBarController = self.tabBarController as! TabBarController
+                tabBarController.selectedIndex = 0
+                tabBarController.showSignInViewController()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
