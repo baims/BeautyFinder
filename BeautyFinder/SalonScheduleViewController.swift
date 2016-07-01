@@ -8,6 +8,7 @@
 
 import UIKit
 import CVCalendar
+import SwiftyJSON
 
 class SalonScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     

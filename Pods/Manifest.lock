@@ -1,36 +1,39 @@
 PODS:
-  - Alamofire (3.1.0)
+  - Alamofire (3.4.1)
   - CVCalendar (1.2.7)
   - Datez (1.0.0)
-  - IQKeyboardManagerSwift (3.3.4)
-  - Kingfisher (1.7.1)
-  - MarqueeLabel-Swift (2.6.5)
-  - PureLayout (3.0.1)
-  - SwiftSpinner (0.9.1)
+  - IQKeyboardManagerSwift (4.0.4)
+  - Kingfisher (1.9.3)
+  - MarqueeLabel-Swift (2.6.8)
+  - PureLayout (3.0.2)
+  - SwiftSpinner (0.9.5)
+  - SwiftyJSON (2.3.2)
   - SWXMLHash (2.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
-  - CVCalendar (~> 1.2.7)
+  - CVCalendar (= 1.2.7)
   - Datez
   - IQKeyboardManagerSwift
   - Kingfisher (~> 1.7)
   - MarqueeLabel-Swift (~> 2.6.5)
   - PureLayout
   - SwiftSpinner
+  - SwiftyJSON
   - SWXMLHash (~> 2.1.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 415bd7f56197722978759078486689f7ef913dce
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   CVCalendar: 1ae6ee62dd7fd4c6a6703a43c641e11dfd32276e
   Datez: 7069ce6694ae7f4e58dd37c4c063d5aa76ac02f9
-  IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
-  Kingfisher: c65d078cfc202639f2b6ddd49f09f742cef8781a
-  MarqueeLabel-Swift: 6fbc43d0bdd41fbd7107a4ca84e167933df42671
-  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  SwiftSpinner: 09a60c00f4dfa2097b4deabd26f513ad077af4f1
+  IQKeyboardManagerSwift: e0964d04d6a29b71016fd346dca13ecb80a2823a
+  Kingfisher: 9e37d2a78a082dc123bfe8a16de65de85518daae
+  MarqueeLabel-Swift: c4b6bd81ad77c5e79c4f04e3ca29d298bded2ebc
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   SWXMLHash: 7257a358b3ab2f7a209e0b4e4cf552e8b6df5f0f
 
-PODFILE CHECKSUM: 9913bdf2231966be03abda7bb77cff7508a85107
+PODFILE CHECKSUM: d8988dcefd748183def713e7c8f44e9f1586bcb5
 
 COCOAPODS: 1.0.0

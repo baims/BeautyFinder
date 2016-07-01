@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SwiftyJSON
 
 class SalonViewController: UIViewController, BACartDelegate {
     
@@ -78,6 +79,7 @@ class SalonViewController: UIViewController, BACartDelegate {
         
         self.salonNameLabel.text = self.salonJson!["name"].string!
         self.salonAddressLabel.text = self.salonJson!["area"].string! + ", " + self.salonJson!["address"].string!
+        self.salonNameLabel.sizeToFit()
     }
     
     override func viewWillAppear(animated: Bool)

@@ -741,14 +741,14 @@
                                 <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salon's address, block 6, whatever street" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-Rd-paj">
-                                <rect key="frame" x="154" y="185" width="293.5" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jabriya, Jabriya, block 1A street 105" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-Rd-paj">
+                                <rect key="frame" x="171" y="185" width="258" height="19"/>
                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="16"/>
                                 <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHo-iA-ERH" userLabel="Open Maps Button">
-                                <rect key="frame" x="454" y="183.5" width="22" height="22"/>
+                                <rect key="frame" x="435" y="183" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="aNh-Q8-XDW"/>
                                 </constraints>
@@ -776,7 +776,7 @@
                                 </connections>
                             </containerView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Um9-QD-7qF" userLabel="Cart Counter">
-                                <rect key="frame" x="579" y="35.5" width="8" height="21"/>
+                                <rect key="frame" x="579" y="35" width="8" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -807,7 +807,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Pmf-2l-fDg" secondAttribute="trailing" constant="-20" id="0vi-E5-ql4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QXD-Sc-htO" secondAttribute="trailing" constant="-20" id="2kI-Nt-gfA"/>
                             <constraint firstItem="9p5-5G-dlw" firstAttribute="width" secondItem="Pmf-2l-fDg" secondAttribute="width" id="6He-Ae-LpT"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="XHo-iA-ERH" secondAttribute="trailing" constant="10" id="9AG-To-IBq"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="XHo-iA-ERH" secondAttribute="trailing" id="9AG-To-IBq"/>
                             <constraint firstItem="yR3-Ix-115" firstAttribute="top" secondItem="jB1-5j-oeC" secondAttribute="bottom" constant="-78" id="9WT-3r-xj4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VJR-KN-ZYg" secondAttribute="trailing" constant="-6" id="9nl-XX-QPH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Um9-QD-7qF" secondAttribute="trailing" constant="-7" id="A0T-qF-4vW"/>
@@ -2290,7 +2290,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="GKH-Db-ABe"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hair Bleach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EG-ZB-VG4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hair Bleach" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EG-ZB-VG4">
                                                     <rect key="frame" x="94" y="35" width="85" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="418" id="Thq-GR-oES"/>
@@ -2344,6 +2344,7 @@
                                                 <constraint firstItem="WTW-rO-j5e" firstAttribute="top" secondItem="LUw-MN-dOR" secondAttribute="top" id="77J-lU-XhI"/>
                                                 <constraint firstItem="Z8d-ap-5Hh" firstAttribute="leading" secondItem="LUw-MN-dOR" secondAttribute="leadingMargin" constant="6" id="Ayx-pc-SHT"/>
                                                 <constraint firstItem="x1Z-yI-Uz5" firstAttribute="leading" secondItem="9EG-ZB-VG4" secondAttribute="trailing" constant="309" id="IUn-er-70a"/>
+                                                <constraint firstItem="x1Z-yI-Uz5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9EG-ZB-VG4" secondAttribute="trailing" constant="10" id="J7f-bF-cRh"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Z8d-ap-5Hh" secondAttribute="trailing" constant="-10" id="QFE-2U-rR7"/>
                                                 <constraint firstItem="x1Z-yI-Uz5" firstAttribute="centerY" secondItem="LUw-MN-dOR" secondAttribute="centerY" id="S8p-pO-YU6"/>
                                                 <constraint firstItem="5O2-iM-HcC" firstAttribute="trailing" secondItem="x1Z-yI-Uz5" secondAttribute="trailing" id="TPo-oq-sVl"/>

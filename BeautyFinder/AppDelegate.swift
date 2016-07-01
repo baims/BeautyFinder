@@ -9,6 +9,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import SwiftyJSON
 
 let k_website = "http://beautyfinders.com/"
 

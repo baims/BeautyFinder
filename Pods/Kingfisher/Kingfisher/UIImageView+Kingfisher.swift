@@ -24,7 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-import Foundation
+import UIKit
 
 // MARK: - Set Images
 /**
@@ -187,44 +187,63 @@ public extension UIImageView {
         image = placeholderImage
         
         kf_setWebURL(resource.downloadURL)
-        let task = KingfisherManager.sharedManager.retrieveImageWithResource(resource, optionsInfo: optionsInfo, progressBlock: { (receivedSize, totalSize) -> () in
-            if let progressBlock = progressBlock {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    progressBlock(receivedSize: receivedSize, totalSize: totalSize)
-                    
-                })
-            }
-            }, completionHandler: {[weak self] (image, error, cacheType, imageURL) -> () in
+        
+        let task = KingfisherManager.sharedManager.retrieveImageWithResource(resource, optionsInfo: optionsInfo,
+            progressBlock: { receivedSize, totalSize in
+                if let progressBlock = progressBlock {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        progressBlock(receivedSize: receivedSize, totalSize: totalSize)
+                        
+                    })
+                }
+            },
+            completionHandler: {[weak self] image, error, cacheType, imageURL in
                 
                 dispatch_async_safely_main_queue {
-                    if let sSelf = self where imageURL == sSelf.kf_webURL && image != nil {
-                        
-                        if let transitionItem = optionsInfo?.kf_findFirstMatch(.Transition(.None)),
-                            case .Transition(let transition) = transitionItem {
+                    
+                    guard let sSelf = self where imageURL == sSelf.kf_webURL else {
+                        completionHandler?(image: image, error: error, cacheType: cacheType, imageURL: imageURL)
+                        return
+                    }
+                    
+                    sSelf.kf_setImageTask(nil)
+                    
+                    guard let image = image else {
+                        indicator?.stopAnimating()
+                        completionHandler?(image: nil, error: error, cacheType: cacheType, imageURL: imageURL)
+                        return
+                    }
+                    
+                    if let transitionItem = optionsInfo?.kf_firstMatchIgnoringAssociatedValue(.Transition(.None)),
+                        case .Transition(let transition) = transitionItem where cacheType == .None {
                             
-                            UIView.transitionWithView(sSelf, duration: 0.0, options: [], animations: { () -> Void in
-                                indicator?.stopAnimating()
-                                }, completion: { (finished) -> Void in
+                            UIView.transitionWithView(sSelf, duration: 0.0, options: [],
+                                animations: {
+                                    indicator?.stopAnimating()
+                                },
+                                completion: { finished in
                                     UIView.transitionWithView(sSelf, duration: transition.duration,
-                                        options: transition.animationOptions, animations:
-                                        { () -> Void in
-                                            transition.animations?(sSelf, image!)
-                                        }, completion: {
-                                            finished in
+                                        options: transition.animationOptions,
+                                        animations: {
+                                            transition.animations?(sSelf, image)
+                                        },
+                                        completion: { finished in
                                             transition.completion?(finished)
                                             completionHandler?(image: image, error: error, cacheType: cacheType, imageURL: imageURL)
-                                        })
-                            })
-                        } else {
-                            indicator?.stopAnimating()
-                            sSelf.image = image;
-                            completionHandler?(image: image, error: error, cacheType: cacheType, imageURL: imageURL)
-                        }
+                                        }
+                                    )
+                                }
+                            )
                     } else {
+                        indicator?.stopAnimating()
+                        sSelf.image = image
                         completionHandler?(image: image, error: error, cacheType: cacheType, imageURL: imageURL)
                     }
                 }
-            })
+            }
+        )
+        
+        kf_setImageTask(task)
         
         return task
     }
@@ -255,17 +274,26 @@ public extension UIImageView {
     }
 }
 
+extension UIImageView {
+    /**
+     Cancel the image download task bounded to the image view if it is running.
+     Nothing will happen if the downloading has already finished.
+     */
+    public func kf_cancelDownloadTask() {
+        kf_imageTask?.downloadTask?.cancel()
+    }
+}
+
 // MARK: - Associated Object
 private var lastURLKey: Void?
 private var indicatorKey: Void?
 private var showIndicatorWhenLoadingKey: Void?
+private var imageTaskKey: Void?
 
 public extension UIImageView {
     /// Get the image URL binded to this image view.
     public var kf_webURL: NSURL? {
-        get {
-            return objc_getAssociatedObject(self, &lastURLKey) as? NSURL
-        }
+        return objc_getAssociatedObject(self, &lastURLKey) as? NSURL
     }
     
     private func kf_setWebURL(URL: NSURL) {
@@ -288,8 +316,13 @@ public extension UIImageView {
                 return
             } else {
                 if newValue {
-                    let indicator = UIActivityIndicatorView(activityIndicatorStyle:.Gray)
-                    indicator.center = CGPointMake(CGRectGetMidX(bounds), CGRectGetMidY(bounds))
+                    #if os(tvOS)
+                        let indicatorStyle = UIActivityIndicatorViewStyle.White
+                    #else
+                        let indicatorStyle = UIActivityIndicatorViewStyle.Gray
+                    #endif
+                    let indicator = UIActivityIndicatorView(activityIndicatorStyle:indicatorStyle)
+                    indicator.center = CGPoint(x: CGRectGetMidX(bounds), y: CGRectGetMidY(bounds))
                     
                     indicator.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleBottomMargin, .FlexibleTopMargin]
                     indicator.hidden = true
@@ -311,13 +344,19 @@ public extension UIImageView {
     /// The indicator view showing when loading. This will be `nil` if `kf_showIndicatorWhenLoading` is false.
     /// You may want to use this to set the indicator style or color when you set `kf_showIndicatorWhenLoading` to true.
     public var kf_indicator: UIActivityIndicatorView? {
-        get {
-            return objc_getAssociatedObject(self, &indicatorKey) as? UIActivityIndicatorView
-        }
+        return objc_getAssociatedObject(self, &indicatorKey) as? UIActivityIndicatorView
     }
     
     private func kf_setIndicator(indicator: UIActivityIndicatorView?) {
         objc_setAssociatedObject(self, &indicatorKey, indicator, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    
+    private var kf_imageTask: RetrieveImageTask? {
+        return objc_getAssociatedObject(self, &imageTaskKey) as? RetrieveImageTask
+    }
+    
+    private func kf_setImageTask(task: RetrieveImageTask?) {
+        objc_setAssociatedObject(self, &imageTaskKey, task, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
 }
 
@@ -351,4 +390,3 @@ public extension UIImageView {
     }
     
 }
-

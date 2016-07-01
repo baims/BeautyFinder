@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import SwiftyJSON
 
 class CategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     

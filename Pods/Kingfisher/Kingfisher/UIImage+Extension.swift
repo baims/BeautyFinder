@@ -49,7 +49,7 @@ extension NSData {
             buffer[2] == jpgHeaderIF[0]
         {
             return .JPEG
-        }else if buffer[0] == gifHeader[0] &&
+        } else if buffer[0] == gifHeader[0] &&
             buffer[1] == gifHeader[1] &&
             buffer[2] == gifHeader[2]
         {
@@ -67,13 +67,18 @@ extension UIImage {
     }
     
     func kf_decodedImage(scale scale: CGFloat) -> UIImage? {
+        // prevent animated image (GIF) lose it's images
+        if images != nil {
+            return self
+        }
+
         let imageRef = self.CGImage
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue).rawValue
         let contextHolder = UnsafeMutablePointer<Void>()
         let context = CGBitmapContextCreate(contextHolder, CGImageGetWidth(imageRef), CGImageGetHeight(imageRef), 8, 0, colorSpace, bitmapInfo)
         if let context = context {
-            let rect = CGRectMake(0, 0, CGFloat(CGImageGetWidth(imageRef)), CGFloat(CGImageGetHeight(imageRef)))
+            let rect = CGRect(x: 0, y: 0, width: CGImageGetWidth(imageRef), height: CGImageGetHeight(imageRef))
             CGContextDrawImage(context, rect, imageRef)
             let decompressedImageRef = CGBitmapContextCreateImage(context)
             return UIImage(CGImage: decompressedImageRef!, scale: scale, orientation: self.imageOrientation)
@@ -86,6 +91,11 @@ extension UIImage {
 // MARK: - Normalization
 extension UIImage {
     public func kf_normalizedImage() -> UIImage {
+        // prevent animated image (GIF) lose it's images
+        if images != nil {
+            return self
+        }
+        
         if imageOrientation == .Up {
             return self
         }
@@ -95,7 +105,7 @@ extension UIImage {
         let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return normalizedImage;
+        return normalizedImage
     }
 }
 
@@ -176,13 +186,10 @@ extension UIImage {
             images.append(UIImage(CGImage: imageRef, scale: scale, orientation: .Up))
         }
         
-        if (frameCount == 1) {
+        if frameCount == 1 {
             return images.first
         } else {
             return UIImage.animatedImageWithImages(images, duration: duration <= 0.0 ? gifDuration : duration)
         }
     }
 }
-
-
-

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -47,6 +48,8 @@ class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UIC
         
         let url = k_website + "salon/\(text)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())! // using the stringByAddingPercent... method to add %20 instead of spaces in the url
         
+       print(url)
+
         Alamofire.request(.GET, url).responseJSON { (response) -> Void in
             
             if let Json = response.result.value {

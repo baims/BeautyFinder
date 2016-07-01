@@ -47,7 +47,7 @@ public class MarqueeLabel: UILabel {
      - SeeAlso: Type
      - SeeAlso: textAlignment
      */
-    public var type: Type = .Continuous {
+    public var type: Type = .LeftRight {
         didSet {
             if type == oldValue {
                 return
@@ -450,7 +450,6 @@ public class MarqueeLabel: UILabel {
         addSubview(sublabel)
         
         // Configure self
-        super.backgroundColor = UIColor.clearColor()
         super.clipsToBounds = true
         super.numberOfLines = 1
         
@@ -489,7 +488,7 @@ public class MarqueeLabel: UILabel {
         sublabel.textColor = super.textColor
         sublabel.backgroundColor = super.backgroundColor ?? UIColor.clearColor()
         sublabel.shadowColor = super.shadowColor
-        sublabel.shadowOffset = super.shadowOffset;
+        sublabel.shadowOffset = super.shadowOffset
         for prop in properties {
             let value: AnyObject! = super.valueForKey(prop)
             sublabel.setValue(value, forKeyPath: prop)
@@ -677,7 +676,8 @@ public class MarqueeLabel: UILabel {
         
         // Check if the label string fits
         let labelTooLarge = (sublabelSize().width + leadingBuffer) > self.bounds.size.width
-        return (!labelize && labelTooLarge)
+        let animationHasDuration = speed.value > 0.0
+        return (!labelize && labelTooLarge && animationHasDuration)
     }
     
     private func labelReadyForScroll() -> Bool {
@@ -1177,6 +1177,12 @@ public class MarqueeLabel: UILabel {
     override public func drawLayer(layer: CALayer, inContext ctx: CGContext) {
         // Do NOT call super, to prevent UILabel superclass from drawing into context
         // Label drawing is handled by sublabel and CAReplicatorLayer layer class
+        
+        // Draw only background color
+        if let bgColor = backgroundColor {
+            CGContextSetFillColorWithColor(ctx, bgColor.CGColor);
+            CGContextFillRect(ctx, layer.bounds);
+        }
     }
     
     private enum MarqueeKeys: String {
@@ -1379,11 +1385,12 @@ public class MarqueeLabel: UILabel {
         // Use subLabel view for handling baseline layouts
         return sublabel
     }
-    #endif
-
-    override public func drawRect(rect: CGRect) {
-        // Draw NOTHING to prevent superclass drawing
+    
+    public override var viewForLastBaselineLayout: UIView {
+        // Use subLabel view for handling baseline layouts
+        return sublabel
     }
+    #endif
 
     public override var text: String? {
         get {
@@ -1526,7 +1533,7 @@ public class MarqueeLabel: UILabel {
         
         set {
             // By the nature of MarqueeLabel, this is false
-            self.adjustsFontSizeToFitWidth = false
+            super.adjustsFontSizeToFitWidth = false
         }
     }
     
@@ -1536,7 +1543,7 @@ public class MarqueeLabel: UILabel {
         }
         
         set {
-            self.minimumScaleFactor = 0.0
+            super.minimumScaleFactor = 0.0
         }
     }
     
@@ -1594,7 +1601,7 @@ private class GradientAnimation: CABasicAnimation {
 private struct Scroller {
     typealias Scroll = (layer: CALayer, anim: CAKeyframeAnimation)
     
-    init(generator gen: (interval: CGFloat, delay: CGFloat) -> [Scroll], scrolls: [Scroll]? = nil) {
+    init(generator gen: (interval: CGFloat, delay: CGFloat) -> [Scroll]) {
         self.generator = gen
     }
     

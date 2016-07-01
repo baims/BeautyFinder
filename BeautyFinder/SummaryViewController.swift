@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftSpinner
+import SwiftyJSON
 
 class SummaryViewController: UIViewController {
         

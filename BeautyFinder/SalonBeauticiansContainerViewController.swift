@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class SalonBeauticiansContainerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 

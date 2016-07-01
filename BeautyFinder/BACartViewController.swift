@@ -11,6 +11,7 @@ import PureLayout
 import SwiftSpinner
 import Alamofire
 import Datez
+import SwiftyJSON
 
 protocol BACartDelegate {
     func dismissCartViewController(orders : [BAOrderData]!)
@@ -269,7 +270,8 @@ class BACartViewController: UIViewController
     
     func bookAndPayButtonTapped(sender : UIButton)
     {
-        self.scheduleLocalNotifications()
+        /// TODO: DELETE THIS LINE:
+        //self.scheduleLocalNotifications()
         
         var ordersWithStartFromPrice = [BAOrderData]()
         
@@ -570,7 +572,15 @@ extension BACartViewController
             let notification = UILocalNotification()
             notification.fireDate = date! + (-1.day.timeInterval)
             notification.alertBody = "You have an appointment tomorrow with \(order.beauticianName) in \(self.salonName) at \(DateTimeConverter.convertTimeToString(order.startTime))"
-            notification.userInfo = ["order" : order, "salonName" : salonName]
+            notification.userInfo = ["salonName" : salonName,
+                                     "subcategoryName" : order.subcategoryName,
+                                     "subcategoryPrice" : order.subcategoryPrice,
+                                     "beauticianName" : order.beauticianName,
+                                     "beauticianImageUrl" : order.beauticianImageUrl,
+                                     "dateOfBooking" : order.dateOfBooking,
+                                     "startTime" : order.startTime,
+                                     "endTime" : order.endTime,
+                                     "startFromPrice" : order.startFromPrice]
             
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
             

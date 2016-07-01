@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import SwiftyJSON
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, UITextFieldDelegate
 {

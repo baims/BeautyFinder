@@ -22,7 +22,6 @@
 		9F5122211C510A7600E92155 /* BAAutoResizingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5122201C510A7600E92155 /* BAAutoResizingTextField.swift */; };
 		9F5122231C51103E00E92155 /* String+EmailPhoneValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5122221C51103E00E92155 /* String+EmailPhoneValidation.swift */; };
 		9F632C961BBDC81C00AF2732 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */; };
-		9F632C981BBDD24F00AF2732 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */; };
 		9F64C66B1CA8479600A98BDD /* BAWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64C66A1CA8479600A98BDD /* BAWebViewController.swift */; };
 		9F64C66D1CA8479C00A98BDD /* BAWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64C66C1CA8479C00A98BDD /* BAWebViewDelegate.swift */; };
 		9F64C66F1CA847D700A98BDD /* SummaryViewControllerPaymentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64C66E1CA847D700A98BDD /* SummaryViewControllerPaymentExtension.swift */; };
@@ -123,7 +122,6 @@
 		9F5122201C510A7600E92155 /* BAAutoResizingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAAutoResizingTextField.swift; sourceTree = "<group>"; };
 		9F5122221C51103E00E92155 /* String+EmailPhoneValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EmailPhoneValidation.swift"; sourceTree = "<group>"; };
 		9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		9F64C66A1CA8479600A98BDD /* BAWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAWebViewController.swift; sourceTree = "<group>"; };
 		9F64C66C1CA8479C00A98BDD /* BAWebViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAWebViewDelegate.swift; sourceTree = "<group>"; };
 		9F64C66E1CA847D700A98BDD /* SummaryViewControllerPaymentExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewControllerPaymentExtension.swift; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 			children = (
 				9F28F2E51BAC85BE007F1396 /* ADVSegmentedControl.swift */,
 				9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */,
-				9F632C971BBDD24F00AF2732 /* UIImageView+URL.swift */,
 				9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */,
 			);
 			name = Modal;
@@ -694,7 +691,6 @@
 				9F64C66D1CA8479C00A98BDD /* BAWebViewDelegate.swift in Sources */,
 				9F96CF631C59130400881A1B /* ProfileTableViewCell.swift in Sources */,
 				9F5122231C51103E00E92155 /* String+EmailPhoneValidation.swift in Sources */,
-				9F632C981BBDD24F00AF2732 /* UIImageView+URL.swift in Sources */,
 				9F28F2E81BAC8EFF007F1396 /* AreaSearchViewController.swift in Sources */,
 				9F3354A01BCD46DB00FA1A21 /* SalonViewController.swift in Sources */,
 				9F96CF651C5A198900881A1B /* BADate.swift in Sources */,
@@ -886,6 +882,7 @@
 				INFOPLIST_FILE = BeautyFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Baims.BeautyFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import IQKeyboardManagerSwift
+import SwiftyJSON
 
 class SignUpViewController: UIViewController, UITextFieldDelegate
 {

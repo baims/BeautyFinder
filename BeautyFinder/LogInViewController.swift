@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SafariServices
+import SwiftyJSON
 
 class LogInViewController: UIViewController, UITextFieldDelegate
 {

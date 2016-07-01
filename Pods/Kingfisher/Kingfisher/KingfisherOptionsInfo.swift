@@ -37,7 +37,7 @@ Item could be added into KingfisherOptionsInfo
 - Options:     Item for options. The value of this item should be a KingfisherOptions.
 - TargetCache: Item for target cache. The value of this item should be an ImageCache object. Kingfisher will use this cache when handling the related operation, including trying to retrieve the cached images and store the downloaded image to it.
 - Downloader:  Item for downloader to use. The value of this item should be an ImageDownloader object. Kingfisher will use this downloader to download the images.
-- Transition:  Item for animation transition when using UIImageView.
+- Transition:  Item for animation transition when using UIImageView. Kingfisher will use the `ImageTransition` of this enum to animate the image in if it is downloaded from web. The transition will not happen when the image is retrieved from either memory or disk cache.
 */
 public enum KingfisherOptionsInfoItem {
     case Options(KingfisherOptions)
@@ -46,8 +46,14 @@ public enum KingfisherOptionsInfoItem {
     case Transition(ImageTransition)
 }
 
-func ==(a: KingfisherOptionsInfoItem, b: KingfisherOptionsInfoItem) -> Bool {
-    switch (a, b) {
+infix operator <== {
+    associativity none
+    precedence 160
+}
+
+// This operator returns true if two `KingfisherOptionsInfoItem` enum is the same, without considering the associated values.
+func <== (lhs: KingfisherOptionsInfoItem, rhs: KingfisherOptionsInfoItem) -> Bool {
+    switch (lhs, rhs) {
     case (.Options(_), .Options(_)): return true
     case (.TargetCache(_), .TargetCache(_)): return true
     case (.Downloader(_), .Downloader(_)): return true
@@ -57,13 +63,8 @@ func ==(a: KingfisherOptionsInfoItem, b: KingfisherOptionsInfoItem) -> Bool {
 }
 
 extension CollectionType where Generator.Element == KingfisherOptionsInfoItem {
-    func kf_findFirstMatch(target: Generator.Element) -> Generator.Element? {
-        
-        let index = indexOf {
-            e in
-            return e == target
-        }
-        
-        return (index != nil) ? self[index!] : nil
+    
+    func kf_firstMatchIgnoringAssociatedValue(target: Generator.Element) -> Generator.Element? {
+        return indexOf { $0 <== target }.flatMap { self[$0] }
     }
 }
