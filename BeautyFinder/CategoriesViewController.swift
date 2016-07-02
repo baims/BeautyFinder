@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Kingfisher
 import SwiftyJSON
+import Datez
 
 class CategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -28,6 +29,36 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         
         self.refreshControl.addTarget(self, action: #selector(CategoriesViewController.startRefresh), forControlEvents: .ValueChanged)
         collectionView?.addSubview(self.refreshControl)
+        
+//        ////////////////////////////////////
+//        
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//        
+//        let date = NSDate()
+//        
+//        let notification = UILocalNotification()
+//        notification.fireDate = date + 10.seconds.timeInterval
+//        notification.alertBody = "You have an appointment tomorrow with Mairy in Bader Salon at 8:00 PM)"
+//        notification.userInfo = ["salonName" : "Bader Salon",
+//                                 "salonAddress" : "Mishref block 5 whatever",
+//                                 "salonImageUrl" : "http://beautyfinders.com/media/salon/image.jpeg",
+//                                 "subcategoryName" : "Hair Wash",
+//                                 "subcategoryPrice" : 20.0,
+//                                 "beauticianName" : "Mairy",
+//                                 "beauticianImageUrl" : "http://beautyfinders.com/media/Beautician/img1456063529780_1_icsrXSC.jpg",
+//                                 "dateOfBooking" : "2-7-2016",
+//                                 "startTime" : "18:00:00",
+//                                 "endTime" : "18:30:00",
+//                                 "startFromPrice" : true,
+//                                 "lat" : 10.743322,
+//                                 "long" : 23.9887433]
+//        
+//        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+//        
+//        print("notification fire date is: \(notification.fireDate!)")
+//        
+//        ///////////////////////////////////////
     }
     
     override func viewDidLayoutSubviews() {

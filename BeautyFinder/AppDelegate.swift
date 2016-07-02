@@ -23,6 +23,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        /*** Local Notifications Setup ***/
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        /*** Local Nofitications Handling ***/
+        if launchOptions != nil
+        {
+            if let notification = launchOptions![UIApplicationLaunchOptionsLocalNotificationKey]
+            {
+                print(notification)
+                //self.application(application, didReceiveLocalNotification: notification as! UILocalNotification)
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                    NSNotificationCenter.defaultCenter().postNotificationName("UserOpenedLocalNotification", object: (notification as! UILocalNotification).userInfo!)
+                })
+            }
+        }
+        
+        
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
@@ -69,10 +88,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        /*** Local Notifications Setup ***/
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-        
         
         /*****
         THIS MUST BE REMOVED IN THE FINAL RELEASE
@@ -99,12 +114,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        self.clearNotificationCenter(application)
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        print("didRecieveLocalNotification")
+        print(notification.userInfo!)
+        
+        if application.applicationState == .Inactive || application.applicationState == .Background
+        {
+            NSNotificationCenter.defaultCenter().postNotificationName("UserOpenedLocalNotification", object: notification.userInfo!)
+        }
+    }
+    
+    func clearNotificationCenter(application : UIApplication)
+    {
+        application.applicationIconBadgeNumber = 1
+        application.applicationIconBadgeNumber = 0
+    }
 }
 

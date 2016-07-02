@@ -208,7 +208,12 @@ class SalonViewController: UIViewController, BACartDelegate {
         let cartViewController = BACartViewController()
         cartViewController.orders = self.orders
         cartViewController.delegate = self
-        cartViewController.salonName = salonNameLabel.text!
+        cartViewController.salonName = self.salonNameLabel.text!
+        cartViewController.salonAddress = self.salonAddressLabel.text!
+        cartViewController.salonImageUrl = k_website + self.salonJson!["logo"].string!
+        cartViewController.salonAddressLatitude = self.salonJson!["latitude"].double!
+        cartViewController.salonAddressLongitude = self.salonJson!["longitude"].double!
+        
         
         let navController = UINavigationController(rootViewController: cartViewController)
         navController.modalPresentationStyle = .OverCurrentContext

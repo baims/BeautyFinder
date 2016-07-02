@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var emailTextField: BAAutoResizingTextField!
     @IBOutlet weak var phoneTextField: BAAutoResizingTextField!
     
+    var didLaunchFromNotification : Bool = false
     
     var emailIsChanged : Bool {
         get {
@@ -117,7 +118,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        if segue.identifier == "booking"
+        if segue.identifier == "booking" && !didLaunchFromNotification
         {
             let jsonOfSelectedIndex = self.json!["lastOrders", self.indexOfSelectedCell!.row]
             let summaryViewController = segue.destinationViewController as! SummaryViewController
@@ -146,6 +147,37 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             summaryViewController.needToHideBookButton = true
         }
         
+        else if segue.identifier == "booking" && didLaunchFromNotification
+        {
+            didLaunchFromNotification = false
+            
+            let userInfo = sender as! [NSObject : AnyObject]
+            
+            let summaryViewController = segue.destinationViewController as! SummaryViewController
+            
+            summaryViewController.salonName        = userInfo["salonName"] as! String
+            summaryViewController.salonImageUrl    = userInfo["salonImageUrl"] as! String
+            summaryViewController.salonAddress     = userInfo["salonAddress"] as! String
+            
+            print(summaryViewController.salonName)
+            
+            summaryViewController.subcategoryName  = userInfo["subcategoryName"] as! String
+            //summaryViewController.subcategoryPK    = jsonOfSelectedIndex["starttime"].string!
+            summaryViewController.subcategoryPrice = userInfo["subcategoryPrice"] as! Double
+            
+            summaryViewController.beauticianName   = userInfo["beauticianName"] as! String
+            //summaryViewController.beauticianPK     = jsonOfSelectedIndex["starttime"].string!
+            summaryViewController.beauticianImageUrl = userInfo["beauticianImageUrl"] as! String
+            
+            summaryViewController.dateOfBooking    = userInfo["dateOfBooking"] as! String
+            summaryViewController.startTime        = userInfo["startTime"] as! String
+            summaryViewController.endTime          = userInfo["endTime"] as! String
+            
+            summaryViewController.latitude         = userInfo["lat"] as! Double
+            summaryViewController.longitude        = userInfo["long"] as! Double
+            
+            summaryViewController.needToHideBookButton = true
+        }
     }
     
     func getProfileJsonIfSignedIn()

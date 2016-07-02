@@ -16,6 +16,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate
         super.viewDidLoad()
         
         self.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.userOpenedLocalNotification(_:)), name: "UserOpenedLocalNotification", object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -30,7 +32,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate
                 tabBar.items![i].selectedImage = UIImage(named: "tabBarImagesSelected\(i)")!.imageWithRenderingMode(.AlwaysOriginal)
             }
             
-            // force loading the ProfileViewController
+            // force loading the ProfileViewController, so when the user taps it, it is already loaded and has all the information without the need to wait
             let _ = (viewControllers![2] as! UINavigationController).viewControllers[0].view
         }
     }
@@ -48,8 +50,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate
                 return false
             }
         }
-        // for loop the viewControllers property of the tabBar and look if the viewController parameter is one of them
-        
         
         return true
     }
@@ -62,5 +62,25 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate
         vc.needGoToProfileViewController = true
         
         self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func userOpenedLocalNotification(notification : NSNotification)
+    {
+        if let _ = NSUserDefaults.standardUserDefaults().objectForKey("token")
+        {
+            let userInfo = notification.object as! [NSObject : AnyObject]
+            
+            print("userOpenedLocalNotification")
+            print(userInfo["salonName"])
+            
+            self.selectedIndex = 2
+            
+            let profileViewController = (self.viewControllers![2] as! UINavigationController).viewControllers[0] as! ProfileViewController
+            profileViewController.didLaunchFromNotification = true
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                profileViewController.performSegueWithIdentifier("booking", sender: userInfo)
+            })
+        }
     }
 }

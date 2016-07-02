@@ -30,6 +30,11 @@ class BACartViewController: UIViewController
     let buttonsSeparator = UIView()
     
     var salonName : String!
+    var salonAddress : String!
+    var salonImageUrl: String!
+    var salonAddressLatitude : Double!
+    var salonAddressLongitude: Double!
+    
     var orders : [BAOrderData]!
     var scrollView = UIScrollView(frame: CGRectZero)
     
@@ -573,6 +578,8 @@ extension BACartViewController
             notification.fireDate = date! + (-1.day.timeInterval)
             notification.alertBody = "You have an appointment tomorrow with \(order.beauticianName) in \(self.salonName) at \(DateTimeConverter.convertTimeToString(order.startTime))"
             notification.userInfo = ["salonName" : salonName,
+                                     "salonImageUrl" : salonImageUrl,
+                                     "salonAddress" : salonAddress,
                                      "subcategoryName" : order.subcategoryName,
                                      "subcategoryPrice" : order.subcategoryPrice,
                                      "beauticianName" : order.beauticianName,
@@ -580,7 +587,9 @@ extension BACartViewController
                                      "dateOfBooking" : order.dateOfBooking,
                                      "startTime" : order.startTime,
                                      "endTime" : order.endTime,
-                                     "startFromPrice" : order.startFromPrice]
+                                     "startFromPrice" : order.startFromPrice,
+                                     "lat" : salonAddressLatitude,
+                                     "long" : salonAddressLongitude]
             
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
             

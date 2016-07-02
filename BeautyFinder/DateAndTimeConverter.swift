@@ -27,7 +27,7 @@ class DateTimeConverter
         
         if (Int(hour) >= 12)
         {
-            hour = String( Int(hour)! - 12 )
+            hour = Int(hour) == 12 ? String(Int(hour)!) : String( Int(hour)! - 12 )
             
             timeString = hour + ":" + minute + " PM"
         }
