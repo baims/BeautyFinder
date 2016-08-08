@@ -31,16 +31,16 @@ class AreaSearchViewController: UIViewController, UICollectionViewDataSource, UI
     
     func refresh(text : String)
     {
-        guard !text.isEmpty else
-        {
-            //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
-            
-            searchJson = nil
-            
-            collectionView.reloadData()
-            
-            return
-        }
+//        guard !text.isEmpty else
+//        {
+//            //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
+//            
+//            searchJson = nil
+//            
+//            collectionView.reloadData()
+//            
+//            return
+//        }
         
         //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
         

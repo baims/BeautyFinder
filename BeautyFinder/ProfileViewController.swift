@@ -466,7 +466,7 @@ extension ProfileViewController
         cell.addressLabel.fadeLength = 4
         cell.addressLabel.scrollRate = 30
         
-        cell.salonLogo.kf_setImageWithURL(NSURL(string: "http://beautyfinders.com" + json["salonLogo"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
+        cell.salonLogo.kf_setImageWithURL(NSURL(string: k_website + json["salonLogo"].string!)!, placeholderImage: UIImage(named: "Icon-72"))
         
         cell.salonLogo.layer.cornerRadius = 86/2
         cell.salonLogo.layer.masksToBounds = true

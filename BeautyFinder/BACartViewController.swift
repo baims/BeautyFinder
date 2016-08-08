@@ -377,11 +377,24 @@ class BACartViewController: UIViewController
                 
                 if json["Operation"].string! == "ok" && extensionLink == "reserve/"
                 {
-                    self.getProfileDataAndFetchMyFatoorahLink(token)
+                    //TODO: Uncomment (1) and remove (2) to remove the 3 seconds timer
+                
+                    
+                    // (1)
+                    //self.getProfileDataAndFetchMyFatoorahLink(token)
+                    
                     print("RESERVED")
-                    //self.orderBooking(token)
                     
                     SwiftSpinner.show("Please Wait...")
+                    
+                    
+                    // (2)
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                    if let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
+                    {
+                        self.orderBooking(token)
+                    }
+                    })
                 }
                 else if json["Operation"].string! == "ok" && extensionLink == "order/"
                 {
@@ -402,12 +415,16 @@ class BACartViewController: UIViewController
                 {
                     SwiftSpinner.hide()
                     
+                    var errorString = ""
+
                     for error in json["errors"].array!
                     {
-                        dispatch_async(dispatch_get_main_queue(), {
-                            self.showAlertView("We're Sorry!", message: error.string!)
-                        })
+                        errorString += "• " + error.string! + (error == json["errors"].array!.last ? "" : "\n")
                     }
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.showAlertView("We're Sorry!", message: errorString)
+                    })
                 }
             }
             else if let error = response.result.error

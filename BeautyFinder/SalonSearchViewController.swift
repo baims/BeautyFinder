@@ -33,14 +33,14 @@ class SalonSearchViewController: UIViewController, UICollectionViewDelegate, UIC
     
     func refresh(text : String)
     {
-        guard !text.isEmpty else
-        {
-            searchJson = nil
-            
-            collectionView.reloadData()
-            
-            return
-        }
+//        guard !text.isEmpty else
+//        {
+//            searchJson = nil
+//            
+//            collectionView.reloadData()
+//            
+//            return
+//        }
         
         
         /*** Start fetching results ***/

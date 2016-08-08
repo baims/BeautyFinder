@@ -36,17 +36,17 @@ class CategorySearchViewController: UIViewController {
         
         var array = [JSON]()
         
-        guard text.isEmpty == false else
-        {
-            searchJson = nil
-            
-            collectionView.reloadData()
-            
-            return
-        }
+//        guard text.isEmpty == false else
+//        {
+//            searchJson = nil
+//            
+//            collectionView.reloadData()
+//            
+//            return
+//        }
         
         
-        if let json = categoriesJson
+        if let json = categoriesJson where !text.isEmpty
         {
             for category in json.array!
             {
@@ -65,7 +65,7 @@ class CategorySearchViewController: UIViewController {
             }
         }
         
-        searchJson = JSON(array)
+        searchJson = text.isEmpty ? categoriesJson : JSON(array)
         print(searchJson)
         
         collectionView.reloadData()

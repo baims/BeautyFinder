@@ -74,6 +74,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UIGestureReco
         self.tabBarController!.tabBar.hidden = false
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        refresh()
+    }
+    
     override func viewWillDisappear(animated: Bool)
     {
         self.searchField.removeFromSuperview()
@@ -139,17 +145,22 @@ extension SearchViewController
     
     func textFieldDidChange(textField : UITextField)
     {
+        refresh(textField.text!)
+    }
+    
+    func refresh(text : String = "")
+    {
         if segmentedControl.selectedIndex == 0
         {
-            self.salonSearchViewController.refresh(searchField.text!)
+            self.salonSearchViewController.refresh(text)
         }
         else if segmentedControl.selectedIndex == 1
         {
-            self.areaSearchViewController.refresh(searchField.text!)
+            self.areaSearchViewController.refresh(text)
         }
         else if segmentedControl.selectedIndex == 2
         {
-            self.categorySearchViewController.refresh(searchField.text!)
+            self.categorySearchViewController.refresh(text)
         }
     }
     

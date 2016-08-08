@@ -128,8 +128,6 @@ extension BACartViewController: BAWebViewDelegate
             //self.dismissViewControllerAnimated(true, completion:nil)
             self.navigationController?.popViewControllerAnimated(true)
         }
-        
-        
     }
     
     func webViewDidLoadNewURL(url: NSURL!)
