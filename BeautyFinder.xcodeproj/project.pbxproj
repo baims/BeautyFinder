@@ -36,6 +36,7 @@
 		9F6C3B561BECEEF60039F742 /* SalonScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6C3B551BECEEF60039F742 /* SalonScheduleViewController.swift */; };
 		9F6CD0511BAC6C8700A0197D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */; };
 		9F6CD0531BAC759F00A0197D /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CD0521BAC759F00A0197D /* SearchTextField.swift */; };
+		9F911A371D5BBB33008F3FED /* BAAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F911A361D5BBB33008F3FED /* BAAlertView.swift */; };
 		9F96CF631C59130400881A1B /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F96CF621C59130400881A1B /* ProfileTableViewCell.swift */; };
 		9F96CF651C5A198900881A1B /* BADate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F96CF641C5A198900881A1B /* BADate.swift */; };
 		9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */; };
@@ -138,6 +139,7 @@
 		9F6C3B551BECEEF60039F742 /* SalonScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonScheduleViewController.swift; sourceTree = "<group>"; };
 		9F6CD0501BAC6C8700A0197D /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9F6CD0521BAC759F00A0197D /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		9F911A361D5BBB33008F3FED /* BAAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAAlertView.swift; sourceTree = "<group>"; };
 		9F96CF621C59130400881A1B /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9F96CF641C5A198900881A1B /* BADate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BADate.swift; sourceTree = "<group>"; };
 		9F9B99011BD12C0F00A78B4D /* SubcategoriesAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubcategoriesAnimationController.swift; sourceTree = "<group>"; };
@@ -328,14 +330,14 @@
 			name = "Summary View";
 			sourceTree = "<group>";
 		};
-		9FFF96D11C174D4B004B8F48 /* Modal */ = {
+		9FFF96D11C174D4B004B8F48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				9F28F2E51BAC85BE007F1396 /* ADVSegmentedControl.swift */,
 				9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */,
 				9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */,
 			);
-			name = Modal;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		CAA008BB1B8C1B150094F10E = {
@@ -367,6 +369,7 @@
 				9F65614C1C46660900FBEE2F /* TabBarController.swift */,
 				9F5122221C51103E00E92155 /* String+EmailPhoneValidation.swift */,
 				9F96CF641C5A198900881A1B /* BADate.swift */,
+				9F911A361D5BBB33008F3FED /* BAAlertView.swift */,
 				9FD7ED151CF202E100D4EB33 /* Cart */,
 				9F6CD04E1BAC6C4600A0197D /* Home View */,
 				9F67FF2F1BBDE49200C47C45 /* Subcategories */,
@@ -375,7 +378,7 @@
 				9F6CD04F1BAC6C6500A0197D /* Search */,
 				9F6561471C44E22D00FBEE2F /* Profile */,
 				9F33549E1BCD465F00FA1A21 /* Sign in / Sign up */,
-				9FFF96D11C174D4B004B8F48 /* Modal */,
+				9FFF96D11C174D4B004B8F48 /* Model */,
 				CAA008CD1B8C1B160094F10E /* Main.storyboard */,
 				CAA008D01B8C1B160094F10E /* Images.xcassets */,
 				CAA008C71B8C1B150094F10E /* Supporting Files */,
@@ -723,6 +726,7 @@
 				9FD7ED191CF202FB00D4EB33 /* BACartViewController.swift in Sources */,
 				9F6C3B541BECE8FD0039F742 /* SalonScheduleTableViewCell.swift in Sources */,
 				9F9B990A1BD12CB600A78B4D /* SalonViewAnimator.swift in Sources */,
+				9F911A371D5BBB33008F3FED /* BAAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

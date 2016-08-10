@@ -405,7 +405,7 @@ class BACartViewController: UIViewController
                     // TODO: show some fancy stuff to let the user know that the booking has succeeded
                     dispatch_async(dispatch_get_main_queue(), {
                         //self.bookAndPayButton.hidden = true
-                        self.showAlertView("Thank you!", message: "We received your payment successfully.")
+                        BAAlertView.showAlertView(self, title: "Thank you!", message: "We received your payment successfully.")
                         self.scheduleLocalNotifications()
                         self.orders.removeAll()
                         self.hideViewControllerWithAnimation()
@@ -423,7 +423,7 @@ class BACartViewController: UIViewController
                     }
                     
                     dispatch_async(dispatch_get_main_queue(), {
-                        self.showAlertView("We're Sorry!", message: errorString)
+                        BAAlertView.showAlertView(self, title: "We're Sorry!", message: errorString)
                     })
                 }
             }
@@ -526,15 +526,6 @@ class BACartViewController: UIViewController
         {
             hideViewControllerWithAnimation()
         }
-    }
-    
-    func showAlertView(title:String = "Something's wrong", message: String = "Please check your email address and phone number and make sure they are valid")
-    {
-        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-        
-        alertView.addAction(okAction)
-        self.presentViewController(alertView, animated: true, completion: nil)
     }
     
     func blurBackgroundViewIsTapped(sender : UITapGestureRecognizer)

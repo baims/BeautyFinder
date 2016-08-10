@@ -263,7 +263,7 @@ class SummaryViewController: UIViewController {
                             SwiftSpinner.hide()
                             
                             dispatch_async(dispatch_get_main_queue(), {
-                                self.showAlertView("We're Sorry!", message: "This appointment is already booked by another customer! Please try again with another time or date.")
+                                BAAlertView.showAlertView(self, title: "We're Sorry!", message: "This appointment is already booked by another customer! Please try again with another time or date.")
                             })
                         }
                         else if json["Operation"].string! == "ok" && extensionLink == "order/"
@@ -273,7 +273,7 @@ class SummaryViewController: UIViewController {
                             // TODO: show some fancy stuff to let the user know that the booking has succeeded
                             dispatch_async(dispatch_get_main_queue(), { 
                                 self.bookAndPayButton.hidden = true
-                                self.showAlertView("Thank you!", message: "We received your payment successfully.")
+                                BAAlertView.showAlertView(self, title: "Thank you!", message: "We received your payment successfully.")
                             })
                         }
                         print(json)

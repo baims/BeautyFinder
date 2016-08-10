@@ -257,7 +257,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                     else
                     {
-                        self.showAlertView("Error", message: respond["error"].string!)
+                        BAAlertView.showAlertView(self, title: "Error", message: respond["error"].string!)
                         
                         self.saveButton.enabled = true
                         self.cancelButton.hidden = false
@@ -269,11 +269,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     
                     if error.code == -1009
                     {
-                        self.showAlertView("No internet connection!", message: "Please check your internet connection")
+                        BAAlertView.showAlertView(self, title: "No internet connection!", message: "Please check your internet connection")
                     }
                     else
                     {
-                        self.showAlertView("Something's Wrong!", message: "Please check the provided data and check your internet connection")
+                        BAAlertView.showAlertView(self, title: "Something's Wrong!", message: "Please check the provided data and check your internet connection")
                     }
                     
                     self.saveButton.enabled = true
@@ -300,7 +300,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                     else
                     {
-                        self.showAlertView("Error", message: respond["error"].string!)
+                        BAAlertView.showAlertView(self, title: "Error", message: respond["error"].string!)
                         
                         self.saveButton.enabled = true
                         self.cancelButton.hidden = false
@@ -312,11 +312,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                     
                     if error.code == -1009
                     {
-                        self.showAlertView("No internet connection!", message: "Please check your internet connection")
+                        BAAlertView.showAlertView(self, title: "No internet connection!", message: "Please check your internet connection")
                     }
                     else
                     {
-                        self.showAlertView("Something's Wrong!", message: "Please check the provided data and check your internet connection")
+                        BAAlertView.showAlertView(self, title: "Something's Wrong!", message: "Please check the provided data and check your internet connection")
                     }
                     
                     self.saveButton.enabled = true
@@ -347,25 +347,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
-    func showAlertView(title:String = "Something's wrong", message: String = "Please check your email address and phone number and make sure they are valid")
-    {
-        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-        
-        alertView.addAction(okAction)
-        self.presentViewController(alertView, animated: true, completion: nil)
-    }
     
     @IBAction func saveButtonTapped(sender: UIButton)
     {
         if phoneIsChanged && phoneTextField.text!.characters.count < 8
         {
-            showAlertView("Phone number is not valid", message: "Phone number should be 8 or more digits")
+            BAAlertView.showAlertView(self, title: "Phone number is not valid", message: "Phone number should be 8 or more digits")
             return
         }
         else if emailIsChanged && !emailTextField.text!.isValidEmail()
         {
-            showAlertView("Your email address is not valid", message: "Please enter a valid email address")
+            BAAlertView.showAlertView(self, title: "Your email address is not valid", message: "Please enter a valid email address")
             return
         }
         

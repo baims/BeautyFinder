@@ -43,16 +43,7 @@ class SalonServicesContainerViewController: UIViewController, UITableViewDelegat
     
     @IBAction func startFromButtonTapped(sender: UIButton)
     {
-        showAlertView("This is a start from price", message: "This means you may end up paying more inside the salon depending on your hair length")
-    }
-    
-    func showAlertView(title:String = "Something's wrong", message: String = "Please check your email address and phone number and make sure they are valid")
-    {
-        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-        
-        alertView.addAction(okAction)
-        self.presentViewController(alertView, animated: true, completion: nil)
+        BAAlertView.showAlertView(self, title: "This is a start from price", message: "This means you may end up paying more inside the salon depending on your hair length")
     }
 }
 

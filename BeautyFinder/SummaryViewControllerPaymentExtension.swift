@@ -106,7 +106,7 @@ extension SummaryViewController: BAWebViewDelegate
             dismissViewControllerAnimated(true, completion: {
                 // TODO: show the user that his booking has failed
                 dispatch_async(dispatch_get_main_queue(), { 
-                    self.showAlertView("Payment Failed!", message: "Please, check your payment card and try again!")
+                    BAAlertView.showAlertView(self, title: "Payment Failed!", message: "Please, check your payment card and try again!")
                 })
             })
             
@@ -130,14 +130,5 @@ extension SummaryViewController: BAWebViewDelegate
     func webViewCancelButtonIsTapped()
     {
         dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func showAlertView(title:String = "Something's wrong", message: String = "Please check your email address and phone number and make sure they are valid")
-    {
-        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-        
-        alertView.addAction(okAction)
-        self.presentViewController(alertView, animated: true, completion: nil)
     }
 }

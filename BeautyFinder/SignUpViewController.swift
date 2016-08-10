@@ -104,22 +104,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate
     {
         if !emailTextField.text!.isValidEmail()
         {
-            showAlertView("Your email address is not valid", message: "Please enter a valid email address")
+            BAAlertView.showAlertView(self, title: "Your email address is not valid", message: "Please enter a valid email address")
             return
         }
         else if phoneTextField.text!.characters.count < 8
         {
-            showAlertView("Phone number is not valid", message: "Phone number should be 8 or more digits")
+            BAAlertView.showAlertView(self, title: "Phone number is not valid", message: "Phone number should be 8 or more digits")
             return
         }
         else if passwordTextField.text!.characters.count < 6
         {
-            showAlertView("Password is very short", message: "Your password should be 6 or more characters")
+            BAAlertView.showAlertView(self, title: "Password is very short", message: "Your password should be 6 or more characters")
             return
         }
         else if nameTextField.text!.isEmpty
         {
-            showAlertView("Name field is empty", message: "Please enter your name")
+            BAAlertView.showAlertView(self, title: "Name field is empty", message: "Please enter your name")
             return
         }
         
@@ -144,7 +144,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate
                     }
                     else
                     {
-                        self.showAlertView("Error", message: json["error"].string!)
+                        BAAlertView.showAlertView(self, title: "Error", message: json["error"].string!)
                     }
                 }
                 else if let error = response.result.error
@@ -153,11 +153,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate
                     
                     if error.code == -1009
                     {
-                        self.showAlertView("No internet connection!", message: "Please check your internet connection")
+                        BAAlertView.showAlertView(self, title: "No internet connection!", message: "Please check your internet connection")
                     }
                     else
                     {
-                        self.showAlertView("Something's Wrong!", message: "Please check the provided data and check your internet connection")
+                        BAAlertView.showAlertView(self, title: "Something's Wrong!", message: "Please check the provided data and check your internet connection")
                     }
                 }
                 
@@ -192,31 +192,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate
                     
                     if error.code == -6003
                     {
-                        self.showAlertView("Something's Wrong!", message: "Your email and password does not match")
+                        BAAlertView.showAlertView(self, title: "Something's Wrong!", message: "Your email and password does not match")
                     }
                     else if error.code == -1009
                     {
-                        self.showAlertView("No internet connection!", message: "Please check your internet connection")
+                        BAAlertView.showAlertView(self, title: "No internet connection!", message: "Please check your internet connection")
                     }
                     else
                     {
-                        self.showAlertView("Something's Wrong!", message: "Please check the provided data and check your internet connection")
+                        BAAlertView.showAlertView(self, title: "Something's Wrong!", message: "Please check the provided data and check your internet connection")
                     }
                 }
                 
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
-    
-    
-    func showAlertView(title:String = "Something's wrong", message: String = "Please check your email address and phone number and make sure they are valid")
-    {
-        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-        
-        alertView.addAction(okAction)
-        self.presentViewController(alertView, animated: true, completion: nil)
-    }
+
     
 
     func textFieldShouldReturn(textField: UITextField) -> Bool

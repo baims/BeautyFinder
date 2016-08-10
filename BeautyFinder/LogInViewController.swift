@@ -105,12 +105,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate
     {
         if !emailTextField.text!.isValidEmail()
         {
-            showAlertView("Your email address is not valid", message: "Please enter a valid email address")
+            BAAlertView.showAlertView(self, title: "Your email address is not valid", message: "Please enter a valid email address")
             return
         }
         else if passwordTextField.text!.isEmpty
         {
-            showAlertView("Enter a password", message: "Please enter your password")
+            BAAlertView.showAlertView(self, title: "Enter a password", message: "Please enter your password")
             return
         }
         
@@ -141,15 +141,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate
                     
                     if error.code == -6003
                     {
-                        self.showAlertView("Something's Wrong!", message: "Your email and password does not match")
+                        BAAlertView.showAlertView(self, title: "Something's Wrong!", message: "Your email and password does not match")
                     }
                     else if error.code == -1009
                     {
-                        self.showAlertView("No internet connection!", message: "Please check your internet connection")
+                        BAAlertView.showAlertView(self, title: "No internet connection!", message: "Please check your internet connection")
                     }
                     else
                     {
-                        self.showAlertView("Something's Wrong!", message: "Please check the provided data and check your internet connection")
+                        BAAlertView.showAlertView(self, title: "Something's Wrong!", message: "Please check the provided data and check your internet connection")
                     }
                 }
                 
@@ -164,16 +164,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate
         
         let safariViewController = SFSafariViewController(URL: NSURL(string: k_website + "reset/recover")!)
         self.presentViewController(safariViewController, animated: true, completion: nil)
-    }
-    
-    
-    func showAlertView(title:String = "Something's wrong", message: String = "Please check your email address and phone number and make sure they are valid")
-    {
-        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
-        
-        alertView.addAction(okAction)
-        self.presentViewController(alertView, animated: true, completion: nil)
     }
     
     

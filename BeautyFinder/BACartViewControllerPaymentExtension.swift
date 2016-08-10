@@ -115,7 +115,7 @@ extension BACartViewController: BAWebViewDelegate
             
             self.navigationController?.popViewControllerAnimated(true)
             dispatch_async(dispatch_get_main_queue(), {
-                self.showAlertView("Payment Failed!", message: "Please, check your payment card and try again!")
+                BAAlertView.showAlertView(self, title: "Payment Failed!", message: "Please, check your payment card and try again!")
             })
         }
         else if url.absoluteString.rangeOfString("http://beautyfinders.com/operation=success") != nil
@@ -144,6 +144,6 @@ extension BACartViewController: BAWebViewDelegate
     {
         self.navigationController?.popViewControllerAnimated(true)
         
-        showAlertView("Time out!", message: "There is a limit of 5 minutes to stay on the payment page. Please try to book again.")
+        BAAlertView.showAlertView(self, title: "Time out!", message: "There is a limit of 5 minutes to stay on the payment page. Please try to book again.")
     }
 }
