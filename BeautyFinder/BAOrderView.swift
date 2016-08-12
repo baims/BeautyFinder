@@ -25,13 +25,15 @@ class BAOrderView: UIView {
         /*** Title label ***/
         let subcategoryNameLabel = UILabel()
         subcategoryNameLabel.text = self.orderData.subcategoryName
+        subcategoryNameLabel.textAlignment = .Center
         subcategoryNameLabel.font = UIFont(name: "MuseoSans-500", size: 18)
+        subcategoryNameLabel.adjustsFontSizeToFitWidth = true
         subcategoryNameLabel.sizeToFit()
         subcategoryNameLabel.textColor = UIColor(white: 0.1, alpha: 1)
         addSubview(subcategoryNameLabel)
         
-        subcategoryNameLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: 12)
         subcategoryNameLabel.autoAlignAxisToSuperviewAxis(.Vertical)
+        subcategoryNameLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(12, 10, 0, 10), excludingEdge: .Bottom)
         
         
         /*** Beautician Image View ***/

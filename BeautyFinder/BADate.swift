@@ -26,6 +26,7 @@ class BADate : NSObject
         //Convert to NSDate
         let today = calendar.dateFromComponents(components)
         
+        
         if someDate!.timeIntervalSinceDate(today!).isSignMinus
         {
             return true

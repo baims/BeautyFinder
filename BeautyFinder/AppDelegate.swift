@@ -11,7 +11,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import SwiftyJSON
 
-let k_website = "http://192.168.8.101:8000/"
+let k_website = "http://beautyfinders.com/"
 
 var categoriesJson : JSON?
 
@@ -27,19 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
+        
         /*** Local Nofitications Handling ***/
-        if launchOptions != nil
+        if let launchOptions = launchOptions
         {
-            if let notification = launchOptions![UIApplicationLaunchOptionsLocalNotificationKey]
+            if let notification = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]
             {
-                print(notification)
-                //self.application(application, didReceiveLocalNotification: notification as! UILocalNotification)
+                // delay posting a notification for a second to make sure the app is launched and ready for it
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                     NSNotificationCenter.defaultCenter().postNotificationName("UserOpenedLocalNotification", object: (notification as! UILocalNotification).userInfo!)
                 })
             }
         }
-        
         
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -50,23 +49,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 30
-        //IQKeyboardManager.sharedManager().disableToolbarInViewControllerClass(SearchViewController)
         
         
         /*** UINavigationController Customizations ***/
         UINavigationBar.appearance().barTintColor = UIColor(red: 211.0/255.0, green: 68.0/255.0, blue:
             124.0/255.0, alpha: 0.3)
-        
-        //navigation bar customization & nav bar image bg
-         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "header_2")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch), forBarMetrics: .Default)
-
-
-        //UINavigationBar.appearance().barTintColor = UIColor(red: 211.0/255.0, green: 68.0/255.0, blue:124.0/255.0, alpha: 0.3)
+        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "header_2")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch), forBarMetrics: .Default)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         
-        if let barFont = UIFont(name: "MuseoSans-500", size: 20.0) {
-            UINavigationBar.appearance().titleTextAttributes =
-            [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
+        /*** Changing the font of the navigation bar to match the font of the rest of the app ***/
+        if let barFont = UIFont(name: "MuseoSans-500", size: 20.0)
+        {
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(), NSFontAttributeName:barFont]
         }
         
         
@@ -75,7 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor    = UIColor.whiteColor()
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(red: 235/255.0, green: 235/255.0, blue: 235/255.0, alpha: 1)], forState: UIControlState.Selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor(red: 252/255.0, green: 158/255.0, blue: 200/255.0, alpha: 1)], forState: UIControlState.Normal)
-        //UITabBar.appearance().backgroundImage = UIImage(named: "header_1")
         let tabBarController = window?.rootViewController as! UITabBarController
     
         
@@ -115,6 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
+        /* Deleting notifications from the Notification Center */
         self.clearNotificationCenter(application)
     }
 
@@ -122,10 +116,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        print("didRecieveLocalNotification")
-        print(notification.userInfo!)
-        
+    
+    /*** If the user opened the app by tapping on the notification ***/
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification)
+    {
         if application.applicationState == .Inactive || application.applicationState == .Background
         {
             NSNotificationCenter.defaultCenter().postNotificationName("UserOpenedLocalNotification", object: notification.userInfo!)
