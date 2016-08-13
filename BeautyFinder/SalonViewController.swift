@@ -27,8 +27,10 @@ class SalonViewController: UIViewController, BACartDelegate {
     
     @IBOutlet weak var segmentedControl: ADVSegmentedControl!
     @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var bannerImageView: UIImageView!
     @IBOutlet weak var salonNameLabel: UILabel!
     @IBOutlet weak var salonAddressLabel: UILabel!
+    @IBOutlet weak var openMapsButton: UIButton!
 
     @IBOutlet weak var cartButton: UIButton!
     @IBOutlet weak var cartCounterLabel: UILabel!
@@ -77,9 +79,28 @@ class SalonViewController: UIViewController, BACartDelegate {
         self.logoImageView.layer.cornerRadius = logoImageView.frame.width/2
         self.logoImageView.clipsToBounds = true
         
+        self.bannerImageView.kf_setImageWithURL(NSURL(string: k_website + self.salonJson!["banner"].string!)!, placeholderImage: UIImage(named: "header_3"), optionsInfo: [.Transition(ImageTransition.Fade(0.2))])
+        
+        
         self.salonNameLabel.text = self.salonJson!["name"].string!
         self.salonAddressLabel.text = self.salonJson!["area"].string! + ", " + self.salonJson!["address"].string!
         self.salonNameLabel.sizeToFit()
+        
+        /*** Adding shadows behind texts ***/
+        self.logoImageView.layer.borderWidth = 1
+        self.logoImageView.layer.borderColor = UIColor(white: 0, alpha: 0.1).CGColor
+        
+        self.salonNameLabel.layer.shadowColor = UIColor.blackColor().CGColor
+        self.salonNameLabel.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.salonNameLabel.layer.shadowOpacity = 1
+        
+        self.salonAddressLabel.layer.shadowColor = UIColor.blackColor().CGColor
+        self.salonAddressLabel.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.salonAddressLabel.layer.shadowOpacity = 1
+        
+        self.openMapsButton.layer.shadowColor = UIColor.blackColor().CGColor
+        self.openMapsButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.openMapsButton.layer.shadowOpacity = 1
     }
     
     override func viewWillAppear(animated: Bool)
