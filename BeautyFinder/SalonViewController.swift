@@ -81,7 +81,6 @@ class SalonViewController: UIViewController, BACartDelegate {
         
         self.bannerImageView.kf_setImageWithURL(NSURL(string: k_website + self.salonJson!["banner"].string!)!, placeholderImage: UIImage(named: "header_3"), optionsInfo: [.Transition(ImageTransition.Fade(0.2))])
         
-        
         self.salonNameLabel.text = self.salonJson!["name"].string!
         self.salonAddressLabel.text = self.salonJson!["area"].string! + ", " + self.salonJson!["address"].string!
         self.salonNameLabel.sizeToFit()
@@ -295,32 +294,6 @@ class SalonViewController: UIViewController, BACartDelegate {
     
     func animateHiding(firstContainerView : UIView?, hidingCenter firstCenter: CGPoint!, andShowing secondContainerView: UIView?, showingCenter secondCenter: CGPoint!)
     {
-        /*if let _secondContainerView = secondContainerView
-        {
-            _secondContainerView.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
-            _secondContainerView.center    = self.servicesContainerView.center
-            _secondContainerView.hidden    = false
-        }
-        
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations: { () -> Void in
-            if let _firstContainerView = firstContainerView
-            {
-                _firstContainerView.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
-                _firstContainerView.center = firstCenter
-            }
-            
-            if let _secondContainerView = secondContainerView
-            {
-                _secondContainerView.transform = CGAffineTransformMakeScale(1, 1)
-                _secondContainerView.center = secondCenter
-            }
-            }, completion: { (completed) -> Void in
-                if let _firstContainerView = firstContainerView
-                {
-                    _firstContainerView.hidden = true
-                }
-        })*/
-        
         self.animateHiding(firstContainerView, hidingToCenter: firstCenter, andShowing: secondContainerView, showingFromCenter: nil, showingToCenter: secondCenter)
     }
     

@@ -688,6 +688,10 @@
                                     <constraint firstAttribute="height" constant="228" id="ZkI-oT-jPR"/>
                                 </constraints>
                             </imageView>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ngy-UW-Tvt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="228"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eef-Bf-5Nx">
                                 <rect key="frame" x="0.0" y="12" width="56" height="61"/>
                                 <constraints>
@@ -735,20 +739,20 @@
                                     <constraint firstAttribute="width" constant="86" id="D0b-1Y-Mdc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-r6-29P">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Salon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxp-r6-29P">
                                 <rect key="frame" x="252" y="146" width="95" height="20"/>
                                 <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="17"/>
                                 <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jabriya, Jabriya, block 1A street 105" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-Rd-paj">
-                                <rect key="frame" x="171.5" y="185" width="258" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Jabriya, Jabriya, block 1A street 105" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-Rd-paj">
+                                <rect key="frame" x="171" y="185" width="258" height="19"/>
                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="16"/>
                                 <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHo-iA-ERH" userLabel="Open Maps Button">
-                                <rect key="frame" x="435.5" y="183" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHo-iA-ERH" userLabel="Open Maps Button">
+                                <rect key="frame" x="435" y="183" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="aNh-Q8-XDW"/>
                                 </constraints>
@@ -806,6 +810,7 @@
                             <constraint firstItem="QXD-Sc-htO" firstAttribute="top" secondItem="VJR-KN-ZYg" secondAttribute="bottom" constant="-66" id="0ZD-Ky-5mt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pmf-2l-fDg" secondAttribute="trailing" constant="-20" id="0vi-E5-ql4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QXD-Sc-htO" secondAttribute="trailing" constant="-20" id="2kI-Nt-gfA"/>
+                            <constraint firstItem="Ngy-UW-Tvt" firstAttribute="width" secondItem="QXD-Sc-htO" secondAttribute="width" id="4i9-ud-muf"/>
                             <constraint firstItem="9p5-5G-dlw" firstAttribute="width" secondItem="Pmf-2l-fDg" secondAttribute="width" id="6He-Ae-LpT"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="XHo-iA-ERH" secondAttribute="trailing" id="9AG-To-IBq"/>
                             <constraint firstItem="yR3-Ix-115" firstAttribute="top" secondItem="jB1-5j-oeC" secondAttribute="bottom" constant="-78" id="9WT-3r-xj4"/>
@@ -825,6 +830,7 @@
                             <constraint firstItem="YR9-CD-gZm" firstAttribute="height" secondItem="Pmf-2l-fDg" secondAttribute="height" id="Pc1-wm-CYt"/>
                             <constraint firstItem="jB1-5j-oeC" firstAttribute="top" secondItem="FWO-Hp-Wug" secondAttribute="bottom" constant="10" id="Q1b-2r-SYp"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="dSJ-Rd-paj" secondAttribute="trailing" constant="10" id="QIM-8W-Z3O"/>
+                            <constraint firstItem="Ngy-UW-Tvt" firstAttribute="centerY" secondItem="QXD-Sc-htO" secondAttribute="centerY" id="Qea-Rt-YNF"/>
                             <constraint firstItem="eef-Bf-5Nx" firstAttribute="leading" secondItem="Vwg-QA-W2e" secondAttribute="leadingMargin" constant="-20" id="SoQ-F0-J0z"/>
                             <constraint firstItem="Um9-QD-7qF" firstAttribute="leading" secondItem="jB1-5j-oeC" secondAttribute="trailing" constant="4" id="Srp-BP-8vc"/>
                             <constraint firstItem="5Cu-F7-IjB" firstAttribute="centerX" secondItem="Vwg-QA-W2e" secondAttribute="centerX" id="VIE-sg-wR1"/>
@@ -836,6 +842,8 @@
                             <constraint firstItem="yR3-Ix-115" firstAttribute="top" secondItem="QXD-Sc-htO" secondAttribute="bottom" constant="-200" id="bLo-7M-Ouv"/>
                             <constraint firstItem="XHo-iA-ERH" firstAttribute="leading" secondItem="dSJ-Rd-paj" secondAttribute="trailing" constant="6" id="brJ-g8-XJT"/>
                             <constraint firstItem="VJR-KN-ZYg" firstAttribute="top" secondItem="QXD-Sc-htO" secondAttribute="bottom" constant="10" id="cOX-hV-LG6"/>
+                            <constraint firstItem="Ngy-UW-Tvt" firstAttribute="height" secondItem="QXD-Sc-htO" secondAttribute="height" id="cr1-YL-LQI"/>
+                            <constraint firstItem="Ngy-UW-Tvt" firstAttribute="centerX" secondItem="QXD-Sc-htO" secondAttribute="centerX" id="dFK-mZ-s2Z"/>
                             <constraint firstItem="rxp-r6-29P" firstAttribute="centerX" secondItem="5Cu-F7-IjB" secondAttribute="centerX" id="gJx-LM-uto"/>
                             <constraint firstItem="QXD-Sc-htO" firstAttribute="top" secondItem="FWO-Hp-Wug" secondAttribute="bottom" constant="-20" id="gdg-5w-Xhm"/>
                             <constraint firstItem="rxp-r6-29P" firstAttribute="top" secondItem="5Cu-F7-IjB" secondAttribute="bottom" constant="16" id="mHk-yK-C5q"/>
@@ -2303,6 +2311,7 @@
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
+                                                            <exclude reference="Thq-GR-oES"/>
                                                             <exclude reference="mKN-GB-0t0"/>
                                                         </mask>
                                                     </variation>

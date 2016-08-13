@@ -29,8 +29,10 @@ class SalonBeauticiansContainerViewController: UIViewController, UICollectionVie
         super.viewDidLoad()
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
+        startRefresh(9, subcategoryPK: 1, subcategoryName: "")
     }
 
     override func didReceiveMemoryWarning() {
