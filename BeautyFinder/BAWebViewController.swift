@@ -43,11 +43,6 @@ class BAWebViewController: UIViewController, WKNavigationDelegate {
         view.insertSubview(webView, belowSubview: progressView)
         webView.translatesAutoresizingMaskIntoConstraints = false
         
-//        let height = NSLayoutConstraint(item: webView, attribute: .Height, relatedBy: .Equal, toItem: view, attribute: .Height, multiplier: 1, constant: 0)
-//        let width = NSLayoutConstraint(item: webView, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 1, constant: 0)
-//        view.addConstraints([height, width])
-        
-        
         webView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(70, 0, 44, 0))
         
         webView.addObserver(self, forKeyPath: "loading", options: .New, context: nil)
@@ -143,15 +138,4 @@ class BAWebViewController: UIViewController, WKNavigationDelegate {
         
         delegate?.webViewDidLoadNewURL!(webView.URL!)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
