@@ -55,3 +55,38 @@ func == (lhs: BAOrderData, rhs: BAOrderData) -> Bool
     
     return true
 }
+
+
+infix operator ~ {}
+
+func ~ (lhs : BAOrderData, rhs: BAOrderData) -> Bool
+{
+    if lhs.beauticianName != rhs.beauticianName
+    {
+        return false
+    }
+    
+    if lhs.dateOfBooking != rhs.dateOfBooking
+    {
+        return false
+    }
+    
+    
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "yyy-MM-dd HH:mm:ss"
+    
+    let leftStartDate = formatter.dateFromString("\(lhs.dateOfBooking) \(lhs.startTime)")
+    let leftEndDate = formatter.dateFromString("\(lhs.dateOfBooking) \(lhs.endTime)")
+    let rightStartDate = formatter.dateFromString("\(rhs.dateOfBooking) \(rhs.startTime)")
+    let rightEndDate = formatter.dateFromString("\(rhs.dateOfBooking) \(rhs.endTime)")
+    
+    if (rightStartDate?.timeIntervalSince1970 >= leftStartDate?.timeIntervalSince1970 && rightStartDate?.timeIntervalSince1970 <= leftEndDate?.timeIntervalSince1970)
+    || (rightEndDate?.timeIntervalSince1970 >= leftStartDate?.timeIntervalSince1970 && rightEndDate?.timeIntervalSince1970 <= leftEndDate?.timeIntervalSince1970)
+    {
+        print("CONFLICT: THERE IS AN OVERLAP!")
+        return true
+    }
+    
+    
+    return false
+}

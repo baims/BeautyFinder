@@ -192,7 +192,7 @@ extension SalonScheduleViewController
         
         if cell.bookingStatus == .Booked || cell.bookingStatus == .InCart
         {
-            cell.selectionStyle = .None // to disable highlighting when the user uses
+            cell.selectionStyle = .None // to disable highlighting when the user taps on it
             
             cell.accessoryView = nil
         }
@@ -309,6 +309,18 @@ extension SalonViewController
         newOrder.subcategoryPK      = self.subcategoryPK
         newOrder.subcategoryName    = self.subcategoryName
         newOrder.startFromPrice     = self.startFromPrice
+        
+        
+        /*** Checking if there is conflicts with orders ( same beautician with same time and date ) ***/
+        for order in orders
+        {
+            if order ~ newOrder // infix operator ~ is defined in BAOrderData.swift
+            {
+                BAAlertView.showAlertView(self, title: "There is overlap", message: "You have another appointment with \(newOrder.beauticianName) which overlaps with the appointment you just selected. You can't book for the same beautician with the same time for two different services.")
+                
+                return // there is a conflict in time
+            }
+        }
         
         orders.append(newOrder)
         
