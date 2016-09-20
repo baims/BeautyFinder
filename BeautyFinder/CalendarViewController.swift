@@ -23,6 +23,11 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.calendarView.calendarAppearanceDelegate = self
+        
+        self.calendarMenuView.delegate = self
+        self.calendarView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +36,10 @@ class CalendarViewController: UIViewController {
     }
     
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        
         calendarView.commitCalendarViewUpdate()
         calendarMenuView.commitMenuViewUpdate()
         
@@ -75,6 +83,7 @@ extension CalendarViewController : CVCalendarViewDelegate, CVCalendarMenuViewDel
     
     /// Required method to implement!
     func presentationMode() -> CalendarMode {
+        print("hehee")
         return .MonthView
     }
     

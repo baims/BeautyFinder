@@ -1,39 +1,55 @@
 PODS:
-  - Alamofire (3.4.1)
+  - Alamofire (3.5.0)
   - CVCalendar (1.2.7)
   - Datez (1.0.0)
-  - IQKeyboardManagerSwift (4.0.4)
-  - Kingfisher (1.9.3)
-  - MarqueeLabel-Swift (2.6.8)
+  - IQKeyboardManagerSwift (4.0.5)
+  - Kingfisher (2.6.0)
+  - MarqueeLabel/Swift (2.7.7)
   - PureLayout (3.0.2)
   - SwiftSpinner (0.9.5)
   - SwiftyJSON (2.3.2)
   - SWXMLHash (2.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, tag `3.5.0`)
   - CVCalendar (= 1.2.7)
   - Datez
-  - IQKeyboardManagerSwift
-  - Kingfisher (~> 1.7)
-  - MarqueeLabel-Swift (~> 2.6.5)
+  - IQKeyboardManagerSwift (= 4.0.5)
+  - Kingfisher (~> 2.6.0)
+  - MarqueeLabel/Swift (from `https://github.com/cbpowell/MarqueeLabel.git`, branch `swift-2.3`)
   - PureLayout
   - SwiftSpinner
   - SwiftyJSON
   - SWXMLHash (~> 2.1.0)
 
+EXTERNAL SOURCES:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire.git
+    :tag: 3.5.0
+  MarqueeLabel:
+    :branch: swift-2.3
+    :git: https://github.com/cbpowell/MarqueeLabel.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire.git
+    :tag: 3.5.0
+  MarqueeLabel:
+    :commit: fafedab2f0a12228a9b0a1059c0b6b7898f09abb
+    :git: https://github.com/cbpowell/MarqueeLabel.git
+
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
   CVCalendar: 1ae6ee62dd7fd4c6a6703a43c641e11dfd32276e
   Datez: 7069ce6694ae7f4e58dd37c4c063d5aa76ac02f9
-  IQKeyboardManagerSwift: e0964d04d6a29b71016fd346dca13ecb80a2823a
-  Kingfisher: 9e37d2a78a082dc123bfe8a16de65de85518daae
-  MarqueeLabel-Swift: c4b6bd81ad77c5e79c4f04e3ca29d298bded2ebc
+  IQKeyboardManagerSwift: 41fd3a45a2cdb2a0e031af697708a95b865068a1
+  Kingfisher: d84c5fd176ea86cc7b8aac65fd55feda6f70f130
+  MarqueeLabel: be020407640503732f7b1dd53c2d4ee692e72041
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SwiftSpinner: c6585a0ae5c67eb33e737695cce88f0262008cce
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   SWXMLHash: 7257a358b3ab2f7a209e0b4e4cf552e8b6df5f0f
 
-PODFILE CHECKSUM: d8988dcefd748183def713e7c8f44e9f1586bcb5
+PODFILE CHECKSUM: 0bbb72fd1894ffda5dc918da287ad9e8f2429e8d
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.0.rc.2

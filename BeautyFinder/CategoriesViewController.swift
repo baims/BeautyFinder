@@ -102,7 +102,7 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
             subcategoryName = subcategoryName.lowercaseString
             subcategoryName.replaceRange(subcategoryName.startIndex ... subcategoryName.startIndex, with: String(subcategoryName[subcategoryName.startIndex]).capitalizedString)
             
-            vc.titleString      = categoryName + " " + subcategoryName
+            vc.titleString = categoryName + " " + subcategoryName
         }
     }
 
@@ -116,6 +116,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
             
             if let Json = response.result.value {
                 categoriesJson = JSON(Json)
+                
+                print(categoriesJson)
                 
                 self.refreshControl.endRefreshing()
                 

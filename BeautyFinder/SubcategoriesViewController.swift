@@ -83,6 +83,8 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
             {
                 self.json = JSON(Json)
                 
+                print(self.json)
+                
                 self.refreshControl.endRefreshing()
                 
                 self.collectionView.reloadData()
@@ -100,7 +102,6 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     {
         self.navigationController?.popViewControllerAnimated(true)
     }
-    
 }
 
 extension SubcategoriesViewController

@@ -109,7 +109,7 @@ extension BACartViewController: BAWebViewDelegate
     func webViewIsLoadingNewURL(url: NSURL!)
     {
         print(url)
-        if url.absoluteString.rangeOfString("http://beautyfinders.com/operation=error") != nil
+        if url.absoluteString!.rangeOfString("http://beautyfinders.com/operation=error") != nil
         {
             print("ERRROOOOORRRR")
             
@@ -118,7 +118,7 @@ extension BACartViewController: BAWebViewDelegate
                 BAAlertView.showAlertView(self, title: "Payment Failed!", message: "Please, check your payment card and try again!")
             })
         }
-        else if url.absoluteString.rangeOfString("http://beautyfinders.com/operation=success") != nil
+        else if url.absoluteString!.rangeOfString("http://beautyfinders.com/operation=success") != nil
         {
             let token = NSUserDefaults.standardUserDefaults().stringForKey("token")!
             orderBooking(token)
