@@ -200,6 +200,10 @@ extension SalonViewController
         self.scheduleContainerViewController.startRefresh(beauticianJSON)
         self.calendarContainerViewController.startRefresh()
         
+        self.calendarContainerViewController.didShowNewMonth = true
+        self.calendarContainerViewController.calendarView.toggleCurrentDayView()
+        self.calendarContainerViewController.didShowNewMonth = false
+        
         self.animateHiding(self.beauticiansContainerView, andShowing: self.scheduleContainerView)
     }
 }

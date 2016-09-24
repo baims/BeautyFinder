@@ -381,20 +381,20 @@ class BACartViewController: UIViewController
                 
                     
                     // (1)
-                    self.getProfileDataAndFetchMyFatoorahLink(token)
-                    
-                    print("RESERVED")
-                    
-                    SwiftSpinner.show("Please Wait...")
+//                    self.getProfileDataAndFetchMyFatoorahLink(token)
+//                    
+//                    print("RESERVED")
+//                    
+//                    SwiftSpinner.show("Please Wait...")
                     
                     
                     // (2)
-//                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-//                    if let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
-//                    {
-//                        self.orderBooking(token)
-//                    }
-//                    })
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                    if let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
+                    {
+                        self.orderBooking(token)
+                    }
+                    })
                 }
                 else if json["Operation"].string! == "ok" && extensionLink == "order/"
                 {

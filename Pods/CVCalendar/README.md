@@ -21,7 +21,7 @@ The project is currently being under an active maintenance. We're going to bring
 
 For contributors
 ==========
-Please, note that the Demo project is supposed to test the changes on CVCalendar. If you've commited any, do not forget to update the root folder (<b>CVCalendar/CVCalendar</b>). Feel free to add wiki pages and/or edits on Readme or existing docs. 
+Please, note that the Demo project is supposed to test the changes on CVCalendar. If you've committed any, do not forget to update the root folder (<b>CVCalendar/CVCalendar</b>). Feel free to add wiki pages and/or edits on the README or existing docs.
 
 Screenshots
 ==========
@@ -43,10 +43,10 @@ GIF Demo
 
 Installation
 ==========
-<h3> Cocoa Pods </h3>
+<h3> CocoaPods </h3>
 
 ```ruby
-pod 'CVCalendar', '~> 1.2.6'
+pod 'CVCalendar', '~> 1.3.0'
 ```
 
 Usage
@@ -71,8 +71,8 @@ Now you're about to add 2 UIViews to your Storyboard as it shown in the picture 
 
 Don't forget to add 2 outlets into your code.
 ```swift
-    @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
+    @IBOutlet weak var calendarView: CVCalendarView!
 ```
 
 Two views are representing ultimately a MenuView and a CalendarView so they should have corresponding classes. To change their classes go to <b>Identity Inspector</b> and set custom classes. When it's done, you'll see in the dock panel something similar to the picture below.  (Blue UIView -> CVCalendarView, Green UIView -> CVCalendarMenuView)
@@ -94,8 +94,8 @@ Since CVCalendarView and CVCalendarMenuView will be created automatically all yo
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
+        calendarView.commitCalendarViewUpdate()
     }
 ````
 
@@ -146,24 +146,24 @@ How it should look like.
 ```swift
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // CVCalendarMenuView initialization with frame
+        self.menuView = CVCalendarMenuView(frame: CGRectMake(0, 0, 300, 15))
 
         // CVCalendarView initialization with frame
         self.calendarView = CVCalendarView(frame: CGRectMake(0, 20, 300, 450))
 
-        // CVCalendarMenuView initialization with frame
-        self.menuView = CVCalendarMenuView(frame: CGRectMake(0, 0, 300, 15))
-
         // Appearance delegate [Unnecessary]
-        self.calendarView.appearanceDelegate = self
+        self.calendarView.calendarAppearanceDelegate = self
 
         // Animator delegate [Unnecessary]
         self.calendarView.animatorDelegate = self
 
-        // Calendar delegate [Required]
-        self.calendarView.calendarDelegate = self
-
         // Menu delegate [Required]
         self.menuView.menuViewDelegate = self
+        
+        // Calendar delegate [Required]
+        self.calendarView.calendarDelegate = self
     }
 ```
 
@@ -174,8 +174,8 @@ And do not forget to commit updates on `viewDidLayoutSubviews` method.
         super.viewDidLayoutSubviews()
 
         // Commit frames' updates
-        self.calendarView.commitCalendarViewUpdate()
         self.menuView.commitMenuViewUpdate()
+        self.calendarView.commitCalendarViewUpdate()
     }
 ```
 

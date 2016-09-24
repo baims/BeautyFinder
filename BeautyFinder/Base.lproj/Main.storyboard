@@ -226,21 +226,21 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="6wJ-i4-5l2"/>
+                                <exclude reference="KJK-dx-Qs0"/>
+                                <exclude reference="eyA-tI-bBI"/>
+                                <exclude reference="gxZ-eh-9Pq"/>
                                 <exclude reference="Asq-G5-vqQ"/>
                                 <exclude reference="FkL-Ac-ac4"/>
                                 <exclude reference="v1f-rg-oPL"/>
                                 <exclude reference="OZ6-sm-WZa"/>
                                 <exclude reference="TDq-uG-l3I"/>
-                                <exclude reference="ceg-NG-Src"/>
-                                <exclude reference="kqt-Ih-wbE"/>
                                 <exclude reference="7qd-VI-QOp"/>
                                 <exclude reference="T6P-kf-2At"/>
                                 <exclude reference="gG0-Xl-rIf"/>
                                 <exclude reference="6i0-hc-O7a"/>
-                                <exclude reference="6wJ-i4-5l2"/>
-                                <exclude reference="KJK-dx-Qs0"/>
-                                <exclude reference="eyA-tI-bBI"/>
-                                <exclude reference="gxZ-eh-9Pq"/>
+                                <exclude reference="ceg-NG-Src"/>
+                                <exclude reference="kqt-Ih-wbE"/>
                                 <exclude reference="Jgk-ON-fEa"/>
                                 <exclude reference="N2l-Co-O9x"/>
                                 <exclude reference="JVU-pa-3qS"/>
@@ -770,13 +770,13 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0ZD-Ky-5mt"/>
-                                <exclude reference="9WT-3r-xj4"/>
-                                <exclude reference="H7K-0H-sVi"/>
-                                <exclude reference="bLo-7M-Ouv"/>
                                 <exclude reference="0Ec-wx-QML"/>
                                 <exclude reference="QIM-8W-Z3O"/>
                                 <exclude reference="Vrl-we-VsB"/>
                                 <exclude reference="a3N-cu-f4g"/>
+                                <exclude reference="9WT-3r-xj4"/>
+                                <exclude reference="H7K-0H-sVi"/>
+                                <exclude reference="bLo-7M-Ouv"/>
                             </mask>
                         </variation>
                     </view>
@@ -824,10 +824,10 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="long_btn"/>
                                 <connections>
-                                    <action selector="bookAndPayButtonTapped:" destination="sda-A2-Lir" eventType="touchUpInside" id="ozc-9K-kk2"/>
+                                    <action selector="cancelBookingButtonTappedWithSender:" destination="sda-A2-Lir" eventType="touchUpInside" id="fHX-t8-hJy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKY-15-oAf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel Booking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKY-15-oAf">
                                 <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -924,7 +924,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-2N-AZa" customClass="MarqueeLabel" customModule="MarqueeLabel_Swift">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-2N-AZa" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1123,7 +1123,7 @@
                             <constraint firstItem="xAg-wR-dBa" firstAttribute="top" secondItem="FSs-Yt-a9d" secondAttribute="bottom" constant="6" id="EfN-jh-mNN"/>
                             <constraint firstItem="zKY-15-oAf" firstAttribute="height" secondItem="AyN-2l-Bbq" secondAttribute="height" id="Ftb-tu-cck"/>
                             <constraint firstItem="r6C-CK-xpG" firstAttribute="centerX" secondItem="ZcJ-Rl-VrN" secondAttribute="centerX" id="GFA-Of-vcr"/>
-                            <constraint firstItem="AyN-2l-Bbq" firstAttribute="top" secondItem="r6C-CK-xpG" secondAttribute="bottom" constant="27" id="H0R-Gq-tKZ"/>
+                            <constraint firstItem="AyN-2l-Bbq" firstAttribute="top" secondItem="r6C-CK-xpG" secondAttribute="bottom" constant="18" id="H0R-Gq-tKZ"/>
                             <constraint firstItem="zKY-15-oAf" firstAttribute="centerX" secondItem="AyN-2l-Bbq" secondAttribute="centerX" id="QSk-h5-Zk4"/>
                             <constraint firstItem="meD-rz-dow" firstAttribute="top" secondItem="qTT-RU-qWx" secondAttribute="bottom" constant="-20" id="Qqd-eu-YDa"/>
                             <constraint firstItem="ehE-2N-AZa" firstAttribute="top" secondItem="PVC-YK-dDd" secondAttribute="bottom" constant="2.5" id="RHU-y6-3U8"/>
@@ -1156,8 +1156,8 @@
                     <connections>
                         <outlet property="beauticianImageView" destination="Om4-lQ-Elb" id="ekg-yv-Y8w"/>
                         <outlet property="beauticianNameLabel" destination="Mm7-la-ffp" id="wGw-6N-all"/>
-                        <outlet property="bookAndPayButton" destination="AyN-2l-Bbq" id="1cU-8f-pU6"/>
-                        <outlet property="bookAndPayButtonHeightConstraint" destination="Dtg-mp-abL" id="SNo-Eo-mma"/>
+                        <outlet property="cancelBookingButton" destination="AyN-2l-Bbq" id="jCh-T7-uNE"/>
+                        <outlet property="cancelBookingButtonHeightConstraint" destination="Dtg-mp-abL" id="vqE-eh-kSO"/>
                         <outlet property="dateOfBookingLabel" destination="Cdy-83-oKb" id="iWx-DN-1ER"/>
                         <outlet property="endTimeLabel" destination="a7j-Wa-6U1" id="yTk-Bl-g8j"/>
                         <outlet property="logoImageView" destination="rSD-Tu-1DW" id="JiR-Z2-blC"/>
@@ -1167,7 +1167,7 @@
                         <outlet property="stackViewTopConstraint" destination="rpS-gQ-AfS" id="uzc-a1-10e"/>
                         <outlet property="startTimeLabel" destination="aZD-9N-6Kg" id="e8a-wv-IiM"/>
                         <outlet property="subcatgoryNameLabel" destination="FSs-Yt-a9d" id="Duj-Xe-Ra5"/>
-                        <outlet property="textOfPayButtonLabel" destination="zKY-15-oAf" id="nfE-JF-Y6n"/>
+                        <outlet property="textOfCancelButtonLabel" destination="zKY-15-oAf" id="mPi-Hc-0d2"/>
                         <outlet property="totalPriceBottomConstraint" destination="H0R-Gq-tKZ" id="Thd-dM-OY7"/>
                         <outlet property="totalPriceLabel" destination="iF7-l0-exZ" id="Wqo-Sb-sLq"/>
                         <outlet property="totalPriceView" destination="r6C-CK-xpG" id="s0P-aJ-kD9"/>
@@ -1668,11 +1668,11 @@
                                         <size key="customSize" width="108" height="110"/>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="kfj-6M-LBY"/>
+                                                <exclude reference="otD-ah-xOa"/>
                                                 <exclude reference="Ca9-Fd-yln"/>
                                                 <exclude reference="OjP-x9-RNx"/>
                                                 <exclude reference="Y6a-lc-jwi"/>
-                                                <exclude reference="kfj-6M-LBY"/>
-                                                <exclude reference="otD-ah-xOa"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -2021,9 +2021,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="wp1-KA-KJ7"/>
                                 <exclude reference="Wkq-B9-xFZ"/>
                                 <exclude reference="oIy-hE-rJF"/>
-                                <exclude reference="wp1-KA-KJ7"/>
                                 <exclude reference="W3S-E7-7JG"/>
                             </mask>
                         </variation>
@@ -2182,9 +2182,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="13J-qn-TVq"/>
                                                     <exclude reference="77J-lU-XhI"/>
                                                     <exclude reference="yne-ec-MwK"/>
-                                                    <exclude reference="13J-qn-TVq"/>
                                                     <exclude reference="IUn-er-70a"/>
                                                     <exclude reference="WVw-Dv-BxG"/>
                                                     <exclude reference="Ze7-LP-dAM"/>
@@ -2285,11 +2285,11 @@
                                         <size key="customSize" width="108" height="110"/>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="BDJ-Tj-nff"/>
+                                                <exclude reference="i2V-yf-Sdx"/>
                                                 <exclude reference="6ex-1T-e5p"/>
                                                 <exclude reference="XoP-EC-EaN"/>
                                                 <exclude reference="esh-8u-c1v"/>
-                                                <exclude reference="BDJ-Tj-nff"/>
-                                                <exclude reference="i2V-yf-Sdx"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -2358,88 +2358,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="383" height="638"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMa-PE-hCF">
+                            <view autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUd-jC-71z">
                                 <subviews>
-                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksZ-ab-Nbb">
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Da4-EF-1uB">
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f07-37-DAf">
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Urt-0g-MUK">
                                             <frame key="frameInset"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnk-q6-Uvn" customClass="CVCalendarView" customModule="CVCalendar">
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="280" id="b0O-qb-e2x"/>
-                                                        <constraint firstAttribute="height" constant="270" id="kUk-Jf-fgp"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <outlet property="calendarAppearanceDelegate" destination="hrC-8s-5Hn" id="zYB-mw-VNf"/>
-                                                        <outlet property="calendarDelegate" destination="hrC-8s-5Hn" id="qtA-6I-CrB"/>
-                                                    </connections>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lse-Rx-XFs">
-                                                    <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="19"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGS-NE-hFR" customClass="CVCalendarMenuView" customModule="CVCalendar">
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="kba-VQ-qlZ"/>
-                                                    </constraints>
-                                                    <connections>
-                                                        <outlet property="menuViewDelegate" destination="hrC-8s-5Hn" id="eFF-3f-sXP"/>
-                                                    </connections>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Nnk-q6-Uvn" firstAttribute="centerY" secondItem="Da4-EF-1uB" secondAttribute="centerY" constant="30" id="ByR-TD-kfA"/>
-                                                <constraint firstItem="sGS-NE-hFR" firstAttribute="top" secondItem="Lse-Rx-XFs" secondAttribute="bottom" constant="6" id="C8d-i8-vSE"/>
-                                                <constraint firstItem="sGS-NE-hFR" firstAttribute="width" secondItem="Nnk-q6-Uvn" secondAttribute="width" id="CY1-Bd-tMK"/>
-                                                <constraint firstItem="Lse-Rx-XFs" firstAttribute="centerX" secondItem="sGS-NE-hFR" secondAttribute="centerX" id="L87-ia-WKT"/>
-                                                <constraint firstItem="Nnk-q6-Uvn" firstAttribute="top" secondItem="sGS-NE-hFR" secondAttribute="bottom" constant="8" id="PLy-GW-rQd"/>
-                                                <constraint firstItem="Nnk-q6-Uvn" firstAttribute="top" secondItem="Da4-EF-1uB" secondAttribute="top" constant="65" id="TqY-iM-uwj"/>
-                                                <constraint firstItem="Nnk-q6-Uvn" firstAttribute="centerX" secondItem="Da4-EF-1uB" secondAttribute="centerX" id="cBw-yh-GWF"/>
-                                                <constraint firstItem="sGS-NE-hFR" firstAttribute="centerX" secondItem="Nnk-q6-Uvn" secondAttribute="centerX" id="dKq-pL-xg0"/>
-                                                <constraint firstAttribute="bottom" secondItem="Nnk-q6-Uvn" secondAttribute="bottom" constant="5" id="t6E-cq-kIy"/>
-                                            </constraints>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="340" id="UcU-4j-MUn"/>
-                                            <constraint firstAttribute="width" constant="290" id="cHP-eg-cE2"/>
-                                        </constraints>
                                         <blurEffect style="light"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="UcU-4j-MUn"/>
-                                            </mask>
-                                        </variation>
                                     </visualEffectView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="ksZ-ab-Nbb" firstAttribute="height" secondItem="jMa-PE-hCF" secondAttribute="height" id="26d-J0-4l6"/>
-                                    <constraint firstItem="ksZ-ab-Nbb" firstAttribute="centerY" secondItem="jMa-PE-hCF" secondAttribute="centerY" id="2Fr-Qn-XZ3"/>
-                                    <constraint firstItem="ksZ-ab-Nbb" firstAttribute="width" secondItem="jMa-PE-hCF" secondAttribute="width" id="bY3-wL-Rtr"/>
-                                    <constraint firstItem="ksZ-ab-Nbb" firstAttribute="centerX" secondItem="jMa-PE-hCF" secondAttribute="centerX" id="pxp-1Z-HaO"/>
+                                    <constraint firstItem="f07-37-DAf" firstAttribute="height" secondItem="eUd-jC-71z" secondAttribute="height" id="2ws-eV-ATE"/>
+                                    <constraint firstItem="f07-37-DAf" firstAttribute="width" secondItem="eUd-jC-71z" secondAttribute="width" id="3bE-JD-hqU"/>
+                                    <constraint firstItem="f07-37-DAf" firstAttribute="centerX" secondItem="eUd-jC-71z" secondAttribute="centerX" id="9PN-NR-e7J"/>
+                                    <constraint firstAttribute="width" constant="284" id="SUg-KJ-UGn"/>
+                                    <constraint firstItem="f07-37-DAf" firstAttribute="centerY" secondItem="eUd-jC-71z" secondAttribute="centerY" id="ahj-8b-OWn"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnk-q6-Uvn" customClass="CVCalendarView" customModule="CVCalendar">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="b0O-qb-e2x"/>
+                                    <constraint firstAttribute="height" constant="300" id="kUk-Jf-fgp"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="calendarAppearanceDelegate" destination="hrC-8s-5Hn" id="zYB-mw-VNf"/>
+                                    <outlet property="calendarDelegate" destination="hrC-8s-5Hn" id="qtA-6I-CrB"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGS-NE-hFR" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="kba-VQ-qlZ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="menuViewDelegate" destination="hrC-8s-5Hn" id="eFF-3f-sXP"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lse-Rx-XFs">
+                                <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="jMa-PE-hCF" firstAttribute="centerY" secondItem="Gi4-Pb-swh" secondAttribute="centerY" id="Oaz-eq-qBu"/>
-                            <constraint firstItem="jMa-PE-hCF" firstAttribute="centerX" secondItem="Gi4-Pb-swh" secondAttribute="centerX" id="Rtt-ZL-lbi"/>
+                            <constraint firstItem="sGS-NE-hFR" firstAttribute="centerX" secondItem="Nnk-q6-Uvn" secondAttribute="centerX" id="2WK-VH-7fK"/>
+                            <constraint firstItem="eUd-jC-71z" firstAttribute="bottom" secondItem="Nnk-q6-Uvn" secondAttribute="bottom" id="32q-hb-G2n"/>
+                            <constraint firstItem="Nnk-q6-Uvn" firstAttribute="centerY" secondItem="Gi4-Pb-swh" secondAttribute="centerY" constant="15" id="AMT-qi-skn"/>
+                            <constraint firstItem="Lse-Rx-XFs" firstAttribute="width" secondItem="sGS-NE-hFR" secondAttribute="width" id="W4t-Mp-sbL"/>
+                            <constraint firstItem="eUd-jC-71z" firstAttribute="top" secondItem="Lse-Rx-XFs" secondAttribute="top" constant="-4" id="caD-4E-p9S"/>
+                            <constraint firstItem="sGS-NE-hFR" firstAttribute="top" secondItem="Lse-Rx-XFs" secondAttribute="bottom" constant="10" id="dl6-LX-h8O"/>
+                            <constraint firstItem="Lse-Rx-XFs" firstAttribute="centerX" secondItem="sGS-NE-hFR" secondAttribute="centerX" id="efl-cg-dyi"/>
+                            <constraint firstItem="Nnk-q6-Uvn" firstAttribute="top" secondItem="sGS-NE-hFR" secondAttribute="bottom" constant="5" id="gpd-4R-g6e"/>
+                            <constraint firstItem="sGS-NE-hFR" firstAttribute="width" secondItem="Nnk-q6-Uvn" secondAttribute="width" id="hms-Y2-QPo"/>
+                            <constraint firstItem="eUd-jC-71z" firstAttribute="centerX" secondItem="Gi4-Pb-swh" secondAttribute="centerX" id="kWq-JV-LEt"/>
+                            <constraint firstItem="Nnk-q6-Uvn" firstAttribute="centerX" secondItem="Gi4-Pb-swh" secondAttribute="centerX" id="x4S-zL-a6y"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Gpz-zL-ckG" appends="YES" id="Mnr-WO-tgz"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="blurView" destination="ksZ-ab-Nbb" id="vdA-Yj-C2f"/>
                         <outlet property="calendarMenuView" destination="sGS-NE-hFR" id="mx6-kj-8uI"/>
                         <outlet property="calendarView" destination="Nnk-q6-Uvn" id="zrB-AB-sXe"/>
                         <outlet property="monthLabel" destination="Lse-Rx-XFs" id="YsO-lw-Z7X"/>
-                        <outlet property="superOfBlurView" destination="jMa-PE-hCF" id="jxO-JM-iyP"/>
+                        <outlet property="superOfBlurView" destination="eUd-jC-71z" id="dfD-bM-26b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3iV-BU-qO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2449,7 +2437,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="449" y="2538"/>
+            <point key="canvasLocation" x="448.80000000000001" y="2537.6311844077964"/>
         </scene>
         <!--Salon Schedule View Controller-->
         <scene sceneID="vdF-fQ-qux">
@@ -2607,13 +2595,13 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="cQF-eF-9Iv"/>
+                                <exclude reference="DYo-Km-ffb"/>
+                                <exclude reference="WsX-Yw-Lql"/>
                                 <exclude reference="7HX-5X-Cqa"/>
                                 <exclude reference="DTe-sK-Hq3"/>
                                 <exclude reference="dBh-2a-UXb"/>
-                                <exclude reference="DYo-Km-ffb"/>
-                                <exclude reference="WsX-Yw-Lql"/>
                                 <exclude reference="MGa-6V-nKR"/>
-                                <exclude reference="cQF-eF-9Iv"/>
                             </mask>
                         </variation>
                     </view>
@@ -2634,6 +2622,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mJX-Ex-DLT" customClass="TabBarController" customModule="BeautyFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="WEl-Vc-HuQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
@@ -2711,11 +2700,11 @@
                                         <size key="customSize" width="108" height="110"/>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="R4Y-Lw-jjx"/>
+                                                <exclude reference="Y14-7A-Oey"/>
                                                 <exclude reference="TS2-zp-sSe"/>
                                                 <exclude reference="Y96-ck-Dw8"/>
                                                 <exclude reference="tLI-Sg-HnI"/>
-                                                <exclude reference="R4Y-Lw-jjx"/>
-                                                <exclude reference="Y14-7A-Oey"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -2893,11 +2882,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="EYE-cm-7Yd"/>
                                 <exclude reference="DMG-Kp-y6G"/>
                                 <exclude reference="lX4-UD-RbI"/>
                                 <exclude reference="q7W-jt-Gft"/>
                                 <exclude reference="v0d-uV-3VU"/>
+                                <exclude reference="EYE-cm-7Yd"/>
                             </mask>
                         </variation>
                     </view>
@@ -2940,8 +2929,8 @@
         <image name="totalCut" width="42" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wYj-pK-fFW"/>
         <segue reference="8RK-R7-7R9"/>
         <segue reference="iVD-BR-7s0"/>
+        <segue reference="K5e-Ch-39M"/>
     </inferredMetricsTieBreakers>
 </document>

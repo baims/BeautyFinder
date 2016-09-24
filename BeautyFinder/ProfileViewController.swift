@@ -125,7 +125,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             summaryViewController.salonName        = jsonOfSelectedIndex["salonName"].string!
             summaryViewController.salonImageUrl    = k_website + jsonOfSelectedIndex["salonLogo"].string!
-            summaryViewController.salonAddress     = jsonOfSelectedIndex["salonAddress"].string!
+            summaryViewController.salonAddress     = jsonOfSelectedIndex["area"].string! + ", " + jsonOfSelectedIndex["salonAddress"].string!
             
             print(summaryViewController.salonName)
             
@@ -144,7 +144,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             summaryViewController.latitude         = jsonOfSelectedIndex["lat"].double!
             summaryViewController.longitude        = jsonOfSelectedIndex["long"].double!
             
-            summaryViewController.needToHideBookButton = true
+            summaryViewController.isCanceled       = jsonOfSelectedIndex["isCanceled"].bool!
+            summaryViewController.bookingPK        = jsonOfSelectedIndex["pk"].int!
+            
+           // summaryViewController.needToHideBookButton = true
         }
         
         else if segue.identifier == "booking" && didLaunchFromNotification
@@ -176,7 +179,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             summaryViewController.latitude         = userInfo["lat"] as! Double
             summaryViewController.longitude        = userInfo["long"] as! Double
             
-            summaryViewController.needToHideBookButton = true
+            summaryViewController.isCanceled       = false
+            summaryViewController.bookingPK        = 0
+            
+            //summaryViewController.needToHideBookButton = true
         }
     }
     
@@ -441,6 +447,8 @@ extension ProfileViewController
         // TODO: implement this freakin' cell
         let json = self.json!["lastOrders", indexPath.row]
         
+        print(self.json!)
+        
         // date label
         cell.dateLabel.text = json["date"].string!
         
@@ -454,7 +462,7 @@ extension ProfileViewController
         cell.serviceLabel.text   = json["service"].string!
         
         
-        cell.addressLabel.text   = json["salonAddress"].string!
+        cell.addressLabel.text   = json["area"].string! + ", " + json["salonAddress"].string!
         cell.addressLabel.fadeLength = 4
         cell.addressLabel.scrollRate = 30
         

@@ -10,12 +10,13 @@ import UIKit
 import Alamofire
 import SwiftSpinner
 import SwiftyJSON
+import Datez
 
 class SummaryViewController: UIViewController {
         
     @IBOutlet weak var beauticianImageView: UIImageView!
     @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var textOfPayButtonLabel: UILabel!
+    @IBOutlet weak var textOfCancelButtonLabel: UILabel!
     @IBOutlet weak var salonNameLabel: UILabel!
     @IBOutlet weak var beauticianNameLabel: UILabel!
     @IBOutlet weak var subcatgoryNameLabel: UILabel!
@@ -26,17 +27,14 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var totalPriceView: UIView!
     
-    @IBOutlet weak var bookAndPayButton: UIButton!
+    @IBOutlet weak var cancelBookingButton: UIButton!
     
     @IBOutlet weak var stackViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var salonNameLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var totalPriceBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bookAndPayButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var cancelBookingButtonHeightConstraint: NSLayoutConstraint!
     
     
-    var viewIsLoaded = false
-    
-    var needToHideBookButton = false
     
     var salonName     : String!
     var salonImageUrl : String!
@@ -56,6 +54,29 @@ class SummaryViewController: UIViewController {
     
     var longitude : Double!
     var latitude  : Double!
+    
+    var bookingPK : Int!
+    var isCanceled : Bool!
+    
+    
+    var viewIsLoaded = false
+    
+    var canCancelBooking : Bool {
+        get
+        {
+            guard isCanceled == true else {
+                return false
+            }
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
+            let date = dateFormatter.dateFromString("\(dateOfBooking) \(startTime)")
+            print("daaateee issss \(date)")
+            
+            return  NSDate() < date! + (-1.day.timeInterval)
+        }
+    }
     
 
     override func viewDidLoad()
@@ -104,9 +125,16 @@ class SummaryViewController: UIViewController {
         {
             viewIsLoaded = true
             
-            if needToHideBookButton
+            if isCanceled == true
             {
-                bookAndPayButtonHeightConstraint.constant = 0
+                cancelBookingButton.enabled = false
+                textOfCancelButtonLabel.text = "Canceled"
+            }
+            else if !canCancelBooking
+            {
+//                cancelBookingButtonHeightConstraint.constant = 0
+                cancelBookingButton.enabled = false
+                textOfCancelButtonLabel.text = "You can't cancel this booking"
             }
             
             /*** Changing the placement of the labels/images depending on the device ***/
@@ -139,14 +167,17 @@ class SummaryViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool)
     {        
-        if let _ = NSUserDefaults.standardUserDefaults().objectForKey("token")
-        {
-            self.textOfPayButtonLabel.text = "Pay & Book"
-        }
-        else
-        {
-            self.textOfPayButtonLabel.text = "Log In To Continue Booking"
-        }
+//        if let _ = NSUserDefaults.standardUserDefaults().objectForKey("token")
+//        {
+//            self.textOfCancelButtonLabel.text = "Pay & Book"
+//        }
+//        else
+//        {
+//            self.textOfCancelButtonLabel.text = "Log In To Continue Booking"
+//        }
+        
+        // TODO: check if booking date is more than 24 hours away of todays date, and then show/hide the cancel button
+        print(canCancelBooking)
     }
 
     @IBAction func backButtonTapped(sender: UIButton)
@@ -164,13 +195,20 @@ class SummaryViewController: UIViewController {
     */
     
     
-    @IBAction func bookAndPayButtonTapped(sender: UIButton)
+    @IBAction func cancelBookingButtonTapped(sender: UIButton)
     {
         if let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
         {
-            SwiftSpinner.show("Please Wait...")
-            // reserving booking
-            self.reserveBooking(token)
+            let alertView = UIAlertController(title: "Cancel Booking", message: "Are you sure you want to cancel this booking?", preferredStyle: .Alert)
+            let yesAction = UIAlertAction(title: "Yes", style: .Default, handler: { (action) in
+                self.cancelBooking(token)
+            })
+            let noAction = UIAlertAction(title: "No", style: .Cancel, handler: nil)
+            
+            alertView.addAction(yesAction)
+            alertView.addAction(noAction)
+            
+            self.presentViewController(alertView, animated: true, completion: nil)
         }
         else
         {
@@ -178,6 +216,69 @@ class SummaryViewController: UIViewController {
         }
     }
     
+    func cancelBooking(token : String)
+    {
+        SwiftSpinner.show("Canceling your booking...")
+        
+        let headers = ["Authorization" : "Token \(token)"]
+        
+        
+        Alamofire.request(.POST, k_website + "cancel/", parameters: ["pk" : bookingPK], headers: headers).responseJSON(completionHandler: { (response) -> Void in
+            
+                SwiftSpinner.hide()
+            
+            if let resultJson = response.result.value
+            {
+                let json = JSON(resultJson)
+                
+                if json["Operation"].string == "ok"
+                {
+                    self.cancelBookingButton.enabled = false
+                    self.textOfCancelButtonLabel.text = "Canceled"
+                    self.isCanceled = true
+                    
+                    BAAlertView.showAlertView(self, title: "Canceled", message: "Your booking is canceled. Salon will contact you very soon for a refund.")
+                    
+                    for notification in UIApplication.sharedApplication().scheduledLocalNotifications!
+                    {
+                        let userInfo = notification.userInfo!
+                        
+                        if (userInfo["salonName"] as! String) != self.salonName
+                        {
+                            continue
+                        }
+                        
+                        if (userInfo["beauticianName"] as! String) != self.beauticianName
+                        {
+                            continue
+                        }
+                        
+                        if (userInfo["startTime"] as! String) != self.startTime
+                        {
+                            continue
+                        }
+                        
+                        if (userInfo["dateOfBooking"] as! String) != self.dateOfBooking
+                        {
+                            continue
+                        }
+                        
+                        UIApplication.sharedApplication().cancelLocalNotification(notification)
+                        
+                        break
+                    }
+                }
+                else
+                {
+                    BAAlertView.showAlertView(self, title: "Error", message: json["error"].string!)
+                }
+            }
+            else if let error = response.result.error
+            {
+                print(error)
+            }
+        })
+    }
     
     @IBAction func openLocationInMaps(sender: UIButton)
     {
@@ -272,7 +373,7 @@ class SummaryViewController: UIViewController {
                             
                             // TODO: show some fancy stuff to let the user know that the booking has succeeded
                             dispatch_async(dispatch_get_main_queue(), { 
-                                self.bookAndPayButton.hidden = true
+                                self.cancelBookingButton.hidden = true
                                 BAAlertView.showAlertView(self, title: "Thank you!", message: "We received your payment successfully.")
                             })
                         }
