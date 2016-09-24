@@ -61,22 +61,7 @@ class SummaryViewController: UIViewController {
     
     var viewIsLoaded = false
     
-    var canCancelBooking : Bool {
-        get
-        {
-            guard isCanceled == true else {
-                return false
-            }
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            
-            let date = dateFormatter.dateFromString("\(dateOfBooking) \(startTime)")
-            print("daaateee issss \(date)")
-            
-            return  NSDate() < date! + (-1.day.timeInterval)
-        }
-    }
+    var canCancelBooking : Bool = false
     
 
     override func viewDidLoad()
@@ -96,6 +81,8 @@ class SummaryViewController: UIViewController {
         dateOfBookingLabel.text = dateOfBooking
         startTimeLabel.text     = DateTimeConverter.convertTimeToString(startTime)
         endTimeLabel.text       = DateTimeConverter.convertTimeToString(endTime)
+        checkCanCancelBooking()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,23 +107,9 @@ class SummaryViewController: UIViewController {
         
         totalPriceLabel.sizeToFit()
         
-        
         if !viewIsLoaded
         {
             viewIsLoaded = true
-            
-            if isCanceled == true
-            {
-                cancelBookingButton.enabled = false
-                textOfCancelButtonLabel.text = "Canceled"
-            }
-            else if !canCancelBooking
-            {
-//                cancelBookingButtonHeightConstraint.constant = 0
-                cancelBookingButton.enabled = false
-                textOfCancelButtonLabel.text = "You can't cancel this booking"
-            }
-            
             /*** Changing the placement of the labels/images depending on the device ***/
             switch self.view.frame.height
             {
@@ -177,7 +150,19 @@ class SummaryViewController: UIViewController {
 //        }
         
         // TODO: check if booking date is more than 24 hours away of todays date, and then show/hide the cancel button
-        print(canCancelBooking)
+        print("canCancelBooking: \(canCancelBooking)")
+        
+        if isCanceled == true
+        {
+            cancelBookingButton.enabled = false
+            textOfCancelButtonLabel.text = "Canceled"
+        }
+        else if !canCancelBooking
+        {
+            //                cancelBookingButtonHeightConstraint.constant = 0
+            cancelBookingButton.enabled = false
+            textOfCancelButtonLabel.text = "You can't cancel this booking"
+        }
     }
 
     @IBAction func backButtonTapped(sender: UIButton)
@@ -195,7 +180,7 @@ class SummaryViewController: UIViewController {
     */
     
     
-    @IBAction func cancelBookingButtonTapped(sender: UIButton)
+    @IBAction func cancelBookingButtonTappedWithSender(sender: UIButton)
     {
         if let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
         {
@@ -218,6 +203,7 @@ class SummaryViewController: UIViewController {
     
     func cancelBooking(token : String)
     {
+        
         SwiftSpinner.show("Canceling your booking...")
         
         let headers = ["Authorization" : "Token \(token)"]
@@ -392,7 +378,20 @@ class SummaryViewController: UIViewController {
         print(headers)
         print("\n\n")
     }
-    
+    func checkCanCancelBooking(){
+        
+        if isCanceled == true {
+            canCancelBooking = false
+            return
+        }
+            
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
+        let date = dateFormatter.dateFromString("\(dateOfBooking) \(startTime)")
+        print("daaateee issss \(date)")
+        canCancelBooking = NSDate() < date! + (-1.day.timeInterval)
+    }
     func getProfileDataAndFetchMyFatoorahLink(token: String!)
     {
         // Getting name, email and phone number of the user
