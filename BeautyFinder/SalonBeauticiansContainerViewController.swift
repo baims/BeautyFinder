@@ -66,12 +66,15 @@ class SalonBeauticiansContainerViewController: UIViewController, UICollectionVie
         self.refreshControl.beginRefreshing()
         
         
-        //UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
         let requestUrl = k_website + "schedule/\(self.salonPK)/\(self.subcategoryPK)/"
         print(requestUrl)
         
         
         Alamofire.request(.GET, requestUrl).responseJSON { (response) -> Void in
+            
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
             if let Json = response.result.value {
                 self.beauticianJson = JSON(Json)

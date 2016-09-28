@@ -11,7 +11,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import SwiftyJSON
 
-let k_website = "http://localhost:8000/"
+let k_website = "http://beautyfinders.com/"
 
 var categoriesJson : JSON?
 
