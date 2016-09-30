@@ -217,6 +217,8 @@ class SummaryViewController: UIViewController {
             {
                 let json = JSON(resultJson)
                 
+                print(json)
+                
                 if json["Operation"].string == "ok"
                 {
                     self.cancelBookingButton.enabled = false
@@ -378,7 +380,9 @@ class SummaryViewController: UIViewController {
         print(headers)
         print("\n\n")
     }
-    func checkCanCancelBooking(){
+    
+    func checkCanCancelBooking()
+    {
         
         if isCanceled == true {
             canCancelBooking = false
@@ -392,6 +396,7 @@ class SummaryViewController: UIViewController {
         print("daaateee issss \(date)")
         canCancelBooking = NSDate() < date! + (-1.day.timeInterval)
     }
+    
     func getProfileDataAndFetchMyFatoorahLink(token: String!)
     {
         // Getting name, email and phone number of the user

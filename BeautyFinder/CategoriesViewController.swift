@@ -15,20 +15,21 @@ import Datez
 class CategoriesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var centerYConstraintOfLoadingView: NSLayoutConstraint!
     
-    let refreshControl = UIRefreshControl()
+    //let refreshControl = UIRefreshControl()
     
     var searchIsHidden = true
     //var json : JSON?
+    
+    var viewIsLoaded = false
     
     var indexPathForSelectedItem : NSIndexPath?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.refreshControl.addTarget(self, action: #selector(CategoriesViewController.startRefresh), forControlEvents: .ValueChanged)
-        collectionView?.addSubview(self.refreshControl)
         
 //        ////////////////////////////////////
 //        
@@ -64,8 +65,14 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLayoutSubviews() {
         //self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
-        self.refreshControl.beginRefreshing()
-        self.startRefresh()
+        if !viewIsLoaded
+        {
+            viewIsLoaded = true
+            
+            print("viewDidLayoutSubviews")
+            
+            self.startRefresh()
+        }
         
         //self.collectionView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.height), animated: true)
     }
@@ -119,10 +126,10 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
                 
                 print(categoriesJson)
                 
-                self.refreshControl.endRefreshing()
+                
+                self.hideLoadingView()
                 
                 self.collectionView.reloadData()
-                self.refreshControl.removeFromSuperview()
             }
             else if let error = response.result.error
             {
@@ -130,6 +137,22 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
             }
             
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
+    
+    func hideLoadingView()
+    {
+        print("animating now ....")
+        
+        self.collectionView.alpha = 0
+        
+        UIView.animateWithDuration(0.3) {
+            self.centerYConstraintOfLoadingView.constant -= 50
+            self.view.layoutIfNeeded()
+            self.loadingView.alpha = 0
+            
+            self.collectionView.alpha = 1
+            self.collectionView.center.y -= 50
         }
     }
 }

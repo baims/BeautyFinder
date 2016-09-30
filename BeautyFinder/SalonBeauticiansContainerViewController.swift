@@ -13,9 +13,8 @@ import SwiftyJSON
 class SalonBeauticiansContainerViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var loadingView: UIView!
     
-    
-    let refreshControl = UIRefreshControl()
     
     var beauticianJson : JSON?
     
@@ -55,15 +54,16 @@ class SalonBeauticiansContainerViewController: UIViewController, UICollectionVie
     func startRefresh(salonPK : Int!, subcategoryPK : Int!, subcategoryName : String!)
     {
         self.beauticianJson = nil
-        self.collectionView.addSubview(self.refreshControl)
         self.collectionView.reloadData()
+        
+        UIView.animateWithDuration(0.2) { 
+            self.loadingView.alpha = 1
+        }
         
         self.salonPK         = salonPK
         self.subcategoryPK   = subcategoryPK
         self.subcategoryName = subcategoryName
         
-        
-        self.refreshControl.beginRefreshing()
         
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -79,10 +79,10 @@ class SalonBeauticiansContainerViewController: UIViewController, UICollectionVie
             if let Json = response.result.value {
                 self.beauticianJson = JSON(Json)
                 
-                self.refreshControl.endRefreshing()
+                
+                self.hideLoadingView()
                 
                 self.collectionView.reloadData()
-                self.refreshControl.removeFromSuperview()
             }
             else if let error = response.result.error
             {
@@ -93,6 +93,15 @@ class SalonBeauticiansContainerViewController: UIViewController, UICollectionVie
         }
     }
 
+    func hideLoadingView()
+    {
+        print("animating now ....")
+        
+        
+        UIView.animateWithDuration(0.2) {
+            self.loadingView.alpha = 0
+        }
+    }
 }
 
 

@@ -377,6 +377,7 @@
                         <outlet property="salonSearchContainerView" destination="oVb-ys-xkB" id="vCh-xf-oD7"/>
                         <outlet property="segmentedControl" destination="vWk-ts-gfr" id="01C-9t-EDd"/>
                         <segue destination="fcD-YS-Zrb" kind="show" identifier="Salon" id="8RK-R7-7R9"/>
+                        <segue destination="Dip-aM-egQ" kind="show" identifier="Category" id="bph-6p-lBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKn-yM-q19" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -420,6 +421,14 @@
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                            <real key="value" value="24"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="FHX-Hd-V0E">
                                                     <constraints>
@@ -544,16 +553,39 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNs-LL-8rU">
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="nBo-TS-6Wu">
+                                        <color key="color" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftU-zT-Q0j">
+                                        <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="nBo-TS-6Wu" firstAttribute="centerX" secondItem="eNs-LL-8rU" secondAttribute="centerX" id="S3y-q7-fDI"/>
+                                    <constraint firstItem="ftU-zT-Q0j" firstAttribute="leading" secondItem="eNs-LL-8rU" secondAttribute="leading" constant="2" id="dsS-Wd-9vP"/>
+                                    <constraint firstItem="ftU-zT-Q0j" firstAttribute="top" secondItem="nBo-TS-6Wu" secondAttribute="bottom" constant="6" id="nih-Ti-Qsr"/>
+                                    <constraint firstItem="nBo-TS-6Wu" firstAttribute="top" secondItem="eNs-LL-8rU" secondAttribute="top" constant="8" id="nzZ-zB-Wpt"/>
+                                    <constraint firstAttribute="bottom" secondItem="ftU-zT-Q0j" secondAttribute="bottom" constant="4" id="tda-69-fz5"/>
+                                    <constraint firstAttribute="trailing" secondItem="ftU-zT-Q0j" secondAttribute="trailing" constant="2" id="zPm-2I-QVN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uhm-1l-glm" firstAttribute="top" secondItem="lEu-ch-Lqg" secondAttribute="bottom" id="43h-bf-PWN"/>
                             <constraint firstItem="skz-xG-IY8" firstAttribute="centerY" secondItem="ku5-75-dwQ" secondAttribute="centerY" id="4uf-Jw-2jS"/>
+                            <constraint firstItem="eNs-LL-8rU" firstAttribute="centerX" secondItem="yVZ-yi-SXz" secondAttribute="centerX" id="AT3-m0-TfL"/>
                             <constraint firstItem="skz-xG-IY8" firstAttribute="leading" secondItem="ku5-75-dwQ" secondAttribute="trailing" constant="1" id="Cvm-56-xpY"/>
                             <constraint firstItem="Eow-OT-gHJ" firstAttribute="centerY" secondItem="kY9-i6-6ek" secondAttribute="centerY" constant="6.5" id="Gu6-xt-ICL"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="top" secondItem="kY9-i6-6ek" secondAttribute="bottom" id="HIK-Lv-g62"/>
                             <constraint firstItem="kY9-i6-6ek" firstAttribute="leading" secondItem="yVZ-yi-SXz" secondAttribute="leadingMargin" constant="-20" id="I6s-IP-Sxk"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="leading" secondItem="yVZ-yi-SXz" secondAttribute="leading" id="OZK-26-YvB"/>
+                            <constraint firstItem="eNs-LL-8rU" firstAttribute="centerY" secondItem="yVZ-yi-SXz" secondAttribute="centerY" id="QBi-LN-SsH"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="centerX" secondItem="yVZ-yi-SXz" secondAttribute="centerX" id="c9B-BS-Ff0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kY9-i6-6ek" secondAttribute="trailing" constant="-20" id="dqL-cN-VMW"/>
                             <constraint firstItem="kY9-i6-6ek" firstAttribute="top" secondItem="3CP-yw-6p7" secondAttribute="bottom" constant="-20" id="hc4-Fm-DBE"/>
@@ -576,7 +608,9 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="centerYConstraintOfLoadingView" destination="QBi-LN-SsH" id="ePE-AN-5MD"/>
                         <outlet property="collectionView" destination="lEu-ch-Lqg" id="KGN-a3-xvJ"/>
+                        <outlet property="loadingView" destination="eNs-LL-8rU" id="Jc4-uh-FSI"/>
                         <outlet property="searchDisplayController" destination="77Y-uI-M3j" id="SCt-SZ-jgt"/>
                     </connections>
                 </viewController>
@@ -870,6 +904,14 @@
                                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
                                         <constraints>
@@ -895,6 +937,14 @@
                                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="13"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
                                         <constraints>
@@ -928,6 +978,14 @@
                                 <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6C-CK-xpG">
                                 <subviews>
@@ -1383,6 +1441,14 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                            <real key="value" value="24"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hair Coloring" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Om-s8-Xo6">
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
@@ -1493,6 +1559,14 @@
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                            <real key="value" value="24"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JBs-ic-EA4">
                                                     <constraints>
@@ -1636,6 +1710,14 @@
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                            <real key="value" value="24"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jjU-lv-eDb">
                                                     <constraints>
@@ -1741,6 +1823,14 @@
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                            <real key="value" value="24"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="H6s-FD-snn">
                                                     <constraints>
@@ -1815,8 +1905,8 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hwE-2K-C4U">
                                         <color key="color" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-cl-xxS">
-                                        <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="11"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC0-cl-xxS">
+                                        <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="13"/>
                                         <color key="textColor" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2279,6 +2369,14 @@
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                            <real key="value" value="24"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="OhV-n2-SnA">
                                                     <constraints>
@@ -2355,17 +2453,41 @@
                                     <outlet property="delegate" destination="6kh-Dj-522" id="Yna-wp-jrh"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uih-57-T4g">
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ct7-HO-hiA">
+                                        <color key="color" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOADING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCs-bA-ebG">
+                                        <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.83529411760000005" green="0.14901960780000001" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FCs-bA-ebG" secondAttribute="trailing" constant="2" id="2b8-kg-G8H"/>
+                                    <constraint firstItem="FCs-bA-ebG" firstAttribute="top" secondItem="ct7-HO-hiA" secondAttribute="bottom" constant="6" id="66j-rc-Pww"/>
+                                    <constraint firstAttribute="bottom" secondItem="FCs-bA-ebG" secondAttribute="bottom" constant="4" id="C4b-bI-wQ9"/>
+                                    <constraint firstItem="FCs-bA-ebG" firstAttribute="leading" secondItem="Uih-57-T4g" secondAttribute="leading" constant="2" id="ZuG-6K-v93"/>
+                                    <constraint firstItem="ct7-HO-hiA" firstAttribute="centerX" secondItem="Uih-57-T4g" secondAttribute="centerX" id="gOc-Uh-5Ki"/>
+                                    <constraint firstItem="ct7-HO-hiA" firstAttribute="top" secondItem="Uih-57-T4g" secondAttribute="top" constant="8" id="p9F-he-WJD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="16f-vz-r6C" firstAttribute="centerX" secondItem="GbY-RV-df4" secondAttribute="centerX" id="Gnl-E2-QWK"/>
                             <constraint firstItem="16f-vz-r6C" firstAttribute="height" secondItem="GbY-RV-df4" secondAttribute="height" id="MbC-HD-VNA"/>
+                            <constraint firstItem="Uih-57-T4g" firstAttribute="centerY" secondItem="GbY-RV-df4" secondAttribute="centerY" id="clo-9s-qiT"/>
                             <constraint firstItem="16f-vz-r6C" firstAttribute="centerY" secondItem="GbY-RV-df4" secondAttribute="centerY" id="g1b-4I-E7y"/>
+                            <constraint firstItem="Uih-57-T4g" firstAttribute="centerX" secondItem="GbY-RV-df4" secondAttribute="centerX" id="hLP-wi-SUb"/>
                             <constraint firstItem="16f-vz-r6C" firstAttribute="width" secondItem="GbY-RV-df4" secondAttribute="width" id="kTD-kP-QLZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="16f-vz-r6C" id="Bgr-At-bVl"/>
+                        <outlet property="loadingView" destination="Uih-57-T4g" id="KKD-p2-kPZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irk-3Q-oVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2694,6 +2816,14 @@
                                                     <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="15"/>
                                                     <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="trailingBuffer">
+                                                            <real key="value" value="24"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-76" translatesAutoresizingMaskIntoConstraints="NO" id="iQx-Jl-wzl">
                                                     <constraints>
@@ -2956,7 +3086,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wYj-pK-fFW"/>
-        <segue reference="7rn-ZD-fhg"/>
+        <segue reference="bph-6p-lBc"/>
+        <segue reference="8RK-R7-7R9"/>
         <segue reference="iVD-BR-7s0"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -125,9 +125,6 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
                 self.hideLoadingView()
                 
                 self.collectionView.reloadData()
-                
-                
-                //self.activityIndicator.removeFromSuperview()
             }
             else if let error = response.result.error
             {
