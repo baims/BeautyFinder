@@ -23,6 +23,11 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.calendarView.calendarAppearanceDelegate = self
+        
+        self.calendarMenuView.delegate = self
+        self.calendarView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,9 +36,14 @@ class CalendarViewController: UIViewController {
     }
     
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        
         calendarView.commitCalendarViewUpdate()
         calendarMenuView.commitMenuViewUpdate()
+        
+        calendarView.redrawViewIfNecessarry()
         
         superOfBlurView.layer.cornerRadius = 15
         superOfBlurView.clipsToBounds = true
@@ -71,10 +81,11 @@ class CalendarViewController: UIViewController {
 
 // MARK: - CVCalendarViewDelegate & CVCalendarMenuViewDelegate
 
-extension CalendarViewController : CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
+extension CalendarViewController : CVCalendarViewDelegate, MenuViewDelegate {
     
     /// Required method to implement!
     func presentationMode() -> CalendarMode {
+        print("hehee")
         return .MonthView
     }
     
@@ -94,16 +105,16 @@ extension CalendarViewController : CVCalendarViewDelegate, CVCalendarMenuViewDel
     }
 
 
-    func didSelectDayView(dayView: DayView) {
+    func didSelectDayView(dayView: DayView, animationDidFinish: Bool) {
         print(dayView.weekdayIndex)
-
+        
         self.selectedDate = dayView.date
         self.monthLabel.text = self.selectedDate.globalDescription
         
         // refreshing the dot markers when a new month is selected
         startRefresh()
         
-        
+        print("didselect")
         
         let parentViewController = self.parentViewController as! SalonViewController
         parentViewController.newDateIsSelected(self.selectedDate)
@@ -120,8 +131,6 @@ extension CalendarViewController : CVCalendarViewDelegate, CVCalendarMenuViewDel
             })
         }
     }
-
-    
     
     
     func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool {
@@ -130,6 +139,7 @@ extension CalendarViewController : CVCalendarViewDelegate, CVCalendarMenuViewDel
     
     func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool
     {
+        print("dotMarker")
         if let parentViewController = self.parentViewController as? SalonViewController
         {
             if parentViewController.checkIfDateIsAvailable(dayView.date) == true
@@ -399,4 +409,47 @@ extension SalonViewController
     {
         return self.scheduleContainerViewController.isDateAvailable(date)
     }
+}
+
+extension CVCalendarView {
+    
+    public func redrawViewIfNecessarry() {
+        let contentViewSize = contentController.bounds.size
+        let selfSize = bounds.size
+        if selfSize.width != contentViewSize.width {
+            let width = selfSize.width
+            let height: CGFloat
+            let countOfWeeks = CGFloat(6)
+            
+            let vSpace = appearance.spaceBetweenWeekViews!
+            let hSpace = appearance.spaceBetweenDayViews!
+            
+            if let mode = calendarMode {
+                switch mode {
+                case .WeekView:
+                    height = selfSize.height
+                case .MonthView :
+                    height = (selfSize.height / countOfWeeks) - (vSpace * countOfWeeks)
+                }
+                
+                // If no height constraint found we set it manually.
+                var found = false
+                for constraint in constraints {
+                    if constraint.firstAttribute == .Height {
+                        found = true
+                    }
+                }
+                
+                if !found {
+                    addConstraint(NSLayoutConstraint(item: self, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .Height, multiplier: 1, constant: frame.height))
+                }
+                
+                weekViewSize = CGSizeMake(width, height)
+                dayViewSize = CGSizeMake((width / 7.0) - hSpace, height)
+                
+                contentController.updateFrames(selfSize != contentViewSize ? bounds : CGRectZero)
+            }
+        }
+    }
+    
 }

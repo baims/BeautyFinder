@@ -29,7 +29,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MarqueeLabel-Swift.xcscheme</key>
+		<key>MarqueeLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,32 +67,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0E7D1EFF1D51CC9945FC56699E2019A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1520003FEBEC114D6C84F832AFEDB994</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>192C8C2413796E089B0A00D1D53C6C09</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>28059C65F1AD2DCE0E8B080796C97D5D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>30F95E272089C65FF087A799EB3A4CD3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3FD9E88561B8AC6AD0861B2D293699E2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5FDAC3FC9FF0F29E7F42DA3B1C381C5C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>78AAC782A1F04FDFFA868BEC3F9595A9</key>
+		<key>71826058FC503246AB16662A655A748F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,32 +92,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8AB2174F08BE2AB6456D323FA3F18AAC</key>
+		<key>7D0754A62B35462236D4E8F8F314B3E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9804D3C4E1094B8BACACDE71EE96B759</key>
+		<key>8D9E612EC5535649024C265E9ADE5887</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA14B622689766F6B8A4F42FD9DE552F</key>
+		<key>A0E4D25C4A15DE7975F9C5BF675D310B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C3CDB8DCA83F7D7680D1E32E674CC8AC</key>
+		<key>A14D8BA6703C474E6BC2E4686663CD68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4BFDF050BA73D60E12EEE95078C09F8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CFF858055EBBB40A023415F0A0168820</key>
+		<key>C1F1807189983BE6FB0D2F59151387D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,7 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F91226101ECE8FCFD221A3EC54481F82</key>
+		<key>E5AB88E8333B9568826C9AA252037278</key>
 		<dict>
 			<key>primary</key>
 			<true/>

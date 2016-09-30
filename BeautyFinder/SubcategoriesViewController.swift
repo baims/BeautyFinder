@@ -16,8 +16,10 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var centerYConstraintOfLoadingView: NSLayoutConstraint!
     
-    let refreshControl = UIRefreshControl()
     
     var searchIsHidden = true
     var json : JSON?
@@ -26,14 +28,25 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     
     var animator = SalonViewAnimator()
     
+    var viewIsLoaded = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshControl.addTarget(self, action: #selector(SubcategoriesViewController.startRefresh), forControlEvents: .ValueChanged)
-        collectionView?.addSubview(self.refreshControl)
+//        self.act = UIRefreshControl()
+//        //self.refreshControl.addTarget(self, action: #selector(SubcategoriesViewController.startRefresh), forControlEvents: .ValueChanged)
+//        //self.refreshControl.tintColor = UIColor.greenColor()
+//        //collectionView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+//        //collectionView.alwaysBounceVertical = true
+//        
+//        self.view.addSubview(self.refreshControl)
+//        
+//        self.refreshControl.autoCenterInSuperview()
+//        
+//        self.refreshControl.beginRefreshing()
         
-        self.refreshControl.beginRefreshing()
-        self.startRefresh()
+        
+        
         
         self.titleLabel.text = self.titleString
     }
@@ -44,7 +57,8 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     }
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool)
+    {
         if let indexPath = indexPathForSelectedItem
         {
             self.collectionView.deselectItemAtIndexPath(indexPath, animated: true)
@@ -56,8 +70,27 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
         
         // showing tabBar ( if it was hidden from the SalonViewController )
         self.tabBarController!.tabBar.hidden = false
+        
+        
+        print("viewWillAppear")
     }
-
+    
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        
+        if !viewIsLoaded
+        {
+            viewIsLoaded = true
+            
+            print("viewDidLayoutSubviews")
+            
+            self.startRefresh()
+        }
+        
+        
+    }
+    
     
     // MARK: - Navigation
 
@@ -77,16 +110,21 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
     
     func startRefresh()
     {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
         Alamofire.request(.GET, k_website + "subcategory/\(self.primaryKey)", parameters:nil).responseJSON { (response) -> Void in
+            
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
             if let Json = response.result.value
             {
                 self.json = JSON(Json)
                 
-                self.refreshControl.endRefreshing()
+                print(self.json)
+                
+                self.hideLoadingView()
                 
                 self.collectionView.reloadData()
-                self.refreshControl.removeFromSuperview()
             }
             else if let error = response.result.error
             {
@@ -95,12 +133,27 @@ class SubcategoriesViewController: UIViewController, UICollectionViewDataSource,
         }
     }
     
+    func hideLoadingView()
+    {
+        print("animating now ....")
+        
+        self.collectionView.alpha = 0
+        
+        UIView.animateWithDuration(0.3) {
+            self.centerYConstraintOfLoadingView.constant -= 50
+            self.view.layoutIfNeeded()
+            self.loadingView.alpha = 0
+            
+            self.collectionView.alpha = 1
+            self.collectionView.center.y -= 50
+        }
+    }
+    
     
     @IBAction func backButtonPressed(sender: UIButton)
     {
         self.navigationController?.popViewControllerAnimated(true)
     }
-    
 }
 
 extension SubcategoriesViewController

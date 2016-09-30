@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MarqueeLabel_Swift
+import MarqueeLabel
 
 class ProfileTableViewCell: UITableViewCell {
 

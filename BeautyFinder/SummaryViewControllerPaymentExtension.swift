@@ -100,7 +100,7 @@ extension SummaryViewController: BAWebViewDelegate
     
     func webViewIsLoadingNewURL(url: NSURL!)
     {
-        if url.absoluteString.rangeOfString("http://beautyfinders.com/operation=error") != nil
+        if url.absoluteString!.rangeOfString("http://beautyfinders.com/operation=error") != nil
         {
             print("ERRROOOOORRRR")
             dismissViewControllerAnimated(true, completion: {
@@ -111,7 +111,7 @@ extension SummaryViewController: BAWebViewDelegate
             })
             
         }
-        else if url.absoluteString.rangeOfString("http://beautyfinders.com/operation=success") != nil
+        else if url.absoluteString!.rangeOfString("http://beautyfinders.com/operation=success") != nil
         {
             let token = NSUserDefaults.standardUserDefaults().stringForKey("token")!
             orderBooking(token)
