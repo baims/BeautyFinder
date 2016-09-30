@@ -290,7 +290,7 @@
             <objects>
                 <navigationController id="Oom-Gd-Co0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="search_btn" id="OWg-AL-lcB"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0v-1G-9QR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0v-1G-9QR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -396,9 +396,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="header_1" translatesAutoresizingMaskIntoConstraints="NO" id="kY9-i6-6ek">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="header_1" translatesAutoresizingMaskIntoConstraints="NO" id="kY9-i6-6ek">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="rCK-85-kCX"/>
+                                    <constraint firstAttribute="height" constant="86" id="rCK-85-kCX"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lEu-ch-Lqg">
@@ -574,6 +574,12 @@
                                     <constraint firstAttribute="trailing" secondItem="ftU-zT-Q0j" secondAttribute="trailing" constant="2" id="zPm-2I-QVN"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Expand Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="i1f-iD-aLB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="cAu-c3-hsb"/>
+                                    <constraint firstAttribute="height" constant="20" id="dhT-nj-a0U"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -581,11 +587,13 @@
                             <constraint firstItem="skz-xG-IY8" firstAttribute="centerY" secondItem="ku5-75-dwQ" secondAttribute="centerY" id="4uf-Jw-2jS"/>
                             <constraint firstItem="eNs-LL-8rU" firstAttribute="centerX" secondItem="yVZ-yi-SXz" secondAttribute="centerX" id="AT3-m0-TfL"/>
                             <constraint firstItem="skz-xG-IY8" firstAttribute="leading" secondItem="ku5-75-dwQ" secondAttribute="trailing" constant="1" id="Cvm-56-xpY"/>
-                            <constraint firstItem="Eow-OT-gHJ" firstAttribute="centerY" secondItem="kY9-i6-6ek" secondAttribute="centerY" constant="6.5" id="Gu6-xt-ICL"/>
+                            <constraint firstItem="i1f-iD-aLB" firstAttribute="centerX" secondItem="kY9-i6-6ek" secondAttribute="centerX" id="DkA-XA-htN"/>
+                            <constraint firstItem="Eow-OT-gHJ" firstAttribute="centerY" secondItem="kY9-i6-6ek" secondAttribute="centerY" id="Gu6-xt-ICL"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="top" secondItem="kY9-i6-6ek" secondAttribute="bottom" id="HIK-Lv-g62"/>
                             <constraint firstItem="kY9-i6-6ek" firstAttribute="leading" secondItem="yVZ-yi-SXz" secondAttribute="leadingMargin" constant="-20" id="I6s-IP-Sxk"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="leading" secondItem="yVZ-yi-SXz" secondAttribute="leading" id="OZK-26-YvB"/>
                             <constraint firstItem="eNs-LL-8rU" firstAttribute="centerY" secondItem="yVZ-yi-SXz" secondAttribute="centerY" id="QBi-LN-SsH"/>
+                            <constraint firstItem="i1f-iD-aLB" firstAttribute="bottom" secondItem="kY9-i6-6ek" secondAttribute="bottom" constant="-4" id="Wep-hi-8W7"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="centerX" secondItem="yVZ-yi-SXz" secondAttribute="centerX" id="c9B-BS-Ff0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kY9-i6-6ek" secondAttribute="trailing" constant="-20" id="dqL-cN-VMW"/>
                             <constraint firstItem="kY9-i6-6ek" firstAttribute="top" secondItem="3CP-yw-6p7" secondAttribute="bottom" constant="-20" id="hc4-Fm-DBE"/>
@@ -610,6 +618,8 @@
                     <connections>
                         <outlet property="centerYConstraintOfLoadingView" destination="QBi-LN-SsH" id="ePE-AN-5MD"/>
                         <outlet property="collectionView" destination="lEu-ch-Lqg" id="KGN-a3-xvJ"/>
+                        <outlet property="headerImageView" destination="kY9-i6-6ek" id="uVI-LE-tBi"/>
+                        <outlet property="infoArrowImageView" destination="i1f-iD-aLB" id="bnj-C2-oxS"/>
                         <outlet property="loadingView" destination="eNs-LL-8rU" id="Jc4-uh-FSI"/>
                         <outlet property="searchDisplayController" destination="77Y-uI-M3j" id="SCt-SZ-jgt"/>
                     </connections>
@@ -623,7 +633,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-400" y="497"/>
+            <point key="canvasLocation" x="-271" y="610"/>
         </scene>
         <!--SALON MIX-->
         <scene sceneID="Brh-3m-Iys">
@@ -1242,7 +1252,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y5d-cS-DKN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Services" id="cmM-mP-zbi"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GX7-x8-aJr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GX7-x8-aJr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1260,7 +1270,7 @@
             <objects>
                 <navigationController id="rDT-lw-XOb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="p2x-Sy-aPr"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cEi-eB-nuE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cEi-eB-nuE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3063,6 +3073,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Expand Arrow" width="375" height="667"/>
         <image name="Icon-76" width="38" height="38"/>
         <image name="RoundWhiteLayered" width="802" height="146"/>
         <image name="RoundedPinkFilled" width="802" height="146"/>
@@ -3085,9 +3096,9 @@
         <image name="totalCut" width="42" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wYj-pK-fFW"/>
-        <segue reference="bph-6p-lBc"/>
         <segue reference="8RK-R7-7R9"/>
+        <segue reference="Yac-r5-IES"/>
+        <segue reference="wYj-pK-fFW"/>
         <segue reference="iVD-BR-7s0"/>
     </inferredMetricsTieBreakers>
 </document>

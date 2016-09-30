@@ -17,6 +17,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var centerYConstraintOfLoadingView: NSLayoutConstraint!
+    @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var infoArrowImageView: UIImageView!
     
     //let refreshControl = UIRefreshControl()
     
@@ -60,14 +62,24 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
 //        print("notification fire date is: \(notification.fireDate!)")
 //        
 //        ///////////////////////////////////////
+        
+        headerImageView.contentMode = .ScaleAspectFill
+        headerImageView.layer.masksToBounds = true
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews()
+    {
         //self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
         if !viewIsLoaded
         {
             viewIsLoaded = true
+            
+            UIView.animateWithDuration(0.6, delay: 0, options: [.Repeat, .CurveEaseInOut, .Autoreverse], animations: {
+                // TODO: scale it bigger and smaller
+                }, completion: { (completed) in
+                    
+            })
             
             print("viewDidLayoutSubviews")
             
@@ -77,11 +89,6 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         //self.collectionView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.height), animated: true)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillAppear(animated: Bool) {
         if let indexPath = self.indexPathForSelectedItem
         {
