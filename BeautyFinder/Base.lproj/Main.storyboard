@@ -283,14 +283,14 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="400" y="497"/>
+            <point key="canvasLocation" x="-2055" y="2381"/>
         </scene>
         <!--Search-->
         <scene sceneID="T1H-tU-Nlt">
             <objects>
                 <navigationController id="Oom-Gd-Co0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="search_btn" id="OWg-AL-lcB"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e0v-1G-9QR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e0v-1G-9QR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -580,23 +580,41 @@
                                     <constraint firstAttribute="height" constant="20" id="dhT-nj-a0U"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBl-UN-dxb" userLabel="Info Button">
+                                <connections>
+                                    <action selector="infoButtonTapped:" destination="Ka9-h3-hlT" eventType="touchUpInside" id="yFh-eQ-eg1"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaV-sS-dh2">
+                                <connections>
+                                    <segue destination="TYZ-BE-3ti" kind="embed" identifier="Info" id="hL5-OT-1go"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uhm-1l-glm" firstAttribute="top" secondItem="lEu-ch-Lqg" secondAttribute="bottom" id="43h-bf-PWN"/>
                             <constraint firstItem="skz-xG-IY8" firstAttribute="centerY" secondItem="ku5-75-dwQ" secondAttribute="centerY" id="4uf-Jw-2jS"/>
+                            <constraint firstItem="WaV-sS-dh2" firstAttribute="height" secondItem="yVZ-yi-SXz" secondAttribute="height" id="7Li-fU-uMm"/>
+                            <constraint firstItem="IBl-UN-dxb" firstAttribute="top" secondItem="3CP-yw-6p7" secondAttribute="bottom" id="8iw-nJ-VEn"/>
                             <constraint firstItem="eNs-LL-8rU" firstAttribute="centerX" secondItem="yVZ-yi-SXz" secondAttribute="centerX" id="AT3-m0-TfL"/>
                             <constraint firstItem="skz-xG-IY8" firstAttribute="leading" secondItem="ku5-75-dwQ" secondAttribute="trailing" constant="1" id="Cvm-56-xpY"/>
                             <constraint firstItem="i1f-iD-aLB" firstAttribute="centerX" secondItem="kY9-i6-6ek" secondAttribute="centerX" id="DkA-XA-htN"/>
                             <constraint firstItem="Eow-OT-gHJ" firstAttribute="centerY" secondItem="kY9-i6-6ek" secondAttribute="centerY" id="Gu6-xt-ICL"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="top" secondItem="kY9-i6-6ek" secondAttribute="bottom" id="HIK-Lv-g62"/>
+                            <constraint firstItem="IBl-UN-dxb" firstAttribute="leading" secondItem="yVZ-yi-SXz" secondAttribute="leadingMargin" constant="-16" id="Hfs-YF-Djf"/>
                             <constraint firstItem="kY9-i6-6ek" firstAttribute="leading" secondItem="yVZ-yi-SXz" secondAttribute="leadingMargin" constant="-20" id="I6s-IP-Sxk"/>
+                            <constraint firstItem="IBl-UN-dxb" firstAttribute="bottom" secondItem="kY9-i6-6ek" secondAttribute="bottom" id="Iju-im-3L0"/>
+                            <constraint firstItem="WaV-sS-dh2" firstAttribute="centerY" secondItem="yVZ-yi-SXz" secondAttribute="centerY" id="KH8-Zh-7Ms"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="leading" secondItem="yVZ-yi-SXz" secondAttribute="leading" id="OZK-26-YvB"/>
                             <constraint firstItem="eNs-LL-8rU" firstAttribute="centerY" secondItem="yVZ-yi-SXz" secondAttribute="centerY" id="QBi-LN-SsH"/>
                             <constraint firstItem="i1f-iD-aLB" firstAttribute="bottom" secondItem="kY9-i6-6ek" secondAttribute="bottom" constant="-4" id="Wep-hi-8W7"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="centerX" secondItem="yVZ-yi-SXz" secondAttribute="centerX" id="c9B-BS-Ff0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kY9-i6-6ek" secondAttribute="trailing" constant="-20" id="dqL-cN-VMW"/>
                             <constraint firstItem="kY9-i6-6ek" firstAttribute="top" secondItem="3CP-yw-6p7" secondAttribute="bottom" constant="-20" id="hc4-Fm-DBE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IBl-UN-dxb" secondAttribute="trailing" constant="-16" id="iIB-s7-aYX"/>
+                            <constraint firstItem="WaV-sS-dh2" firstAttribute="centerX" secondItem="yVZ-yi-SXz" secondAttribute="centerX" id="pUz-SY-oGc"/>
+                            <constraint firstItem="WaV-sS-dh2" firstAttribute="width" secondItem="yVZ-yi-SXz" secondAttribute="width" id="qQm-oa-icp"/>
                             <constraint firstItem="Eow-OT-gHJ" firstAttribute="centerX" secondItem="kY9-i6-6ek" secondAttribute="centerX" id="r3F-8c-2C6"/>
                             <constraint firstItem="lEu-ch-Lqg" firstAttribute="width" secondItem="yVZ-yi-SXz" secondAttribute="width" id="tYK-mI-yWs"/>
                         </constraints>
@@ -620,8 +638,10 @@
                         <outlet property="collectionView" destination="lEu-ch-Lqg" id="KGN-a3-xvJ"/>
                         <outlet property="headerImageView" destination="kY9-i6-6ek" id="uVI-LE-tBi"/>
                         <outlet property="infoArrowImageView" destination="i1f-iD-aLB" id="bnj-C2-oxS"/>
+                        <outlet property="infoContainerView" destination="WaV-sS-dh2" id="I0o-4D-NjC"/>
                         <outlet property="loadingView" destination="eNs-LL-8rU" id="Jc4-uh-FSI"/>
                         <outlet property="searchDisplayController" destination="77Y-uI-M3j" id="SCt-SZ-jgt"/>
+                        <segue destination="baN-PY-Do1" kind="show" identifier="termsAndConditions" id="flA-fw-i07"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Y0-fD-4zr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -633,7 +653,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-271" y="610"/>
+            <point key="canvasLocation" x="-362" y="496"/>
         </scene>
         <!--SALON MIX-->
         <scene sceneID="Brh-3m-Iys">
@@ -1252,7 +1272,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y5d-cS-DKN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Services" id="cmM-mP-zbi"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GX7-x8-aJr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GX7-x8-aJr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1270,7 +1290,7 @@
             <objects>
                 <navigationController id="rDT-lw-XOb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" id="p2x-Sy-aPr"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cEi-eB-nuE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cEi-eB-nuE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1992,6 +2012,45 @@
                                     <outletCollection property="gestureRecognizers" destination="b7l-2j-j7x" appends="YES" id="fq3-Xn-v36"/>
                                 </connections>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7t-Gn-D5B">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urg-vb-7ha">
+                                        <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="15"/>
+                                        <state key="normal" title="Terms &amp; Conditions">
+                                            <color key="titleColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="termsAndConditionsButtonIsTapped" destination="dTx-e6-an2" eventType="touchUpInside" id="XDB-NV-fQD"/>
+                                            <action selector="termsAndConditionsButtonTouchedDown" destination="dTx-e6-an2" eventType="touchDown" id="G7s-CL-9Ra"/>
+                                            <action selector="termsAndConditionsButtonTouchedUpOutside" destination="dTx-e6-an2" eventType="touchDragOutside" id="GZd-4y-sA6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Prf-sx-fBk">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="18" id="B1R-Dr-ocP"/>
+                                            <constraint firstAttribute="height" constant="18" id="G9a-Zd-Any"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="Circled Chevron Right">
+                                            <color key="titleColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="termsAndConditionsButtonIsTapped" destination="dTx-e6-an2" eventType="touchUpInside" id="faM-Sh-KsF"/>
+                                            <action selector="termsAndConditionsButtonTouchedDown" destination="dTx-e6-an2" eventType="touchDown" id="QhP-wd-GYU"/>
+                                            <action selector="termsAndConditionsButtonTouchedUpOutside" destination="dTx-e6-an2" eventType="touchDragOutside" id="CLd-j1-vnG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="urg-vb-7ha" secondAttribute="bottom" id="FWW-lx-g5X"/>
+                                    <constraint firstItem="urg-vb-7ha" firstAttribute="leading" secondItem="c7t-Gn-D5B" secondAttribute="leading" id="I9v-M2-hVb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Prf-sx-fBk" secondAttribute="trailing" id="ZGt-0V-h15"/>
+                                    <constraint firstItem="urg-vb-7ha" firstAttribute="top" secondItem="c7t-Gn-D5B" secondAttribute="top" id="ejy-SZ-fX6"/>
+                                    <constraint firstItem="Prf-sx-fBk" firstAttribute="centerY" secondItem="urg-vb-7ha" secondAttribute="centerY" id="gMt-WA-WDN"/>
+                                    <constraint firstItem="Prf-sx-fBk" firstAttribute="leading" secondItem="urg-vb-7ha" secondAttribute="trailing" constant="5" id="vPl-er-2Ld"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="072-Ag-9aH">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="I8c-3v-xEO"/>
@@ -2091,6 +2150,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.75849873310000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up, you agree to our" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SG-z7-acU">
+                                <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="13"/>
+                                <color key="textColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -2103,10 +2167,13 @@
                             <constraint firstItem="QIx-lx-PeU" firstAttribute="centerY" secondItem="072-Ag-9aH" secondAttribute="centerY" id="8uc-sU-SXT"/>
                             <constraint firstItem="vO2-es-QtP" firstAttribute="centerX" secondItem="h88-S5-1H3" secondAttribute="centerX" id="8yG-cg-gTg"/>
                             <constraint firstItem="JZS-BN-2ME" firstAttribute="width" secondItem="JZS-BN-2ME" secondAttribute="height" multiplier="83:16" id="9Sd-tq-3aA"/>
+                            <constraint firstItem="c7t-Gn-D5B" firstAttribute="top" secondItem="5SG-z7-acU" secondAttribute="bottom" id="AET-NX-x2x"/>
                             <constraint firstItem="CdD-w5-Q3f" firstAttribute="height" secondItem="qWw-fc-TrB" secondAttribute="height" id="Av5-Uw-9XU"/>
                             <constraint firstItem="CdD-w5-Q3f" firstAttribute="centerY" secondItem="qWw-fc-TrB" secondAttribute="centerY" id="CQ9-8X-4z5"/>
                             <constraint firstItem="IwS-f5-T32" firstAttribute="leading" secondItem="h88-S5-1H3" secondAttribute="leading" constant="15" id="DFO-YM-AeC"/>
                             <constraint firstItem="h88-S5-1H3" firstAttribute="width" secondItem="h88-S5-1H3" secondAttribute="height" multiplier="83:16" id="DLM-G2-oFz"/>
+                            <constraint firstItem="5SG-z7-acU" firstAttribute="centerX" secondItem="W0x-4B-EAv" secondAttribute="centerX" id="DSj-ya-JHf"/>
+                            <constraint firstItem="5SG-z7-acU" firstAttribute="centerX" secondItem="c7t-Gn-D5B" secondAttribute="centerX" id="J8a-tT-nhj"/>
                             <constraint firstItem="qWw-fc-TrB" firstAttribute="width" secondItem="qWw-fc-TrB" secondAttribute="height" multiplier="83:16" id="JQS-5k-2zo"/>
                             <constraint firstItem="Y4k-4q-j5M" firstAttribute="centerX" secondItem="ga7-G5-7qB" secondAttribute="centerX" id="Jpr-jT-Ph1"/>
                             <constraint firstItem="xvx-1T-SrD" firstAttribute="height" secondItem="JZS-BN-2ME" secondAttribute="height" id="L7K-SM-zH0"/>
@@ -2126,6 +2193,7 @@
                             <constraint firstItem="072-Ag-9aH" firstAttribute="top" secondItem="Kr0-p1-LzN" secondAttribute="bottom" constant="8" id="aif-oh-zzm"/>
                             <constraint firstItem="Y4k-4q-j5M" firstAttribute="width" secondItem="ga7-G5-7qB" secondAttribute="width" id="avl-ln-3m0"/>
                             <constraint firstItem="vO2-es-QtP" firstAttribute="width" secondItem="vO2-es-QtP" secondAttribute="height" multiplier="83:16" id="b2O-xg-hrt"/>
+                            <constraint firstItem="5SG-z7-acU" firstAttribute="top" secondItem="W0x-4B-EAv" secondAttribute="bottom" constant="10" id="cL9-Md-kXq"/>
                             <constraint firstItem="Fx1-8w-Cd6" firstAttribute="trailing" secondItem="vO2-es-QtP" secondAttribute="trailing" constant="-15" id="cyp-qW-Pk8"/>
                             <constraint firstItem="JZS-BN-2ME" firstAttribute="top" secondItem="qWw-fc-TrB" secondAttribute="bottom" constant="8" id="d2b-pM-dw3"/>
                             <constraint firstItem="072-Ag-9aH" firstAttribute="centerX" secondItem="ga7-G5-7qB" secondAttribute="centerX" constant="-43" id="diX-1R-yK6"/>
@@ -2137,7 +2205,7 @@
                             <constraint firstItem="Fx1-8w-Cd6" firstAttribute="centerY" secondItem="vO2-es-QtP" secondAttribute="centerY" id="nQw-5w-Wps"/>
                             <constraint firstItem="Y4k-4q-j5M" firstAttribute="bottom" secondItem="LOB-6E-evp" secondAttribute="top" id="oIy-hE-rJF"/>
                             <constraint firstItem="JZS-BN-2ME" firstAttribute="width" secondItem="JZS-BN-2ME" secondAttribute="height" multiplier="83:16" id="oOT-LI-eCa"/>
-                            <constraint firstItem="LOB-6E-evp" firstAttribute="top" secondItem="W0x-4B-EAv" secondAttribute="bottom" constant="20" id="p3k-FI-QIz"/>
+                            <constraint firstItem="LOB-6E-evp" firstAttribute="top" secondItem="W0x-4B-EAv" secondAttribute="bottom" constant="60" id="p3k-FI-QIz"/>
                             <constraint firstItem="Y4k-4q-j5M" firstAttribute="centerY" secondItem="ga7-G5-7qB" secondAttribute="centerY" id="qxM-DS-X62"/>
                             <constraint firstItem="IwS-f5-T32" firstAttribute="height" secondItem="h88-S5-1H3" secondAttribute="height" id="rci-Px-wNR"/>
                             <constraint firstItem="xvx-1T-SrD" firstAttribute="centerY" secondItem="JZS-BN-2ME" secondAttribute="centerY" id="tAB-CU-otr"/>
@@ -2147,9 +2215,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="wp1-KA-KJ7"/>
                                 <exclude reference="Wkq-B9-xFZ"/>
                                 <exclude reference="oIy-hE-rJF"/>
+                                <exclude reference="wp1-KA-KJ7"/>
                                 <exclude reference="W3S-E7-7JG"/>
                             </mask>
                         </variation>
@@ -2163,7 +2231,10 @@
                         <outlet property="passwordTextField" destination="xvx-1T-SrD" id="Zb7-sj-Dos"/>
                         <outlet property="phoneTextField" destination="Fx1-8w-Cd6" id="p0O-It-AKS"/>
                         <outlet property="signUpButtonYConstraint" destination="p3k-FI-QIz" id="2Qn-hJ-22U"/>
+                        <outlet property="termsAndConditionsButtonArrow" destination="Prf-sx-fBk" id="kI8-IR-jYf"/>
+                        <outlet property="termsAndConditionsButtonLabel" destination="urg-vb-7ha" id="oi7-ro-DX3"/>
                         <outlet property="textFieldYConstraint" destination="iAH-UT-eSU" id="v5X-IC-3mk"/>
+                        <segue destination="baN-PY-Do1" kind="show" identifier="termsAndConditions" id="Iwt-w1-mb4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pz-qo-d7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2193,7 +2264,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1119" y="497"/>
+            <point key="canvasLocation" x="-1335" y="2381"/>
         </scene>
         <!--Salon Services Container View Controller-->
         <scene sceneID="ejS-sb-JfE">
@@ -3071,10 +3142,299 @@
             </objects>
             <point key="canvasLocation" x="-400" y="3584"/>
         </scene>
+        <!--Info View Controller-->
+        <scene sceneID="tmK-2u-zU9">
+            <objects>
+                <viewController id="TYZ-BE-3ti" customClass="InfoViewController" customModule="BeautyFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AHo-ZY-5jZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0l3-Um-n0T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="isZ-zs-ZLi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJC-HL-GfO">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="a9g-Uh-pVP">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="1Un-hz-JXv"/>
+                                            <constraint firstAttribute="width" constant="36" id="xge-hN-3Fy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihg-Qg-Vyk">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FINDER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEn-a0-EcZ">
+                                                <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEAUTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXl-RP-8CN">
+                                                <fontDescription key="fontDescription" name="MuseoSans-900" family="Museo Sans" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="ZEn-a0-EcZ" firstAttribute="leading" secondItem="UXl-RP-8CN" secondAttribute="trailing" constant="1" id="KNC-Lg-PxA"/>
+                                            <constraint firstAttribute="bottom" secondItem="UXl-RP-8CN" secondAttribute="bottom" id="Z2s-q4-mwm"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZEn-a0-EcZ" secondAttribute="trailing" id="Z5I-FU-1XQ"/>
+                                            <constraint firstItem="UXl-RP-8CN" firstAttribute="top" secondItem="Ihg-Qg-Vyk" secondAttribute="top" id="fsT-c9-R7I"/>
+                                            <constraint firstItem="UXl-RP-8CN" firstAttribute="leading" secondItem="Ihg-Qg-Vyk" secondAttribute="leading" id="mBf-Vv-bzE"/>
+                                            <constraint firstItem="UXl-RP-8CN" firstAttribute="centerY" secondItem="ZEn-a0-EcZ" secondAttribute="centerY" id="nSA-Se-zYO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rj4-g0-C7a">
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram" translatesAutoresizingMaskIntoConstraints="NO" id="906-Hu-tb9">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+965 55804273" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxT-HG-Uzb">
+                                                <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
+                                                <color key="textColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Beautyfinder_kw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtR-PE-f84">
+                                                <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="17"/>
+                                                <color key="textColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="YsK-NS-97z">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Email" translatesAutoresizingMaskIntoConstraints="NO" id="kQX-Rf-hHd">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="41" id="9dh-Jm-RYF"/>
+                                                    <constraint firstAttribute="height" constant="41" id="D0m-Q0-JoO"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="beautyfinder@hotmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfx-sU-04Q">
+                                                <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="14"/>
+                                                <color key="textColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="kQX-Rf-hHd" firstAttribute="top" secondItem="YsK-NS-97z" secondAttribute="bottom" constant="18" id="4hJ-wj-tFD"/>
+                                            <constraint firstItem="VtR-PE-f84" firstAttribute="leading" secondItem="FxT-HG-Uzb" secondAttribute="leading" id="5MQ-6z-ceO"/>
+                                            <constraint firstItem="YsK-NS-97z" firstAttribute="centerX" secondItem="kQX-Rf-hHd" secondAttribute="centerX" id="Emy-hk-fE3"/>
+                                            <constraint firstItem="906-Hu-tb9" firstAttribute="top" secondItem="Rj4-g0-C7a" secondAttribute="top" id="EpN-4U-GiH"/>
+                                            <constraint firstItem="FxT-HG-Uzb" firstAttribute="leading" secondItem="Hfx-sU-04Q" secondAttribute="leading" id="F1n-D5-CFd"/>
+                                            <constraint firstItem="YsK-NS-97z" firstAttribute="top" secondItem="906-Hu-tb9" secondAttribute="bottom" constant="18" id="ISI-N0-Ky2"/>
+                                            <constraint firstItem="906-Hu-tb9" firstAttribute="height" secondItem="YsK-NS-97z" secondAttribute="height" id="LyU-Zu-SgS"/>
+                                            <constraint firstItem="Hfx-sU-04Q" firstAttribute="leading" secondItem="kQX-Rf-hHd" secondAttribute="trailing" constant="11" id="ONw-di-2XR"/>
+                                            <constraint firstItem="kQX-Rf-hHd" firstAttribute="leading" secondItem="Rj4-g0-C7a" secondAttribute="leading" id="QUZ-Bd-WVa"/>
+                                            <constraint firstItem="906-Hu-tb9" firstAttribute="width" secondItem="YsK-NS-97z" secondAttribute="width" id="Qk4-VM-Dbq"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hfx-sU-04Q" secondAttribute="trailing" id="Vch-Yv-VOg"/>
+                                            <constraint firstItem="YsK-NS-97z" firstAttribute="height" secondItem="kQX-Rf-hHd" secondAttribute="height" id="Vyo-WL-UfN"/>
+                                            <constraint firstItem="VtR-PE-f84" firstAttribute="centerY" secondItem="906-Hu-tb9" secondAttribute="centerY" id="cHm-CT-gwl"/>
+                                            <constraint firstItem="FxT-HG-Uzb" firstAttribute="centerY" secondItem="YsK-NS-97z" secondAttribute="centerY" id="cSc-5u-g3k"/>
+                                            <constraint firstItem="YsK-NS-97z" firstAttribute="width" secondItem="kQX-Rf-hHd" secondAttribute="width" id="gns-22-FYq"/>
+                                            <constraint firstItem="Hfx-sU-04Q" firstAttribute="centerY" secondItem="kQX-Rf-hHd" secondAttribute="centerY" id="h1l-Jr-ULC"/>
+                                            <constraint firstAttribute="bottom" secondItem="kQX-Rf-hHd" secondAttribute="bottom" id="iCE-Jp-Whv"/>
+                                            <constraint firstItem="906-Hu-tb9" firstAttribute="centerX" secondItem="YsK-NS-97z" secondAttribute="centerX" id="zt8-ms-dSz"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pe-tb-VcZ">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R19-w9-QYG">
+                                                <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="16"/>
+                                                <state key="normal" title="Terms &amp; Conditions">
+                                                    <color key="titleColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="termsAndConditionsButtonIsTapped" destination="TYZ-BE-3ti" eventType="touchUpInside" id="ljm-1O-y0r"/>
+                                                    <action selector="termsAndConditionsButtonTouchedDown:" destination="TYZ-BE-3ti" eventType="touchDown" id="0mq-tZ-zSn"/>
+                                                    <action selector="termsAndConditionsButtonTouchedUpOutside" destination="TYZ-BE-3ti" eventType="touchUpOutside" id="L6T-Cw-oiW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypH-rY-3ZU">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="AY9-Mg-xoE"/>
+                                                    <constraint firstAttribute="width" constant="18" id="Bpp-4q-62g"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="Circled Chevron Right">
+                                                    <color key="titleColor" red="0.99991267920000004" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="termsAndConditionsButtonArrowTouchedDown:" destination="TYZ-BE-3ti" eventType="touchDown" id="kfP-BX-9eE"/>
+                                                    <action selector="termsAndConditionsButtonIsTapped" destination="TYZ-BE-3ti" eventType="touchUpInside" id="Mlf-Q7-87R"/>
+                                                    <action selector="termsAndConditionsButtonTouchedUpOutside" destination="TYZ-BE-3ti" eventType="touchUpOutside" id="Sra-Kh-TCh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="R19-w9-QYG" secondAttribute="bottom" id="92h-u6-feM"/>
+                                            <constraint firstItem="ypH-rY-3ZU" firstAttribute="leading" secondItem="R19-w9-QYG" secondAttribute="trailing" constant="5" id="DDi-1y-ztO"/>
+                                            <constraint firstAttribute="trailing" secondItem="ypH-rY-3ZU" secondAttribute="trailing" id="DLc-7H-XHK"/>
+                                            <constraint firstItem="R19-w9-QYG" firstAttribute="top" secondItem="2Pe-tb-VcZ" secondAttribute="top" id="Hiu-xR-qn7"/>
+                                            <constraint firstItem="ypH-rY-3ZU" firstAttribute="centerY" secondItem="R19-w9-QYG" secondAttribute="centerY" id="QHB-aw-nF6"/>
+                                            <constraint firstItem="R19-w9-QYG" firstAttribute="leading" secondItem="2Pe-tb-VcZ" secondAttribute="leading" id="yZT-TW-0Vp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.68235294120000001" green="0.1960784314" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2Pe-tb-VcZ" firstAttribute="top" secondItem="Rj4-g0-C7a" secondAttribute="bottom" constant="28" id="5c1-Me-in8"/>
+                                    <constraint firstItem="Ihg-Qg-Vyk" firstAttribute="centerX" secondItem="a9g-Uh-pVP" secondAttribute="centerX" id="70t-qd-fIA"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ihg-Qg-Vyk" secondAttribute="trailing" constant="56" id="75H-e4-4Bq"/>
+                                    <constraint firstItem="Rj4-g0-C7a" firstAttribute="top" secondItem="Ihg-Qg-Vyk" secondAttribute="bottom" constant="30" id="MQs-7L-osb"/>
+                                    <constraint firstItem="a9g-Uh-pVP" firstAttribute="top" secondItem="YJC-HL-GfO" secondAttribute="top" constant="12" id="Q4u-eE-x32"/>
+                                    <constraint firstItem="Rj4-g0-C7a" firstAttribute="centerX" secondItem="a9g-Uh-pVP" secondAttribute="centerX" id="VMZ-Mu-cdC"/>
+                                    <constraint firstItem="2Pe-tb-VcZ" firstAttribute="centerX" secondItem="Rj4-g0-C7a" secondAttribute="centerX" id="faY-lB-CBn"/>
+                                    <constraint firstItem="a9g-Uh-pVP" firstAttribute="centerX" secondItem="YJC-HL-GfO" secondAttribute="centerX" id="k9M-5W-tXz"/>
+                                    <constraint firstItem="Ihg-Qg-Vyk" firstAttribute="leading" secondItem="YJC-HL-GfO" secondAttribute="leading" constant="56" id="kF3-uP-337"/>
+                                    <constraint firstItem="Ihg-Qg-Vyk" firstAttribute="top" secondItem="a9g-Uh-pVP" secondAttribute="bottom" constant="10" id="kgj-D2-RIN"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Pe-tb-VcZ" secondAttribute="bottom" constant="8" id="tOp-eE-x3t"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.83999999999999997" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="YJC-HL-GfO" firstAttribute="centerY" secondItem="isZ-zs-ZLi" secondAttribute="centerY" id="Hhn-D8-ROq"/>
+                            <constraint firstItem="YJC-HL-GfO" firstAttribute="centerX" secondItem="isZ-zs-ZLi" secondAttribute="centerX" id="z6S-Wc-EiF"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mEW-uz-1OP" appends="YES" id="Aqs-aI-ybV"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="infoSheet" destination="YJC-HL-GfO" id="EUf-t2-pYV"/>
+                        <outlet property="termsAndConditionsButtonArrow" destination="ypH-rY-3ZU" id="WAW-Gi-JlX"/>
+                        <outlet property="termsAndConditionsButtonLabel" destination="R19-w9-QYG" id="LLf-Mn-vsl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ti-k0-qci" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mEW-uz-1OP">
+                    <connections>
+                        <action selector="userTappedOutsideOfInfoView:" destination="TYZ-BE-3ti" id="tM0-NW-jik"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="650" y="496"/>
+        </scene>
+        <!--Terms And Conditions View Controller-->
+        <scene sceneID="kbf-Rv-SSg">
+            <objects>
+                <viewController id="baN-PY-Do1" customClass="TermsAndConditionsViewController" customModule="BeautyFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q1x-jc-t7w"/>
+                        <viewControllerLayoutGuide type="bottom" id="4fs-x4-1No"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="csP-PW-575">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="header_1" translatesAutoresizingMaskIntoConstraints="NO" id="mMG-GW-wuy">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="pvu-Hk-yWB"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzm-TM-Q5w">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="J78-XS-K0P"/>
+                                    <constraint firstAttribute="height" constant="60.5" id="bSp-It-YmC"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="back_btn">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped" destination="baN-PY-Do1" eventType="touchUpInside" id="w6R-lX-9RJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-KV-MuY">
+                                <fontDescription key="fontDescription" name="MuseoSans-500" family="Museo Sans" pointSize="18"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.99607843139999996" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYs-yI-M9U">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">The Purpose of this mobile application is to serve our customers and the use of this service shall be subject to the following terms and conditions (Terms and conditions or Terms of use). Therefore, Kindly read the following terms and conditions before using this mobile application since the use of the service by the customer shall be considered as an approval on these terms and conditions. Therefore, if you do not agree on the terms and conditions, do not use this application the terms you shall refer to any person, customer, subscribe, or entity, who views, uses, access, browses or submits any content or material to the BeautyFinder Application. BeautyFinder reserves the right to modify these Terms of use at any time without prior notice. You agree that each visit you make to the application shall be subject to the then-current Terms of Use, and continued use of the application now or following modifications in these Terms of use confirms that you have read, accepted and agreed to be bound by such modifications.
+	
+The terms and conditions, Booking policies, Privacy policy and all other, policies shall constitute an integral part of the agreement “the Agreement”.
+
+
+Primary eligibility conditions for participating in the Application
+1-	The Subscriber should not be less than 21 years old. Otherwise, approval of parents- or guardian- or person in charge of the service applicant is required prior to using the mobile application.
+2-	Subscribers should accept all the articles and conditions without manipulation or allegation of lack of understanding.
+3-	Subscribers should also agree upon abiding to the terms of use that all the information submitted by them are valid and accurate.
+4-	Subscribers should also agree that the optional non perusal of this agreement shall not change any case or deny the subscribers approval of the agreement.
+
+
+Agreement approval 
+In order to become a member of the BeautyFinder mobile Application you should fill the registration form and agree to the terms of use prior to using any services provided by the mobile application. BeautyFinder terms of use is available on the terms and conditions section within the mobile application iPhones Devices.
+
+
+Description of the services 
+The purpose of this system to provide an easy platform for the customers of the Beauty Salons, Cosmetic Centers &amp; Spas in the state of Kuwait to book and pay for their salon appointments in advance. In addition, The BeautyFinder Provides Beauty Salons, Cosmetic Centers &amp; Spas in the state of Kuwait with a system allows them to display their salon at home services, prices, Special offers and manage their customers appointments online. Through the BeautyFinder application, customers will be able to browse salon profiles, view salon services, special offers, stylist names, price lists, available timings, and book appointment in advance. Booking appointments would be against advanced full payment or deposits.
+
+-	BeautyFinder does not in any way guaranty the timing of services provided by salons.
+-	BeautyFinder does not in any way guaranty the quality of services provided by the salons.
+-	BeautyFinder shall not be liable or responsible for any damage or cause of injury occurred by salons.
+-	Customers are solely responsible for verifying the accuracy of address of the salon. BeautyFinder shall have no liability or responsibility for such erroneous in the salon address. The quality of the service in the sole responsibility of the salon. Please be aware that the salon will do everything they can to provide the best service to their customers, however in some occasions, the service might be affected by factors beyond their control and therefore cannot be guaranteed.
+
+
+The Customer shall be responsible for the following :-
+1-	The account information submitted through the entry registration form is accurate and the name is real and not imaginary.
+2-	All financial transactions including bank cards carried out by the customer or any person using the application should be related to the customer.
+3-	Not to use the mobile application to broadcast illegal information or threats or defamation or publish immoral behaviors or create chaos or pornography or sexual materials or materials subject to legal accountability or acts encouraging criminal acts or violating the applied law or any illegal purpose by virtue of the terms of Use.
+4-	Sending any materials violating the law or religions or doctrine or morals and resulting in a civil liability or otherwise violating any laws or by-laws or regulations or practices.
+5-	Intervening in the use or enjoyment of any customer using the BeautyFinder Application or causing damages to the image of the application or decreasing the use of this application or trying to get an unauthorized  access to this application or the networks connected thereto through piracy or deception or any other means.
+
+
+Booking Policy
+1-	BeautyFinder application shall have the right to accept or reject any bookings requested by the customer to the different beauty salons, cosmetic Centers &amp; Spas available on the BeautyFinder application. The customer booking request shall be considered as an offer from the customer to obtain the salon services. Once the application accepts such offer, it becomes a contact for providing the customer with the required salon Services. BeautyFinder role shall end by booking an appointment for the customer in the desired Salon.
+2-	BeautyFinder shall perform the required due diligence to ensure of the availability of its services. However, it shall bot bear any responsibility in the case of the system being temporarily suspended without notification or in any case of any damage in the system or maintenance works or repair for reasons beyond our control.
+3-	All booking requested submitted by customers through the customer to the different beauty salons, cosmetic Centers &amp; Spas available on the BeautyFinder application are dedicated for personal use only.
+4-	You should review the booking and cancelation policy related to each and every cancelation policy related to each and every salon listed on the App prior to submitting the final booking request. You will not be able to cancel the booking or claim for a refund unless the cancelation or refund request meets the salon’s refund and cancelation Policy. Therefore, you should be very careful prior to booking.
+5-	 After the submittal of the booking request, The customer shall pledge to wait for 60 minute from the date of booking to confirm the appointment.
+6-	In the case of requesting a Home service, The customer is solely responsible for providing us with their valid address and valid phone numbers.
+7-	The price list of salon services shall be listed in the each salon profile respectively within The App. The service price may be listed as a full payment or a booking Deposit Only. In the case of playing “Deposit Only”, the customer is liable to pay additional fees directly to the salon should they requested to perform additional services. The service price could differ based on the stylist and service will be provided in the salon or at home.
+8-	Payment settlement is done through the payment gateway within The App in which you pay the service amount via KNET. The customer shall solely bear the all the banking comminssions resulting from the payment mechanism through KNET cards.
+9-	The Customer shall abide by the laws of the state of Kuwait and relevant by-laws and decisions.
+
+Jurisdiction
+Except as may be provided for, All Materials in the the customer to the different beauty salons, cosmetic Centers &amp; Spas available on the BeautyFinder application for salons clients service are only available for providing information on the salons existing in the state of Kuwait and uploaded on the application, and that the the customer to the different beauty salons, cosmetic Centers &amp; Spas available on the BeautyFinder application shall control this application and activate it from its regional office in the state of Kuwait and shall not claim that these materials are appropriate or available for use in other places, and in the event of using this application from other places, you shall assume the liability of abiding by the local applicable laws.</mutableString>
+                                <color key="textColor" red="0.72549019609999998" green="0.19215686269999999" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="MuseoSans-300" family="Museo Sans" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mMG-GW-wuy" secondAttribute="trailing" constant="-20" id="5A1-VV-T66"/>
+                            <constraint firstItem="VYs-yI-M9U" firstAttribute="centerX" secondItem="csP-PW-575" secondAttribute="centerX" id="AmV-lI-wjO"/>
+                            <constraint firstItem="4fs-x4-1No" firstAttribute="top" secondItem="VYs-yI-M9U" secondAttribute="bottom" id="FaR-mi-Jj7"/>
+                            <constraint firstItem="mMG-GW-wuy" firstAttribute="leading" secondItem="csP-PW-575" secondAttribute="leadingMargin" constant="-20" id="Gcw-SV-RMP"/>
+                            <constraint firstItem="mMG-GW-wuy" firstAttribute="top" secondItem="Q1x-jc-t7w" secondAttribute="bottom" constant="-20" id="H0g-Jh-cgu"/>
+                            <constraint firstItem="cO6-KV-MuY" firstAttribute="centerY" secondItem="hzm-TM-Q5w" secondAttribute="centerY" id="KBu-0O-XDI"/>
+                            <constraint firstItem="hzm-TM-Q5w" firstAttribute="leading" secondItem="csP-PW-575" secondAttribute="leadingMargin" constant="-16" id="S67-ot-Y7L"/>
+                            <constraint firstItem="cO6-KV-MuY" firstAttribute="centerX" secondItem="csP-PW-575" secondAttribute="centerX" id="UIF-aq-8SL"/>
+                            <constraint firstItem="VYs-yI-M9U" firstAttribute="width" secondItem="csP-PW-575" secondAttribute="width" id="dv7-PG-rS6"/>
+                            <constraint firstItem="hzm-TM-Q5w" firstAttribute="top" secondItem="Q1x-jc-t7w" secondAttribute="bottom" constant="-8" id="hcR-l8-l4x"/>
+                            <constraint firstItem="VYs-yI-M9U" firstAttribute="top" secondItem="mMG-GW-wuy" secondAttribute="bottom" id="lFh-UQ-4aj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fya-Gc-tm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1509.5999999999999" y="497.90104947526243"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Expand Arrow" width="375" height="667"/>
+        <image name="Circled Chevron Right" width="25" height="25"/>
+        <image name="Email" width="60" height="60"/>
+        <image name="Expand Arrow" width="25" height="25"/>
         <image name="Icon-76" width="38" height="38"/>
+        <image name="Instagram" width="60" height="60"/>
+        <image name="Phone" width="60" height="60"/>
         <image name="RoundWhiteLayered" width="802" height="146"/>
         <image name="RoundedPinkFilled" width="802" height="146"/>
         <image name="back_btn" width="19" height="19"/>
@@ -3096,9 +3456,10 @@
         <image name="totalCut" width="42" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8RK-R7-7R9"/>
-        <segue reference="Yac-r5-IES"/>
         <segue reference="wYj-pK-fFW"/>
         <segue reference="iVD-BR-7s0"/>
+        <segue reference="Iwt-w1-mb4"/>
+        <segue reference="Yac-r5-IES"/>
+        <segue reference="7rn-ZD-fhg"/>
     </inferredMetricsTieBreakers>
 </document>

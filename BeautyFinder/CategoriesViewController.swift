@@ -16,9 +16,12 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var infoContainerView: UIView!
     @IBOutlet weak var centerYConstraintOfLoadingView: NSLayoutConstraint!
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var infoArrowImageView: UIImageView!
+    
+    var infoViewController : InfoViewController!
     
     //let refreshControl = UIRefreshControl()
     
@@ -81,6 +84,16 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
                     
             })
             
+            UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: [], animations: {
+                self.infoArrowImageView.transform       = CGAffineTransformMakeScale(1.2, 1.2)
+            }) {
+                (completed) in
+                
+                UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 2, options: [.Autoreverse, .Repeat, .AllowUserInteraction], animations: {
+                    self.infoArrowImageView.transform       = CGAffineTransformMakeScale(0.9, 0.9)
+                    }, completion: nil)
+            }
+            
             print("viewDidLayoutSubviews")
             
             self.startRefresh()
@@ -89,7 +102,8 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         //self.collectionView.setContentOffset(CGPointMake(0, -self.refreshControl.frame.height), animated: true)
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool)
+    {
         if let indexPath = self.indexPathForSelectedItem
         {
             self.collectionView.deselectItemAtIndexPath(indexPath, animated: true)
@@ -98,6 +112,12 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
         self.navigationController?.navigationBar.hidden = true
     }
     
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
@@ -117,6 +137,12 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
             subcategoryName.replaceRange(subcategoryName.startIndex ... subcategoryName.startIndex, with: String(subcategoryName[subcategoryName.startIndex]).capitalizedString)
             
             vc.titleString = categoryName + " " + subcategoryName
+        }
+        
+        else if segue.identifier == "Info"
+        {
+            self.infoViewController = segue.destinationViewController as! InfoViewController
+            
         }
     }
 
@@ -160,6 +186,25 @@ class CategoriesViewController: UIViewController, UICollectionViewDataSource, UI
             
             self.collectionView.alpha = 1
             self.collectionView.center.y -= 50
+        }
+    }
+    
+    
+    @IBAction func infoButtonTapped(sender: UIButton)
+    {
+        infoViewController.showInfoSheetWithAnimation()
+        
+        UIView.animateWithDuration(0.3) {
+            self.infoContainerView.alpha = 1
+        }
+    }
+    
+    func hideInfoVC()
+    {
+        UIView.animateWithDuration(0.35, animations: {
+            self.infoContainerView.alpha = 0
+        }) { (completed) in
+
         }
     }
 }

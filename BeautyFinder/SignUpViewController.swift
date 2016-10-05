@@ -27,6 +27,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var textFieldYConstraint: NSLayoutConstraint!
     @IBOutlet weak var signUpButtonYConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var termsAndConditionsButtonLabel: UIButton!
+    @IBOutlet weak var termsAndConditionsButtonArrow: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -244,5 +246,34 @@ class SignUpViewController: UIViewController, UITextFieldDelegate
             self.emailTextField.resignFirstResponder()
             self.passwordTextField.resignFirstResponder()
         }
+    }
+}
+
+// MARK: Terms & Conditions button
+extension SignUpViewController
+{
+    // TOUCH UP INSIDE events
+    @IBAction func termsAndConditionsButtonIsTapped()
+    {
+        self.performSegueWithIdentifier("termsAndConditions", sender: nil)
+        
+        self.termsAndConditionsButtonTouchedUpOutside()
+    }
+    
+    // TOUCH UP OUTSIDE events
+    @IBAction func termsAndConditionsButtonTouchedUpOutside()
+    {
+        self.termsAndConditionsButtonLabel.highlighted = false
+        self.termsAndConditionsButtonArrow.highlighted = false
+    }
+    
+    
+    // TOUCH DOWN events
+    @IBAction func termsAndConditionsButtonTouchedDown()
+    {
+        self.termsAndConditionsButtonArrow.highlighted = true
+        self.termsAndConditionsButtonLabel.highlighted = true
+        
+        print("touchedDown")
     }
 }

@@ -19,6 +19,7 @@
 		9F3354A01BCD46DB00FA1A21 /* SalonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33549F1BCD46DB00FA1A21 /* SalonViewController.swift */; };
 		9F3354A21BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */; };
 		9F3973851BF68F90006C3748 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3973841BF68F90006C3748 /* SummaryViewController.swift */; };
+		9F45123D1DA4609700FC92C9 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F45123C1DA4609700FC92C9 /* TermsAndConditionsViewController.swift */; };
 		9F5122211C510A7600E92155 /* BAAutoResizingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5122201C510A7600E92155 /* BAAutoResizingTextField.swift */; };
 		9F5122231C51103E00E92155 /* String+EmailPhoneValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5122221C51103E00E92155 /* String+EmailPhoneValidation.swift */; };
 		9F632C961BBDC81C00AF2732 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */; };
@@ -45,6 +46,7 @@
 		9FD7ED191CF202FB00D4EB33 /* BACartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7ED161CF202FB00D4EB33 /* BACartViewController.swift */; };
 		9FD7ED1A1CF202FB00D4EB33 /* BAOrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7ED171CF202FB00D4EB33 /* BAOrderData.swift */; };
 		9FD7ED1B1CF202FC00D4EB33 /* BAOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7ED181CF202FB00D4EB33 /* BAOrderView.swift */; };
+		9FDDCA4D1DA422B300714F8A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDDCA4C1DA422B300714F8A /* InfoViewController.swift */; };
 		9FFF96BC1C1092EF004B8F48 /* DateAndTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */; };
 		9FFF96D31C174ECC004B8F48 /* CategorySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFF96D21C174ECC004B8F48 /* CategorySearchViewController.swift */; };
 		BEDA589FC67C9C6A4A6CEDCD /* Pods_BeautyFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973A1B2300219F730F0128EB /* Pods_BeautyFinderTests.framework */; };
@@ -120,6 +122,7 @@
 		9F33549F1BCD46DB00FA1A21 /* SalonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonViewController.swift; sourceTree = "<group>"; };
 		9F3354A11BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalonServicesTableViewCell.swift; sourceTree = "<group>"; };
 		9F3973841BF68F90006C3748 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		9F45123C1DA4609700FC92C9 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		9F5122201C510A7600E92155 /* BAAutoResizingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAAutoResizingTextField.swift; sourceTree = "<group>"; };
 		9F5122221C51103E00E92155 /* String+EmailPhoneValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EmailPhoneValidation.swift"; sourceTree = "<group>"; };
 		9F632C951BBDC81C00AF2732 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 		9FD7ED161CF202FB00D4EB33 /* BACartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACartViewController.swift; sourceTree = "<group>"; };
 		9FD7ED171CF202FB00D4EB33 /* BAOrderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAOrderData.swift; sourceTree = "<group>"; };
 		9FD7ED181CF202FB00D4EB33 /* BAOrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BAOrderView.swift; sourceTree = "<group>"; };
+		9FDDCA4C1DA422B300714F8A /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		9FFF96BB1C1092EF004B8F48 /* DateAndTimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateAndTimeConverter.swift; sourceTree = "<group>"; };
 		9FFF96D21C174ECC004B8F48 /* CategorySearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySearchViewController.swift; sourceTree = "<group>"; };
 		CAA008C41B8C1B150094F10E /* BeautyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +268,8 @@
 				9F27BAAA1B99B93600F5DF6A /* CategoriesViewController.swift */,
 				9F27BAAC1B99BBFA00F5DF6A /* CategoriesHeaderCollectionReusableView.swift */,
 				9F27BAAE1B9AB13900F5DF6A /* CategoriesCollectionViewCell.swift */,
+				9FDDCA4C1DA422B300714F8A /* InfoViewController.swift */,
+				9F45123C1DA4609700FC92C9 /* TermsAndConditionsViewController.swift */,
 			);
 			name = "Home View";
 			sourceTree = "<group>";
@@ -702,11 +708,13 @@
 				9FD7ED1B1CF202FC00D4EB33 /* BAOrderView.swift in Sources */,
 				9F3354A21BCD4A5E00FA1A21 /* SalonServicesTableViewCell.swift in Sources */,
 				CAA008CA1B8C1B160094F10E /* AppDelegate.swift in Sources */,
+				9FDDCA4D1DA422B300714F8A /* InfoViewController.swift in Sources */,
 				9F6C3B501BE2AC1B0039F742 /* SalonBeauticiansContainerViewController.swift in Sources */,
 				9F28F2E61BAC85BE007F1396 /* ADVSegmentedControl.swift in Sources */,
 				9F28F2EA1BAC95F4007F1396 /* SalonSearchViewController.swift in Sources */,
 				9F3973851BF68F90006C3748 /* SummaryViewController.swift in Sources */,
 				9FFF96D31C174ECC004B8F48 /* CategorySearchViewController.swift in Sources */,
+				9F45123D1DA4609700FC92C9 /* TermsAndConditionsViewController.swift in Sources */,
 				9FFF96BC1C1092EF004B8F48 /* DateAndTimeConverter.swift in Sources */,
 				9F9B99021BD12C0F00A78B4D /* SubcategoriesAnimationController.swift in Sources */,
 				9FB6F0F91CF74B3900F1B2CB /* BACartViewControllerPaymentExtension.swift in Sources */,
